@@ -16,10 +16,12 @@ The following mods are possible with this tool:
 1. Make all males a Diamond, with the option of including rare furs. This will not affect Great Ones.
 1. Make some males a Diamond, with the option of including rare furs, where you tell the tool what percentage you want to be a Diamond.
 
-This tool was tested on Windows 11 with the game installed via Steam. If your game files are saved somewhere else besides where Steam saves them, use the `apc set-save [SAVE_PATH]` command to tell the tool which path to use.
-
 The modded population files can be found at the following directory: `C:\Users\{username}\Documents\APC\mods`.
 
+## Caveats:
+This tool was tested on Windows 11 with the game installed via Steam. If your game files are saved somewhere else besides where Steam saves them, use the `apc set-save [SAVE_PATH]` command to tell the tool which path to use.
+
+Not all furs are defined in the tool. It is a work in progress, and it takes a lot of time, so expect some gaps.
 ## How To Build
 
 | Note: This code was built and tested with Python 3.10.10.
