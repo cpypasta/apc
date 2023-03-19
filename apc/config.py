@@ -264,7 +264,19 @@ ANIMALS = {
       "score_low": 275,
       "score_high": 305,
       "weight_low": 605,
-      "weight_high": 620
+      "weight_high": 620,
+      "furs": {
+        "male": {
+            "melanistic": 27915576,
+            "piebald": 747308994,
+            "albino": 264274951
+        },
+        "female": {
+            "melanistic": 27915576,
+            "piebald": 747308994,
+            "albino": 1141231243
+        }   
+      }
     }
   },
   "red_deer": {
@@ -302,6 +314,18 @@ ANIMALS = {
       "score_high": 25,
       "weight_low": 280,
       "weight_high": 290,   
+      "furs": {
+        "male": {
+          "cinnamon": 3363397298,
+          # "blonde": 0,
+          "brown": 1911408571
+        },
+        "female": {
+          "cinnamon": 3363397298,
+          # "blonde": 0,
+          "brown": 4206745190
+        }   
+      }
    }
   },
   "whitetail_deer": {
@@ -320,8 +344,43 @@ ANIMALS = {
       "score_low": 255,
       "score_high": 273,
       "weight_low": 90,
-      "weight_high": 100   
+      "weight_high": 100,
+      "furs": {
+        "male": {
+          "piebald": 3675496031,
+          "melanistic": 925535978,
+          "albino": 4207695112   
+        },
+        "female": {
+          "melanistic": 2141175380,
+          "albino": 1770358919,
+          "piebald": 2765078492          
+        }
+      }
    }
+  },
+  "bobcat": {
+    "diamonds": {
+      "score_low": 27.7,
+      "score_high": 30,
+      "weight_low": 40,
+      "weight_high": 45,   
+      "furs": {
+        "male": {
+          "blue": 209843553,
+          "melanistic": 534063775,
+          "brown": 3958048063,
+          "tan": 1862790386,
+          "gray": 2843566431,
+          "red": 343310641
+        },
+        "female": {
+          "blue": 2113993964,
+          "melanistic": 3030070873,
+          "albino": 3654283380
+        }
+      }
+    }
   }
 }
 
@@ -352,6 +411,7 @@ class ModifiableSpecies(str, Enum):
    black_bear = "black_bear"
    whitetail_deer = "whitetail_deer"
    red_deer = "red_deer"
+   bobcat = "bobcat"
 
 def load_config(config_path: Path) -> int: 
   config_path.read_text()
@@ -366,3 +426,26 @@ def save_path(save_path_location: str) -> None:
 
 def get_reserve_name(key: str) -> str:
     return RESERVES[key]["name"]
+
+def _get_fur(furs: dict, seed: int) -> str:
+  try:
+    return next(key for key, value in furs.items() if value == seed)
+  except:
+    return None
+
+def get_animal_fur_by_seed(species: str, gender: str, seed: int) -> str:
+  if species not in ANIMALS:
+     return "-"
+
+  animal = ANIMALS[species]
+  go_furs = animal["go"]["furs"] if "go" in animal and "furs" in animal["go"] else []
+  diamond_furs = animal["diamonds"]["furs"] if "furs" in animal["diamonds"] else []
+  diamond_furs = diamond_furs[gender] if gender in diamond_furs else []
+  go_key = _get_fur(go_furs, seed)
+  diamond_key = _get_fur(diamond_furs, seed)
+  if go_key:
+    return go_key
+  elif diamond_key:
+    return diamond_key
+  else:
+    return "-"

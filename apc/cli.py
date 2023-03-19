@@ -35,6 +35,17 @@ def reserves() -> None:
   reserve_names = commands.reserves()
   console.print(reserve_names)
   
+
+@app.command(help="Show the animal species at a reserve")
+def animals(
+   reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch), 
+   species: str = typer.Argument(..., help="Animal species to see"),
+   good: Optional[bool] = typer.Option(False, "--good", "-g", help="Only show diamonds and GOs"),
+   modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
+) -> None:
+  animal_details = commands.describe_animals(reserve_name, species, good, modded, state["verbose"])
+  console.print(animal_details)
+
 @app.command(help="Shows all the species found at a reserve")
 def species(reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch)) -> None:
   species = commands.species(reserve_name)
@@ -46,9 +57,10 @@ def mod(
    species: config.ModifiableSpecies = typer.Argument(...),
    strategy: config.Strategy = typer.Argument(...),
    modifier: int = typer.Argument(None, help="used to modify strategy; usually a percentage", min=1, max=100),
+   rares: Optional[bool] = typer.Option(False, "--rares", "-r", help="Include rare and super rare furs"),
    modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
 ) -> None:
-   mod_result = commands.mod(reserve_name, species, strategy, modifier, modded, state["verbose"])
+   mod_result = commands.mod(reserve_name, species, strategy, modifier, rares, modded, state["verbose"])
    print(f"[yellow]You can find the modded file at: {config.MOD_DIR_PATH}[/yellow]")
    print()
    console.print(mod_result)
@@ -78,5 +90,5 @@ def main(
     Animal Population Changer
     """
     if verbose:
-       print("[red]Using verbose mode[/red]")
+       print("[yellow]Using verbose mode[/yellow]")
        state["verbose"] = True

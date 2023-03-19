@@ -4,6 +4,7 @@ from deca.ff_adf import Adf, AdfValue
 from apc import config
 from rich import print
 from apc.adf import ParsedAdfFile, load_reserve
+from apc.config import get_animal_fur_by_seed
 
 def _species(reserve_name: str, reserve_details: Adf, species: str) -> list:
    reserve = config.RESERVES[reserve_name]
@@ -44,8 +45,51 @@ def species(reserve_name: str, include_keys = False) -> list:
    species_keys = config.RESERVES[reserve_name]["species"]
    return [f"{format_key(s)}{' (' + s + ')' if include_keys else ''}" for s in species_keys]
 
+def _get_populations(reserve_details: Adf) -> list:
+  populations = reserve_details.table_instance_full_values[0].value["Populations"].value
+  return [p for p in populations if len(p.value["Groups"].value) > 0]
+
+def describe_animals(reserve_name: str, species: str, reserve_details: Adf, good = False, verbose = False) -> list:
+    populations = _get_populations(reserve_details)
+    population = populations[config.RESERVES[reserve_name]["species"].index(species)]
+    groups = population.value["Groups"].value
+    
+    if verbose:
+      print(f"processing {format_key(species)} animals...")
+
+    rows = []
+
+    known_species = species in config.ANIMALS.keys()
+    diamond_weight = config.ANIMALS[species]["diamonds"]["weight_low"] if known_species else config.HIGH_NUMBER
+    diamond_score = config.ANIMALS[species]["diamonds"]["score_low"] if known_species else config.HIGH_NUMBER
+
+    if verbose and diamond_score != config.HIGH_NUMBER:
+      print(f"Species: {species}, Diamond Weight: {diamond_weight}, Diamond Score: {diamond_score}")
+
+    for group in groups:
+      animals = group.value["Animals"].value
+
+      for animal in animals:
+        animal = Animal(animal)
+        is_diamond = animal.weight >= diamond_weight and animal.score >= diamond_score
+        is_go = animal.go
+        
+        if ((good and (is_diamond or is_go)) or not good):
+          rows.append([
+            animal.gender,
+            round(animal.weight,3),
+            round(animal.score, 3),
+            animal.visual_seed,
+            get_animal_fur_by_seed(species, animal.gender, animal.visual_seed),
+            "yes" if is_diamond else "-",
+            "yes" if is_go else "-"
+          ])
+
+    rows.sort(key=lambda x: x[2], reverse=True)
+    return rows 
+
 def describe_reserve(reserve_name: str, reserve_details: Adf, include_species = True, verbose = False) -> list:
-    populations = reserve_details.table_instance_full_values[0].value["Populations"].value
+    populations = _get_populations(reserve_details)
 
     if verbose:
       print(f"processing {len(populations)} species...")
@@ -62,9 +106,6 @@ def describe_reserve(reserve_name: str, reserve_details: Adf, include_species = 
       male_cnt = 0
       go_cnt = 0
       diamond_cnt = 0
-
-      if len(groups) == 0:
-        continue
 
       species = config.RESERVES[reserve_name]["species"][population_cnt] if include_species else str(population_cnt)
       known_species = species in config.ANIMALS.keys()
@@ -132,24 +173,27 @@ def _create_go(animal: Animal, go_config: dict, data: bytearray, fur: int = None
   update_uint(data, animal.go_offset, 1)
   update_uint(data, animal.visual_seed_offset, visual_seed) 
 
-def _create_diamond(animal: Animal, species_config: dict, data: bytearray) -> None:
+def _create_diamond(animal: Animal, species_config: dict, data: bytearray, rares: bool = False) -> None:
   new_weight = _random_float(species_config["weight_low"], species_config["weight_high"])
   new_score = _random_float(species_config["score_low"], species_config["score_high"])
+  visual_seed = _random_choice(species_config["furs"][animal.gender]) if "furs" in species_config else None
   update_float(data, animal.weight_offset, new_weight)
   update_float(data, animal.score_offset, new_score)
+  if visual_seed and rares:
+    update_uint(data, animal.visual_seed_offset, visual_seed)
 
-def _process_all(species_config: dict, groups: list, reserve_data: bytearray, cb: callable) -> None:
+def _process_all(species_config: dict, groups: list, reserve_data: bytearray, cb: callable, kwargs = {}) -> None:
   male_animals = _get_males_not_go(groups)
   for animal in male_animals:
-    cb(animal, species_config, reserve_data)
+    cb(animal, species_config, reserve_data, **kwargs)
 
 def _go_all(species: str, groups: list, reserve_data: bytearray) -> None:
   go_config = config.ANIMALS[species]["go"]
   _process_all(go_config, groups, reserve_data, _create_go)
 
-def _diamond_all(species: str, groups: list, reserve_data: bytearray) -> None:
+def _diamond_all(species: str, groups: list, reserve_data: bytearray, rares: bool = False) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
-  _process_all(species_config, groups, reserve_data, _create_diamond)
+  _process_all(species_config, groups, reserve_data, _create_diamond, { "rares": rares })
 
 def _go_furs(species: str, groups: list, reserve_data: bytearray) -> None:
   go_config = config.ANIMALS[species]["go"]
@@ -159,22 +203,22 @@ def _go_furs(species: str, groups: list, reserve_data: bytearray) -> None:
   for animal_i, animal in enumerate(chosen_animals):
     _create_go(animal, go_config, reserve_data, go_furs[animal_i])
 
-def _process_some(species_config: dict, groups: list, reserve_data: bytearray, percent: int, cb: callable) -> None:
+def _process_some(species_config: dict, groups: list, reserve_data: bytearray, percent: int, cb: callable, kwargs = {}) -> None:
   male_animals = _get_males_not_go(groups)
   animal_cnt = round((percent / 100) * len(male_animals))
   chosen_animals = random.sample(male_animals, k = animal_cnt)
   for animal in chosen_animals:
-    cb(animal, species_config, reserve_data)
+    cb(animal, species_config, reserve_data, **kwargs)
 
 def _go_some(species: str, groups: list, reserve_data: bytearray, percent: int) -> None:
   go_config = config.ANIMALS[species]["go"]
   _process_some(go_config, groups, reserve_data, percent, _create_go)
 
-def _diamond_some(species: str, groups: list, reserve_data: bytearray, percent: int) -> None:
+def _diamond_some(species: str, groups: list, reserve_data: bytearray, percent: int, rares: bool = False) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
-  _process_some(species_config, groups, reserve_data, percent, _create_diamond)
+  _process_some(species_config, groups, reserve_data, percent, _create_diamond, { "rares": rares })
   
-def mod(reserve_name: str, reserve_details: ParsedAdfFile, species: str, strategy: str, modifier: int = None, verbose = False):
+def mod(reserve_name: str, reserve_details: ParsedAdfFile, species: str, strategy: str, modifier: int = None, rares: bool = False, verbose = False):
   species_details = _species(reserve_name, reserve_details.adf, species)
   groups = species_details.value["Groups"].value
   species_name = format_key(species)
@@ -190,10 +234,10 @@ def mod(reserve_name: str, reserve_details: ParsedAdfFile, species: str, strateg
     _go_some(species, groups, reserve_data, modifier)
     print(f"[green]All {modifier}% of male {species_name} are now Great Ones![/green]")
   elif (strategy == config.Strategy.diamond_all):
-    _diamond_all(species, groups, reserve_data)
+    _diamond_all(species, groups, reserve_data, rares)
     print(f"[green]All {species_name} males are now Diamonds![/green]")
   elif (strategy == config.Strategy.diamond_some):
-    _diamond_some(species, groups, reserve_data, modifier)
+    _diamond_some(species, groups, reserve_data, modifier, rares)
     print(f"[green]All {modifier}% of male {species_name} are now Diamonds![/green]")    
 
   reserve_details.decompressed.save(config.MOD_DIR_PATH, verbose=verbose)

@@ -10,3 +10,4 @@ build
 dist
 *.spec
 ..spec
+apc/config
