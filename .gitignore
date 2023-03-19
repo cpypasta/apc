@@ -1,0 +1,8 @@
+.working
+apc/__pycache__
+config/save_path.txt
+apc.egg-info
+mods
+venv
+*/__pycache__
+.DS_Store
