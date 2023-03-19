@@ -2,6 +2,17 @@ from apc import adf, populations, utils, config
 from rich.table import Table
 from pathlib import Path
 
+def _highlight_highs(reserve_description: list):
+  diamond_row = 6
+  go_row = 7
+  for row in reserve_description:
+    diamond_cnt = row[diamond_row]
+    go_cnt = row[go_row]
+    if diamond_cnt > 0:
+      row[diamond_row] = f"[bold yellow]{diamond_cnt}[/bold yellow]"
+    if go_cnt > 0:
+      row[go_row] = f":boom: [bold red]{go_cnt}[/bold red]"
+
 def _create_reserve_table(reserve_name: str, reserve_description: list, modded: bool = False) -> Table:
   reserve_name = config.get_reserve_name(reserve_name)
   title = f"[green]{reserve_name} Summary[/green]"
@@ -10,14 +21,14 @@ def _create_reserve_table(reserve_name: str, reserve_description: list, modded: 
     row_styles=["dim", ""]
   )
   table.add_column("Species")
-  table.add_column("Groups", justify="right")
   table.add_column("Animals", justify="right")
   table.add_column("Males", justify="right")
   table.add_column("Females", justify="right")
   table.add_column("High Weight", justify="right")
   table.add_column("High Score", justify="right")
+  table.add_column("Diamonds", justify="right")
   table.add_column("Great Ones", justify="right")
-
+  _highlight_highs(reserve_description)
   return utils.list_to_table(reserve_description, table)  
 
 def reserves() -> Table:
@@ -33,7 +44,7 @@ def reserves() -> Table:
 def species(reserve_name: str) -> Table:
   species = [[species_name] for species_name in populations.species(reserve_name, True)]
   table = Table(
-    title=f"[green]{reserve_name.capitalize()} Species[/green]", 
+    title=f"[green]{config.get_reserve_name(reserve_name)} Species[/green]", 
     row_styles=["dim", ""]
   )
   table.add_column("Species (key)")

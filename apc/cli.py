@@ -1,7 +1,7 @@
 from typing import Optional
 from rich import print
 from rich.console import Console
-from apc import commands
+from apc import commands, config
 
 import typer
 
@@ -11,19 +11,19 @@ app = typer.Typer()
 console = Console()
 state = { "verbose": False }
 
-@app.command(name="set-save", help="Set the location where the game's animal population files are located")
+@app.command(name="set-save", help="Set the location of animal population files")
 def set_save(save_path: str = typer.Argument(...)) -> None:
   config.save_path(save_path)
   print(f"[green]The save path {save_path} has been saved[/green]")
 
-@app.command(name="show-save", help="Show the location where the game's animal population files are located")
+@app.command(name="show-save", help="Show the location of animal population files")
 def show_save() -> None:
   save_path = config.get_save_path()
   print(f"[green]The save path is {save_path}[/green]")
 
 @app.command(help="Show an overview of the animals at a reserve")
 def reserve(
-   reserve_name: str = typer.Argument("layton"), 
+   reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch), 
    species: Optional[bool] = typer.Option(True, help="Include the species names"),
    modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
 ) -> None:
@@ -36,16 +36,16 @@ def reserves() -> None:
   console.print(reserve_names)
   
 @app.command(help="Shows all the species found at a reserve")
-def species(reserve_name: str = typer.Argument("layton")) -> None:
+def species(reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch)) -> None:
   species = commands.species(reserve_name)
   console.print(species)
 
 @app.command(help="Modify the animals for a specific reserve and species")
 def mod(
-   reserve_name: str = typer.Argument("layton"), 
-   species: str = typer.Argument(...),
-   strategy: str = typer.Argument(...),
-   modifier: int = typer.Argument(None, help="modifies the strategy"),
+   reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch), 
+   species: config.ModifiableSpecies = typer.Argument(...),
+   strategy: config.Strategy = typer.Argument(...),
+   modifier: int = typer.Argument(None, help="used to modify strategy; usually a percentage", min=1, max=100),
    modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
 ) -> None:
    mod_result = commands.mod(reserve_name, species, strategy, modifier, modded, state["verbose"])

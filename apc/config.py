@@ -1,6 +1,7 @@
 import os
 import re
 from pathlib import Path
+from enum import Enum
 from apc import __app_name__
 
 def _find_saves_path() -> str:
@@ -25,6 +26,7 @@ SAVE_PATH = APP_DIR_PATH / "config/save_path.txt"
 SAVE_PATH.parent.mkdir(exist_ok=True)
 MOD_DIR_PATH = APP_DIR_PATH / "mods"
 MOD_DIR_PATH.mkdir(exist_ok=True)
+HIGH_NUMBER = 100000
 
 RESERVES = {
     "hirsch": {
@@ -245,8 +247,8 @@ RESERVES = {
 ANIMALS = {
   "moose": {
     "go": {
-      "score_low": 271,
-      "score_high": 294,
+      "score_low": 275,
+      "score_high": 305,
       "weight_low": 605,
       "weight_high": 700,
       "furs": {
@@ -257,17 +259,29 @@ ANIMALS = {
         "fabled_spruce": 2099598749,
         "fabled_ashen": 3430844549        
       }
+    },
+    "diamonds": {
+      "score_low": 275,
+      "score_high": 305,
+      "weight_low": 605,
+      "weight_high": 620
     }
   },
   "red_deer": {
    "go": {
-      "score_low": 239,
-      "score_high": 279,
-      "weight_low": 241,
+      "score_low": 251,
+      "score_high": 284,
+      "weight_low": 240,
       "weight_high": 260,
       "furs": {
         "fabled_spotted": 0
       }   
+   },
+   "diamonds": {
+      "score_low": 251,
+      "score_high": 284,
+      "weight_low": 220,
+      "weight_high": 240
    }
   },
   "black_bear": {
@@ -282,6 +296,12 @@ ANIMALS = {
         "fabled_cream": 3631307431,
         "fabled_spotted": 1868463965
       }   
+   },
+   "diamonds": {
+      "score_low": 23,
+      "score_high": 25,
+      "weight_low": 280,
+      "weight_high": 290,   
    }
   },
   "whitetail_deer": {
@@ -295,13 +315,43 @@ ANIMALS = {
         "dark_brown": 3643313656,
         "tan": 203506860
       }   
+   },
+   "diamonds": {
+      "score_low": 255,
+      "score_high": 273,
+      "weight_low": 90,
+      "weight_high": 100   
    }
   }
 }
 
-GO_ALL_STRATEGY = "go-all"
-GO_FURS_STRATEGY = "go-furs"
-GO_SOME_STRATEGY = "go-some"
+class Reserve(str, Enum):
+   hirsch = "hirsch"
+   layton = "layton"
+   medved = "medved"
+   vurhonga = "vurhonga"
+   parque = "parque"
+   yukon = "yukon"
+   cuatro = "cuatro"
+   silver = "silver"
+   teawaroa = "teaworoa"
+   rancho = "rancho"
+   mississippi = "mississippi"
+   revontuli = "revontuli"
+   newengland = "newengland"
+
+class Strategy(str, Enum):
+   go_all = "go-all"
+   go_furs = "go-furs"
+   go_some = "go-some"
+   diamond_all = "diamond-all"
+   diamond_some = "diamond-some"
+
+class ModifiableSpecies(str, Enum):
+   mooose = "moose"
+   black_bear = "black_bear"
+   whitetail_deer = "whitetail_deer"
+   red_deer = "red_deer"
 
 def load_config(config_path: Path) -> int: 
   config_path.read_text()

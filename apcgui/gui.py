@@ -8,12 +8,12 @@ DEFAULT_FONT = "_ 16"
 
 RESERVE_COLUMNS = [
     "Species",
-    "Groups",
     "Animals",
     "Males",
     "Females",
     "High Weight",
     "High Score",
+    "Diamonds",
     "Great Ones"
 ]
 
@@ -21,7 +21,7 @@ def _app_path() -> Path:
    return Path(os.path.realpath(__file__)).parents[0]
 
 def reserves() -> list:
-    return populations.reserves()
+    return populations.reserve_keys()
 
 def main():
     reserve_names = reserves()
