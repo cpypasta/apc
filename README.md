@@ -84,7 +84,7 @@ The `-m` option is to tell the command if you want to modify the game population
 
 ## Example Usage
 
-To see what the reserve names:
+To see the reserve names:
 ```sh
 apc reserves
 ```
