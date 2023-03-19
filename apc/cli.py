@@ -49,6 +49,8 @@ def mod(
    modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
 ) -> None:
    mod_result = commands.mod(reserve_name, species, strategy, modifier, modded, state["verbose"])
+   print(f"[yellow]You can find the modded file at: {config.MOD_DIR_PATH}[/yellow]")
+   print()
    console.print(mod_result)
 
 @app.command(help="Debug command to parse and save compressed ADF as text file")
@@ -66,7 +68,6 @@ def main(
     version: Optional[bool] = typer.Option(
         None,
         "--version",
-        "-v",
         help="Show the application's version and exit.",
         callback=_version_callback,
         is_eager=True,
