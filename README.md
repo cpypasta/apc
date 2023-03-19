@@ -1,12 +1,19 @@
 # animal-population-changer
 
-A tool that allows someone to change the animals on the reserves in theHunter: Call of the Wild (COTW). I have started out with the CLI, but I plan on building a simple GUI also.
+A tool that allows anyone to change the animal population on all the reserves in theHunter: Call of the Wild (COTW). I have started out with the CLI, but I plan on building a simple GUI also.
 
 Currently the tool only supports modifying the following species:
 1. Red Deer
 1. Whitetail Deer
 1. Black Bear
 1. Moose
+
+The following mods are possible with this tool:
+1. Make all males Great Ones.
+1. Make a Great One male for every fur type (e.g., since moose have 6 furs, this would make 6 males a Great One).
+1. Make some males a Great One, where you tell the tool what percentage you want to be a Great One.
+1. Make all males a Diamond. This will not affect Great Ones.
+1. Make some males a Diamond, where you tell the tool what percentage you want to be a Diamond.
 
 This tool was tested on Windows 11 with the game installed via Steam. If your game files are saved somewhere else besides where Steam saves them, use the `apc set-save [SAVE_PATH]` command to tell the tool which path to use.
 
