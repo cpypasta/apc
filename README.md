@@ -41,7 +41,7 @@ pip install dist/apc-0.1.0-py3-none-any.whl
 If you want to build an executable (i.e., from Windows):
 ```sh
 pip install -U pyinstaller
-pyinstaller apc.py
+pyinstaller -F apc.py
 ./dist/apc.exe
 ```
 
