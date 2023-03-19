@@ -37,8 +37,8 @@ def reserve_keys() -> list:
   return list(dict.keys(config.RESERVES))
 
 def reserves(include_keys = False) -> list:
-   reserve_keys = reserve_keys()
-   return [f"{config.RESERVES[r]['name']}{' (' + r + ')' if include_keys else ''}" for r in reserve_keys]
+   keys = reserve_keys()
+   return [f"{config.RESERVES[r]['name']}{' (' + r + ')' if include_keys else ''}" for r in keys]
 
 def species(reserve_name: str, include_keys = False) -> list:
    species_keys = config.RESERVES[reserve_name]["species"]

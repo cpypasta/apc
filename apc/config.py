@@ -24,8 +24,8 @@ APP_DIR_PATH = _parent_path()
 DEFAULT_SAVE_PATH = _find_saves_path()
 SAVE_PATH = APP_DIR_PATH / "config/save_path.txt"
 SAVE_PATH.parent.mkdir(exist_ok=True)
-MOD_DIR_PATH = APP_DIR_PATH / "mods"
-MOD_DIR_PATH.mkdir(exist_ok=True)
+MOD_DIR_PATH = Path().home() / "Documents/APC/mods"
+MOD_DIR_PATH.mkdir(exist_ok=True, parents=True)
 HIGH_NUMBER = 100000
 
 RESERVES = {
