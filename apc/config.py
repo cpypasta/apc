@@ -407,11 +407,17 @@ class Strategy(str, Enum):
    diamond_some = "diamond-some"
 
 class ModifiableSpecies(str, Enum):
-   mooose = "moose"
+   moose = "moose"
    black_bear = "black_bear"
    whitetail_deer = "whitetail_deer"
    red_deer = "red_deer"
    bobcat = "bobcat"
+
+class GreatOnes(str, Enum):
+   moose = "moose"
+   black_bear = "black_bear"
+   whitetail_deer = "whitetail_deer"
+   red_deer = "red_deer"
 
 def load_config(config_path: Path) -> int: 
   config_path.read_text()
@@ -449,3 +455,9 @@ def get_animal_fur_by_seed(species: str, gender: str, seed: int) -> str:
     return diamond_key
   else:
     return "-"
+  
+def valid_species_to_modify(species: str) -> bool:
+    return species in ModifiableSpecies.__members__
+
+def valid_go_species(species: str) -> bool:
+    return species in GreatOnes.__members__

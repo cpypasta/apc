@@ -24,3 +24,7 @@ def update_float(data_bytes: bytearray, offset: int, new_value: float) -> None:
 def format_key(key: str) -> str:
   key = [s.capitalize() for s in key.split("_")]
   return " ".join(key)
+
+def unformat_key(value: str) -> str:
+  parts = value.lower().split(" ")
+  return "_".join(parts)
