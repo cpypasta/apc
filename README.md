@@ -38,11 +38,18 @@ python -m build
 pip install dist/apc-0.1.0-py3-none-any.whl
 ```
 
-If you want to build an executable (i.e., from Windows):
+If you want to build an executable for the CLI (i.e., from Windows):
 ```sh
 pip install -U pyinstaller
 pyinstaller -F apc.py
 ./dist/apc.exe
+```
+
+If you want to build an executable for the GUI (i.e., from Windows):
+```sh
+pip install -U pyinstaller
+pyinstaller -F --noconsole apcgui.py
+./dist/apcgui.exe
 ```
 
 ## Command-Line Interface
