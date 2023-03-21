@@ -5,17 +5,26 @@ from enum import Enum
 from apc import __app_name__
 
 def _find_saves_path() -> str:
-    saves = Path().home() / "Documents/Avalanche Studios/COTW/Saves"
+    steam_saves = Path().home() / "Documents/Avalanche Studios/COTW/Saves"
+    epic_saves = Path().home() / "Documents/Avalanche Studios/Epic Games Store/COTW/Saves"
+    base_saves = None
+    if steam_saves.exists():
+      base_saves = steam_saves
+    elif epic_saves.exists():
+      base_saves = epic_saves
+
     save_folder = None
-    if saves.exists():
-        folders = os.listdir(saves)
+    if base_saves:
+        folders = os.listdir(base_saves)
         all_numbers = re.compile(r"\d+")
         for folder in folders:
             if all_numbers.match(folder):
                 save_folder = folder
                 break
     if save_folder:
-       return saves / save_folder
+       return base_saves / save_folder
+    else:
+      return None
 
 def _parent_path() -> Path:
    return Path(os.path.realpath(__file__)).parents[0]
@@ -404,6 +413,7 @@ class Strategy(str, Enum):
    go_furs = "go-furs"
    go_some = "go-some"
    diamond_all = "diamond-all"
+   diamond_furs = "diamond-furs"
    diamond_some = "diamond-some"
 
 class ModifiableSpecies(str, Enum):

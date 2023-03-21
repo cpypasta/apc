@@ -5,6 +5,9 @@ from deca.ff_adf import Adf
 from pathlib import Path
 from apc import config
 
+class FileNotFound(Exception):
+    pass
+
 class DecompressedAdfFile():
     def __init__(self, basename: str, filename: Path, file_header: bytearray, header: bytearray, data: bytearray) -> None:
         self.basename = basename
@@ -34,6 +37,8 @@ def __get_population_file_name(reserve: str):
 def _get_file_name(reserve: str, mod: bool):
     save_path = config.MOD_DIR_PATH if mod else config.get_save_path()
     filename = save_path / __get_population_file_name(reserve)
+    if not filename.exists():
+        raise FileNotFound(f'{filename} does not exist')
     return filename
 
 def _read_file(filename: Path, verbose = False):

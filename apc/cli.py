@@ -2,6 +2,7 @@ from typing import Optional
 from rich import print
 from rich.console import Console
 from apc import commands, config
+from apc.adf import FileNotFound
 
 import typer
 
@@ -10,6 +11,9 @@ from apc import __app_name__, __version__, config
 app = typer.Typer()
 console = Console()
 state = { "verbose": False }
+
+def _show_filenotfound(ex) -> None:
+  print(f"[red]{ex}[/red] [yellow](set a valid save location with [bold]apc set-save[/bold])[/yellow]")   
 
 @app.command(name="set-save", help="Set the location of animal population files")
 def set_save(save_path: str = typer.Argument(...)) -> None:
@@ -27,8 +31,11 @@ def reserve(
    species: Optional[bool] = typer.Option(True, help="Include the species names"),
    modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
 ) -> None:
-  reserve_details = commands.describe_reserve(reserve_name, modded, species, state["verbose"])
-  console.print(reserve_details)
+  try:
+    reserve_details = commands.describe_reserve(reserve_name, modded, species, state["verbose"])
+    console.print(reserve_details)
+  except FileNotFound as ex:
+    _show_filenotfound(ex)
 
 @app.command(help="Shows all the reserve names")
 def reserves() -> None:
@@ -43,8 +50,11 @@ def animals(
    good: Optional[bool] = typer.Option(False, "--good", "-g", help="Only show diamonds and GOs"),
    modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
 ) -> None:
-  animal_details = commands.describe_animals(reserve_name, species, good, modded, state["verbose"])
-  console.print(animal_details)
+  try:
+    animal_details = commands.describe_animals(reserve_name, species, good, modded, state["verbose"])
+    console.print(animal_details)
+  except FileNotFound as ex:
+     _show_filenotfound(ex)
 
 @app.command(help="Shows all the species found at a reserve")
 def species(reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch)) -> None:
@@ -60,15 +70,21 @@ def mod(
    rares: Optional[bool] = typer.Option(False, "--rares", "-r", help="Include rare and super rare furs"),
    modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
 ) -> None:
-   mod_result = commands.mod(reserve_name, species, strategy, modifier, rares, modded, state["verbose"])
-   print(f"[yellow]You can find the modded file at: {config.MOD_DIR_PATH}[/yellow]")
-   print()
-   console.print(mod_result)
+  try:
+    mod_result = commands.mod(reserve_name, species, strategy, modifier, rares, modded, state["verbose"])
+    print(f"[yellow]You can find the modded file at: {config.MOD_DIR_PATH}[/yellow]")
+    print()
+    console.print(mod_result)
+  except FileNotFound as ex:
+    _show_filenotfound(ex)
 
 @app.command(help="Debug command to parse and save compressed ADF as text file")
 def parse(filename: str = typer.Argument(...)):
-   commands.parse(filename, state["verbose"])
-   console.print(f"[green]File {filename} parsed[/green]")
+  try:
+    commands.parse(filename, state["verbose"])
+    console.print(f"[green]File {filename} parsed[/green]")
+  except FileNotFound as ex:
+    _show_filenotfound(ex)
 
 def _version_callback(value: bool) -> None:
     if value:

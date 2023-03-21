@@ -58,7 +58,7 @@ def _create_animals_table(reserve_name: str, species: str, species_description: 
   table.add_column("Visual", justify="right")
   table.add_column("Fur")
   table.add_column("Diamond")
-  table.add_column("GOs")
+  table.add_column("GO")
   _highlight_animal_highs(species_description)
   return utils.list_to_table(species_description, table)  
 

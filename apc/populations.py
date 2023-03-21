@@ -173,13 +173,13 @@ def _create_go(animal: Animal, go_config: dict, data: bytearray, fur: int = None
   update_uint(data, animal.go_offset, 1)
   update_uint(data, animal.visual_seed_offset, visual_seed) 
 
-def _create_diamond(animal: Animal, species_config: dict, data: bytearray, rares: bool = False) -> None:
+def _create_diamond(animal: Animal, species_config: dict, data: bytearray, rares: bool = False, fur: int = None) -> None:
   new_weight = _random_float(species_config["weight_low"], species_config["weight_high"])
   new_score = _random_float(species_config["score_low"], species_config["score_high"])
-  visual_seed = _random_choice(species_config["furs"][animal.gender]) if "furs" in species_config else None
+  visual_seed = fur if fur else _random_choice(species_config["furs"][animal.gender]) if "furs" in species_config else None
   update_float(data, animal.weight_offset, new_weight)
   update_float(data, animal.score_offset, new_score)
-  if visual_seed and rares:
+  if visual_seed and (rares or fur):
     update_uint(data, animal.visual_seed_offset, visual_seed)
 
 def _process_all(species_config: dict, groups: list, reserve_data: bytearray, cb: callable, kwargs = {}) -> None:
@@ -195,13 +195,21 @@ def _diamond_all(species: str, groups: list, reserve_data: bytearray, rares: boo
   species_config = config.ANIMALS[species]["diamonds"]
   _process_all(species_config, groups, reserve_data, _create_diamond, { "rares": rares })
 
+def _process_furs(species_config: dict, furs: list, groups: list, reserve_data: bytearray, cb: callable) -> None:
+  male_animals = _get_males_not_go(groups)
+  chosen_animals = random.sample(male_animals, k = len(furs))
+  for animal_i, animal in enumerate(chosen_animals):
+    cb(animal, species_config, reserve_data, fur = furs[animal_i])  
+
 def _go_furs(species: str, groups: list, reserve_data: bytearray) -> None:
   go_config = config.ANIMALS[species]["go"]
   go_furs = _dict_values(go_config["furs"])
-  male_animals = _get_males_not_go(groups)
-  chosen_animals = random.sample(male_animals, k = len(go_furs))
-  for animal_i, animal in enumerate(chosen_animals):
-    _create_go(animal, go_config, reserve_data, go_furs[animal_i])
+  _process_furs(go_config, go_furs, groups, reserve_data, _create_go)
+
+def _diamond_furs(species: str, groups: list, reserve_data: bytearray) -> None:
+  species_config = config.ANIMALS[species]["diamonds"]
+  diamond_furs = _dict_values(species_config["furs"]["male"])
+  _process_furs(species_config, diamond_furs, groups, reserve_data, _create_diamond)
 
 def _process_some(species_config: dict, groups: list, reserve_data: bytearray, percent: int, cb: callable, kwargs = {}) -> None:
   male_animals = _get_males_not_go(groups)
@@ -235,6 +243,9 @@ def mod(reserve_name: str, reserve_details: ParsedAdfFile, species: str, strateg
     print(f"[green]All {modifier}% of male {species_name} are now Great Ones![/green]")
   elif (strategy == config.Strategy.diamond_all):
     _diamond_all(species, groups, reserve_data, rares)
+    print(f"[green]All {species_name} males are now Diamonds![/green]")  
+  elif (strategy == config.Strategy.diamond_furs):
+    _diamond_furs(species, groups, reserve_data)
     print(f"[green]All {species_name} males are now Diamonds![/green]")
   elif (strategy == config.Strategy.diamond_some):
     _diamond_some(species, groups, reserve_data, modifier, rares)
