@@ -1,6 +1,6 @@
 # animal-population-changer
 
-A tool that allows anyone to change the animal population on all the reserves in theHunter: Call of the Wild (COTW). I have started out with the CLI, but I plan on building a simple GUI also.
+A tool that allows anyone to change the animal population on all the reserves in theHunter: Call of the Wild (COTW). You can choose to use the CLI tool or the GUI.
 
 Currently the tool only supports modifying the following species:
 1. Red Deer
@@ -14,17 +14,24 @@ The following mods are possible with this tool:
 1. Make a Great One male for every fur type (e.g., since moose have 6 furs, this would make 6 males a Great One).
 1. Make some males a Great One, where you tell the tool what percentage you want to be a Great One.
 1. Make all males a Diamond, with the option of including rare furs. This will not affect Great Ones.
+1. Make a Diamond for every fur type, which includes rare fur types.
 1. Make some males a Diamond, with the option of including rare furs, where you tell the tool what percentage you want to be a Diamond.
 
 The modded population files can be found at the following directory: `C:\Users\{username}\Documents\APC\mods`.
 
 ## Caveats:
-This tool was tested on Windows 11 with the game installed via Steam. If your game files are saved somewhere else besides where Steam saves them, use the `apc set-save [SAVE_PATH]` command to tell the tool which path to use.
+This tool was tested on Windows 11 with the game installed via Steam. It is smart enough to also look where Epic Games saves it files too. If your game files are saved somewhere else besides where Steam or Epic saves them, use the `apc set-save [SAVE_PATH]` command to tell the tool which path to use in the CLI or the "configure path" in the GUI.
 
 Not all furs are defined in the tool. It is a work in progress, and it takes a lot of time, so expect some gaps.
 ## How To Build
 
 | Note: This code was built and tested with Python 3.10.10.
+
+You can skip building and just run it directly:
+```sh
+python -m apc
+pytonn -m apcgui
+```
 
 You can install a developer version by using:
 ```sh
