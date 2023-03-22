@@ -9,7 +9,7 @@ from apc.config import get_animal_fur_by_seed
 def _species(reserve_name: str, reserve_details: Adf, species: str) -> list:
    reserve = config.RESERVES[reserve_name]
    species_index = reserve["species"].index(species)
-   populations = reserve_details.table_instance_full_values[0].value["Populations"].value
+   populations = _get_populations(reserve_details)
    return populations[species_index]
 
 def _random_float(low: int, high: int, precision: int = 3) -> float:

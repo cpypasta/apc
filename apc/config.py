@@ -276,8 +276,8 @@ ANIMALS = {
       "weight_high": 620,
       "furs": {
         "male": {
-            "melanistic": 27915576,
-            "piebald": 747308994,
+            # "melanistic": 27915576,
+            # "piebald": 747308994,
             "albino": 264274951
         },
         "female": {
@@ -300,9 +300,19 @@ ANIMALS = {
    },
    "diamonds": {
       "score_low": 251,
-      "score_high": 284,
+      "score_high": 274,
       "weight_low": 220,
-      "weight_high": 240
+      "weight_high": 240,
+      "furs": {
+        "male": {
+          "piebald": 631703144,
+          # "albino": 0,
+          # "melanistic": 0
+        },
+        "female": {
+          "melanistic": 2838816491
+        }
+      }
    }
   },
   "black_bear": {
@@ -402,7 +412,7 @@ class Reserve(str, Enum):
    yukon = "yukon"
    cuatro = "cuatro"
    silver = "silver"
-   teawaroa = "teaworoa"
+   teawaroa = "teawaroa"
    rancho = "rancho"
    mississippi = "mississippi"
    revontuli = "revontuli"
