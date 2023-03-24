@@ -238,16 +238,16 @@ RESERVES = {
           "moose",
           "goldeneye",
           "raccoon",
-          "rabbit",
-          "bobwhite_quail",
-          "turkey",
+          "eastern_cottontail_rabbit",
+          "northern_bobwhite_quail",
+          "eastern_wild_turkey",
           "gray_fox",
           "red_fox",
           "black_bear",
           "bobcat",
           "coyote",
           "pheasant",
-          "green_winged_teal",
+          "green_wing_teal",
           "whitetail_deer"
         ]        
     }
