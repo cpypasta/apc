@@ -2,9 +2,15 @@ import os
 import re
 import json
 import sys
+import gettext
 from pathlib import Path
 from enum import Enum
 from apc import __app_name__
+
+_ = gettext.gettext
+
+test_value = _("this is my test value")
+print(test_value)
 
 def _find_saves_path() -> str:
     steam_saves = Path().home() / "Documents/Avalanche Studios/COTW/Saves"
