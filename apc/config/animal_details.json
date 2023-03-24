@@ -1,0 +1,838 @@
+{
+  "american_alligator": {
+    "diamonds": {
+      "score_low": 492,
+      "score_high": 530.0,
+      "weight_low": 484.491,
+      "weight_high": 530.0,
+      "furs": {}
+    }
+  },
+  "antelope_jackrabbit": {
+    "diamonds": {
+      "score_low": 6.33,
+      "score_high": 6.83,
+      "weight_low": 4.565,
+      "weight_high": 4.7,
+      "furs": {}
+    }
+  },
+  "axis_deer": {
+    "diamonds": {
+      "score_low": 217.29,
+      "score_high": 237.937,
+      "weight_low": 70.991,
+      "weight_high": 75.0,
+      "furs": {}
+    }
+  },
+  "beceite_ibex": {
+    "diamonds": {
+      "score_low": 191.63,
+      "score_high": 207.864,
+      "weight_low": 103.991,
+      "weight_high": 110.0,
+      "furs": {}
+    }
+  },
+  "bighorn_sheep": {
+    "diamonds": {
+      "score_low": 164.63,
+      "score_high": 175.248,
+      "weight_low": 151.191,
+      "weight_high": 160.0,
+      "furs": {}
+    }
+  },
+  "black_bear": {
+    "go": {
+      "score_low": 24,
+      "score_high": 28,
+      "weight_low": 291,
+      "weight_high": 490,
+      "furs": {
+        "fabled_glacier": 2742609257,
+        "fabled_chestnut": 3087602548,
+        "fabled_cream": 3631307431,
+        "fabled_spotted": 1868463965
+      }
+    },
+    "diamonds": {
+      "score_low": 22.8,
+      "score_high": 24.0,
+      "weight_low": 264.991,
+      "weight_high": 290.0,
+      "furs": {
+        "male": {
+          "cinnamon": 3363397298,
+          "brown": 1911408571
+        },
+        "female": {
+          "cinnamon": 3363397298,
+          "brown": 4206745190
+        }
+      }
+    }
+  },
+  "black_grouse": {
+    "diamonds": {
+      "score_low": 120,
+      "score_high": 125.0,
+      "weight_low": 1.216,
+      "weight_high": 1.25,
+      "furs": {}
+    }
+  },
+  "blackbuck": {
+    "diamonds": {
+      "score_low": 132.26,
+      "score_high": 140.897,
+      "weight_low": 48.911,
+      "weight_high": 51.0,
+      "furs": {}
+    }
+  },
+  "blacktail_deer": {
+    "diamonds": {
+      "score_low": 177.58,
+      "score_high": 191.961,
+      "weight_low": 90.591,
+      "weight_high": 95.0,
+      "furs": {}
+    }
+  },
+  "blue_wildebeest": {
+    "diamonds": {
+      "score_low": 37.69,
+      "score_high": 40.0,
+      "weight_low": 281.991,
+      "weight_high": 290.0,
+      "furs": {}
+    }
+  },
+  "bobcat": {
+    "diamonds": {
+      "score_low": 27.68,
+      "score_high": 28.98,
+      "weight_low": 41.291,
+      "weight_high": 45.0,
+      "furs": {
+        "male": {
+          "blue": 209843553,
+          "melanistic": 534063775,
+          "brown": 3958048063,
+          "tan": 1862790386,
+          "gray": 2843566431,
+          "red": 343310641
+        },
+        "female": {
+          "blue": 2113993964,
+          "melanistic": 3030070873,
+          "albino": 3654283380
+        }
+      }
+    }
+  },
+  "canada_goose": {
+    "diamonds": {
+      "score_low": 8.59,
+      "score_high": 9.2,
+      "weight_low": 8.711,
+      "weight_high": 9.2,
+      "furs": {}
+    }
+  },
+  "cape_buffalo": {
+    "diamonds": {
+      "score_low": 151.35,
+      "score_high": 162.5,
+      "weight_low": 890.991,
+      "weight_high": 950.0,
+      "furs": {}
+    }
+  },
+  "caribou": {
+    "diamonds": {
+      "score_low": 430.23,
+      "score_high": 469.903,
+      "weight_low": 180.791,
+      "weight_high": 190.0,
+      "furs": {}
+    }
+  },
+  "chamois": {
+    "diamonds": {
+      "score_low": 58,
+      "score_high": 61.89,
+      "weight_low": 62.591,
+      "weight_high": 65.0,
+      "furs": {}
+    }
+  },
+  "cinnamon_teal": {
+    "diamonds": {
+      "score_low": 4.6,
+      "score_high": 4.8,
+      "weight_low": 0.461,
+      "weight_high": 0.48,
+      "furs": {}
+    }
+  },
+  "collared_peccary": {
+    "diamonds": {
+      "score_low": 144.25,
+      "score_high": 159.5,
+      "weight_low": 29.631,
+      "weight_high": 31.0,
+      "furs": {}
+    }
+  },
+  "coyote": {
+    "diamonds": {
+      "score_low": 56.87,
+      "score_high": 59.525,
+      "weight_low": 25.791,
+      "weight_high": 27.0,
+      "furs": {}
+    }
+  },
+  "eastern_cottontail_rabbit": {
+    "diamonds": {
+      "score_low": 1.97,
+      "score_high": 2.1,
+      "weight_low": 2.026,
+      "weight_high": 2.1,
+      "furs": {}
+    }
+  },
+  "eastern_wild_turkey": {
+    "diamonds": {
+      "score_low": 4.62,
+      "score_high": 4.8,
+      "weight_low": 10.62,
+      "weight_high": 11.0,
+      "furs": {}
+    }
+  },
+  "eu_bison": {
+    "diamonds": {
+      "score_low": 270.4,
+      "score_high": 300.0,
+      "weight_low": 870.391,
+      "weight_high": 920.0,
+      "furs": {}
+    }
+  },
+  "eu_hare": {
+    "diamonds": {
+      "score_low": 6.5,
+      "score_high": 7.0,
+      "weight_low": 6.74,
+      "weight_high": 7.0,
+      "furs": {}
+    }
+  },
+  "eu_rabbit": {
+    "diamonds": {
+      "score_low": 19.62,
+      "score_high": 2.6,
+      "weight_low": 2.505,
+      "weight_high": 2.6,
+      "furs": {}
+    }
+  },
+  "eurasian_brown_bear": {
+    "diamonds": {
+      "score_low": 27.7,
+      "score_high": 29.0,
+      "weight_low": 444.791,
+      "weight_high": 482.0,
+      "furs": {}
+    }
+  },
+  "eurasian_lynx": {
+    "diamonds": {
+      "score_low": 27.68,
+      "score_high": 28.98,
+      "weight_low": 41.291,
+      "weight_high": 45.0,
+      "furs": {}
+    }
+  },
+  "eurasian_teal": {
+    "diamonds": {
+      "score_low": 905,
+      "score_high": 360.0,
+      "weight_low": 0.348,
+      "weight_high": 0.36,
+      "furs": {}
+    }
+  },
+  "eurasian_wigeon": {
+    "diamonds": {
+      "score_low": 905,
+      "score_high": 950.0,
+      "weight_low": 0.918,
+      "weight_high": 0.95,
+      "furs": {}
+    }
+  },
+  "fallow_deer": {
+    "diamonds": {
+      "score_low": 251.72,
+      "score_high": 277.975,
+      "weight_low": 94.391,
+      "weight_high": 100.0,
+      "furs": {}
+    }
+  },
+  "feral_goat": {
+    "diamonds": {
+      "score_low": 208.71,
+      "score_high": 225.758,
+      "weight_low": 47.991,
+      "weight_high": 50.0,
+      "furs": {}
+    }
+  },
+  "feral_pig": {
+    "diamonds": {
+      "score_low": 144.25,
+      "score_high": 159.5,
+      "weight_low": 191.151,
+      "weight_high": 205.0,
+      "furs": {}
+    }
+  },
+  "gemsbok": {
+    "diamonds": {
+      "score_low": 337.59,
+      "score_high": 358.0,
+      "weight_low": 228.791,
+      "weight_high": 240.0,
+      "furs": {}
+    }
+  },
+  "goldeneye": {
+    "diamonds": {
+      "score_low": 1200,
+      "score_high": 1300.0,
+      "weight_low": 1.256,
+      "weight_high": 1.3,
+      "furs": {}
+    }
+  },
+  "gray_fox": {
+    "diamonds": {
+      "score_low": 6.43,
+      "score_high": 6.8,
+      "weight_low": 6.421,
+      "weight_high": 6.8,
+      "furs": {}
+    }
+  },
+  "gray_wolf": {
+    "diamonds": {
+      "score_low": 39,
+      "score_high": 40.0,
+      "weight_low": 74.991,
+      "weight_high": 80.0,
+      "furs": {}
+    }
+  },
+  "gredos_ibex": {
+    "diamonds": {
+      "score_low": 100.17,
+      "score_high": 106.719,
+      "weight_low": 96.631,
+      "weight_high": 102.0,
+      "furs": {}
+    }
+  },
+  "green_wing_teal": {
+    "diamonds": {
+      "score_low": 480,
+      "score_high": 500.0,
+      "weight_low": 0.48,
+      "weight_high": 0.5,
+      "furs": {}
+    }
+  },
+  "greylag_goose": {
+    "diamonds": {
+      "score_low": 3.85,
+      "score_high": 4.0,
+      "weight_low": 3.871,
+      "weight_high": 4.0,
+      "furs": {}
+    }
+  },
+  "grizzly_bear": {
+    "diamonds": {
+      "score_low": 66.94,
+      "score_high": 69.0,
+      "weight_low": 628.491,
+      "weight_high": 680.0,
+      "furs": {}
+    }
+  },
+  "harlequin_duck": {
+    "diamonds": {
+      "score_low": 7.2,
+      "score_high": 7.5,
+      "weight_low": 0.727,
+      "weight_high": 0.75,
+      "furs": {}
+    }
+  },
+  "hazel_grouse": {
+    "diamonds": {
+      "score_low": 435,
+      "score_high": 450.0,
+      "weight_low": 0.433,
+      "weight_high": 0.45,
+      "furs": {}
+    }
+  },
+  "iberian_mouflon": {
+    "diamonds": {
+      "score_low": 179.56,
+      "score_high": 191.36,
+      "weight_low": 57.591,
+      "weight_high": 60.0,
+      "furs": {}
+    }
+  },
+  "iberian_wolf": {
+    "diamonds": {
+      "score_low": 39,
+      "score_high": 40.0,
+      "weight_low": 47.991,
+      "weight_high": 50.0,
+      "furs": {}
+    }
+  },
+  "jackrabbit": {
+    "diamonds": {
+      "score_low": 6.33,
+      "score_high": 6.83,
+      "weight_low": 6.574,
+      "weight_high": 6.83,
+      "furs": {}
+    }
+  },
+  "lesser_kudu": {
+    "diamonds": {
+      "score_low": 151.64,
+      "score_high": 157.901,
+      "weight_low": 100.591,
+      "weight_high": 105.0,
+      "furs": {}
+    }
+  },
+  "lion": {
+    "diamonds": {
+      "score_low": 48.5,
+      "score_high": 50.0,
+      "weight_low": 256.491,
+      "weight_high": 270.0,
+      "furs": {}
+    }
+  },
+  "mallard": {
+    "diamonds": {
+      "score_low": 19.62,
+      "score_high": 21.0,
+      "weight_low": 2.022,
+      "weight_high": 2.1,
+      "furs": {}
+    }
+  },
+  "mexican_bobcat": {
+    "diamonds": {
+      "score_low": 27.68,
+      "score_high": 28.98,
+      "weight_low": 41.291,
+      "weight_high": 45.0,
+      "furs": {}
+    }
+  },
+  "moose": {
+    "go": {
+      "score_low": 275,
+      "score_high": 305,
+      "weight_low": 605,
+      "weight_high": 700,
+      "furs": {
+        "fabled_two_tone": 2834255352,
+        "fabled_birch": 4184913762,
+        "fabled_oak": 868192954,
+        "fabled_speckled": 2725877565,
+        "fabled_spruce": 2099598749,
+        "fabled_ashen": 3430844549
+      }
+    },
+    "diamonds": {
+      "score_low": 274.99,
+      "score_high": 301.959,
+      "weight_low": 595.991,
+      "weight_high": 620.0,
+      "furs": {
+        "male": {
+          "melanistic": 27915576,
+          "piebald": 747308994,
+          "albino": 264274951
+        },
+        "female": {
+          "melanistic": 27915576,
+          "piebald": 747308994,
+          "albino": 1141231243
+        }
+      }
+    }
+  },
+  "mountain_goat": {
+    "diamonds": {
+      "score_low": 107.67,
+      "score_high": 115.529,
+      "weight_low": 136.991,
+      "weight_high": 145.0,
+      "furs": {}
+    }
+  },
+  "mountain_hare": {
+    "diamonds": {
+      "score_low": 5.6,
+      "score_high": 6.0,
+      "weight_low": 5.79,
+      "weight_high": 6.0,
+      "furs": {}
+    }
+  },
+  "mule_deer": {
+    "diamonds": {
+      "score_low": 312.17,
+      "score_high": 342.714,
+      "weight_low": 198.791,
+      "weight_high": 210.0,
+      "furs": {}
+    }
+  },
+  "northern_bobwhite_quail": {
+    "diamonds": {
+      "score_low": 238,
+      "score_high": 250.0,
+      "weight_low": 0.234,
+      "weight_high": 0.25,
+      "furs": {}
+    }
+  },
+  "pheasant": {
+    "diamonds": {
+      "score_low": 20.29,
+      "score_high": 21.9,
+      "weight_low": 2.865,
+      "weight_high": 3.0,
+      "furs": {}
+    }
+  },
+  "plains_bison": {
+    "diamonds": {
+      "score_low": 221.15,
+      "score_high": 245.5,
+      "weight_low": 1131.991,
+      "weight_high": 1200.0,
+      "furs": {}
+    }
+  },
+  "prong_horn": {
+    "diamonds": {
+      "score_low": 98.02,
+      "score_high": 105.447,
+      "weight_low": 62.591,
+      "weight_high": 65.0,
+      "furs": {}
+    }
+  },
+  "puma": {
+    "diamonds": {
+      "score_low": 39,
+      "score_high": 40.0,
+      "weight_low": 97.391,
+      "weight_high": 105.0,
+      "furs": {}
+    }
+  },
+  "raccoon": {
+    "diamonds": {
+      "score_low": 12,
+      "score_high": 13.0,
+      "weight_low": 12.191,
+      "weight_high": 13.0,
+      "furs": {}
+    }
+  },
+  "raccoon_dog": {
+    "diamonds": {
+      "score_low": 9.29,
+      "score_high": 10.0,
+      "weight_low": 9.291,
+      "weight_high": 10.0,
+      "furs": {}
+    }
+  },
+  "red_deer": {
+    "go": {
+      "score_low": 251,
+      "score_high": 284,
+      "weight_low": 240,
+      "weight_high": 260,
+      "furs": {
+        "fabled_spotted": 0
+      }
+    },
+    "diamonds": {
+      "score_low": 251.07,
+      "score_high": 274.015,
+      "weight_low": 227.991,
+      "weight_high": 240.0,
+      "furs": {
+        "male": {
+          "piebald": 631703144
+        },
+        "female": {
+          "melanistic": 2838816491
+        }
+      }
+    }
+  },
+  "red_fox": {
+    "diamonds": {
+      "score_low": 14.05,
+      "score_high": 15.4,
+      "weight_low": 14.049,
+      "weight_high": 15.4,
+      "furs": {}
+    }
+  },
+  "reindeer": {
+    "diamonds": {
+      "score_low": 430.23,
+      "score_high": 469.903,
+      "weight_low": 173.831,
+      "weight_high": 182.0,
+      "furs": {}
+    }
+  },
+  "rio_grande_turkey": {
+    "diamonds": {
+      "score_low": 4.62,
+      "score_high": 4.8,
+      "weight_low": 10.62,
+      "weight_high": 11.0,
+      "furs": {}
+    }
+  },
+  "rock_ptarmigan": {
+    "diamonds": {
+      "score_low": 709,
+      "score_high": 740.0,
+      "weight_low": 0.715,
+      "weight_high": 0.74,
+      "furs": {}
+    }
+  },
+  "rockymountain_elk": {
+    "diamonds": {
+      "score_low": 481.41,
+      "score_high": 524.777,
+      "weight_low": 457.591,
+      "weight_high": 480.0,
+      "furs": {}
+    }
+  },
+  "roe_deer": {
+    "diamonds": {
+      "score_low": 81.86,
+      "score_high": 87.697,
+      "weight_low": 33.94,
+      "weight_high": 35.0,
+      "furs": {}
+    }
+  },
+  "ronda_ibex": {
+    "diamonds": {
+      "score_low": 107.98,
+      "score_high": 113.517,
+      "weight_low": 67.191,
+      "weight_high": 70.0,
+      "furs": {}
+    }
+  },
+  "roosevelt_elk": {
+    "diamonds": {
+      "score_low": 380.84,
+      "score_high": 416.861,
+      "weight_low": 480.791,
+      "weight_high": 500.0,
+      "furs": {}
+    }
+  },
+  "scrub_hare": {
+    "diamonds": {
+      "score_low": 5.37,
+      "score_high": 5.8,
+      "weight_low": 5.576,
+      "weight_high": 5.8,
+      "furs": {}
+    }
+  },
+  "siberian_musk_deer": {
+    "diamonds": {
+      "score_low": 249,
+      "score_high": 276.0,
+      "weight_low": 16.49,
+      "weight_high": 17.0,
+      "furs": {}
+    }
+  },
+  "sidestriped_jackal": {
+    "diamonds": {
+      "score_low": 29.1,
+      "score_high": 30.865,
+      "weight_low": 13.191,
+      "weight_high": 14.0,
+      "furs": {}
+    }
+  },
+  "sika_deer": {
+    "diamonds": {
+      "score_low": 198.74,
+      "score_high": 219.524,
+      "weight_low": 70.991,
+      "weight_high": 75.0,
+      "furs": {}
+    }
+  },
+  "southeastern_ibex": {
+    "diamonds": {
+      "score_low": 89.68,
+      "score_high": 95.387,
+      "weight_low": 83.291,
+      "weight_high": 87.5,
+      "furs": {}
+    }
+  },
+  "springbok": {
+    "diamonds": {
+      "score_low": 110.7,
+      "score_high": 116.6,
+      "weight_low": 40.791,
+      "weight_high": 42.0,
+      "furs": {}
+    }
+  },
+  "tufted_duck": {
+    "diamonds": {
+      "score_low": 963,
+      "score_high": 1000.0,
+      "weight_low": 0.972,
+      "weight_high": 1.0,
+      "furs": {}
+    }
+  },
+  "tundra_bean_goose": {
+    "diamonds": {
+      "score_low": 3.16,
+      "score_high": 3.3,
+      "weight_low": 3.179,
+      "weight_high": 3.3,
+      "furs": {}
+    }
+  },
+  "warthog": {
+    "diamonds": {
+      "score_low": 58.19,
+      "score_high": 63.0,
+      "weight_low": 141.591,
+      "weight_high": 150.0,
+      "furs": {}
+    }
+  },
+  "water_buffalo": {
+    "diamonds": {
+      "score_low": 167.54,
+      "score_high": 179.439,
+      "weight_low": 1176.991,
+      "weight_high": 1250.0,
+      "furs": {}
+    }
+  },
+  "western_capercaillie": {
+    "diamonds": {
+      "score_low": 4.64,
+      "score_high": 5.0,
+      "weight_low": 4.816,
+      "weight_high": 5.0,
+      "furs": {}
+    }
+  },
+  "whitetail_deer": {
+    "go": {
+      "score_low": 300,
+      "score_high": 643,
+      "weight_low": 97,
+      "weight_high": 110,
+      "furs": {
+        "brown": 3758024868,
+        "dark_brown": 3643313656,
+        "tan": 203506860
+      }
+    },
+    "diamonds": {
+      "score_low": 255.09,
+      "score_high": 275.535,
+      "weight_low": 96.99,
+      "weight_high": 100.0,
+      "furs": {
+        "male": {
+          "piebald": 3675496031,
+          "melanistic": 925535978,
+          "albino": 4207695112
+        },
+        "female": {
+          "melanistic": 2141175380,
+          "albino": 1770358919,
+          "piebald": 2765078492
+        }
+      }
+    }
+  },
+  "wild_boar": {
+    "diamonds": {
+      "score_low": 144.25,
+      "score_high": 159.5,
+      "weight_low": 222.791,
+      "weight_high": 240.0,
+      "furs": {}
+    }
+  },
+  "wild_turkey": {
+    "diamonds": {
+      "score_low": 4.62,
+      "score_high": 4.8,
+      "weight_low": 10.62,
+      "weight_high": 11.0,
+      "furs": {}
+    }
+  },
+  "willow_ptarmigan": {
+    "diamonds": {
+      "score_low": 772,
+      "score_high": 810.0,
+      "weight_low": 0.782,
+      "weight_high": 0.81,
+      "furs": {}
+    }
+  }
+}

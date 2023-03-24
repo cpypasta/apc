@@ -176,7 +176,11 @@ def _create_go(animal: Animal, go_config: dict, data: bytearray, fur: int = None
 def _create_diamond(animal: Animal, species_config: dict, data: bytearray, rares: bool = False, fur: int = None) -> None:
   new_weight = _random_float(species_config["weight_low"], species_config["weight_high"])
   new_score = _random_float(species_config["score_low"], species_config["score_high"])
-  visual_seed = fur if fur else _random_choice(species_config["furs"][animal.gender]) if "furs" in species_config else None
+  visual_seed = None
+  if fur:
+    visual_seed = fur
+  elif "furs" in species_config and animal.gender in species_config["furs"]:
+    visual_seed = _random_choice(species_config["furs"][animal.gender])
   update_float(data, animal.weight_offset, new_weight)
   update_float(data, animal.score_offset, new_score)
   if visual_seed and (rares or fur):
@@ -208,7 +212,10 @@ def _go_furs(species: str, groups: list, reserve_data: bytearray) -> None:
 
 def _diamond_furs(species: str, groups: list, reserve_data: bytearray) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
-  diamond_furs = _dict_values(species_config["furs"]["male"])
+  if "furs" in species_config and "male" in species_config["furs"]:
+    diamond_furs = _dict_values(species_config["furs"]["male"])
+  else:
+    raise Exception("Furs have not been loaded for this species yet.")
   _process_furs(species_config, diamond_furs, groups, reserve_data, _create_diamond)
 
 def _process_some(species_config: dict, groups: list, reserve_data: bytearray, percent: int, cb: callable, kwargs = {}) -> None:

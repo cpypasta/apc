@@ -2,7 +2,7 @@
 
 A tool that allows anyone to change the animal population on all the reserves in theHunter: Call of the Wild (COTW). You can choose to use the CLI tool or the GUI.
 
-Currently the tool only supports modifying the following species:
+This tool can make all species a diamond and the appropriate species a Great one. Currently, the tool only supports rare furs for the following species:
 1. Red Deer
 1. Whitetail Deer
 1. Black Bear
@@ -17,7 +17,7 @@ The following mods are possible with this tool:
 1. Make a Diamond for every fur type, which includes rare fur types.
 1. Make some males a Diamond, with the option of including rare furs, where you tell the tool what percentage you want to be a Diamond.
 
-The modded population files can be found at the following directory: `C:\Users\{username}\Documents\APC\mods`.
+The modded population files can be found in a `mods` folder in the same directory you are running the tool.
 
 ## Caveats:
 This tool was tested on Windows 11 with the game installed via Steam. It is smart enough to also look where Epic Games saves it files too. If your game files are saved somewhere else besides where Steam or Epic saves them, use the `apc set-save [SAVE_PATH]` command to tell the tool which path to use in the CLI or the "configure path" in the GUI.
@@ -48,14 +48,14 @@ pip install dist/apc-0.1.0-py3-none-any.whl
 If you want to build an executable for the CLI (i.e., from Windows):
 ```sh
 pip install -U pyinstaller
-pyinstaller -F apc.py
+pyinstaller -F --add-data "apc/config/animal_details.json;config" apc.py
 ./dist/apc.exe
 ```
 
 If you want to build an executable for the GUI (i.e., from Windows):
 ```sh
 pip install -U pyinstaller
-pyinstaller -F --noconsole apcgui.py
+pyinstaller -F --noconsole --add-data "apc/config/animal_details.json;config" apcgui.py
 ./dist/apcgui.exe
 ```
 
@@ -119,7 +119,12 @@ apc mod layton moose go-furs
 
 I also want to add some diamonds (30%) with rare furs, so I'm going to use the `-m` option to modify again and the `-r` option to include rare furs:
 ```sh
-apc mod -mr layton moose diamon-some 30
+apc mod -mr layton moose diamond-some 30
+```
+
+Look at the diamond animals you have created (the `-g` flag tells the tool to only show Great Ones and diamonds):
+```sh
+apc animals -mg layton moose
 ```
 
 That's it. I have modified the moose on the Layton Lakes reserve. For my computer, I copied the modded file located at `C:\Users\appma\Documents\APC\mods\animal_population_1` to my saved games folder.

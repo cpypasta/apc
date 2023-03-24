@@ -1,5 +1,7 @@
 import os
 import re
+import json
+import sys
 from pathlib import Path
 from enum import Enum
 from apc import __app_name__
@@ -26,14 +28,12 @@ def _find_saves_path() -> str:
     else:
       return None
 
-def _parent_path() -> Path:
-   return Path(os.path.realpath(__file__)).parents[0]
-
-APP_DIR_PATH = _parent_path()
+APP_DIR_PATH = Path(getattr(sys, '_MEIPASS', Path(__file__).resolve().parent))
 DEFAULT_SAVE_PATH = _find_saves_path()
 SAVE_PATH = APP_DIR_PATH / "config/save_path.txt"
+ANIMAL_DETAILS_PATH = APP_DIR_PATH / "config/animal_details.json"
 SAVE_PATH.parent.mkdir(exist_ok=True, parents=True)
-MOD_DIR_PATH = Path().home() / "Documents/APC/mods"
+MOD_DIR_PATH = Path().cwd() / "mods"
 MOD_DIR_PATH.mkdir(exist_ok=True, parents=True)
 HIGH_NUMBER = 100000
 
@@ -43,9 +43,9 @@ RESERVES = {
         "index": 0,
         "species": [
           "wild_boar",
-          "euro_rabbit",
+          "eu_rabbit",
           "fallow_deer",
-          "euro_bison",
+          "eu_bison",
           "roe_deer",
           "red_fox",
           "pheasant",
@@ -60,7 +60,7 @@ RESERVES = {
           "moose",
           "jackrabbit",
           "mallard",
-          "turkey",
+          "wild_turkey",
           "black_bear",
           "roosevelt_elk",
           "coyote",
@@ -78,17 +78,17 @@ RESERVES = {
           "reindeer",
           "eurasian_lynx",
           "brown_bear",
-          "w_capercaillie",
-          "grey_wolf"
+          "western_capercaillie",
+          "gray_wolf"
         ]
     },
     "vurhonga": {
         "name": "Vurhonga Savanna",
         "index": 3,
         "species": [
-          "eu_wigeon",
+          "eurasian_wigeon",
           "blue_wildebeest",
-          "s_striped_jackal",
+          "sidestriped_jackal",
           "gemsbok",
           "lesser_kudu",
           "scrub_hare",
@@ -106,8 +106,8 @@ RESERVES = {
           "water_buffalo",
           "puma",
           "blackbuck",
-          "cin_teal",
-          "coll_peccary",
+          "cinnamon_teal",
+          "collared_peccary",
           "mule_deer",
           "axis_deer"
         ]
@@ -116,13 +116,13 @@ RESERVES = {
         "name": "Yukon Valley",
         "index": 6,
         "species": [
-          "h_duck",
+          "harlequin_duck",
           "moose",
           "red_fox",
           "caribou",
           "canada_goose",
           "grizzly_bear",
-          "grey_wolf",
+          "gray_wolf",
           "plains_bison"
         ]
     },
@@ -130,13 +130,13 @@ RESERVES = {
         "name": "Cuatro Colinas Game Reserve",
         "index": 8,
         "species": [
-          "ses_ibex",
+          "southeastern_ibex",
           "ibearian_wolf",
           "red_deer",
           "iberian_mouflon",
           "wild_boar",
           "beceite_ibex",
-          "european_hare",
+          "eu_hare",
           "roe_deer",
           "ronda_ibex",
           "pheasant",
@@ -147,11 +147,11 @@ RESERVES = {
         "name": "Sivler Ridge Peaks",
         "index": 9,
         "species": [
-          "pronghorn",
-          "mountain_lion",
+          "prong_horn",
+          "puma",
           "mountain_goat",
           "bighorn_sheep",
-          "turkey",
+          "wild_turkey",
           "black_bear",
           "mule_deer",
           "roosevelt_elk",
@@ -163,12 +163,12 @@ RESERVES = {
         "index": 10,
         "species": [
           "red_deer",
-          "euro_rabbit",
+          "eu_rabbit",
           "feral_pig",
           "fallow_deer",
           "chamois",
           "mallard",
-          "turkey",
+          "wild_turkey",
           "sika_deer",
           "feral_goat"
         ]
@@ -178,11 +178,11 @@ RESERVES = {
         "index": 11,
         "species": [
           "mexican_bobcat",
-          "rg_turkey",
-          "pronghorn",
+          "rio_grande_turkey",
+          "prong_horn",
           "bighorn_sheep",
-          "coll_peccary",
-          "ant_jackrabbit",
+          "collared_peccary",
+          "antelope_jackrabbit",
           "mule_deer",
           "coyote",
           "pheasant",
@@ -195,13 +195,13 @@ RESERVES = {
         "species": [
           "wild_hog",
           "raccoon",
-          "ect_rabbit",
-          "bobwhite_quail",
-          "ew_turkey",
+          "eastern_cottontail_rabbit",
+          "northern_bobwhite_quail",
+          "eastern_wild_turkey",
           "gray_fox",
           "black_bear",
-          "am_alligator",
-          "gw_teal",
+          "american_alligator",
+          "green_wing_teal",
           "whitetail_deer"
         ]        
     },
@@ -211,19 +211,19 @@ RESERVES = {
         "species": [
           "mallard",
           "rock_ptarmigan",
-          "eurasian_widgeon",
+          "eurasian_wigeon",
           "moose",
           "goldeneye",
-          "mountain_lion",
+          "puma",
           "tufted_duck",
           "black_grouse",
-          "tbean_goose",
+          "tundra_bean_goose",
           "willow_ptarmigan",
           "eu_lynx",
           "hazel_grouse",
-          "brown_bear",
-          "eu_teal",
-          "w_capercaillie",
+          "eurasian_brown_bear",
+          "eurasian_teal",
+          "western_capercaillie",
           "raccoon_dog",
           "greylag_goose",
           "whitetail_deer",
@@ -253,155 +253,7 @@ RESERVES = {
     }
 }
 
-ANIMALS = {
-  "moose": {
-    "go": {
-      "score_low": 275,
-      "score_high": 305,
-      "weight_low": 605,
-      "weight_high": 700,
-      "furs": {
-        "fabled_two_tone": 2834255352,
-        "fabled_birch": 4184913762,
-        "fabled_oak": 868192954,
-        "fabled_speckled": 2725877565,
-        "fabled_spruce": 2099598749,
-        "fabled_ashen": 3430844549        
-      }
-    },
-    "diamonds": {
-      "score_low": 275,
-      "score_high": 305,
-      "weight_low": 605,
-      "weight_high": 620,
-      "furs": {
-        "male": {
-            # "melanistic": 27915576,
-            # "piebald": 747308994,
-            "albino": 264274951
-        },
-        "female": {
-            "melanistic": 27915576,
-            "piebald": 747308994,
-            "albino": 1141231243
-        }   
-      }
-    }
-  },
-  "red_deer": {
-   "go": {
-      "score_low": 251,
-      "score_high": 284,
-      "weight_low": 240,
-      "weight_high": 260,
-      "furs": {
-        "fabled_spotted": 0
-      }   
-   },
-   "diamonds": {
-      "score_low": 251,
-      "score_high": 274,
-      "weight_low": 220,
-      "weight_high": 240,
-      "furs": {
-        "male": {
-          "piebald": 631703144,
-          # "albino": 0,
-          # "melanistic": 0
-        },
-        "female": {
-          "melanistic": 2838816491
-        }
-      }
-   }
-  },
-  "black_bear": {
-   "go": {
-      "score_low": 24,
-      "score_high": 28,
-      "weight_low": 291,
-      "weight_high": 490,
-      "furs": {
-        "fabled_glacier": 2742609257,
-        "fabled_chestnut": 3087602548,
-        "fabled_cream": 3631307431,
-        "fabled_spotted": 1868463965
-      }   
-   },
-   "diamonds": {
-      "score_low": 23,
-      "score_high": 25,
-      "weight_low": 280,
-      "weight_high": 290,   
-      "furs": {
-        "male": {
-          "cinnamon": 3363397298,
-          # "blonde": 0,
-          "brown": 1911408571
-        },
-        "female": {
-          "cinnamon": 3363397298,
-          # "blonde": 0,
-          "brown": 4206745190
-        }   
-      }
-   }
-  },
-  "whitetail_deer": {
-   "go": {
-      "score_low": 300,
-      "score_high": 643,
-      "weight_low": 97,
-      "weight_high": 110,
-      "furs": {
-        "brown": 3758024868,
-        "dark_brown": 3643313656,
-        "tan": 203506860
-      }   
-   },
-   "diamonds": {
-      "score_low": 255,
-      "score_high": 273,
-      "weight_low": 90,
-      "weight_high": 100,
-      "furs": {
-        "male": {
-          "piebald": 3675496031,
-          "melanistic": 925535978,
-          "albino": 4207695112   
-        },
-        "female": {
-          "melanistic": 2141175380,
-          "albino": 1770358919,
-          "piebald": 2765078492          
-        }
-      }
-   }
-  },
-  "bobcat": {
-    "diamonds": {
-      "score_low": 27.7,
-      "score_high": 30,
-      "weight_low": 40,
-      "weight_high": 45,   
-      "furs": {
-        "male": {
-          "blue": 209843553,
-          "melanistic": 534063775,
-          "brown": 3958048063,
-          "tan": 1862790386,
-          "gray": 2843566431,
-          "red": 343310641
-        },
-        "female": {
-          "blue": 2113993964,
-          "melanistic": 3030070873,
-          "albino": 3654283380
-        }
-      }
-    }
-  }
-}
+ANIMALS = json.load(ANIMAL_DETAILS_PATH.open())
 
 class Reserve(str, Enum):
    hirsch = "hirsch"
@@ -425,13 +277,6 @@ class Strategy(str, Enum):
    diamond_all = "diamond-all"
    diamond_furs = "diamond-furs"
    diamond_some = "diamond-some"
-
-class ModifiableSpecies(str, Enum):
-   moose = "moose"
-   black_bear = "black_bear"
-   whitetail_deer = "whitetail_deer"
-   red_deer = "red_deer"
-   bobcat = "bobcat"
 
 class GreatOnes(str, Enum):
    moose = "moose"
@@ -475,9 +320,6 @@ def get_animal_fur_by_seed(species: str, gender: str, seed: int) -> str:
     return diamond_key
   else:
     return "-"
-  
-def valid_species_to_modify(species: str) -> bool:
-    return species in ModifiableSpecies.__members__
 
 def valid_go_species(species: str) -> bool:
     return species in GreatOnes.__members__

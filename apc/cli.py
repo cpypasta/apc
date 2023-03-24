@@ -64,7 +64,7 @@ def species(reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch)
 @app.command(help="Modify the animals for a specific reserve and species")
 def mod(
    reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch), 
-   species: config.ModifiableSpecies = typer.Argument(...),
+   species: str = typer.Argument(...),
    strategy: config.Strategy = typer.Argument(...),
    modifier: int = typer.Argument(None, help="used to modify strategy; usually a percentage", min=1, max=100),
    rares: Optional[bool] = typer.Option(False, "--rares", "-r", help="Include rare and super rare furs"),
