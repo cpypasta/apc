@@ -52,10 +52,11 @@ def _create_animals_table(reserve_name: str, species: str, species_description: 
     title=f"{title} [yellow](modded)[/yellow]" if modded else title, 
     row_styles=["dim", ""]
   )
-  table.add_column("Gender", justify="right")
+  table.add_column("Level",  justify="right")
+  table.add_column("Gender")
   table.add_column("Weight", justify="right")
   table.add_column("Score", justify="right")
-  table.add_column("Visual", justify="right")
+  table.add_column("Visual Seed", justify="right")
   table.add_column("Fur")
   table.add_column("Diamond")
   table.add_column("GO")

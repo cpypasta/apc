@@ -72,12 +72,12 @@ RESERVES = {
         "name": "Medved-Taiga National Park",
         "index": 2,
         "species": [
-          "musk_deer",
+          "siberian_musk_deer",
           "moose",
           "wild_boar",
           "reindeer",
           "eurasian_lynx",
-          "brown_bear",
+          "eurasian_brown_bear",
           "western_capercaillie",
           "gray_wolf"
         ]
@@ -131,7 +131,7 @@ RESERVES = {
         "index": 8,
         "species": [
           "southeastern_ibex",
-          "ibearian_wolf",
+          "iberian_wolf",
           "red_deer",
           "iberian_mouflon",
           "wild_boar",
@@ -193,7 +193,7 @@ RESERVES = {
         "name": "Mississippi Acres Preserve",
         "index": 12,
         "species": [
-          "wild_hog",
+          "warthog",
           "raccoon",
           "eastern_cottontail_rabbit",
           "northern_bobwhite_quail",
@@ -219,7 +219,7 @@ RESERVES = {
           "black_grouse",
           "tundra_bean_goose",
           "willow_ptarmigan",
-          "eu_lynx",
+          "eurasian_lynx",
           "hazel_grouse",
           "eurasian_brown_bear",
           "eurasian_teal",
@@ -284,6 +284,18 @@ class GreatOnes(str, Enum):
    whitetail_deer = "whitetail_deer"
    red_deer = "red_deer"
 
+class Levels(int, Enum):
+  TRIVIAL = 1
+  MINOR = 2
+  VERY_EASY = 3
+  EASY = 4
+  MEDIUM = 5
+  HARD = 6
+  VERY_HARD = 7
+  MYTHICAL = 8
+  LEGENDARY = 9
+  GREAT_ONE = 10
+
 def load_config(config_path: Path) -> int: 
   config_path.read_text()
 
@@ -320,6 +332,12 @@ def get_animal_fur_by_seed(species: str, gender: str, seed: int) -> str:
     return diamond_key
   else:
     return "-"
+
+def valid_species_for_reserve(species: str, reserve: str) -> bool:
+  return reserve in RESERVES and species in RESERVES[reserve]["species"]
+
+def valid_species(species: str) -> bool:
+  return species in list(ANIMALS.keys())
 
 def valid_go_species(species: str) -> bool:
     return species in GreatOnes.__members__

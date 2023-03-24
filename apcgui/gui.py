@@ -3,7 +3,7 @@ import time
 from apc import populations, adf
 from apc.config import valid_go_species, Strategy, MOD_DIR_PATH, save_path, get_save_path
 from apcgui import __version__, logo
-from apc.utils import unformat_key
+from apc.utils import unformat_key, format_key
 
 DEFAULT_FONT = "_ 14"
 MEDIUM_FONT = "_ 13"
@@ -22,10 +22,11 @@ RESERVE_COLUMNS = [
     "Great Ones" 
 ]
 SPECIES_COLUMNS = [
+  "Level",
   "Gender",
   "Weight",
   "Score",
-  "Visual",
+  "Visual Seed",
   "Fur",
   "Diamond",
   "Great One"
@@ -110,7 +111,7 @@ def _mod(reserve_key: str, species: str, strategy: Strategy, window: sg.Window, 
   window["reserve_description"].update(_highlight_values(modded_reserve_description))
   window["progress"].update(75)
   window["reserve_warning"].update(VIEW_MODDED)
-  window["reserve_note"].update(f"Mod saved to: \"{MOD_DIR_PATH}\"")
+  window["reserve_note"].update(f"{format_key(species).upper()} mod has been saved to: \"{MOD_DIR_PATH}\"")
   window["progress"].update(100)
   time.sleep(PROGRESS_DELAY)
   window["progress"].update(visible=False)

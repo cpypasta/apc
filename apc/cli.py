@@ -15,6 +15,12 @@ state = { "verbose": False }
 def _show_filenotfound(ex) -> None:
   print(f"[red]{ex}[/red] [yellow](set a valid save location with [bold]apc set-save[/bold])[/yellow]")   
 
+def _show_species_error(species: str) -> None:
+  print(f"[red]{species} is not a valid species[/red]")
+  
+def _show_species_reserve_error(species: str, reserve: str) -> None:
+  print(f"[red]{species} is not a valid species at {reserve}[/red]")
+
 @app.command(name="set-save", help="Set the location of animal population files")
 def set_save(save_path: str = typer.Argument(...)) -> None:
   config.save_path(save_path)
@@ -31,6 +37,12 @@ def reserve(
    species: Optional[bool] = typer.Option(True, help="Include the species names"),
    modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
 ) -> None:
+  if not config.valid_species(species):
+    _show_species_error(species)
+    return  
+  if not config.valid_species_for_reserve(species, reserve_name):
+    _show_species_reserve_error(species, reserve_name)
+    return  
   try:
     reserve_details = commands.describe_reserve(reserve_name, modded, species, state["verbose"])
     console.print(reserve_details)
@@ -40,8 +52,7 @@ def reserve(
 @app.command(help="Shows all the reserve names")
 def reserves() -> None:
   reserve_names = commands.reserves()
-  console.print(reserve_names)
-  
+  console.print(reserve_names)  
 
 @app.command(help="Show the animal species at a reserve")
 def animals(
@@ -50,6 +61,12 @@ def animals(
    good: Optional[bool] = typer.Option(False, "--good", "-g", help="Only show diamonds and GOs"),
    modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
 ) -> None:
+  if not config.valid_species(species):
+    _show_species_error(species)
+    return  
+  if not config.valid_species_for_reserve(species, reserve_name):
+    _show_species_reserve_error(species, reserve_name)
+    return    
   try:
     animal_details = commands.describe_animals(reserve_name, species, good, modded, state["verbose"])
     console.print(animal_details)
@@ -70,6 +87,12 @@ def mod(
    rares: Optional[bool] = typer.Option(False, "--rares", "-r", help="Include rare and super rare furs"),
    modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
 ) -> None:
+  if not config.valid_species(species):
+    _show_species_error(species)
+    return
+  if not config.valid_species_for_reserve(species, reserve_name):
+    _show_species_reserve_error(species, reserve_name)
+    return    
   try:
     mod_result = commands.mod(reserve_name, species, strategy, modifier, rares, modded, state["verbose"])
     print(f"[yellow]You can find the modded file at: {config.MOD_DIR_PATH}[/yellow]")
