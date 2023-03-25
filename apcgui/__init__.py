@@ -14,4 +14,4 @@ else:
 tgui = gettext.translation("apcgui", localedir=LOCALE_PATH, languages=use_languages)
 
 __app_name__ = "apcgui"
-__version__ = "0.2.1"
+__version__ = "0.3.0"
