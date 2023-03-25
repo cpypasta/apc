@@ -44,14 +44,18 @@ def _create_reserve_table(reserve_name: str, reserve_description: list, modded: 
   _highlight_reserve_highs(reserve_description)
   return utils.list_to_table(reserve_description, table)  
 
-def _create_animals_table(reserve_name: str, species: str, species_description: list, modded: bool = False) -> Table:
-  reserve_name = config.get_reserve_name(reserve_name)
+def _create_animals_table(species: str, species_description: list, reserve_name: str = None, modded: bool = False) -> Table:
   species_name = config.get_species_name(species)
-  title = f"[green]{species_name} @ {reserve_name}[/green]"
+  if reserve_name:
+    reserve_name = config.get_reserve_name(reserve_name)
+    title = f"[green]{species_name} @ {reserve_name}[/green]"
+  else:
+    title = f"[green]{species_name}[/green]"
   table = Table(
     title=f"{title} [yellow](modded)[/yellow]" if modded else title, 
     row_styles=["dim", ""]
   )
+  table.add_column(config.RESERVE)
   table.add_column(config.LEVEL,  justify="right")
   table.add_column(config.GENDER)
   table.add_column(config.WEIGHT, justify="right")
@@ -91,7 +95,11 @@ def describe_reserve(reserve_name: str, modded: bool, include_species = True, ve
 def describe_animals(reserve_name: str, species: str, good: bool = False, modded: bool = False, verbose = False) -> Table:
   reserve_details = adf.load_reserve(reserve_name, modded, verbose=verbose)
   species_description = populations.describe_animals(reserve_name, species, reserve_details.adf, good, verbose=verbose)
-  return _create_animals_table(reserve_name, species, species_description, modded)
+  return _create_animals_table(species, species_description, reserve_name=reserve_name, modded=modded)
+
+def find_animals(species: str, good: bool = False, modded: bool = False, verbose = False) -> Table:
+  species_description = populations.find_animals(species, good=good, modded=modded, verbose=verbose)
+  return _create_animals_table(species, species_description, modded=modded)
 
 def mod(reserve_name: str, species: str, strategy: str, modifier: int = None, rares: bool = False, modded: bool = False, verbose = False) -> Table:
   if verbose:

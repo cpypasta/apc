@@ -125,6 +125,7 @@ FUR = translate("Fur")
 DIAMOND = translate("Diamond")
 GREATONE = translate("Great One")
 SUMMARY = translate("Summary")
+RESERVE = translate("Reserve")
 RESERVES_TITLE = translate("Reserves")
 RESERVE_NAME_KEY = translate("Reserve Name (key)")
 YES = translate("Yes")
@@ -146,7 +147,10 @@ def get_species_name(key: str) -> str:
   return translate(ANIMAL_NAMES[key]["animal_name"])
 
 def get_reserve_name(key: str) -> str:
-    return translate(RESERVE_NAMES[key]["reserve_name"])
+  return translate(RESERVE_NAMES[key]["reserve_name"])
+
+def get_reserve(reserve_name: str) -> dict:
+  return RESERVES[reserve_name]
 
 def _get_fur(furs: dict, seed: int) -> str:
   try:

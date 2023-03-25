@@ -48,19 +48,22 @@ def reserves() -> None:
 
 @app.command(help="Show the animal species at a reserve")
 def animals(
-   reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch), 
    species: str = typer.Argument(..., help="Animal species to see"),
+   reserve_name: Optional[config.Reserve] = typer.Option(None, "--reserve-name", "-r", help="Provide a reserve to use"), 
    good: Optional[bool] = typer.Option(False, "--good", "-g", help="Only show diamonds and GOs"),
    modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
 ) -> None:
   if not config.valid_species(species):
     _show_species_error(species)
     return  
-  if not config.valid_species_for_reserve(species, reserve_name):
+  if reserve_name and not config.valid_species_for_reserve(species, reserve_name):
     _show_species_reserve_error(species, reserve_name)
     return    
   try:
-    animal_details = commands.describe_animals(reserve_name, species, good, modded, state["verbose"])
+    if reserve_name:
+      animal_details = commands.describe_animals(reserve_name, species, good, modded, state["verbose"])
+    else:
+      animal_details = commands.find_animals(species, good, modded, state["verbose"])
     console.print(animal_details)
   except FileNotFound as ex:
      _show_filenotfound(ex)

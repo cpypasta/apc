@@ -1,10 +1,10 @@
 import random
 from apc.utils import update_float, update_uint, format_key
 from deca.ff_adf import Adf, AdfValue
-from apc import config
+from apc import config, adf
 from rich import print
 from apc.adf import ParsedAdfFile, load_reserve
-from apc.config import get_animal_fur_by_seed, get_species_name, get_reserve_name, get_level_name
+from apc.config import get_animal_fur_by_seed, get_species_name, get_reserve_name, get_level_name, get_reserve, valid_species_for_reserve
 from apc.utils import format_key
 
 def _species(reserve_name: str, reserve_details: Adf, species: str) -> list:
@@ -23,7 +23,7 @@ def _random_choice(choices):
    return random.choice(_dict_values(choices))
 
 class Animal:
-   def __init__(self, details: AdfValue) -> None:
+    def __init__(self, details: AdfValue) -> None:
       gender = "male" if details.value["Gender"].value == 1 else "female"
       self.gender = gender
       self.weight = float(details.value["Weight"].value)
@@ -34,6 +34,9 @@ class Animal:
       self.score_offset = details.value["Score"].data_offset
       self.go_offset = details.value["IsGreatOne"].data_offset
       self.visual_seed_offset = details.value["VisualVariationSeed"].data_offset
+            
+    def __repr__(self) -> str:
+      return f"({self.gender}, {self.weight}, {self.score}, {self.go}, {self.visual_seed})"
 
 def reserve_keys() -> list:
   return list(dict.keys(config.RESERVES))
@@ -51,16 +54,26 @@ def _get_populations(reserve_details: Adf) -> list:
   return [p for p in populations if len(p.value["Groups"].value) > 0]
 
 def _find_animal_level(weight: float, levels: list) -> int:
-  level = 0
+  level = 1
   for value_i, value in enumerate(levels):
     low_bound, high_bound = value
     if weight <= high_bound and weight > low_bound:
       level = value_i + 1
   return level
 
+def find_animals(species: str, modded = False, good = False, verbose = False) -> list:
+  reserves = reserve_keys()
+  animals = []
+  for reserve in reserves:
+    if valid_species_for_reserve(species, reserve):
+      reserve_details = adf.load_reserve(reserve, modded)
+      reserve_animals = describe_animals(reserve, species, reserve_details.adf, good, verbose)
+      animals.extend(reserve_animals)  
+  return sorted(animals, key = lambda x : x[4], reverse=True)
+
 def describe_animals(reserve_name: str, species: str, reserve_details: Adf, good = False, verbose = False) -> list:
     populations = _get_populations(reserve_details)
-    population = populations[config.RESERVES[reserve_name]["species"].index(species)]
+    population = populations[get_reserve(reserve_name)["species"].index(species)]
     groups = population.value["Groups"].value
     
     if verbose:
@@ -89,13 +102,14 @@ def describe_animals(reserve_name: str, species: str, reserve_details: Adf, good
         
         if ((good and (is_diamond or is_go)) or not good):
           rows.append([
+            get_reserve_name(reserve_name),
             f"{level_name}, {level}",
             config.MALE if animal.gender == "male" else config.FEMALE,
             round(animal.weight,3),
             round(animal.score, 3),
             animal.visual_seed,
             get_animal_fur_by_seed(species, animal.gender, animal.visual_seed),
-            config.YES if is_diamond else "-",
+            config.YES if is_diamond and not is_go else "-",
             config.YES if is_go else "-"
           ])
 
