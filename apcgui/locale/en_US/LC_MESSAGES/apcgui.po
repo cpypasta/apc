@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-25 02:17-0500\n"
-"PO-Revision-Date: 2023-03-24 19:18-0500\n"
+"POT-Creation-Date: 2023-03-25 14:39-0500\n"
+"PO-Revision-Date: 2023-03-25 14:39-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en_US\n"
 "Language-Team: en_US <LL@li.org>\n"
@@ -18,11 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: gui.py:130
-msgid "Great Ones"
-msgstr ""
-
-#: gui.py:141
+#: apcgui/gui.py:141
 msgid "Animal Population Changer"
-msgstr "Animal Population Changer English"
+msgstr ""
 

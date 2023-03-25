@@ -1,8 +1,8 @@
 import PySimpleGUI as sg
 import time
 from apc import populations, adf
-from apc.config import valid_go_species, Strategy, MOD_DIR_PATH, save_path, get_save_path, test_value
-from apcgui import __version__, logo, tgui
+from apc.config import valid_go_species, Strategy, MOD_DIR_PATH, save_path, get_save_path
+from apcgui import __version__, logo, tgui, use_languages
 from apc.utils import unformat_key, format_key
 
 translate = tgui.gettext
@@ -127,7 +127,7 @@ def main():
 
     mod_layout = [
         [sg.Column([
-          [sg.T(translate("Great Ones")+":", font=MEDIUM_FONT, expand_x=True), sg.Input(s=4, default_text="100", disabled=True, k="go_percent")],
+          [sg.T("Great Ones"+":", font=MEDIUM_FONT, expand_x=True), sg.Input(s=4, default_text="100", disabled=True, k="go_percent")],
           [sg.T("Diamonds:", font=MEDIUM_FONT, expand_x=True), sg.Input(s=4, default_text="100", disabled=True, k="diamond_percent")]
         ], expand_x=True)],        
         [sg.Checkbox("include rare furs", k="furs")],
@@ -138,11 +138,11 @@ def main():
         [
           sg.Image(logo.value), 
           sg.Column([
-            [sg.T(translate('Animal Population Changer'), expand_x=True, font="_ 24"), sg.T(test_value)],
+            [sg.T(translate('Animal Population Changer'), expand_x=True, font="_ 24")],
             [sg.T(save_path_value, font=SMALL_FONT, k="save_path")]
           ]), 
           sg.Push(),
-          sg.T(f"version: {__version__}", font=SMALL_FONT, p=((0,0),(0,60)))
+          sg.T(f"version: {__version__} ({use_languages[0]})", font=SMALL_FONT, p=((0,0),(0,60)))
         ],
         [
           sg.Column([[sg.T("Hunting Reserve:"), 
