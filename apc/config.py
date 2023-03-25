@@ -2,15 +2,13 @@ import os
 import re
 import json
 import sys
-import gettext
 from pathlib import Path
 from enum import Enum
-from apc import __app_name__
+from apc import __app_name__, t
 
-_ = gettext.gettext
+translate = t.gettext
 
-test_value = _("this is my test value")
-print(test_value)
+t.ngettext
 
 def _find_saves_path() -> str:
     steam_saves = Path().home() / "Documents/Avalanche Studios/COTW/Saves"
@@ -285,8 +283,8 @@ class Strategy(str, Enum):
    diamond_some = "diamond-some"
 
 class GreatOnes(str, Enum):
-   moose = "moose"
-   black_bear = "black_bear"
+   moose = translate("moose")
+   black_bear = translate("black_bear")
    whitetail_deer = "whitetail_deer"
    red_deer = "red_deer"
 

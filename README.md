@@ -48,14 +48,14 @@ pip install dist/apc-0.1.0-py3-none-any.whl
 If you want to build an executable for the CLI (i.e., from Windows):
 ```sh
 pip install -U pyinstaller
-pyinstaller -F --add-data "apc/config/animal_details.json;config" apc.py
+pyinstaller -F --add-data "apc/config/animal_details.json;config" --add-data "locale;locale" apc.py
 ./dist/apc.exe
 ```
 
 If you want to build an executable for the GUI (i.e., from Windows):
 ```sh
 pip install -U pyinstaller
-pyinstaller -F --noconsole --add-data "apc/config/animal_details.json;config" apcgui.py
+pyinstaller -F --noconsole --add-data "apc/config/animal_details.json;config" --add-data "locale;locale" apcgui.py
 ./dist/apcgui.exe
 ```
 

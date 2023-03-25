@@ -1,0 +1,12 @@
+pip install Babel
+pybabel --list-locales
+
+pybabel extract . -o locale/apc.pot
+pybabel extract -k translate -o locale/apcgui.pot . (custom keyword)
+pybabel extract -o locale/apc.pot -F babel.cfg . (options go into cfg file)
+
+pybabel init -l en_DE -i locale/apc.pot -d locale -D apc
+pybabel init -l en_US -i locale/apc.pot -d locale -D apc
+
+pybabel compile --domain=apc --directory=locale
+pybabel update --domain=apcgui -d locale -i locale/apcgui.pot (only adds new keys to po file)

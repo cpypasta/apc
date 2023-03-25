@@ -3,10 +3,8 @@ from rich import print
 from rich.console import Console
 from apc import commands, config
 from apc.adf import FileNotFound
-
-import typer
-
 from apc import __app_name__, __version__, config
+import typer
 
 app = typer.Typer()
 console = Console()
