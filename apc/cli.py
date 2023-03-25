@@ -34,13 +34,7 @@ def reserve(
    reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch), 
    species: Optional[bool] = typer.Option(True, help="Include the species names"),
    modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
-) -> None:
-  if not config.valid_species(species):
-    _show_species_error(species)
-    return  
-  if not config.valid_species_for_reserve(species, reserve_name):
-    _show_species_reserve_error(species, reserve_name)
-    return  
+) -> None:  
   try:
     reserve_details = commands.describe_reserve(reserve_name, modded, species, state["verbose"])
     console.print(reserve_details)

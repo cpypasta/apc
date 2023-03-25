@@ -1,0 +1,43 @@
+{
+  "reserve_names": {
+    "hirsch": {
+      "reserve_name": "Hirschfelden"
+    },
+    "layton": {
+      "reserve_name": "Layton Lake"
+    },
+    "medved": {
+      "reserve_name": "Medved-Taiga National Park"
+    },
+    "vurhonga": {
+      "reserve_name": "Vurhonga Savanna"
+    },
+    "parque": {
+      "reserve_name": "Parque Fernando"
+    },
+    "yukon": {
+      "reserve_name": "Yukon Valley"
+    },
+    "cuatro": {
+      "reserve_name": "Cuatro Colinas Game Reserve"
+    },
+    "silver": {
+      "reserve_name": "Sivler Ridge Peaks"
+    },
+    "teawaroa": {
+      "reserve_name": "Te Awaroa National Park"
+    },
+    "rancho": {
+      "reserve_name": "Rancho del Arroyo"
+    },
+    "mississippi": {
+      "reserve_name": "Mississippi Acres Preserve"
+    },
+    "revontuli": {
+      "reserve_name": "Revontuli Coast"
+    },
+    "newengland": {
+      "reserve_name": "New England Mountains"
+    }
+  }
+}

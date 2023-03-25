@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-24 17:45-0500\n"
-"PO-Revision-Date: 2023-03-24 17:49-0500\n"
+"POT-Creation-Date: 2023-03-25 14:06-0500\n"
+"PO-Revision-Date: 2023-03-25 14:07-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en_DE\n"
 "Language-Team: en_DE <LL@li.org>\n"
@@ -18,7 +18,515 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: config.py:9
-msgid "this is my test value"
-msgstr "this is my GERMAN value"
+#: apc/config.py:90
+msgid "Trivial"
+msgstr ""
+
+#: apc/config.py:92
+msgid "Minor"
+msgstr ""
+
+#: apc/config.py:94
+msgid "Very Easy"
+msgstr ""
+
+#: apc/config.py:96
+msgid "Easy"
+msgstr ""
+
+#: apc/config.py:98
+msgid "Medium"
+msgstr ""
+
+#: apc/config.py:100
+msgid "Hard"
+msgstr ""
+
+#: apc/config.py:102
+msgid "Very Hard"
+msgstr ""
+
+#: apc/config.py:104
+msgid "Mythical"
+msgstr ""
+
+#: apc/config.py:106
+msgid "Legendary"
+msgstr ""
+
+#: apc/config.py:108 apc/config.py:126
+msgid "Great One"
+msgstr ""
+
+#: apc/config.py:111
+msgid "Species"
+msgstr ""
+
+#: apc/config.py:112
+msgid "Animals"
+msgstr ""
+
+#: apc/config.py:113
+msgid "Male"
+msgstr ""
+
+#: apc/config.py:114
+msgid "Males"
+msgstr ""
+
+#: apc/config.py:115
+msgid "Female"
+msgstr ""
+
+#: apc/config.py:116
+msgid "Females"
+msgstr ""
+
+#: apc/config.py:117
+msgid "High Weight"
+msgstr ""
+
+#: apc/config.py:118
+msgid "High Score"
+msgstr ""
+
+#: apc/config.py:119
+msgid "Level"
+msgstr ""
+
+#: apc/config.py:120
+msgid "Gender"
+msgstr ""
+
+#: apc/config.py:121
+msgid "Weight"
+msgstr ""
+
+#: apc/config.py:122
+msgid "Score"
+msgstr ""
+
+#: apc/config.py:123
+msgid "Visual Seed"
+msgstr ""
+
+#: apc/config.py:124
+msgid "Fur"
+msgstr ""
+
+#: apc/config.py:125
+msgid "Diamond"
+msgstr ""
+
+#: apc/config.py:127
+msgid "Summary"
+msgstr ""
+
+#: apc/config.py:128
+msgid "Reserves"
+msgstr ""
+
+#: apc/config.py:129
+msgid "Reserve Name (key)"
+msgstr ""
+
+#: apc/config.py:130
+msgid "Yes"
+msgstr ""
+
+#: apc/config.py:131
+msgid "Modded"
+msgstr ""
+
+#: apc/config.py:132
+msgid "Species (key)"
+msgstr ""
+
+#: apc/config.py:146
+msgid "animal_name"
+msgstr ""
+
+#: apc/config.py:149
+msgid "reserve_name"
+msgstr ""
+
+#: apc/config/animal_names.json:4
+msgid "American Alligator"
+msgstr ""
+
+#: apc/config/animal_names.json:7
+msgid "Antelope Jackrabbit"
+msgstr ""
+
+#: apc/config/animal_names.json:10
+msgid "Axis Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:13
+msgid "Beceite Ibex"
+msgstr ""
+
+#: apc/config/animal_names.json:16
+msgid "Bighorn Sheep"
+msgstr ""
+
+#: apc/config/animal_names.json:19
+msgid "Black Bear"
+msgstr ""
+
+#: apc/config/animal_names.json:22
+msgid "Black Grouse"
+msgstr ""
+
+#: apc/config/animal_names.json:25
+msgid "Blackbuck"
+msgstr ""
+
+#: apc/config/animal_names.json:28
+msgid "Blacktail Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:31
+msgid "Blue Wildebeest"
+msgstr ""
+
+#: apc/config/animal_names.json:34
+msgid "Bobcat"
+msgstr ""
+
+#: apc/config/animal_names.json:37
+msgid "Canada Goose"
+msgstr ""
+
+#: apc/config/animal_names.json:40
+msgid "Cape Buffalo"
+msgstr ""
+
+#: apc/config/animal_names.json:43
+msgid "Caribou"
+msgstr ""
+
+#: apc/config/animal_names.json:46
+msgid "Chamois"
+msgstr ""
+
+#: apc/config/animal_names.json:49
+msgid "Cinnamon Teal"
+msgstr ""
+
+#: apc/config/animal_names.json:52
+msgid "Collared Peccary"
+msgstr ""
+
+#: apc/config/animal_names.json:55
+msgid "Coyote"
+msgstr ""
+
+#: apc/config/animal_names.json:58
+msgid "Eastern Cottontail Rabbit"
+msgstr ""
+
+#: apc/config/animal_names.json:61
+msgid "Eastern Wild Turkey"
+msgstr ""
+
+#: apc/config/animal_names.json:64
+msgid "Eu Bison"
+msgstr ""
+
+#: apc/config/animal_names.json:67
+msgid "Eu Hare"
+msgstr ""
+
+#: apc/config/animal_names.json:70
+msgid "Eu Rabbit"
+msgstr ""
+
+#: apc/config/animal_names.json:73
+msgid "Eurasian Brown Bear"
+msgstr ""
+
+#: apc/config/animal_names.json:76
+msgid "Eurasian Lynx"
+msgstr ""
+
+#: apc/config/animal_names.json:79
+msgid "Eurasian Teal"
+msgstr ""
+
+#: apc/config/animal_names.json:82
+msgid "Eurasian Wigeon"
+msgstr ""
+
+#: apc/config/animal_names.json:85
+msgid "Fallow Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:88
+msgid "Feral Goat"
+msgstr ""
+
+#: apc/config/animal_names.json:91
+msgid "Feral Pig"
+msgstr ""
+
+#: apc/config/animal_names.json:94
+msgid "Gemsbok"
+msgstr ""
+
+#: apc/config/animal_names.json:97
+msgid "Goldeneye"
+msgstr ""
+
+#: apc/config/animal_names.json:100
+msgid "Gray Fox"
+msgstr ""
+
+#: apc/config/animal_names.json:103
+msgid "Gray Wolf"
+msgstr ""
+
+#: apc/config/animal_names.json:106
+msgid "Gredos Ibex"
+msgstr ""
+
+#: apc/config/animal_names.json:109
+msgid "Green Wing Teal"
+msgstr ""
+
+#: apc/config/animal_names.json:112
+msgid "Greylag Goose"
+msgstr ""
+
+#: apc/config/animal_names.json:115
+msgid "Grizzly Bear"
+msgstr ""
+
+#: apc/config/animal_names.json:118
+msgid "Harlequin Duck"
+msgstr ""
+
+#: apc/config/animal_names.json:121
+msgid "Hazel Grouse"
+msgstr ""
+
+#: apc/config/animal_names.json:124
+msgid "Iberian Mouflon"
+msgstr ""
+
+#: apc/config/animal_names.json:127
+msgid "Iberian Wolf"
+msgstr ""
+
+#: apc/config/animal_names.json:130
+msgid "Jackrabbit"
+msgstr ""
+
+#: apc/config/animal_names.json:133
+msgid "Lesser Kudu"
+msgstr ""
+
+#: apc/config/animal_names.json:136
+msgid "Lion"
+msgstr ""
+
+#: apc/config/animal_names.json:139
+msgid "Mallard"
+msgstr ""
+
+#: apc/config/animal_names.json:142
+msgid "Mexican Bobcat"
+msgstr ""
+
+#: apc/config/animal_names.json:145
+msgid "Moose"
+msgstr ""
+
+#: apc/config/animal_names.json:148
+msgid "Mountain Goat"
+msgstr ""
+
+#: apc/config/animal_names.json:151
+msgid "Mountain Hare"
+msgstr ""
+
+#: apc/config/animal_names.json:154
+msgid "Mule Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:157
+msgid "Northern Bobwhite Quail"
+msgstr ""
+
+#: apc/config/animal_names.json:160
+msgid "Pheasant"
+msgstr ""
+
+#: apc/config/animal_names.json:163
+msgid "Plains Bison"
+msgstr ""
+
+#: apc/config/animal_names.json:166
+msgid "Prong Horn"
+msgstr ""
+
+#: apc/config/animal_names.json:169
+msgid "Puma"
+msgstr ""
+
+#: apc/config/animal_names.json:172
+msgid "Raccoon"
+msgstr ""
+
+#: apc/config/animal_names.json:175
+msgid "Raccoon Dog"
+msgstr ""
+
+#: apc/config/animal_names.json:178
+msgid "Red Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:181
+msgid "Red Fox"
+msgstr ""
+
+#: apc/config/animal_names.json:184
+msgid "Reindeer"
+msgstr ""
+
+#: apc/config/animal_names.json:187
+msgid "Rio Grande Turkey"
+msgstr ""
+
+#: apc/config/animal_names.json:190
+msgid "Rock Ptarmigan"
+msgstr ""
+
+#: apc/config/animal_names.json:193
+msgid "Rockymountain Elk"
+msgstr ""
+
+#: apc/config/animal_names.json:196
+msgid "Roe Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:199
+msgid "Ronda Ibex"
+msgstr ""
+
+#: apc/config/animal_names.json:202
+msgid "Roosevelt Elk"
+msgstr ""
+
+#: apc/config/animal_names.json:205
+msgid "Scrub Hare"
+msgstr ""
+
+#: apc/config/animal_names.json:208
+msgid "Siberian Musk Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:211
+msgid "Sidestriped Jackal"
+msgstr ""
+
+#: apc/config/animal_names.json:214
+msgid "Sika Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:217
+msgid "Southeastern Ibex"
+msgstr ""
+
+#: apc/config/animal_names.json:220
+msgid "Springbok"
+msgstr ""
+
+#: apc/config/animal_names.json:223
+msgid "Tufted Duck"
+msgstr ""
+
+#: apc/config/animal_names.json:226
+msgid "Tundra Bean Goose"
+msgstr ""
+
+#: apc/config/animal_names.json:229
+msgid "Warthog"
+msgstr ""
+
+#: apc/config/animal_names.json:232
+msgid "Water Buffalo"
+msgstr ""
+
+#: apc/config/animal_names.json:235
+msgid "Western Capercaillie"
+msgstr ""
+
+#: apc/config/animal_names.json:238
+msgid "Whitetail Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:241
+msgid "Wild Boar"
+msgstr ""
+
+#: apc/config/animal_names.json:244
+msgid "Wild Turkey"
+msgstr ""
+
+#: apc/config/animal_names.json:247
+msgid "Willow Ptarmigan"
+msgstr ""
+
+#: apc/config/reserve_names.json:4
+msgid "Hirschfelden"
+msgstr ""
+
+#: apc/config/reserve_names.json:7
+msgid "Layton Lake"
+msgstr ""
+
+#: apc/config/reserve_names.json:10
+msgid "Medved-Taiga National Park"
+msgstr ""
+
+#: apc/config/reserve_names.json:13
+msgid "Vurhonga Savanna"
+msgstr ""
+
+#: apc/config/reserve_names.json:16
+msgid "Parque Fernando"
+msgstr ""
+
+#: apc/config/reserve_names.json:19
+msgid "Yukon Valley"
+msgstr ""
+
+#: apc/config/reserve_names.json:22
+msgid "Cuatro Colinas Game Reserve"
+msgstr ""
+
+#: apc/config/reserve_names.json:25
+msgid "Sivler Ridge Peaks"
+msgstr ""
+
+#: apc/config/reserve_names.json:28
+msgid "Te Awaroa National Park"
+msgstr ""
+
+#: apc/config/reserve_names.json:31
+msgid "Rancho del Arroyo"
+msgstr ""
+
+#: apc/config/reserve_names.json:34
+msgid "Mississippi Acres Preserve"
+msgstr ""
+
+#: apc/config/reserve_names.json:37
+msgid "Revontuli Coast"
+msgstr ""
+
+#: apc/config/reserve_names.json:40
+msgid "New England Mountains"
+msgstr ""
 

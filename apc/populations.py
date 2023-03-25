@@ -4,7 +4,7 @@ from deca.ff_adf import Adf, AdfValue
 from apc import config
 from rich import print
 from apc.adf import ParsedAdfFile, load_reserve
-from apc.config import get_animal_fur_by_seed
+from apc.config import get_animal_fur_by_seed, get_species_name, get_reserve_name, get_level_name
 from apc.utils import format_key
 
 def _species(reserve_name: str, reserve_details: Adf, species: str) -> list:
@@ -40,11 +40,11 @@ def reserve_keys() -> list:
 
 def reserves(include_keys = False) -> list:
    keys = reserve_keys()
-   return [f"{config.RESERVES[r]['name']}{' (' + r + ')' if include_keys else ''}" for r in keys]
+   return [f"{get_reserve_name(r)}{' (' + r + ')' if include_keys else ''}" for r in keys]
 
 def species(reserve_name: str, include_keys = False) -> list:
    species_keys = config.RESERVES[reserve_name]["species"]
-   return [f"{format_key(s)}{' (' + s + ')' if include_keys else ''}" for s in species_keys]
+   return [f"{get_species_name(s)}{' (' + s + ')' if include_keys else ''}" for s in species_keys]
 
 def _get_populations(reserve_details: Adf) -> list:
   populations = reserve_details.table_instance_full_values[0].value["Populations"].value
@@ -85,18 +85,18 @@ def describe_animals(reserve_name: str, species: str, reserve_details: Adf, good
         is_diamond = animal.weight >= diamond_weight and animal.score >= diamond_score
         is_go = animal.go
         level = _find_animal_level(animal.weight, diamond_levels) if not is_go else 10
-        level_name = format_key(config.Levels(level).name)
+        level_name = get_level_name(config.Levels(level))
         
         if ((good and (is_diamond or is_go)) or not good):
           rows.append([
             f"{level_name}, {level}",
-            "M" if animal.gender is "male" else "F",
+            config.MALE if animal.gender == "male" else config.FEMALE,
             round(animal.weight,3),
             round(animal.score, 3),
             animal.visual_seed,
             get_animal_fur_by_seed(species, animal.gender, animal.visual_seed),
-            "yes" if is_diamond else "-",
-            "yes" if is_go else "-"
+            config.YES if is_diamond else "-",
+            config.YES if is_go else "-"
           ])
 
     rows.sort(key=lambda x: x[2], reverse=True)
@@ -125,7 +125,7 @@ def describe_reserve(reserve_name: str, reserve_details: Adf, include_species = 
       known_species = species in config.ANIMALS.keys()
       diamond_weight = config.ANIMALS[species]["diamonds"]["weight_low"] if known_species else config.HIGH_NUMBER
       diamond_score = config.ANIMALS[species]["diamonds"]["score_low"] if known_species else config.HIGH_NUMBER
-      species = format_key(species)
+      species = get_species_name(species)
       population_cnt += 1
 
       if verbose and diamond_score != config.HIGH_NUMBER:

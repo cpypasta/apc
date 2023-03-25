@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-25 02:50-0500\n"
+"POT-Creation-Date: 2023-03-25 14:06-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,369 +17,515 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: config/animal_details.json:4 config/animal_details.json:51
-#: config/animal_details.json:74 config/animal_details.json:105
-#: config/animal_details.json:136 config/animal_details.json:167
-#: config/animal_details.json:179 config/animal_details.json:235
-#: config/animal_details.json:258 config/animal_details.json:289
-#: config/animal_details.json:320 config/animal_details.json:351
-#: config/animal_details.json:412 config/animal_details.json:443
-#: config/animal_details.json:490 config/animal_details.json:521
-#: config/animal_details.json:552 config/animal_details.json:575
-#: config/animal_details.json:606 config/animal_details.json:653
-#: config/animal_details.json:676 config/animal_details.json:699
-#: config/animal_details.json:730 config/animal_details.json:753
-#: config/animal_details.json:776 config/animal_details.json:823
-#: config/animal_details.json:870 config/animal_details.json:893
-#: config/animal_details.json:916 config/animal_details.json:947
-#: config/animal_details.json:978 config/animal_details.json:1009
-#: config/animal_details.json:1040 config/animal_details.json:1063
-#: config/animal_details.json:1110 config/animal_details.json:1157
-#: config/animal_details.json:1188 config/animal_details.json:1211
-#: config/animal_details.json:1242 config/animal_details.json:1289
-#: config/animal_details.json:1312 config/animal_details.json:1335
-#: config/animal_details.json:1366 config/animal_details.json:1413
-#: config/animal_details.json:1436 config/animal_details.json:1467
-#: config/animal_details.json:1514 config/animal_details.json:1537
-#: config/animal_details.json:1584 config/animal_details.json:1598
-#: config/animal_details.json:1640 config/animal_details.json:1671
-#: config/animal_details.json:1694 config/animal_details.json:1725
-#: config/animal_details.json:1748 config/animal_details.json:1771
-#: config/animal_details.json:1802 config/animal_details.json:1833
-#: config/animal_details.json:1880 config/animal_details.json:1911
-#: config/animal_details.json:1958 config/animal_details.json:1967
-#: config/animal_details.json:2021 config/animal_details.json:2068
-#: config/animal_details.json:2099 config/animal_details.json:2122
-#: config/animal_details.json:2145 config/animal_details.json:2176
-#: config/animal_details.json:2199 config/animal_details.json:2230
-#: config/animal_details.json:2261 config/animal_details.json:2284
-#: config/animal_details.json:2307 config/animal_details.json:2354
-#: config/animal_details.json:2385 config/animal_details.json:2416
-#: config/animal_details.json:2447 config/animal_details.json:2470
-#: config/animal_details.json:2501 config/animal_details.json:2532
-#: config/animal_details.json:2579 config/animal_details.json:2602
-#: config/animal_details.json:2613 config/animal_details.json:2647
-#: config/animal_details.json:2678 config/animal_details.json:2701
-msgid "score_low"
+#: apc/config.py:90
+msgid "Trivial"
 msgstr ""
 
-#: config/animal_details.json:5 config/animal_details.json:52
-#: config/animal_details.json:75 config/animal_details.json:106
-#: config/animal_details.json:137 config/animal_details.json:168
-#: config/animal_details.json:180 config/animal_details.json:236
-#: config/animal_details.json:259 config/animal_details.json:290
-#: config/animal_details.json:321 config/animal_details.json:352
-#: config/animal_details.json:413 config/animal_details.json:444
-#: config/animal_details.json:491 config/animal_details.json:522
-#: config/animal_details.json:553 config/animal_details.json:576
-#: config/animal_details.json:607 config/animal_details.json:654
-#: config/animal_details.json:677 config/animal_details.json:700
-#: config/animal_details.json:731 config/animal_details.json:754
-#: config/animal_details.json:777 config/animal_details.json:824
-#: config/animal_details.json:871 config/animal_details.json:894
-#: config/animal_details.json:917 config/animal_details.json:948
-#: config/animal_details.json:979 config/animal_details.json:1010
-#: config/animal_details.json:1041 config/animal_details.json:1064
-#: config/animal_details.json:1111 config/animal_details.json:1158
-#: config/animal_details.json:1189 config/animal_details.json:1212
-#: config/animal_details.json:1243 config/animal_details.json:1290
-#: config/animal_details.json:1313 config/animal_details.json:1336
-#: config/animal_details.json:1367 config/animal_details.json:1414
-#: config/animal_details.json:1437 config/animal_details.json:1468
-#: config/animal_details.json:1515 config/animal_details.json:1538
-#: config/animal_details.json:1585 config/animal_details.json:1599
-#: config/animal_details.json:1641 config/animal_details.json:1672
-#: config/animal_details.json:1695 config/animal_details.json:1726
-#: config/animal_details.json:1749 config/animal_details.json:1772
-#: config/animal_details.json:1803 config/animal_details.json:1834
-#: config/animal_details.json:1881 config/animal_details.json:1912
-#: config/animal_details.json:1959 config/animal_details.json:1968
-#: config/animal_details.json:2022 config/animal_details.json:2069
-#: config/animal_details.json:2100 config/animal_details.json:2123
-#: config/animal_details.json:2146 config/animal_details.json:2177
-#: config/animal_details.json:2200 config/animal_details.json:2231
-#: config/animal_details.json:2262 config/animal_details.json:2285
-#: config/animal_details.json:2308 config/animal_details.json:2355
-#: config/animal_details.json:2386 config/animal_details.json:2417
-#: config/animal_details.json:2448 config/animal_details.json:2471
-#: config/animal_details.json:2502 config/animal_details.json:2533
-#: config/animal_details.json:2580 config/animal_details.json:2603
-#: config/animal_details.json:2614 config/animal_details.json:2648
-#: config/animal_details.json:2679 config/animal_details.json:2702
-msgid "score_high"
+#: apc/config.py:92
+msgid "Minor"
 msgstr ""
 
-#: config/animal_details.json:6 config/animal_details.json:53
-#: config/animal_details.json:76 config/animal_details.json:107
-#: config/animal_details.json:138 config/animal_details.json:169
-#: config/animal_details.json:181 config/animal_details.json:237
-#: config/animal_details.json:260 config/animal_details.json:291
-#: config/animal_details.json:322 config/animal_details.json:353
-#: config/animal_details.json:414 config/animal_details.json:445
-#: config/animal_details.json:492 config/animal_details.json:523
-#: config/animal_details.json:554 config/animal_details.json:577
-#: config/animal_details.json:608 config/animal_details.json:655
-#: config/animal_details.json:678 config/animal_details.json:701
-#: config/animal_details.json:732 config/animal_details.json:755
-#: config/animal_details.json:778 config/animal_details.json:825
-#: config/animal_details.json:872 config/animal_details.json:895
-#: config/animal_details.json:918 config/animal_details.json:949
-#: config/animal_details.json:980 config/animal_details.json:1011
-#: config/animal_details.json:1042 config/animal_details.json:1065
-#: config/animal_details.json:1112 config/animal_details.json:1159
-#: config/animal_details.json:1190 config/animal_details.json:1213
-#: config/animal_details.json:1244 config/animal_details.json:1291
-#: config/animal_details.json:1314 config/animal_details.json:1337
-#: config/animal_details.json:1368 config/animal_details.json:1415
-#: config/animal_details.json:1438 config/animal_details.json:1469
-#: config/animal_details.json:1516 config/animal_details.json:1539
-#: config/animal_details.json:1586 config/animal_details.json:1600
-#: config/animal_details.json:1642 config/animal_details.json:1673
-#: config/animal_details.json:1696 config/animal_details.json:1727
-#: config/animal_details.json:1750 config/animal_details.json:1773
-#: config/animal_details.json:1804 config/animal_details.json:1835
-#: config/animal_details.json:1882 config/animal_details.json:1913
-#: config/animal_details.json:1960 config/animal_details.json:1969
-#: config/animal_details.json:2023 config/animal_details.json:2070
-#: config/animal_details.json:2101 config/animal_details.json:2124
-#: config/animal_details.json:2147 config/animal_details.json:2178
-#: config/animal_details.json:2201 config/animal_details.json:2232
-#: config/animal_details.json:2263 config/animal_details.json:2286
-#: config/animal_details.json:2309 config/animal_details.json:2356
-#: config/animal_details.json:2387 config/animal_details.json:2418
-#: config/animal_details.json:2449 config/animal_details.json:2472
-#: config/animal_details.json:2503 config/animal_details.json:2534
-#: config/animal_details.json:2581 config/animal_details.json:2604
-#: config/animal_details.json:2615 config/animal_details.json:2649
-#: config/animal_details.json:2680 config/animal_details.json:2703
-msgid "weight_low"
+#: apc/config.py:94
+msgid "Very Easy"
 msgstr ""
 
-#: config/animal_details.json:7 config/animal_details.json:54
-#: config/animal_details.json:77 config/animal_details.json:108
-#: config/animal_details.json:139 config/animal_details.json:170
-#: config/animal_details.json:182 config/animal_details.json:238
-#: config/animal_details.json:261 config/animal_details.json:292
-#: config/animal_details.json:323 config/animal_details.json:354
-#: config/animal_details.json:415 config/animal_details.json:446
-#: config/animal_details.json:493 config/animal_details.json:524
-#: config/animal_details.json:555 config/animal_details.json:578
-#: config/animal_details.json:609 config/animal_details.json:656
-#: config/animal_details.json:679 config/animal_details.json:702
-#: config/animal_details.json:733 config/animal_details.json:756
-#: config/animal_details.json:779 config/animal_details.json:826
-#: config/animal_details.json:873 config/animal_details.json:896
-#: config/animal_details.json:919 config/animal_details.json:950
-#: config/animal_details.json:981 config/animal_details.json:1012
-#: config/animal_details.json:1043 config/animal_details.json:1066
-#: config/animal_details.json:1113 config/animal_details.json:1160
-#: config/animal_details.json:1191 config/animal_details.json:1214
-#: config/animal_details.json:1245 config/animal_details.json:1292
-#: config/animal_details.json:1315 config/animal_details.json:1338
-#: config/animal_details.json:1369 config/animal_details.json:1416
-#: config/animal_details.json:1439 config/animal_details.json:1470
-#: config/animal_details.json:1517 config/animal_details.json:1540
-#: config/animal_details.json:1587 config/animal_details.json:1601
-#: config/animal_details.json:1643 config/animal_details.json:1674
-#: config/animal_details.json:1697 config/animal_details.json:1728
-#: config/animal_details.json:1751 config/animal_details.json:1774
-#: config/animal_details.json:1805 config/animal_details.json:1836
-#: config/animal_details.json:1883 config/animal_details.json:1914
-#: config/animal_details.json:1961 config/animal_details.json:1970
-#: config/animal_details.json:2024 config/animal_details.json:2071
-#: config/animal_details.json:2102 config/animal_details.json:2125
-#: config/animal_details.json:2148 config/animal_details.json:2179
-#: config/animal_details.json:2202 config/animal_details.json:2233
-#: config/animal_details.json:2264 config/animal_details.json:2287
-#: config/animal_details.json:2310 config/animal_details.json:2357
-#: config/animal_details.json:2388 config/animal_details.json:2419
-#: config/animal_details.json:2450 config/animal_details.json:2473
-#: config/animal_details.json:2504 config/animal_details.json:2535
-#: config/animal_details.json:2582 config/animal_details.json:2605
-#: config/animal_details.json:2616 config/animal_details.json:2650
-#: config/animal_details.json:2681 config/animal_details.json:2704
-msgid "weight_high"
+#: apc/config.py:96
+msgid "Easy"
 msgstr ""
 
-#: config/animal_details.json:8 config/animal_details.json:55
-#: config/animal_details.json:78 config/animal_details.json:109
-#: config/animal_details.json:140 config/animal_details.json:239
-#: config/animal_details.json:262 config/animal_details.json:293
-#: config/animal_details.json:324 config/animal_details.json:416
-#: config/animal_details.json:447 config/animal_details.json:494
-#: config/animal_details.json:525 config/animal_details.json:556
-#: config/animal_details.json:579 config/animal_details.json:610
-#: config/animal_details.json:657 config/animal_details.json:680
-#: config/animal_details.json:703 config/animal_details.json:734
-#: config/animal_details.json:757 config/animal_details.json:780
-#: config/animal_details.json:827 config/animal_details.json:874
-#: config/animal_details.json:897 config/animal_details.json:920
-#: config/animal_details.json:951 config/animal_details.json:982
-#: config/animal_details.json:1013 config/animal_details.json:1044
-#: config/animal_details.json:1067 config/animal_details.json:1114
-#: config/animal_details.json:1161 config/animal_details.json:1192
-#: config/animal_details.json:1215 config/animal_details.json:1246
-#: config/animal_details.json:1293 config/animal_details.json:1316
-#: config/animal_details.json:1339 config/animal_details.json:1370
-#: config/animal_details.json:1417 config/animal_details.json:1440
-#: config/animal_details.json:1471 config/animal_details.json:1518
-#: config/animal_details.json:1541 config/animal_details.json:1644
-#: config/animal_details.json:1675 config/animal_details.json:1698
-#: config/animal_details.json:1729 config/animal_details.json:1752
-#: config/animal_details.json:1775 config/animal_details.json:1806
-#: config/animal_details.json:1837 config/animal_details.json:1884
-#: config/animal_details.json:1915 config/animal_details.json:2025
-#: config/animal_details.json:2072 config/animal_details.json:2103
-#: config/animal_details.json:2126 config/animal_details.json:2149
-#: config/animal_details.json:2180 config/animal_details.json:2203
-#: config/animal_details.json:2234 config/animal_details.json:2265
-#: config/animal_details.json:2288 config/animal_details.json:2311
-#: config/animal_details.json:2358 config/animal_details.json:2389
-#: config/animal_details.json:2420 config/animal_details.json:2451
-#: config/animal_details.json:2474 config/animal_details.json:2505
-#: config/animal_details.json:2536 config/animal_details.json:2583
-#: config/animal_details.json:2651 config/animal_details.json:2682
-#: config/animal_details.json:2705
-msgid "furs"
+#: apc/config.py:98
+msgid "Medium"
 msgstr ""
 
-#: config/animal_details.json:9 config/animal_details.json:56
-#: config/animal_details.json:79 config/animal_details.json:110
-#: config/animal_details.json:141 config/animal_details.json:193
-#: config/animal_details.json:240 config/animal_details.json:263
-#: config/animal_details.json:294 config/animal_details.json:325
-#: config/animal_details.json:370 config/animal_details.json:417
-#: config/animal_details.json:448 config/animal_details.json:495
-#: config/animal_details.json:526 config/animal_details.json:557
-#: config/animal_details.json:580 config/animal_details.json:611
-#: config/animal_details.json:658 config/animal_details.json:681
-#: config/animal_details.json:704 config/animal_details.json:735
-#: config/animal_details.json:758 config/animal_details.json:781
-#: config/animal_details.json:828 config/animal_details.json:875
-#: config/animal_details.json:898 config/animal_details.json:921
-#: config/animal_details.json:952 config/animal_details.json:983
-#: config/animal_details.json:1014 config/animal_details.json:1045
-#: config/animal_details.json:1068 config/animal_details.json:1115
-#: config/animal_details.json:1162 config/animal_details.json:1193
-#: config/animal_details.json:1216 config/animal_details.json:1247
-#: config/animal_details.json:1294 config/animal_details.json:1317
-#: config/animal_details.json:1340 config/animal_details.json:1371
-#: config/animal_details.json:1418 config/animal_details.json:1441
-#: config/animal_details.json:1472 config/animal_details.json:1519
-#: config/animal_details.json:1542 config/animal_details.json:1614
-#: config/animal_details.json:1645 config/animal_details.json:1676
-#: config/animal_details.json:1699 config/animal_details.json:1730
-#: config/animal_details.json:1753 config/animal_details.json:1776
-#: config/animal_details.json:1807 config/animal_details.json:1838
-#: config/animal_details.json:1885 config/animal_details.json:1916
-#: config/animal_details.json:1979 config/animal_details.json:2026
-#: config/animal_details.json:2073 config/animal_details.json:2104
-#: config/animal_details.json:2127 config/animal_details.json:2150
-#: config/animal_details.json:2181 config/animal_details.json:2204
-#: config/animal_details.json:2235 config/animal_details.json:2266
-#: config/animal_details.json:2289 config/animal_details.json:2312
-#: config/animal_details.json:2359 config/animal_details.json:2390
-#: config/animal_details.json:2421 config/animal_details.json:2452
-#: config/animal_details.json:2475 config/animal_details.json:2506
-#: config/animal_details.json:2537 config/animal_details.json:2584
-#: config/animal_details.json:2629 config/animal_details.json:2652
-#: config/animal_details.json:2683 config/animal_details.json:2706
-msgid "levels"
+#: apc/config.py:100
+msgid "Hard"
 msgstr ""
 
-#: config/animal_details.json:172
-msgid "fabled_glacier"
+#: apc/config.py:102
+msgid "Very Hard"
 msgstr ""
 
-#: config/animal_details.json:173
-msgid "fabled_chestnut"
+#: apc/config.py:104
+msgid "Mythical"
 msgstr ""
 
-#: config/animal_details.json:174
-msgid "fabled_cream"
+#: apc/config.py:106
+msgid "Legendary"
 msgstr ""
 
-#: config/animal_details.json:175 config/animal_details.json:1963
-msgid "fabled_spotted"
+#: apc/config.py:108 apc/config.py:126
+msgid "Great One"
 msgstr ""
 
-#: config/animal_details.json:185 config/animal_details.json:189
-msgid "cinnamon"
+#: apc/config.py:111
+msgid "Species"
 msgstr ""
 
-#: config/animal_details.json:186 config/animal_details.json:190
-#: config/animal_details.json:359 config/animal_details.json:2607
-msgid "brown"
+#: apc/config.py:112
+msgid "Animals"
 msgstr ""
 
-#: config/animal_details.json:357 config/animal_details.json:365
-msgid "blue"
+#: apc/config.py:113
+msgid "Male"
 msgstr ""
 
-#: config/animal_details.json:358 config/animal_details.json:366
-#: config/animal_details.json:1604 config/animal_details.json:1609
-#: config/animal_details.json:1976 config/animal_details.json:2620
-#: config/animal_details.json:2624
-msgid "melanistic"
+#: apc/config.py:114
+msgid "Males"
 msgstr ""
 
-#: config/animal_details.json:360 config/animal_details.json:2609
-msgid "tan"
+#: apc/config.py:115
+msgid "Female"
 msgstr ""
 
-#: config/animal_details.json:361
-msgid "gray"
+#: apc/config.py:116
+msgid "Females"
 msgstr ""
 
-#: config/animal_details.json:362
-msgid "red"
+#: apc/config.py:117
+msgid "High Weight"
 msgstr ""
 
-#: config/animal_details.json:367 config/animal_details.json:1606
-#: config/animal_details.json:1611 config/animal_details.json:2621
-#: config/animal_details.json:2625
-msgid "albino"
+#: apc/config.py:118
+msgid "High Score"
 msgstr ""
 
-#: config/animal_details.json:1589
-msgid "fabled_two_tone"
+#: apc/config.py:119
+msgid "Level"
 msgstr ""
 
-#: config/animal_details.json:1590
-msgid "fabled_birch"
+#: apc/config.py:120
+msgid "Gender"
 msgstr ""
 
-#: config/animal_details.json:1591
-msgid "fabled_oak"
+#: apc/config.py:121
+msgid "Weight"
 msgstr ""
 
-#: config/animal_details.json:1592
-msgid "fabled_speckled"
+#: apc/config.py:122
+msgid "Score"
 msgstr ""
 
-#: config/animal_details.json:1593
-msgid "fabled_spruce"
+#: apc/config.py:123
+msgid "Visual Seed"
 msgstr ""
 
-#: config/animal_details.json:1594
-msgid "fabled_ashen"
+#: apc/config.py:124
+msgid "Fur"
 msgstr ""
 
-#: config/animal_details.json:1605 config/animal_details.json:1610
-#: config/animal_details.json:1973 config/animal_details.json:2619
-#: config/animal_details.json:2626
-msgid "piebald"
+#: apc/config.py:125
+msgid "Diamond"
 msgstr ""
 
-#: config/animal_details.json:2608
-msgid "dark_brown"
+#: apc/config.py:127
+msgid "Summary"
 msgstr ""
 
-#: config/animal_names.json:2
-msgid "animal"
+#: apc/config.py:128
+msgid "Reserves"
 msgstr ""
 
-#: config/animal_names.json:2
-msgid "another time"
+#: apc/config.py:129
+msgid "Reserve Name (key)"
+msgstr ""
+
+#: apc/config.py:130
+msgid "Yes"
+msgstr ""
+
+#: apc/config.py:131
+msgid "Modded"
+msgstr ""
+
+#: apc/config.py:132
+msgid "Species (key)"
+msgstr ""
+
+#: apc/config.py:146
+msgid "animal_name"
+msgstr ""
+
+#: apc/config.py:149
+msgid "reserve_name"
+msgstr ""
+
+#: apc/config/animal_names.json:4
+msgid "American Alligator"
+msgstr ""
+
+#: apc/config/animal_names.json:7
+msgid "Antelope Jackrabbit"
+msgstr ""
+
+#: apc/config/animal_names.json:10
+msgid "Axis Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:13
+msgid "Beceite Ibex"
+msgstr ""
+
+#: apc/config/animal_names.json:16
+msgid "Bighorn Sheep"
+msgstr ""
+
+#: apc/config/animal_names.json:19
+msgid "Black Bear"
+msgstr ""
+
+#: apc/config/animal_names.json:22
+msgid "Black Grouse"
+msgstr ""
+
+#: apc/config/animal_names.json:25
+msgid "Blackbuck"
+msgstr ""
+
+#: apc/config/animal_names.json:28
+msgid "Blacktail Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:31
+msgid "Blue Wildebeest"
+msgstr ""
+
+#: apc/config/animal_names.json:34
+msgid "Bobcat"
+msgstr ""
+
+#: apc/config/animal_names.json:37
+msgid "Canada Goose"
+msgstr ""
+
+#: apc/config/animal_names.json:40
+msgid "Cape Buffalo"
+msgstr ""
+
+#: apc/config/animal_names.json:43
+msgid "Caribou"
+msgstr ""
+
+#: apc/config/animal_names.json:46
+msgid "Chamois"
+msgstr ""
+
+#: apc/config/animal_names.json:49
+msgid "Cinnamon Teal"
+msgstr ""
+
+#: apc/config/animal_names.json:52
+msgid "Collared Peccary"
+msgstr ""
+
+#: apc/config/animal_names.json:55
+msgid "Coyote"
+msgstr ""
+
+#: apc/config/animal_names.json:58
+msgid "Eastern Cottontail Rabbit"
+msgstr ""
+
+#: apc/config/animal_names.json:61
+msgid "Eastern Wild Turkey"
+msgstr ""
+
+#: apc/config/animal_names.json:64
+msgid "Eu Bison"
+msgstr ""
+
+#: apc/config/animal_names.json:67
+msgid "Eu Hare"
+msgstr ""
+
+#: apc/config/animal_names.json:70
+msgid "Eu Rabbit"
+msgstr ""
+
+#: apc/config/animal_names.json:73
+msgid "Eurasian Brown Bear"
+msgstr ""
+
+#: apc/config/animal_names.json:76
+msgid "Eurasian Lynx"
+msgstr ""
+
+#: apc/config/animal_names.json:79
+msgid "Eurasian Teal"
+msgstr ""
+
+#: apc/config/animal_names.json:82
+msgid "Eurasian Wigeon"
+msgstr ""
+
+#: apc/config/animal_names.json:85
+msgid "Fallow Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:88
+msgid "Feral Goat"
+msgstr ""
+
+#: apc/config/animal_names.json:91
+msgid "Feral Pig"
+msgstr ""
+
+#: apc/config/animal_names.json:94
+msgid "Gemsbok"
+msgstr ""
+
+#: apc/config/animal_names.json:97
+msgid "Goldeneye"
+msgstr ""
+
+#: apc/config/animal_names.json:100
+msgid "Gray Fox"
+msgstr ""
+
+#: apc/config/animal_names.json:103
+msgid "Gray Wolf"
+msgstr ""
+
+#: apc/config/animal_names.json:106
+msgid "Gredos Ibex"
+msgstr ""
+
+#: apc/config/animal_names.json:109
+msgid "Green Wing Teal"
+msgstr ""
+
+#: apc/config/animal_names.json:112
+msgid "Greylag Goose"
+msgstr ""
+
+#: apc/config/animal_names.json:115
+msgid "Grizzly Bear"
+msgstr ""
+
+#: apc/config/animal_names.json:118
+msgid "Harlequin Duck"
+msgstr ""
+
+#: apc/config/animal_names.json:121
+msgid "Hazel Grouse"
+msgstr ""
+
+#: apc/config/animal_names.json:124
+msgid "Iberian Mouflon"
+msgstr ""
+
+#: apc/config/animal_names.json:127
+msgid "Iberian Wolf"
+msgstr ""
+
+#: apc/config/animal_names.json:130
+msgid "Jackrabbit"
+msgstr ""
+
+#: apc/config/animal_names.json:133
+msgid "Lesser Kudu"
+msgstr ""
+
+#: apc/config/animal_names.json:136
+msgid "Lion"
+msgstr ""
+
+#: apc/config/animal_names.json:139
+msgid "Mallard"
+msgstr ""
+
+#: apc/config/animal_names.json:142
+msgid "Mexican Bobcat"
+msgstr ""
+
+#: apc/config/animal_names.json:145
+msgid "Moose"
+msgstr ""
+
+#: apc/config/animal_names.json:148
+msgid "Mountain Goat"
+msgstr ""
+
+#: apc/config/animal_names.json:151
+msgid "Mountain Hare"
+msgstr ""
+
+#: apc/config/animal_names.json:154
+msgid "Mule Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:157
+msgid "Northern Bobwhite Quail"
+msgstr ""
+
+#: apc/config/animal_names.json:160
+msgid "Pheasant"
+msgstr ""
+
+#: apc/config/animal_names.json:163
+msgid "Plains Bison"
+msgstr ""
+
+#: apc/config/animal_names.json:166
+msgid "Prong Horn"
+msgstr ""
+
+#: apc/config/animal_names.json:169
+msgid "Puma"
+msgstr ""
+
+#: apc/config/animal_names.json:172
+msgid "Raccoon"
+msgstr ""
+
+#: apc/config/animal_names.json:175
+msgid "Raccoon Dog"
+msgstr ""
+
+#: apc/config/animal_names.json:178
+msgid "Red Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:181
+msgid "Red Fox"
+msgstr ""
+
+#: apc/config/animal_names.json:184
+msgid "Reindeer"
+msgstr ""
+
+#: apc/config/animal_names.json:187
+msgid "Rio Grande Turkey"
+msgstr ""
+
+#: apc/config/animal_names.json:190
+msgid "Rock Ptarmigan"
+msgstr ""
+
+#: apc/config/animal_names.json:193
+msgid "Rockymountain Elk"
+msgstr ""
+
+#: apc/config/animal_names.json:196
+msgid "Roe Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:199
+msgid "Ronda Ibex"
+msgstr ""
+
+#: apc/config/animal_names.json:202
+msgid "Roosevelt Elk"
+msgstr ""
+
+#: apc/config/animal_names.json:205
+msgid "Scrub Hare"
+msgstr ""
+
+#: apc/config/animal_names.json:208
+msgid "Siberian Musk Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:211
+msgid "Sidestriped Jackal"
+msgstr ""
+
+#: apc/config/animal_names.json:214
+msgid "Sika Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:217
+msgid "Southeastern Ibex"
+msgstr ""
+
+#: apc/config/animal_names.json:220
+msgid "Springbok"
+msgstr ""
+
+#: apc/config/animal_names.json:223
+msgid "Tufted Duck"
+msgstr ""
+
+#: apc/config/animal_names.json:226
+msgid "Tundra Bean Goose"
+msgstr ""
+
+#: apc/config/animal_names.json:229
+msgid "Warthog"
+msgstr ""
+
+#: apc/config/animal_names.json:232
+msgid "Water Buffalo"
+msgstr ""
+
+#: apc/config/animal_names.json:235
+msgid "Western Capercaillie"
+msgstr ""
+
+#: apc/config/animal_names.json:238
+msgid "Whitetail Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:241
+msgid "Wild Boar"
+msgstr ""
+
+#: apc/config/animal_names.json:244
+msgid "Wild Turkey"
+msgstr ""
+
+#: apc/config/animal_names.json:247
+msgid "Willow Ptarmigan"
+msgstr ""
+
+#: apc/config/reserve_names.json:4
+msgid "Hirschfelden"
+msgstr ""
+
+#: apc/config/reserve_names.json:7
+msgid "Layton Lake"
+msgstr ""
+
+#: apc/config/reserve_names.json:10
+msgid "Medved-Taiga National Park"
+msgstr ""
+
+#: apc/config/reserve_names.json:13
+msgid "Vurhonga Savanna"
+msgstr ""
+
+#: apc/config/reserve_names.json:16
+msgid "Parque Fernando"
+msgstr ""
+
+#: apc/config/reserve_names.json:19
+msgid "Yukon Valley"
+msgstr ""
+
+#: apc/config/reserve_names.json:22
+msgid "Cuatro Colinas Game Reserve"
+msgstr ""
+
+#: apc/config/reserve_names.json:25
+msgid "Sivler Ridge Peaks"
+msgstr ""
+
+#: apc/config/reserve_names.json:28
+msgid "Te Awaroa National Park"
+msgstr ""
+
+#: apc/config/reserve_names.json:31
+msgid "Rancho del Arroyo"
+msgstr ""
+
+#: apc/config/reserve_names.json:34
+msgid "Mississippi Acres Preserve"
+msgstr ""
+
+#: apc/config/reserve_names.json:37
+msgid "Revontuli Coast"
+msgstr ""
+
+#: apc/config/reserve_names.json:40
+msgid "New England Mountains"
 msgstr ""
 

@@ -1,0 +1,215 @@
+{
+  "hirsch": {
+      "name": "Hirschfelden",
+      "index": 0,
+      "species": [
+        "wild_boar",
+        "eu_rabbit",
+        "fallow_deer",
+        "eu_bison",
+        "roe_deer",
+        "red_fox",
+        "pheasant",
+        "canada_goose",
+        "red_deer"
+      ]
+  },
+  "layton": {
+      "name": "Layton Lake",
+      "index": 1,
+      "species": [
+        "moose",
+        "jackrabbit",
+        "mallard",
+        "wild_turkey",
+        "black_bear",
+        "roosevelt_elk",
+        "coyote",
+        "blacktail_deer",
+        "whitetail_deer"
+      ]
+  },
+  "medved": {
+      "name": "Medved-Taiga National Park",
+      "index": 2,
+      "species": [
+        "siberian_musk_deer",
+        "moose",
+        "wild_boar",
+        "reindeer",
+        "eurasian_lynx",
+        "eurasian_brown_bear",
+        "western_capercaillie",
+        "gray_wolf"
+      ]
+  },
+  "vurhonga": {
+      "name": "Vurhonga Savanna",
+      "index": 3,
+      "species": [
+        "eurasian_wigeon",
+        "blue_wildebeest",
+        "sidestriped_jackal",
+        "gemsbok",
+        "lesser_kudu",
+        "scrub_hare",
+        "lion",
+        "warthog",
+        "cape_buffalo",
+        "springbok"
+      ]
+  },
+  "parque": {
+      "name": "Parque Fernando",
+      "index": 4,
+      "species": [
+        "red_deer",
+        "water_buffalo",
+        "puma",
+        "blackbuck",
+        "cinnamon_teal",
+        "collared_peccary",
+        "mule_deer",
+        "axis_deer"
+      ]
+  },
+  "yukon": {
+      "name": "Yukon Valley",
+      "index": 6,
+      "species": [
+        "harlequin_duck",
+        "moose",
+        "red_fox",
+        "caribou",
+        "canada_goose",
+        "grizzly_bear",
+        "gray_wolf",
+        "plains_bison"
+      ]
+  },
+  "cuatro": {
+      "name": "Cuatro Colinas Game Reserve",
+      "index": 8,
+      "species": [
+        "southeastern_ibex",
+        "iberian_wolf",
+        "red_deer",
+        "iberian_mouflon",
+        "wild_boar",
+        "beceite_ibex",
+        "eu_hare",
+        "roe_deer",
+        "ronda_ibex",
+        "pheasant",
+        "gredos_ibex"
+      ]
+  },
+  "silver": {
+      "name": "Sivler Ridge Peaks",
+      "index": 9,
+      "species": [
+        "prong_horn",
+        "puma",
+        "mountain_goat",
+        "bighorn_sheep",
+        "wild_turkey",
+        "black_bear",
+        "mule_deer",
+        "roosevelt_elk",
+        "plains_bison"
+      ]
+  },
+  "teawaroa": {
+      "name": "Te Awaroa National Park",
+      "index": 10,
+      "species": [
+        "red_deer",
+        "eu_rabbit",
+        "feral_pig",
+        "fallow_deer",
+        "chamois",
+        "mallard",
+        "wild_turkey",
+        "sika_deer",
+        "feral_goat"
+      ]
+  },
+  "rancho": {
+      "name": "Rancho del Arroyo",
+      "index": 11,
+      "species": [
+        "mexican_bobcat",
+        "rio_grande_turkey",
+        "prong_horn",
+        "bighorn_sheep",
+        "collared_peccary",
+        "antelope_jackrabbit",
+        "mule_deer",
+        "coyote",
+        "pheasant",
+        "whitetail_deer"
+      ]        
+  },
+  "mississippi": {
+      "name": "Mississippi Acres Preserve",
+      "index": 12,
+      "species": [
+        "warthog",
+        "raccoon",
+        "eastern_cottontail_rabbit",
+        "northern_bobwhite_quail",
+        "eastern_wild_turkey",
+        "gray_fox",
+        "black_bear",
+        "american_alligator",
+        "green_wing_teal",
+        "whitetail_deer"
+      ]        
+  },
+  "revontuli": {
+      "name": "Revontuli Coast",
+      "index": 13,
+      "species": [
+        "mallard",
+        "rock_ptarmigan",
+        "eurasian_wigeon",
+        "moose",
+        "goldeneye",
+        "puma",
+        "tufted_duck",
+        "black_grouse",
+        "tundra_bean_goose",
+        "willow_ptarmigan",
+        "eurasian_lynx",
+        "hazel_grouse",
+        "eurasian_brown_bear",
+        "eurasian_teal",
+        "western_capercaillie",
+        "raccoon_dog",
+        "greylag_goose",
+        "whitetail_deer",
+        "canada_goose"
+      ]        
+  },
+  "newengland": {
+      "name": "New England Mountains",
+      "index": 14,
+      "species": [
+        "mallard",
+        "moose",
+        "goldeneye",
+        "raccoon",
+        "eastern_cottontail_rabbit",
+        "northern_bobwhite_quail",
+        "eastern_wild_turkey",
+        "gray_fox",
+        "red_fox",
+        "black_bear",
+        "bobcat",
+        "coyote",
+        "pheasant",
+        "green_wing_teal",
+        "whitetail_deer"
+      ]        
+  }
+}

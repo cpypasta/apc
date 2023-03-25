@@ -8,8 +8,6 @@ from apc import __app_name__, t
 
 translate = t.gettext
 
-t.ngettext
-
 def _find_saves_path() -> str:
     steam_saves = Path().home() / "Documents/Avalanche Studios/COTW/Saves"
     epic_saves = Path().home() / "Documents/Avalanche Studios/Epic Games Store/COTW/Saves"
@@ -34,230 +32,17 @@ def _find_saves_path() -> str:
 
 APP_DIR_PATH = Path(getattr(sys, '_MEIPASS', Path(__file__).resolve().parent))
 DEFAULT_SAVE_PATH = _find_saves_path()
-SAVE_PATH = APP_DIR_PATH / "config/save_path.txt"
-ANIMAL_DETAILS_PATH = APP_DIR_PATH / "config/animal_details.json"
+CONFIG_PATH = APP_DIR_PATH / "config"
+SAVE_PATH = CONFIG_PATH / "save_path.txt"
 SAVE_PATH.parent.mkdir(exist_ok=True, parents=True)
 MOD_DIR_PATH = Path().cwd() / "mods"
 MOD_DIR_PATH.mkdir(exist_ok=True, parents=True)
 HIGH_NUMBER = 100000
 
-RESERVES = {
-    "hirsch": {
-        "name": "Hirschfelden",
-        "index": 0,
-        "species": [
-          "wild_boar",
-          "eu_rabbit",
-          "fallow_deer",
-          "eu_bison",
-          "roe_deer",
-          "red_fox",
-          "pheasant",
-          "canada_goose",
-          "red_deer"
-        ]
-    },
-    "layton": {
-        "name": "Layton Lake",
-        "index": 1,
-        "species": [
-          "moose",
-          "jackrabbit",
-          "mallard",
-          "wild_turkey",
-          "black_bear",
-          "roosevelt_elk",
-          "coyote",
-          "blacktail_deer",
-          "whitetail_deer"
-        ]
-    },
-    "medved": {
-        "name": "Medved-Taiga National Park",
-        "index": 2,
-        "species": [
-          "siberian_musk_deer",
-          "moose",
-          "wild_boar",
-          "reindeer",
-          "eurasian_lynx",
-          "eurasian_brown_bear",
-          "western_capercaillie",
-          "gray_wolf"
-        ]
-    },
-    "vurhonga": {
-        "name": "Vurhonga Savanna",
-        "index": 3,
-        "species": [
-          "eurasian_wigeon",
-          "blue_wildebeest",
-          "sidestriped_jackal",
-          "gemsbok",
-          "lesser_kudu",
-          "scrub_hare",
-          "lion",
-          "warthog",
-          "cape_buffalo",
-          "springbok"
-        ]
-    },
-    "parque": {
-        "name": "Parque Fernando",
-        "index": 4,
-        "species": [
-          "red_deer",
-          "water_buffalo",
-          "puma",
-          "blackbuck",
-          "cinnamon_teal",
-          "collared_peccary",
-          "mule_deer",
-          "axis_deer"
-        ]
-    },
-    "yukon": {
-        "name": "Yukon Valley",
-        "index": 6,
-        "species": [
-          "harlequin_duck",
-          "moose",
-          "red_fox",
-          "caribou",
-          "canada_goose",
-          "grizzly_bear",
-          "gray_wolf",
-          "plains_bison"
-        ]
-    },
-    "cuatro": {
-        "name": "Cuatro Colinas Game Reserve",
-        "index": 8,
-        "species": [
-          "southeastern_ibex",
-          "iberian_wolf",
-          "red_deer",
-          "iberian_mouflon",
-          "wild_boar",
-          "beceite_ibex",
-          "eu_hare",
-          "roe_deer",
-          "ronda_ibex",
-          "pheasant",
-          "gredos_ibex"
-        ]
-    },
-    "silver": {
-        "name": "Sivler Ridge Peaks",
-        "index": 9,
-        "species": [
-          "prong_horn",
-          "puma",
-          "mountain_goat",
-          "bighorn_sheep",
-          "wild_turkey",
-          "black_bear",
-          "mule_deer",
-          "roosevelt_elk",
-          "plains_bison"
-        ]
-    },
-    "teawaroa": {
-        "name": "Te Awaroa National Park",
-        "index": 10,
-        "species": [
-          "red_deer",
-          "eu_rabbit",
-          "feral_pig",
-          "fallow_deer",
-          "chamois",
-          "mallard",
-          "wild_turkey",
-          "sika_deer",
-          "feral_goat"
-        ]
-    },
-    "rancho": {
-        "name": "Rancho del Arroyo",
-        "index": 11,
-        "species": [
-          "mexican_bobcat",
-          "rio_grande_turkey",
-          "prong_horn",
-          "bighorn_sheep",
-          "collared_peccary",
-          "antelope_jackrabbit",
-          "mule_deer",
-          "coyote",
-          "pheasant",
-          "whitetail_deer"
-        ]        
-    },
-    "mississippi": {
-        "name": "Mississippi Acres Preserve",
-        "index": 12,
-        "species": [
-          "warthog",
-          "raccoon",
-          "eastern_cottontail_rabbit",
-          "northern_bobwhite_quail",
-          "eastern_wild_turkey",
-          "gray_fox",
-          "black_bear",
-          "american_alligator",
-          "green_wing_teal",
-          "whitetail_deer"
-        ]        
-    },
-    "revontuli": {
-        "name": "Revontuli Coast",
-        "index": 13,
-        "species": [
-          "mallard",
-          "rock_ptarmigan",
-          "eurasian_wigeon",
-          "moose",
-          "goldeneye",
-          "puma",
-          "tufted_duck",
-          "black_grouse",
-          "tundra_bean_goose",
-          "willow_ptarmigan",
-          "eurasian_lynx",
-          "hazel_grouse",
-          "eurasian_brown_bear",
-          "eurasian_teal",
-          "western_capercaillie",
-          "raccoon_dog",
-          "greylag_goose",
-          "whitetail_deer",
-          "canada_goose"
-        ]        
-    },
-    "newengland": {
-        "name": "New England Mountains",
-        "index": 14,
-        "species": [
-          "mallard",
-          "moose",
-          "goldeneye",
-          "raccoon",
-          "eastern_cottontail_rabbit",
-          "northern_bobwhite_quail",
-          "eastern_wild_turkey",
-          "gray_fox",
-          "red_fox",
-          "black_bear",
-          "bobcat",
-          "coyote",
-          "pheasant",
-          "green_wing_teal",
-          "whitetail_deer"
-        ]        
-    }
-}
-
-ANIMALS = json.load(ANIMAL_DETAILS_PATH.open())
+ANIMAL_NAMES = json.load((CONFIG_PATH / "animal_names.json").open())["animal_names"]
+RESERVE_NAMES = json.load((CONFIG_PATH / "reserve_names.json").open())["reserve_names"]
+RESERVES = json.load((CONFIG_PATH / "reserve_details.json").open())
+ANIMALS = json.load((CONFIG_PATH / "animal_details.json").open())
 
 class Reserve(str, Enum):
    hirsch = "hirsch"
@@ -283,8 +68,8 @@ class Strategy(str, Enum):
    diamond_some = "diamond-some"
 
 class GreatOnes(str, Enum):
-   moose = translate("moose")
-   black_bear = translate("black_bear")
+   moose = "moose"
+   black_bear = "black_bear"
    whitetail_deer = "whitetail_deer"
    red_deer = "red_deer"
 
@@ -299,6 +84,52 @@ class Levels(int, Enum):
   MYTHICAL = 8
   LEGENDARY = 9
   GREAT_ONE = 10
+  
+def get_level_name(level: Levels):
+  if level == Levels.TRIVIAL:
+   return translate("Trivial")
+  if level == Levels.MINOR:
+    return translate("Minor")
+  if level == Levels.VERY_EASY:
+    return translate("Very Easy")
+  if level == Levels.EASY:
+    return translate("Easy")
+  if level == Levels.MEDIUM:
+    return translate("Medium")
+  if level == Levels.HARD:
+    return translate("Hard")
+  if level == Levels.VERY_HARD:
+    return translate("Very Hard")
+  if level == Levels.MYTHICAL:
+    return translate("Mythical")
+  if level == Levels.LEGENDARY:
+    return translate("Legendary")
+  if level == Levels.GREAT_ONE:
+    return translate("Great One")
+  return None
+
+SPECIES = translate("Species")
+ANIMALS_TITLE = translate("Animals")
+MALE = translate("Male")
+MALES = translate("Males")
+FEMALE = translate("Female")
+FEMALES = translate("Females")
+HIGH_WEIGHT = translate("High Weight")
+HIGH_SCORE = translate("High Score")
+LEVEL = translate("Level")
+GENDER = translate("Gender")
+WEIGHT = translate("Weight")
+SCORE = translate("Score")
+VISUALSEED = translate("Visual Seed")
+FUR = translate("Fur")
+DIAMOND = translate("Diamond")
+GREATONE = translate("Great One")
+SUMMARY = translate("Summary")
+RESERVES_TITLE = translate("Reserves")
+RESERVE_NAME_KEY = translate("Reserve Name (key)")
+YES = translate("Yes")
+MODDED = translate("Modded")
+SPECIES_NAME_KEY = translate("Species (key)")
 
 def load_config(config_path: Path) -> int: 
   config_path.read_text()
@@ -311,8 +142,11 @@ def get_save_path() -> Path:
 def save_path(save_path_location: str) -> None:
   SAVE_PATH.write_text(save_path_location)
 
+def get_species_name(key: str) -> str:
+  return translate(ANIMAL_NAMES[key]["animal_name"])
+
 def get_reserve_name(key: str) -> str:
-    return RESERVES[key]["name"]
+    return translate(RESERVE_NAMES[key]["reserve_name"])
 
 def _get_fur(furs: dict, seed: int) -> str:
   try:

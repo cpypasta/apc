@@ -1,3 +1,250 @@
 {
-  "animal_names": ["animal", "another time"]
+  "animal_names": {
+    "american_alligator": {
+      "animal_name": "American Alligator"
+    },
+    "antelope_jackrabbit": {
+      "animal_name": "Antelope Jackrabbit"
+    },
+    "axis_deer": {
+      "animal_name": "Axis Deer"
+    },
+    "beceite_ibex": {
+      "animal_name": "Beceite Ibex"
+    },
+    "bighorn_sheep": {
+      "animal_name": "Bighorn Sheep"
+    },
+    "black_bear": {
+      "animal_name": "Black Bear"
+    },
+    "black_grouse": {
+      "animal_name": "Black Grouse"
+    },
+    "blackbuck": {
+      "animal_name": "Blackbuck"
+    },
+    "blacktail_deer": {
+      "animal_name": "Blacktail Deer"
+    },
+    "blue_wildebeest": {
+      "animal_name": "Blue Wildebeest"
+    },
+    "bobcat": {
+      "animal_name": "Bobcat"
+    },
+    "canada_goose": {
+      "animal_name": "Canada Goose"
+    },
+    "cape_buffalo": {
+      "animal_name": "Cape Buffalo"
+    },
+    "caribou": {
+      "animal_name": "Caribou"
+    },
+    "chamois": {
+      "animal_name": "Chamois"
+    },
+    "cinnamon_teal": {
+      "animal_name": "Cinnamon Teal"
+    },
+    "collared_peccary": {
+      "animal_name": "Collared Peccary"
+    },
+    "coyote": {
+      "animal_name": "Coyote"
+    },
+    "eastern_cottontail_rabbit": {
+      "animal_name": "Eastern Cottontail Rabbit"
+    },
+    "eastern_wild_turkey": {
+      "animal_name": "Eastern Wild Turkey"
+    },
+    "eu_bison": {
+      "animal_name": "Eu Bison"
+    },
+    "eu_hare": {
+      "animal_name": "Eu Hare"
+    },
+    "eu_rabbit": {
+      "animal_name": "Eu Rabbit"
+    },
+    "eurasian_brown_bear": {
+      "animal_name": "Eurasian Brown Bear"
+    },
+    "eurasian_lynx": {
+      "animal_name": "Eurasian Lynx"
+    },
+    "eurasian_teal": {
+      "animal_name": "Eurasian Teal"
+    },
+    "eurasian_wigeon": {
+      "animal_name": "Eurasian Wigeon"
+    },
+    "fallow_deer": {
+      "animal_name": "Fallow Deer"
+    },
+    "feral_goat": {
+      "animal_name": "Feral Goat"
+    },
+    "feral_pig": {
+      "animal_name": "Feral Pig"
+    },
+    "gemsbok": {
+      "animal_name": "Gemsbok"
+    },
+    "goldeneye": {
+      "animal_name": "Goldeneye"
+    },
+    "gray_fox": {
+      "animal_name": "Gray Fox"
+    },
+    "gray_wolf": {
+      "animal_name": "Gray Wolf"
+    },
+    "gredos_ibex": {
+      "animal_name": "Gredos Ibex"
+    },
+    "green_wing_teal": {
+      "animal_name": "Green Wing Teal"
+    },
+    "greylag_goose": {
+      "animal_name": "Greylag Goose"
+    },
+    "grizzly_bear": {
+      "animal_name": "Grizzly Bear"
+    },
+    "harlequin_duck": {
+      "animal_name": "Harlequin Duck"
+    },
+    "hazel_grouse": {
+      "animal_name": "Hazel Grouse"
+    },
+    "iberian_mouflon": {
+      "animal_name": "Iberian Mouflon"
+    },
+    "iberian_wolf": {
+      "animal_name": "Iberian Wolf"
+    },
+    "jackrabbit": {
+      "animal_name": "Jackrabbit"
+    },
+    "lesser_kudu": {
+      "animal_name": "Lesser Kudu"
+    },
+    "lion": {
+      "animal_name": "Lion"
+    },
+    "mallard": {
+      "animal_name": "Mallard"
+    },
+    "mexican_bobcat": {
+      "animal_name": "Mexican Bobcat"
+    },
+    "moose": {
+      "animal_name": "Moose"
+    },
+    "mountain_goat": {
+      "animal_name": "Mountain Goat"
+    },
+    "mountain_hare": {
+      "animal_name": "Mountain Hare"
+    },
+    "mule_deer": {
+      "animal_name": "Mule Deer"
+    },
+    "northern_bobwhite_quail": {
+      "animal_name": "Northern Bobwhite Quail"
+    },
+    "pheasant": {
+      "animal_name": "Pheasant"
+    },
+    "plains_bison": {
+      "animal_name": "Plains Bison"
+    },
+    "prong_horn": {
+      "animal_name": "Prong Horn"
+    },
+    "puma": {
+      "animal_name": "Puma"
+    },
+    "raccoon": {
+      "animal_name": "Raccoon"
+    },
+    "raccoon_dog": {
+      "animal_name": "Raccoon Dog"
+    },
+    "red_deer": {
+      "animal_name": "Red Deer"
+    },
+    "red_fox": {
+      "animal_name": "Red Fox"
+    },
+    "reindeer": {
+      "animal_name": "Reindeer"
+    },
+    "rio_grande_turkey": {
+      "animal_name": "Rio Grande Turkey"
+    },
+    "rock_ptarmigan": {
+      "animal_name": "Rock Ptarmigan"
+    },
+    "rockymountain_elk": {
+      "animal_name": "Rockymountain Elk"
+    },
+    "roe_deer": {
+      "animal_name": "Roe Deer"
+    },
+    "ronda_ibex": {
+      "animal_name": "Ronda Ibex"
+    },
+    "roosevelt_elk": {
+      "animal_name": "Roosevelt Elk"
+    },
+    "scrub_hare": {
+      "animal_name": "Scrub Hare"
+    },
+    "siberian_musk_deer": {
+      "animal_name": "Siberian Musk Deer"
+    },
+    "sidestriped_jackal": {
+      "animal_name": "Sidestriped Jackal"
+    },
+    "sika_deer": {
+      "animal_name": "Sika Deer"
+    },
+    "southeastern_ibex": {
+      "animal_name": "Southeastern Ibex"
+    },
+    "springbok": {
+      "animal_name": "Springbok"
+    },
+    "tufted_duck": {
+      "animal_name": "Tufted Duck"
+    },
+    "tundra_bean_goose": {
+      "animal_name": "Tundra Bean Goose"
+    },
+    "warthog": {
+      "animal_name": "Warthog"
+    },
+    "water_buffalo": {
+      "animal_name": "Water Buffalo"
+    },
+    "western_capercaillie": {
+      "animal_name": "Western Capercaillie"
+    },
+    "whitetail_deer": {
+      "animal_name": "Whitetail Deer"
+    },
+    "wild_boar": {
+      "animal_name": "Wild Boar"
+    },
+    "wild_turkey": {
+      "animal_name": "Wild Turkey"
+    },
+    "willow_ptarmigan": {
+      "animal_name": "Willow Ptarmigan"
+    }
+  }
 }

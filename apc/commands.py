@@ -18,68 +18,68 @@ def _highlight_animal_highs(species_description: list) -> None:
   diamond_col = 5
   go_col = 6
   for row in species_description:
-    is_diamond = True if row[diamond_col] == "yes" else False
-    is_go = True if row[go_col] == "yes" else False
+    is_diamond = True if row[diamond_col] == config.YES else False
+    is_go = True if row[go_col] == config.YES else False
     if is_go > 0:
-      row[go_col] = f":boom: [bold red]yes[/bold red]"
+      row[go_col] = f":boom: [bold red]{config.YES}[/bold red]"
       row[diamond_col] = "-"
     elif is_diamond:
-      row[diamond_col] = f"[bold yellow]yes[/bold yellow]"
+      row[diamond_col] = f"[bold yellow]{config.YES}[/bold yellow]"
       
 def _create_reserve_table(reserve_name: str, reserve_description: list, modded: bool = False) -> Table:
   reserve_name = config.get_reserve_name(reserve_name)
-  title = f"[green]{reserve_name} Summary[/green]"
+  title = f"[green]{reserve_name} {config.SUMMARY}[/green]"
   table = Table(
-    title=f"{title} [yellow](modded)[/yellow]" if modded else title, 
+    title=f"{title} [yellow]({config.MODDED})[/yellow]" if modded else title, 
     row_styles=["dim", ""]
   )
-  table.add_column("Species")
-  table.add_column("Animals", justify="right")
-  table.add_column("Males", justify="right")
-  table.add_column("Females", justify="right")
-  table.add_column("High Weight", justify="right")
-  table.add_column("High Score", justify="right")
-  table.add_column("Diamonds", justify="right")
-  table.add_column("GOs", justify="right")
+  table.add_column(config.SPECIES)
+  table.add_column(config.ANIMALS_TITLE, justify="right")
+  table.add_column(config.MALES, justify="right")
+  table.add_column(config.FEMALES, justify="right")
+  table.add_column(config.HIGH_WEIGHT, justify="right")
+  table.add_column(config.HIGH_SCORE, justify="right")
+  table.add_column(config.DIAMOND, justify="right")
+  table.add_column(config.GREATONE, justify="right")
   _highlight_reserve_highs(reserve_description)
   return utils.list_to_table(reserve_description, table)  
 
 def _create_animals_table(reserve_name: str, species: str, species_description: list, modded: bool = False) -> Table:
   reserve_name = config.get_reserve_name(reserve_name)
-  species_name = utils.format_key(species)
-  title = f"[green]{species_name} at {reserve_name}[/green]"
+  species_name = config.get_species_name(species)
+  title = f"[green]{species_name} @ {reserve_name}[/green]"
   table = Table(
     title=f"{title} [yellow](modded)[/yellow]" if modded else title, 
     row_styles=["dim", ""]
   )
-  table.add_column("Level",  justify="right")
-  table.add_column("Gender")
-  table.add_column("Weight", justify="right")
-  table.add_column("Score", justify="right")
-  table.add_column("Visual Seed", justify="right")
-  table.add_column("Fur")
-  table.add_column("Diamond")
-  table.add_column("GO")
+  table.add_column(config.LEVEL,  justify="right")
+  table.add_column(config.GENDER)
+  table.add_column(config.WEIGHT, justify="right")
+  table.add_column(config.SCORE, justify="right")
+  table.add_column(config.VISUALSEED, justify="right")
+  table.add_column(config.FUR)
+  table.add_column(config.DIAMOND)
+  table.add_column(config.GREATONE)
   _highlight_animal_highs(species_description)
   return utils.list_to_table(species_description, table)  
 
 def reserves() -> Table:
   reserve_names = [[reserve_name] for reserve_name in populations.reserves(True)]
   table = Table(
-    title=f"[green]Reserves[/green]", 
+    title=f"[green]{config.RESERVES_TITLE}[/green]", 
     row_styles=["dim", ""]
   )
-  table.add_column("Reserve Name (key)")
+  table.add_column(config.RESERVE_NAME_KEY)
 
   return utils.list_to_table(reserve_names, table)
 
 def species(reserve_name: str) -> Table:
   species = [[species_name] for species_name in populations.species(reserve_name, True)]
   table = Table(
-    title=f"[green]{config.get_reserve_name(reserve_name)} Species[/green]", 
+    title=f"[green]{config.get_reserve_name(reserve_name)} {config.SPECIES}[/green]", 
     row_styles=["dim", ""]
   )
-  table.add_column("Species (key)")
+  table.add_column(config.SPECIES_NAME_KEY)
 
   return utils.list_to_table(species, table)
 

@@ -1,5 +1,7 @@
 import struct
+import json
 from rich.table import Table
+from pathlib import Path
 
 def list_to_table(
     data: list,
@@ -28,3 +30,27 @@ def format_key(key: str) -> str:
 def unformat_key(value: str) -> str:
   parts = value.lower().split(" ")
   return "_".join(parts)
+
+def extract_animal_names(path: Path) -> dict:
+  data = json.load(path.open())
+  names = {}
+  for animal in data.keys():
+    names[animal] = { "animal_name": format_key(animal) }
+  return {
+    "animal_names": names
+  }
+  
+def extract_reserve_names(path: Path) -> dict:
+  data = json.load(path.open())
+  names = {}
+  for reserve in data.keys():
+    names[reserve] = { "reserve_name": data[reserve]["name"] }
+  return {
+    "reserve_names": names
+  }  
+
+if __name__ == "__main__":
+  names = extract_animal_names(Path().cwd() / "config/animal_details.json")
+  Path(Path().cwd() / "config/animal_names.json").write_text(json.dumps(names, indent=2))  
+  names = extract_reserve_names(Path().cwd() / "config/reserve_details.json")
+  Path(Path().cwd() / "config/reserve_names.json").write_text(json.dumps(names, indent=2))
