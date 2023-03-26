@@ -48,9 +48,17 @@ def extract_reserve_names(path: Path) -> dict:
   return {
     "reserve_names": names
   }  
+  
+def bad_scores(path: Path) -> None:
+  data = json.load(path.open())
+  for animal_key in data.keys():
+    animal = data[animal_key]
+    if animal["diamonds"]["score_low"] > animal["diamonds"]["score_high"]:
+      print(animal_key, animal)
 
 if __name__ == "__main__":
-  names = extract_animal_names(Path().cwd() / "config/animal_details.json")
-  Path(Path().cwd() / "config/animal_names.json").write_text(json.dumps(names, indent=2))  
-  names = extract_reserve_names(Path().cwd() / "config/reserve_details.json")
-  Path(Path().cwd() / "config/reserve_names.json").write_text(json.dumps(names, indent=2))
+  # names = extract_animal_names(Path().cwd() / "config/animal_details.json")
+  # Path(Path().cwd() / "config/animal_names.json").write_text(json.dumps(names, indent=2))  
+  # names = extract_reserve_names(Path().cwd() / "config/reserve_details.json")
+  # Path(Path().cwd() / "config/reserve_names.json").write_text(json.dumps(names, indent=2))
+  bad_scores(Path().cwd() / "config/animal_details.json")

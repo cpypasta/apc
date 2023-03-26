@@ -23,7 +23,7 @@ def _random_choice(choices):
    return random.choice(_dict_values(choices))
 
 class Animal:
-    def __init__(self, details: AdfValue) -> None:
+    def __init__(self, details: AdfValue, species: str) -> None:
       gender = "male" if details.value["Gender"].value == 1 else "female"
       self.gender = gender
       self.weight = float(details.value["Weight"].value)
@@ -34,9 +34,19 @@ class Animal:
       self.score_offset = details.value["Score"].data_offset
       self.go_offset = details.value["IsGreatOne"].data_offset
       self.visual_seed_offset = details.value["VisualVariationSeed"].data_offset
+      self.gender_offset = details.value["Gender"].data_offset
+      self.species = species
             
     def __repr__(self) -> str:
-      return f"({self.gender}, {self.weight}, {self.score}, {self.go}, {self.visual_seed})"
+      return str({ 
+        "species": self.species,
+        "gender": self.gender, 
+        "weight": self.weight, 
+        "score": self.score, 
+        "go": self.go, 
+        "seed": self.visual_seed,
+        "score_offset": self.score_offset
+      })
 
 def reserve_keys() -> list:
   return list(dict.keys(config.RESERVES))
@@ -61,7 +71,16 @@ def _find_animal_level(weight: float, levels: list) -> int:
       level = value_i + 1
   return level
 
-def find_animals(species: str, modded = False, good = False, verbose = False) -> list:
+def _is_go(animal: Animal) -> bool:
+  return animal.gender == "male" and animal.go
+
+def _is_diamond(animal: Animal) -> bool:
+  known_species = config.valid_species(animal.species)
+  diamond_config = config.ANIMALS[animal.species]["diamonds"]
+  diamond_score = diamond_config["score_low"] if known_species else config.HIGH_NUMBER
+  return animal.score >= diamond_score  
+
+def find_animals(species: str, modded = False, good = False, verbose = False, top: bool = False) -> list:
   reserves = reserve_keys()
   animals = []
   for reserve in reserves:
@@ -69,9 +88,10 @@ def find_animals(species: str, modded = False, good = False, verbose = False) ->
       reserve_details = adf.load_reserve(reserve, modded)
       reserve_animals = describe_animals(reserve, species, reserve_details.adf, good, verbose)
       animals.extend(reserve_animals)  
-  return sorted(animals, key = lambda x : x[4], reverse=True)
+  animals = sorted(animals, key = lambda x : x[4], reverse=True)
+  return animals[:10] if top else animals
 
-def describe_animals(reserve_name: str, species: str, reserve_details: Adf, good = False, verbose = False) -> list:
+def describe_animals(reserve_name: str, species: str, reserve_details: Adf, good = False, verbose = False, top: bool = False) -> list:
     populations = _get_populations(reserve_details)
     population = populations[get_reserve(reserve_name)["species"].index(species)]
     groups = population.value["Groups"].value
@@ -94,9 +114,9 @@ def describe_animals(reserve_name: str, species: str, reserve_details: Adf, good
       animals = group.value["Animals"].value
 
       for animal in animals:
-        animal = Animal(animal)
-        is_diamond = animal.weight >= diamond_weight and animal.score >= diamond_score
-        is_go = animal.go
+        animal = Animal(animal, species)
+        is_diamond = _is_diamond(animal)
+        is_go = _is_go(animal)
         level = _find_animal_level(animal.weight, diamond_levels) if not is_go else 10
         level_name = get_level_name(config.Levels(level))
         
@@ -113,8 +133,8 @@ def describe_animals(reserve_name: str, species: str, reserve_details: Adf, good
             config.YES if is_go else "-"
           ])
 
-    rows.sort(key=lambda x: x[2], reverse=True)
-    return rows 
+    rows.sort(key=lambda x: x[4], reverse=True)
+    return rows[:10] if top else rows 
 
 def describe_reserve(reserve_name: str, reserve_details: Adf, include_species = True, verbose = False) -> list:
     populations = _get_populations(reserve_details)
@@ -152,7 +172,7 @@ def describe_reserve(reserve_name: str, reserve_details: Adf, include_species = 
         total_cnt += group_animal_cnt
 
         for animal in animals:
-          animal = Animal(animal)
+          animal = Animal(animal, species)
 
           if animal.gender == "male":
             male_cnt += 1
@@ -182,15 +202,15 @@ def describe_reserve(reserve_name: str, reserve_details: Adf, include_species = 
 
     return rows
 
-def _get_males_not_go(groups: list) -> list:
-  male_animals = []
+def _get_eligible_animals(groups: list, species: str, gender: str = "male") -> list:
+  eligible_animals = []
   for group in groups:
     animals = group.value["Animals"].value  
     for animal in animals:
-      animal = Animal(animal)
-      if (animal.gender == "male" and not animal.go):
-        male_animals.append(animal)
-  return male_animals
+      animal = Animal(animal, species)
+      if (animal.gender == gender and not (_is_diamond(animal) or _is_go(animal))):
+        eligible_animals.append(animal)
+  return eligible_animals
 
 def _create_go(animal: Animal, go_config: dict, data: bytearray, fur: int = None) -> None:
   new_weight = _random_float(go_config["weight_low"], go_config["weight_high"])
@@ -214,29 +234,32 @@ def _create_diamond(animal: Animal, species_config: dict, data: bytearray, rares
   if visual_seed and (rares or fur):
     update_uint(data, animal.visual_seed_offset, visual_seed)
 
-def _process_all(species_config: dict, groups: list, reserve_data: bytearray, cb: callable, kwargs = {}) -> None:
-  male_animals = _get_males_not_go(groups)
-  for animal in male_animals:
+def _create_male(animal: Animal, _config: dict, data: bytearray) -> None:
+  update_uint(data, animal.gender_offset, 1)
+
+def _process_all(species: str, species_config: dict, groups: list, reserve_data: bytearray, cb: callable, kwargs = {}) -> None:
+  animals = _get_eligible_animals(groups, species)
+  for animal in animals:
     cb(animal, species_config, reserve_data, **kwargs)
 
 def _go_all(species: str, groups: list, reserve_data: bytearray) -> None:
   go_config = config.ANIMALS[species]["go"]
-  _process_all(go_config, groups, reserve_data, _create_go)
+  _process_all(species, go_config, groups, reserve_data, _create_go)
 
 def _diamond_all(species: str, groups: list, reserve_data: bytearray, rares: bool = False) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
-  _process_all(species_config, groups, reserve_data, _create_diamond, { "rares": rares })
+  _process_all(species, species_config, groups, reserve_data, _create_diamond, { "rares": rares })
 
-def _process_furs(species_config: dict, furs: list, groups: list, reserve_data: bytearray, cb: callable) -> None:
-  male_animals = _get_males_not_go(groups)
-  chosen_animals = random.sample(male_animals, k = len(furs))
+def _process_furs(species, species_config: dict, furs: list, groups: list, reserve_data: bytearray, cb: callable) -> None:
+  eligible_animals = _get_eligible_animals(groups, species)  
+  chosen_animals = random.sample(eligible_animals, k = len(furs))
   for animal_i, animal in enumerate(chosen_animals):
     cb(animal, species_config, reserve_data, fur = furs[animal_i])  
 
 def _go_furs(species: str, groups: list, reserve_data: bytearray) -> None:
   go_config = config.ANIMALS[species]["go"]
   go_furs = _dict_values(go_config["furs"])
-  _process_furs(go_config, go_furs, groups, reserve_data, _create_go)
+  _process_furs(species, go_config, go_furs, groups, reserve_data, _create_go)
 
 def _diamond_furs(species: str, groups: list, reserve_data: bytearray) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
@@ -244,24 +267,30 @@ def _diamond_furs(species: str, groups: list, reserve_data: bytearray) -> None:
     diamond_furs = _dict_values(species_config["furs"]["male"])
   else:
     raise Exception("Furs have not been loaded for this species yet.")
-  _process_furs(species_config, diamond_furs, groups, reserve_data, _create_diamond)
+  _process_furs(species, species_config, diamond_furs, groups, reserve_data, _create_diamond)
 
-def _process_some(species_config: dict, groups: list, reserve_data: bytearray, percent: int, cb: callable, kwargs = {}) -> None:
-  male_animals = _get_males_not_go(groups)
-  animal_cnt = round((percent / 100) * len(male_animals))
-  chosen_animals = random.sample(male_animals, k = animal_cnt)
+def _process_some(species, species_config: dict, groups: list, reserve_data: bytearray, modifier: int, percentage: bool, cb: callable, kwargs: dict = {}, gender: str = "male") -> None:
+  eligible_animals = _get_eligible_animals(groups, species, gender=gender)
+  if percentage:
+    animal_cnt = round((modifier / 100) * len(eligible_animals))
+  else:
+    animal_cnt = modifier
+  chosen_animals = random.sample(eligible_animals, k = animal_cnt)
   for animal in chosen_animals:
     cb(animal, species_config, reserve_data, **kwargs)
 
-def _go_some(species: str, groups: list, reserve_data: bytearray, percent: int) -> None:
+def _go_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False) -> None:
   go_config = config.ANIMALS[species]["go"]
-  _process_some(go_config, groups, reserve_data, percent, _create_go)
+  _process_some(species, go_config, groups, reserve_data, modifier, percentage, _create_go)
 
-def _diamond_some(species: str, groups: list, reserve_data: bytearray, percent: int, rares: bool = False) -> None:
+def _diamond_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False, rares: bool = False) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
-  _process_some(species_config, groups, reserve_data, percent, _create_diamond, { "rares": rares })
+  _process_some(species, species_config, groups, reserve_data, modifier, percentage, _create_diamond, { "rares": rares })
+
+def _male_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False) -> None:
+  _process_some(species, {}, groups, reserve_data, modifier, percentage, _create_male, gender = "female")  
   
-def mod(reserve_name: str, reserve_details: ParsedAdfFile, species: str, strategy: str, modifier: int = None, rares: bool = False, verbose = False):
+def mod(reserve_name: str, reserve_details: ParsedAdfFile, species: str, strategy: str, modifier: int = None, percentage: bool = False, rares: bool = False, verbose = False):
   species_details = _species(reserve_name, reserve_details.adf, species)
   groups = species_details.value["Groups"].value
   species_name = format_key(species)
@@ -269,22 +298,27 @@ def mod(reserve_name: str, reserve_details: ParsedAdfFile, species: str, strateg
 
   if (strategy == config.Strategy.go_all):
     _go_all(species, groups, reserve_data)
-    print(f"[green]All {species_name} males are now Great Ones![/green]")
+    print(f"[green]All {species_name} are now Great Ones![/green]")
   elif (strategy == config.Strategy.go_furs):
     _go_furs(species, groups, reserve_data)
     print(f"[green]All {species_name} Great One furs have been added![/green]")
   elif (strategy == config.Strategy.go_some):
-    _go_some(species, groups, reserve_data, modifier)
-    print(f"[green]All {modifier}% of male {species_name} are now Great Ones![/green]")
+    _go_some(species, groups, reserve_data, modifier, percentage)
+    print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now Great Ones![/green]")
   elif (strategy == config.Strategy.diamond_all):
     _diamond_all(species, groups, reserve_data, rares)
-    print(f"[green]All {species_name} males are now Diamonds![/green]")  
+    print(f"[green]All {species_name} are now Diamonds![/green]")  
   elif (strategy == config.Strategy.diamond_furs):
     _diamond_furs(species, groups, reserve_data)
-    print(f"[green]All {species_name} males are now Diamonds![/green]")
+    print(f"[green]All {species_name} are now Diamonds![/green]")
   elif (strategy == config.Strategy.diamond_some):
-    _diamond_some(species, groups, reserve_data, modifier, rares)
-    print(f"[green]All {modifier}% of male {species_name} are now Diamonds![/green]")    
+    _diamond_some(species, groups, reserve_data, modifier, percentage, rares)
+    print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now Diamonds![/green]")  
+  elif (strategy == config.Strategy.males):
+    _male_some(species, groups, reserve_data, modifier, percentage)
+    print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now males![/green]")  
+  else:
+    print(f"[red]Unknown strategy: {strategy}")  
 
   reserve_details.decompressed.save(config.MOD_DIR_PATH, verbose=verbose)
   return describe_reserve(reserve_name, load_reserve(reserve_name, True, verbose=verbose).adf, verbose=verbose)

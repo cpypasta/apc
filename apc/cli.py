@@ -51,7 +51,8 @@ def animals(
    species: str = typer.Argument(..., help="Animal species to see"),
    reserve_name: Optional[config.Reserve] = typer.Option(None, "--reserve-name", "-r", help="Provide a reserve to use"), 
    good: Optional[bool] = typer.Option(False, "--good", "-g", help="Only show diamonds and GOs"),
-   modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
+   modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve"),
+   top: Optional[bool] = typer.Option(False, "--top", "-t", help="Show top 10 only")
 ) -> None:
   if not config.valid_species(species):
     _show_species_error(species)
@@ -61,9 +62,9 @@ def animals(
     return    
   try:
     if reserve_name:
-      animal_details = commands.describe_animals(reserve_name, species, good, modded, state["verbose"])
+      animal_details = commands.describe_animals(reserve_name, species, good, modded, state["verbose"], top)
     else:
-      animal_details = commands.find_animals(species, good, modded, state["verbose"])
+      animal_details = commands.find_animals(species, good, modded, state["verbose"], top)
     console.print(animal_details)
   except FileNotFound as ex:
      _show_filenotfound(ex)
@@ -78,9 +79,10 @@ def mod(
    reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch), 
    species: str = typer.Argument(...),
    strategy: config.Strategy = typer.Argument(...),
-   modifier: int = typer.Argument(None, help="used to modify strategy; usually a percentage", min=1, max=100),
+   modifier: int = typer.Argument(None, help="used to modify strategy", min=1, max=100),
    rares: Optional[bool] = typer.Option(False, "--rares", "-r", help="Include rare and super rare furs"),
-   modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve")
+   modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve"),
+   percentage: Optional[bool] = typer.Option(False, "--percent", "-p", help="Treat modifier as a percentage")
 ) -> None:
   if not config.valid_species(species):
     _show_species_error(species)
@@ -89,7 +91,7 @@ def mod(
     _show_species_reserve_error(species, reserve_name)
     return    
   try:
-    mod_result = commands.mod(reserve_name, species, strategy, modifier, rares, modded, state["verbose"])
+    mod_result = commands.mod(reserve_name, species, strategy, modifier, percentage, rares, modded, state["verbose"])
     print(f"[yellow]You can find the modded file at: {config.MOD_DIR_PATH}[/yellow]")
     print()
     console.print(mod_result)

@@ -30,13 +30,9 @@ class ParsedAdfFile():
         self.decompressed = decompressed
         self.adf = adf
 
-def __get_population_file_name(reserve: str):
-    index = config.RESERVES[reserve]["index"]
-    return f"animal_population_{index}"
-
 def _get_file_name(reserve: str, mod: bool):
     save_path = config.MOD_DIR_PATH if mod else config.get_save_path()
-    filename = save_path / __get_population_file_name(reserve)
+    filename = save_path / config.get_population_file_name(reserve)
     if not filename.exists():
         raise FileNotFound(f'{filename} does not exist')
     return filename

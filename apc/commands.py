@@ -92,23 +92,23 @@ def describe_reserve(reserve_name: str, modded: bool, include_species = True, ve
   reserve_description = populations.describe_reserve(reserve_name, reserve_details.adf, include_species, verbose=verbose)
   return _create_reserve_table(reserve_name, reserve_description, modded)
 
-def describe_animals(reserve_name: str, species: str, good: bool = False, modded: bool = False, verbose = False) -> Table:
+def describe_animals(reserve_name: str, species: str, good: bool = False, modded: bool = False, verbose: bool = False, top: bool = False) -> Table:
   reserve_details = adf.load_reserve(reserve_name, modded, verbose=verbose)
-  species_description = populations.describe_animals(reserve_name, species, reserve_details.adf, good, verbose=verbose)
+  species_description = populations.describe_animals(reserve_name, species, reserve_details.adf, good, verbose=verbose, top=top)
   return _create_animals_table(species, species_description, reserve_name=reserve_name, modded=modded)
 
-def find_animals(species: str, good: bool = False, modded: bool = False, verbose = False) -> Table:
-  species_description = populations.find_animals(species, good=good, modded=modded, verbose=verbose)
+def find_animals(species: str, good: bool = False, modded: bool = False, verbose = False, top: bool = False) -> Table:
+  species_description = populations.find_animals(species, good=good, modded=modded, verbose=verbose, top=top)
   return _create_animals_table(species, species_description, modded=modded)
 
-def mod(reserve_name: str, species: str, strategy: str, modifier: int = None, rares: bool = False, modded: bool = False, verbose = False) -> Table:
+def mod(reserve_name: str, species: str, strategy: str, modifier: int = None, percentage: bool = False, rares: bool = False, modded: bool = False, verbose = False) -> Table:
   if verbose:
     if modded:
       print("[yellow]Using existing modded file to mod...[/yellow]")
     if rares:
       print("[yellow]Will use rare fur types when modding...[/yellow]")
   reserve_details = adf.load_reserve(reserve_name, modded, verbose=verbose)
-  reserve_description = populations.mod(reserve_name, reserve_details, species, strategy, modifier, rares, verbose=verbose)
+  reserve_description = populations.mod(reserve_name, reserve_details, species, strategy, modifier, percentage, rares, verbose=verbose)
   return _create_reserve_table(reserve_name, reserve_description, True)
 
 def parse(filename: str, verbose = False) -> None:

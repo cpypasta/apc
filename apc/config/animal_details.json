@@ -750,8 +750,8 @@
   },
   "eu_rabbit": {
     "diamonds": {
-      "score_low": 19.62,
-      "score_high": 2.6,
+      "score_low": 2.6,
+      "score_high": 19.62,
       "weight_low": 2.505,
       "weight_high": 2.6,
       "furs": {},
@@ -867,8 +867,8 @@
   },
   "eurasian_teal": {
     "diamonds": {
-      "score_low": 905,
-      "score_high": 360.0,
+      "score_low": 360,
+      "score_high": 905,
       "weight_low": 0.348,
       "weight_high": 0.36,
       "furs": {},

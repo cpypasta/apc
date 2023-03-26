@@ -73,6 +73,7 @@ class Strategy(str, Enum):
    diamond_all = "diamond-all"
    diamond_furs = "diamond-furs"
    diamond_some = "diamond-some"
+   males = "males"
 
 class GreatOnes(str, Enum):
    moose = "moose"
@@ -190,3 +191,7 @@ def valid_species(species: str) -> bool:
 
 def valid_go_species(species: str) -> bool:
     return species in GreatOnes.__members__
+  
+def get_population_file_name(reserve: str):
+    index = RESERVES[reserve]["index"]
+    return f"animal_population_{index}"
