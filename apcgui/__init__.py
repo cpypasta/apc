@@ -11,7 +11,7 @@ if env_language:
   use_languages = env_language.split(':')
 else:
   use_languages = [default_locale]
-tgui = gettext.translation("apcgui", localedir=LOCALE_PATH, languages=use_languages)
+tgui = gettext.translation("apcgui", localedir=LOCALE_PATH, languages=["en_US"])
 
 __app_name__ = "apcgui"
-__version__ = "0.3.0"
+__version__ = "0.3.1"

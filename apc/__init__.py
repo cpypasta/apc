@@ -11,7 +11,7 @@ if env_language:
   use_languages = env_language.split(':')
 else:
   use_languages = [default_locale]
-t = gettext.translation("apc", localedir=LOCALE_PATH, languages=[default_locale])
+t = gettext.translation("apc", localedir=LOCALE_PATH, languages=["en_US"])
 
 __app_name__ = "apc"
-__version__ = "0.3.0"
+__version__ = "0.3.1"

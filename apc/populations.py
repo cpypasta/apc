@@ -54,10 +54,10 @@ def _get_populations(reserve_details: Adf) -> list:
   return [p for p in populations if len(p.value["Groups"].value) > 0]
 
 def _find_animal_level(weight: float, levels: list) -> int:
-  level = 1
+  level = 1  
   for value_i, value in enumerate(levels):
-    low_bound, high_bound = value
-    if weight <= high_bound and weight > low_bound:
+    low_bound, high_bound = value  
+    if weight <= round(high_bound) and weight > low_bound:
       level = value_i + 1
   return level
 

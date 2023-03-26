@@ -10,12 +10,19 @@ translate = t.gettext
 
 def _find_saves_path() -> str:
     steam_saves = Path().home() / "Documents/Avalanche Studios/COTW/Saves"
+    steam_onedrive = Path().home() / "/OneDrive/Documents/Avalanche Studios/COTW/Saves"
     epic_saves = Path().home() / "Documents/Avalanche Studios/Epic Games Store/COTW/Saves"
+    epic_onedrive = Path().home() / "/OneDrive/Documents/Avalanche Studios/Epic Games Store/COTW/Saves"
+    
     base_saves = None
     if steam_saves.exists():
       base_saves = steam_saves
     elif epic_saves.exists():
       base_saves = epic_saves
+    elif steam_onedrive.exists():
+      base_saves = steam_onedrive
+    elif epic_onedrive.exists():
+      base_saves = epic_onedrive      
 
     save_folder = None
     if base_saves:
