@@ -1,0 +1,2 @@
+include apc/config/*.json
+include apc/locale/*/LC_MESSAGES/apc.mo

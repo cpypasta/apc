@@ -2,6 +2,7 @@ import struct
 import json
 from rich.table import Table
 from pathlib import Path
+from apc import populations
 
 def list_to_table(
     data: list,
@@ -55,10 +56,14 @@ def bad_scores(path: Path) -> None:
     animal = data[animal_key]
     if animal["diamonds"]["score_low"] > animal["diamonds"]["score_high"]:
       print(animal_key, animal)
+      
+def seed_animals() -> None:
+  input("press any key to continue...")
 
 if __name__ == "__main__":
   # names = extract_animal_names(Path().cwd() / "config/animal_details.json")
   # Path(Path().cwd() / "config/animal_names.json").write_text(json.dumps(names, indent=2))  
   # names = extract_reserve_names(Path().cwd() / "config/reserve_details.json")
   # Path(Path().cwd() / "config/reserve_names.json").write_text(json.dumps(names, indent=2))
-  bad_scores(Path().cwd() / "config/animal_details.json")
+  # bad_scores(Path().cwd() / "config/animal_details.json")
+  seed_animals()
