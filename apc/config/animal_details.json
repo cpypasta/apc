@@ -869,9 +869,9 @@
   },
   "eurasian_teal": {
     "diamonds": {
-      "score_low": 360,
-      "score_high": 905,
-      "weight_low": 0.348,
+      "score_low": 354,
+      "score_high": 360,
+      "weight_low": 0.32,
       "weight_high": 0.36,
       "furs": {},
       "levels": [
@@ -885,7 +885,7 @@
         ],
         [
           0.348,
-          0.35
+          0.36
         ]
       ]
     }
@@ -1008,6 +1008,7 @@
   },
   "gemsbok": {
     "diamonds": {
+      "gender": "both",
       "score_low": 337.59,
       "score_high": 358.0,
       "weight_low": 228.791,
@@ -1062,6 +1063,7 @@
   },
   "gray_fox": {
     "diamonds": {
+      "gender": "both",
       "score_low": 6.43,
       "score_high": 6.8,
       "weight_low": 6.421,
@@ -1725,6 +1727,7 @@
   },
   "northern_bobwhite_quail": {
     "diamonds": {
+      "gender": "both",
       "score_low": 238,
       "score_high": 250.0,
       "weight_low": 0.234,
@@ -1741,7 +1744,7 @@
         ],
         [
           0.234,
-          0.24
+          0.25
         ]
       ]
     }

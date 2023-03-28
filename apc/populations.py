@@ -84,7 +84,7 @@ def _is_diamond(animal: Animal) -> bool:
   diamond_config = config.ANIMALS[animal.species]["diamonds"]
   diamond_score = diamond_config["score_low"] if known_species else config.HIGH_NUMBER
   diamond_gender = _diamond_gender(diamond_config)
-  return animal.score >= diamond_score and animal.gender == diamond_gender
+  return animal.score >= diamond_score and (animal.gender == diamond_gender or diamond_gender == "both")
 
 def find_animals(species: str, modded = False, good = False, verbose = False, top: bool = False) -> list:
   reserves = reserve_keys()
@@ -214,8 +214,9 @@ def _get_eligible_animals(groups: list, species: str, gender: str = "male") -> l
     animals = group.value["Animals"].value  
     for animal in animals:
       animal = Animal(animal, species)
-      if (animal.gender == gender and not (_is_diamond(animal) or _is_go(animal))):
-        eligible_animals.append(animal)
+      if (not (_is_diamond(animal) or _is_go(animal))):
+        if animal.gender == gender or gender == "both":
+          eligible_animals.append(animal)
   return eligible_animals
 
 def _create_go(animal: Animal, go_config: dict, data: bytearray, fur: int = None) -> None:

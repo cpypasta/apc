@@ -111,6 +111,8 @@ def _show_reserve_description(window: sg.Window) -> None:
     window["mod_tab"].select()
     window["explore_tab"].update(disabled=False)    
     window["reserve_note"].update("")
+    window["load_mod"].update(disabled=True)
+    window["unload_mod"].update(disabled=True)    
 
 def _show_mod_list(window: sg.Window) -> None:
   window["reserve_description"].update(visible=False)
@@ -118,12 +120,18 @@ def _show_mod_list(window: sg.Window) -> None:
   window["show_reserve"].update(visible=True)
   window["mod_tab"].update(disabled=True)
   window["explore_tab"].update(disabled=True)
+  window["load_mod"].update(disabled=True)
+  window["unload_mod"].update(disabled=True)
   
 
 def _viewing_modded(window: sg.Window) -> bool:
   return window['reserve_warning'].get() == VIEW_MODDED  
 
+def _is_male_enabled(window: sg.Window, value: int) -> bool:
+  return not window["male_value"].Disabled and value != 0 
+
 def _is_diamond_enabled(window: sg.Window, value: int) -> bool:
+  print(window["diamonds"].Disabled, value)
   return not window["diamonds"].Disabled and value != 0
 
 def _is_go_enabled(window: sg.Window, value: int) -> bool:
@@ -159,8 +167,7 @@ def _mod(reserve_key: str, species: str, strategy: Strategy, window: sg.Window, 
   window["reserve_note"].update(f"{format_key(species).upper()} ({strategy}) Saved: \"{MOD_DIR_PATH / get_population_file_name(reserve_key)}\"")
   window["progress"].update(100)
   time.sleep(PROGRESS_DELAY)
-  window["progress"].update(0)
-  _disable_new_reserve(window)
+  window["progress"].update(0)  
   window["show_animals"].update(disabled=True)
   window["update_animals"].update(disabled=True)
 
@@ -174,7 +181,9 @@ def _list_mods(window: sg.Window) -> List[List[str]]:
   for item in items:
     item_path = MOD_DIR_PATH / item.name
     if item.is_file() and file_format.match(item.name):
-      mods.append([get_population_name(item.name), item_path])
+      already_loaded = (BACKUP_DIR_PATH / item.name).exists()
+      already_loaded = "Yes" if already_loaded else "-"
+      mods.append([get_population_name(item.name), already_loaded, item_path])
   return mods
 
 def _copy_file(filename: Path, destination: Path) -> None:
@@ -196,9 +205,10 @@ def _load_mod(window: sg.Window, filename: Path) -> None:
       _show_warning(window, f"failed to load mod {filename}")
       return    
     _progress(window, 100)
-    window["reserve_note"].update("Mod has been loaded")
+    sg.PopupOK("Mod has been loaded", font=DEFAULT_FONT, icon=logo.value, title="Mod Loaded")
     time.sleep(PROGRESS_DELAY)
   except Exception:
+    print(traceback.format_exc())
     _show_warning(window, "failed to load mod")    
   _progress(window, 0)
 
@@ -210,16 +220,34 @@ def _unload_mod(window: sg.Window, filename: Path) -> None:
     if not backup_file.exists():
       _show_warning(window, f"{backup_file} does not exist")
       return
-    game_path = _copy_file(backup_file, game_path)
+    game_path = _copy_file(backup_file, game_path)    
     if not game_path:
       _show_warning(window, f"failed to load backup file to {game_path}")
       return
+    _progress(window, 50)
+    os.remove(backup_file)
     _progress(window, 100)
-    window["reserve_note"].update("Mod has been unloaded")
+    sg.PopupOK("Mod has been unloaded", font=DEFAULT_FONT, icon=logo.value, title="Mod Unloaded")
     time.sleep(PROGRESS_DELAY)
   except Exception:
+    print(traceback.format_exc())
     _show_warning(window, f"failed to unload mod")    
   _progress(window, 0)
+
+def _process_list_mods(window: sg.Window, reserve_name: str = None) -> list:
+  _show_mod_list(window)
+  window["progress"].update(30)
+  mods = _list_mods(window)
+  window["progress"].update(60)
+  window["mod_list"].update(mods)
+  if reserve_name:
+    for mod_i, mod in enumerate(mods):
+      if mod[0] == reserve_name:
+        window["mod_list"].update(select_rows=[mod_i])
+  window["progress"].update(100)
+  time.sleep(PROGRESS_DELAY)
+  window["progress"].update(0)
+  return mods 
 
 def main():
     sg.theme("DarkAmber")
@@ -278,16 +306,16 @@ def main():
             ),
             sg.Table(
               [], 
-              ["Reserve", "Modded File"],
+              ["Reserve", "Loaded", "Modded File"],
               font=MEDIUM_FONT, 
               header_background_color="brown",              
               expand_x=True, 
               expand_y=True, 
               k="mod_list", 
-              col_widths=[15,50],
+              col_widths=[17, 4, 50],
               auto_size_columns=False,
               visible=False,
-              cols_justification=("l", "l"),
+              cols_justification=("l", "c", "l"),
               enable_click_events=True
             )
           ],
@@ -300,9 +328,9 @@ def main():
               sg.Tab("Mod", [
                 [sg.T(" ", font="_ 3", p=(0,0))],
                 [sg.Column([
+                  [sg.T("Males:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="male_value")],
                   [sg.T("Great Ones"+":", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="go_value")],
-                  [sg.T("Diamonds:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="diamond_value")],
-                  [sg.T("Males:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="male_value")]
+                  [sg.T("Diamonds:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="diamond_value")]
                 ] , expand_x=True)],
                 [sg.Checkbox("include rare furs", k="furs", font=MEDIUM_FONT, tooltip="Will include rare furs if available")],
                 [sg.Checkbox("update by percentage", k="by_percentage", font=MEDIUM_FONT, tooltip="Use numbers provided above as percentage of animals")],
@@ -342,7 +370,7 @@ def main():
 
     while True:
         event, values = window.read()
-        # print(event, values)
+        print(event, values)
 
         if event == sg.WIN_CLOSED:
             break 
@@ -391,7 +419,7 @@ def main():
               if row != None and row >= 0:
                 selected_mod = mods[row]
                 window["load_mod"].update(disabled=False)
-                window["unload_mod"].update(disabled=False)
+                window["unload_mod"].update(disabled=selected_mod[1] != "Yes")                
           elif event == "set_save":
             provided_path = sg.popup_get_folder("Select the folder where the game saves your files:", title="Saves Path", icon=logo.value, font=DEFAULT_FONT)
             if provided_path:
@@ -429,21 +457,20 @@ def main():
             diamond_value = int(values["diamond_value"]) if values["diamond_value"].isdigit() else 0
             male_value = int(values["male_value"]) if values["male_value"].isdigit() else 0
             use_percent = values["by_percentage"]
-            go_strategy = Strategy.go_all if go_value == 100 else Strategy.go_some
-            diamond_strategy = Strategy.diamond_all if diamond_value == 100 else Strategy.diamond_some
+            go_strategy = Strategy.go_all if (go_value == 100 and use_percent) else Strategy.go_some
+            diamond_strategy = Strategy.diamond_all if (diamond_value == 100 and use_percent) else Strategy.diamond_some
             
-            if male_value:
+            if _is_male_enabled(window, male_value):
+              print("modding males")
               _mod(reserve_key, species, Strategy.males, window, male_value, False, use_percent)
-              window["male_value"].update("0")
-            elif _is_diamond_enabled(window, diamond_value) and _is_go_enabled(window, go_value):            
-              _mod(reserve_key, species, go_strategy, window, go_value, use_rares, use_percent)
-              _mod(reserve_key, species, diamond_strategy, window, diamond_value, use_rares, use_percent)        
-            elif _is_diamond_enabled(window, diamond_value):
-              _mod(reserve_key, species, diamond_strategy, window, diamond_value, use_rares, use_percent)        
-            elif _is_go_enabled(window, go_value):
+              window["male_value"].update("0")                                 
+            if _is_go_enabled(window, go_value):
+              print("modding go")
               _mod(reserve_key, species, go_strategy, window, go_value, use_rares, use_percent)        
-            else:
-              print("neither dimaond or go is enabled")
+            if _is_diamond_enabled(window, diamond_value):
+              print("modding diamonds")
+              _mod(reserve_key, species, diamond_strategy, window, diamond_value, use_rares, use_percent)                    
+            _disable_new_reserve(window)
           elif event == "great_ones":
             _mod(reserve_key, species, Strategy.go_furs, window, 0, True, False)             
           elif event == "diamonds":
@@ -451,20 +478,15 @@ def main():
           elif event == "load_modded":
             window["modded_reserves"].update(values["load_modded"])  
           elif event == "list_mods":
-            _show_mod_list(window)
-            window["progress"].update(30)
-            mods = _list_mods(window)
-            window["progress"].update(60)            
-            window["mod_list"].update(mods)
-            window["progress"].update(100)
-            time.sleep(PROGRESS_DELAY)
-            window["progress"].update(0)  
+            mods = _process_list_mods(window, reserve_name)
           elif event == "load_mod":
             confirm = sg.PopupOKCancel(f"Are you sure you want to overwrite your {selected_mod[0]} game file with the modded one? \n\nDon't worry, a backup copy will be made.\n", title="Confirmation", icon=logo.value, font=DEFAULT_FONT)
             if confirm == "OK":
-              _load_mod(window, selected_mod[1])
+              _load_mod(window, selected_mod[2])
+              mods = _process_list_mods(window)
           elif event == "unload_mod":
-            _unload_mod(window, selected_mod[1])
+            _unload_mod(window, selected_mod[2])
+            mods = _process_list_mods(window)
             
         except Exception:
           _show_error_window(traceback.format_exc())
