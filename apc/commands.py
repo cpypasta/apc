@@ -77,8 +77,8 @@ def reserves() -> Table:
 
   return utils.list_to_table(reserve_names, table)
 
-def species(reserve_name: str) -> Table:
-  species = [[species_name] for species_name in populations.species(reserve_name, True)]
+def species_key(reserve_name: str) -> Table:
+  species = [[species_name] for species_name in populations.species_key(reserve_name, True)]
   table = Table(
     title=f"[green]{config.get_reserve_name(reserve_name)} {config.SPECIES}[/green]", 
     row_styles=["dim", ""]

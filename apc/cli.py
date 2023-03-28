@@ -70,8 +70,8 @@ def animals(
      _show_filenotfound(ex)
 
 @app.command(help="Shows all the species found at a reserve")
-def species(reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch)) -> None:
-  species = commands.species(reserve_name)
+def species_key(reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch)) -> None:
+  species = commands.species_key(reserve_name)
   console.print(species)
 
 @app.command(help="Modify the animals for a specific reserve and species")

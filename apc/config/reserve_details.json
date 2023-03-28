@@ -107,6 +107,9 @@
   "silver": {
       "name": "Sivler Ridge Peaks",
       "index": 9,
+      "renames": {
+        "puma": "mountain_lion"
+      },
       "species": [
         "prong_horn",
         "puma",
@@ -115,7 +118,7 @@
         "wild_turkey",
         "black_bear",
         "mule_deer",
-        "roosevelt_elk",
+        "rockymountain_elk",
         "plains_bison"
       ]
   },
@@ -153,8 +156,11 @@
   "mississippi": {
       "name": "Mississippi Acres Preserve",
       "index": 12,
+      "renames": {
+        "feral_pig": "wild_hog"
+      },
       "species": [
-        "warthog",
+        "feral_pig",
         "raccoon",
         "eastern_cottontail_rabbit",
         "northern_bobwhite_quail",
@@ -175,7 +181,7 @@
         "eurasian_wigeon",
         "moose",
         "goldeneye",
-        "puma",
+        "mountain_hare",
         "tufted_duck",
         "black_grouse",
         "tundra_bean_goose",

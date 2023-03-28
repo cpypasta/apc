@@ -29,6 +29,7 @@ def format_key(key: str) -> str:
   key = [s.capitalize() for s in key.split("_")]
   return " ".join(key)
 
+# TODO: all people calling this should stop and call config
 def unformat_key(value: str) -> str:
   parts = value.lower().split(" ")
   return "_".join(parts)

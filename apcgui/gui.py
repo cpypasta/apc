@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 import sys, traceback, time
 from apc import populations, adf
-from apc.config import valid_go_species, Strategy, MOD_DIR_PATH, save_path, get_save_path, get_population_file_name
+from apc.config import valid_go_species, Strategy, MOD_DIR_PATH, save_path, get_save_path, get_population_file_name, get_reserve_species_key
 from apcgui import __version__, logo, tgui, use_languages
 from apc.utils import unformat_key, format_key
 
@@ -83,7 +83,7 @@ def _disable_new_reserve(window: sg.Window) -> None:
   window["update_animals"].update(disabled=True)
 
 def _reserve_key_from_name(name: str) -> str:
-  return reserve_keys[reserve_names.index(name)]   
+  return reserve_keys[reserve_names.index(name)]  # TODO: won't work when translations come
 
 def _show_species_description(window: sg.Window, species_name: str) -> None:
     window["reserve_description"].update(visible=False)
@@ -270,7 +270,7 @@ def main():
               if row != None and row >= 0:
                 window["update_animals"].update(disabled=False)
                 species_name = reserve_description[row][0] if reserve_description else ""
-                species = unformat_key(species_name)
+                species = get_reserve_species_key(species_name, reserve_key)
                 print(f"species clicked: {species}")
                 _disable_diamonds(window, True)
                 _disable_go(window, True)

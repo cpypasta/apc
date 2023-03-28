@@ -150,6 +150,9 @@
     "mountain_hare": {
       "animal_name": "Mountain Hare"
     },
+    "mountain_lion": {
+      "animal_name": "Mountain Lion"
+    },    
     "mule_deer": {
       "animal_name": "Mule Deer"
     },
@@ -240,6 +243,9 @@
     "wild_boar": {
       "animal_name": "Wild Boar"
     },
+    "wild_hog": {
+      "animal_name": "Wild Hog"
+    },    
     "wild_turkey": {
       "animal_name": "Wild Turkey"
     },

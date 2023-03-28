@@ -151,9 +151,35 @@ def get_save_path() -> Path:
 def save_path(save_path_location: str) -> None:
   SAVE_PATH.write_text(save_path_location)
 
+def get_reserve_species_renames(reserve_key: str) -> dict:
+  reserve = get_reserve(reserve_key)
+  return reserve["renames"] if "renames" in reserve else {}
+
 def get_species_name(key: str) -> str:
   return translate(ANIMAL_NAMES[key]["animal_name"])
 
+def get_species_key(species_name: str) -> str:
+  for animal_name_key, names in ANIMAL_NAMES.items():
+    if names["animal_name"] == species_name:
+      return animal_name_key
+  return None
+
+def get_reserve_species_name(species_key: str, reserve_key: str) -> str:
+  renames = get_reserve_species_renames(reserve_key)
+  species_key = renames[species_key] if species_key in renames else species_key
+  return get_species_name(species_key)
+
+def get_reserve_species_key(species_name: str, reserve_key: str) -> str:
+  reserve = get_reserve(reserve_key)
+  species_key = get_species_key(species_name)
+  if species_key in reserve["species"]:
+    return species_key
+  renames = get_reserve_species_renames(reserve_key)
+  for name, rename in renames.items():
+    if rename == species_key:
+      return name
+  return None    
+  
 def get_reserve_name(key: str) -> str:
   return translate(RESERVE_NAMES[key]["reserve_name"])
 

@@ -650,6 +650,7 @@
   },
   "eastern_cottontail_rabbit": {
     "diamonds": {
+      "gender": "female",
       "score_low": 1.97,
       "score_high": 2.1,
       "weight_low": 2.026,
@@ -727,6 +728,7 @@
   },
   "eu_hare": {
     "diamonds": {
+      "gender": "female",
       "score_low": 6.5,
       "score_high": 7.0,
       "weight_low": 6.74,
@@ -750,8 +752,8 @@
   },
   "eu_rabbit": {
     "diamonds": {
-      "score_low": 2.6,
-      "score_high": 19.62,
+      "score_low": 2.4,
+      "score_high": 2.6,
       "weight_low": 2.505,
       "weight_high": 2.6,
       "furs": {},
@@ -1668,6 +1670,7 @@
   },
   "mountain_hare": {
     "diamonds": {
+      "gender": "female",
       "score_low": 5.6,
       "score_high": 6.0,
       "weight_low": 5.79,
@@ -2258,6 +2261,7 @@
   },
   "scrub_hare": {
     "diamonds": {
+      "gender": "female",
       "score_low": 5.37,
       "score_high": 5.8,
       "weight_low": 5.576,
