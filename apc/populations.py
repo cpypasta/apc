@@ -125,8 +125,8 @@ def describe_animals(reserve_name: str, species: str, reserve_details: Adf, good
             get_reserve_name(reserve_name),
             f"{level_name}, {level}",
             config.MALE if animal.gender == "male" else config.FEMALE,
-            round(animal.weight,3),
-            round(animal.score, 3),
+            round(animal.weight,2),
+            round(animal.score, 2),
             animal.visual_seed,
             get_animal_fur_by_seed(species, animal.gender, animal.visual_seed),
             config.YES if is_diamond and not is_go else "-",
@@ -194,8 +194,8 @@ def describe_reserve(reserve_name: str, reserve_details: Adf, include_species = 
         animal_cnt,
         male_cnt,
         female_cnt,
-        round(population_high_weight, 3), 
-        round(population_high_score, 3),
+        round(population_high_weight, 2), 
+        round(population_high_score, 2),
         diamond_cnt,
         go_cnt
       ])
@@ -249,6 +249,22 @@ def _go_all(species: str, groups: list, reserve_data: bytearray) -> None:
 def _diamond_all(species: str, groups: list, reserve_data: bytearray, rares: bool = False) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
   _process_all(species, species_config, groups, reserve_data, _create_diamond, { "rares": rares })
+
+def diamond_test_seed(species: str, groups: list, data: bytearray, seed: int) -> None:
+  eligible_animals = []
+  for group in groups:
+    animals = group.value["Animals"].value  
+    for animal in animals:
+      animal = Animal(animal, species)
+      eligible_animals.append(animal)
+        
+  for animal in eligible_animals:
+    update_float(data, animal.weight_offset, seed)
+    update_float(data, animal.score_offset, seed / 10000)
+    update_uint(data, animal.visual_seed_offset, seed)
+    update_uint(data, animal.gender_offset, 1)
+    seed += 1
+  return seed
 
 def _process_furs(species, species_config: dict, furs: list, groups: list, reserve_data: bytearray, cb: callable) -> None:
   eligible_animals = _get_eligible_animals(groups, species)  
