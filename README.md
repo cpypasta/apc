@@ -16,6 +16,7 @@ The following mods are possible with this tool:
 1. Make all males a Diamond, with the option of including rare furs. This will not affect Great Ones.
 1. Make a Diamond for every fur type, which includes rare fur types.
 1. Make some males a Diamond, with the option of including rare furs, where you tell the tool what percentage you want to be a Diamond.
+1. Make a female animal a male.
 
 The modded population files can be found in a `mods` folder in the same directory you are running the tool.
 
@@ -27,7 +28,13 @@ Not all furs are defined in the tool. It is a work in progress, and it takes a l
 
 | Note: This code was built and tested with Python 3.10.10.
 
-You can skip building and just run it directly:
+To install dependencies:
+```sh
+pip install -r requirements.txt
+python -m PySimpleGUI.PySimpleGUI upgrade
+```
+
+You can run the packages directly by using:
 ```sh
 python -m apc
 pytonn -m apcgui

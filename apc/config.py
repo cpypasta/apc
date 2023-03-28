@@ -44,6 +44,8 @@ SAVE_PATH = CONFIG_PATH / "save_path.txt"
 SAVE_PATH.parent.mkdir(exist_ok=True, parents=True)
 MOD_DIR_PATH = Path().cwd() / "mods"
 MOD_DIR_PATH.mkdir(exist_ok=True, parents=True)
+BACKUP_DIR_PATH = Path().cwd() / "backups"
+BACKUP_DIR_PATH.mkdir(exist_ok=True, parents=True)
 HIGH_NUMBER = 100000
 
 ANIMAL_NAMES = json.load((CONFIG_PATH / "animal_names.json").open())["animal_names"]
@@ -221,3 +223,10 @@ def valid_go_species(species: str) -> bool:
 def get_population_file_name(reserve: str):
     index = RESERVES[reserve]["index"]
     return f"animal_population_{index}"
+  
+def get_population_name(filename: str):
+  for _reserve, details in RESERVES.items():
+    reserve_filename = f"animal_population_{details['index']}"
+    if reserve_filename == filename:
+      return details["name"]
+  return None

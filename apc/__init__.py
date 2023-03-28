@@ -14,4 +14,4 @@ else:
 t = gettext.translation("apc", localedir=LOCALE_PATH, languages=["en_US"])
 
 __app_name__ = "apc"
-__version__ = "0.3.2"
+__version__ = "0.3.3"
