@@ -245,8 +245,13 @@ def _create_diamond(animal: Animal, species_config: dict, data: bytearray, rares
   if visual_seed and (rares or fur):
     update_uint(data, animal.visual_seed_offset, visual_seed)
 
-def _create_fur(animal: Animal, _species_config: dict, data: bytearray, fur: int) -> None:
-  update_uint(data, animal.visual_seed_offset, fur)
+def _create_fur(animal: Animal, species_config: dict, data: bytearray, fur: int = None) -> None:
+  visual_seed = None
+  if fur:
+    visual_seed = fur
+  elif "furs" in species_config and animal.gender in species_config["furs"]:
+    visual_seed = _random_choice(species_config["furs"][animal.gender])  
+  update_uint(data, animal.visual_seed_offset, visual_seed)
 
 def _create_male(animal: Animal, _config: dict, data: bytearray) -> None:
   update_uint(data, animal.gender_offset, 1)
