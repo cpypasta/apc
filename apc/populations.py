@@ -6,24 +6,7 @@ from rich import print
 from apc.adf import ParsedAdfFile, load_reserve
 from apc.config import get_animal_fur_by_seed, get_species_name, get_reserve_name, get_level_name, get_reserve, valid_species_for_reserve
 from apc.utils import format_key
-
-def _species(reserve_name: str, reserve_details: Adf, species: str) -> list:
-   reserve = config.RESERVES[reserve_name]
-   species_index = reserve["species"].index(species)
-   populations = _get_populations(reserve_details)
-   return populations[species_index]
-
-def _random_float(low: int, high: int, precision: int = 3) -> float:
-   return round(random.uniform(low, high), precision)
-
-def _dict_values(dict):
-  return list(dict.values())
-
-def _random_choice(choices):
-   return random.choice(_dict_values(choices))
-
-def _diamond_gender(species_config: dict) -> str:
-  return species_config["gender"] if "gender" in species_config else "male"  
+from typing import List
 
 class Animal:
     def __init__(self, details: AdfValue, species: str) -> None:
@@ -50,6 +33,27 @@ class Animal:
         "seed": self.visual_seed,
         "score_offset": self.score_offset
       })
+      
+class NoAnimalsException(Exception):
+  pass
+      
+def _species(reserve_name: str, reserve_details: Adf, species: str) -> list:
+   reserve = config.RESERVES[reserve_name]
+   species_index = reserve["species"].index(species)
+   populations = _get_populations(reserve_details)
+   return populations[species_index]
+
+def _random_float(low: int, high: int, precision: int = 3) -> float:
+   return round(random.uniform(low, high), precision)
+
+def _dict_values(dict):
+  return list(dict.values())
+
+def _random_choice(choices):
+   return random.choice(_dict_values(choices))
+
+def _diamond_gender(species_config: dict) -> str:
+  return species_config["gender"] if "gender" in species_config else "male"  
 
 def reserve_keys() -> list:
   return list(dict.keys(config.RESERVES))
@@ -241,11 +245,19 @@ def _create_diamond(animal: Animal, species_config: dict, data: bytearray, rares
   if visual_seed and (rares or fur):
     update_uint(data, animal.visual_seed_offset, visual_seed)
 
+def _create_fur(animal: Animal, _species_config: dict, data: bytearray, fur: int) -> None:
+  update_uint(data, animal.visual_seed_offset, fur)
+
 def _create_male(animal: Animal, _config: dict, data: bytearray) -> None:
   update_uint(data, animal.gender_offset, 1)
+  
+def _create_female(animal: Animal, _config: dict, data: bytearray) -> None:
+  update_uint(data, animal.gender_offset, 2)
 
 def _process_all(species: str, species_config: dict, groups: list, reserve_data: bytearray, cb: callable, kwargs = {}, gender: str = "male") -> None:
   animals = _get_eligible_animals(groups, species, gender=gender)
+  if len(animals) == 0:
+    raise NoAnimalsException(f"There are not enough {get_species_name(species)} to process")  
   for animal in animals:
     cb(animal, species_config, reserve_data, **kwargs)
 
@@ -258,7 +270,7 @@ def _diamond_all(species: str, groups: list, reserve_data: bytearray, rares: boo
   diamond_gender = _diamond_gender(species_config)
   _process_all(species, species_config, groups, reserve_data, _create_diamond, { "rares": rares }, gender=diamond_gender)
 
-def diamond_test_seed(species: str, groups: list, data: bytearray, seed: int) -> None:
+def diamond_test_seed(species: str, groups: list, data: bytearray, seed: int, gender: int = 1) -> None:
   eligible_animals = []
   for group in groups:
     animals = group.value["Animals"].value  
@@ -270,12 +282,31 @@ def diamond_test_seed(species: str, groups: list, data: bytearray, seed: int) ->
     update_float(data, animal.weight_offset, seed)
     update_float(data, animal.score_offset, seed / 10000)
     update_uint(data, animal.visual_seed_offset, seed)
+    update_uint(data, animal.gender_offset, gender)
+    seed += 1
+  return seed
+
+def diamond_test_seeds(species: str, groups: list, data: bytearray, seeds: List[int]) -> None:
+  eligible_animals = []
+  for group in groups:
+    animals = group.value["Animals"].value  
+    for animal in animals[:len(seeds)]:
+      animal = Animal(animal, species)
+      eligible_animals.append(animal)
+        
+  for animal_i, animal in enumerate(eligible_animals[:len(seeds)]):
+    seed = seeds[animal_i]
+    update_float(data, animal.weight_offset, seed)
+    update_float(data, animal.score_offset, seed / 10000)
+    update_uint(data, animal.visual_seed_offset, seed)
     update_uint(data, animal.gender_offset, 1)
     seed += 1
   return seed
 
-def _process_furs(species, species_config: dict, furs: list, groups: list, reserve_data: bytearray, cb: callable) -> None:
-  eligible_animals = _get_eligible_animals(groups, species)  
+def _process_furs(species, species_config: dict, furs: list, groups: list, reserve_data: bytearray, cb: callable, gender: str = "male") -> None:
+  eligible_animals = _get_eligible_animals(groups, species, gender=gender) 
+  if len(eligible_animals) == 0:
+    raise NoAnimalsException(f"There are not enough {get_species_name(species)} to process") 
   chosen_animals = random.sample(eligible_animals, k = len(furs))
   for animal_i, animal in enumerate(chosen_animals):
     cb(animal, species_config, reserve_data, fur = furs[animal_i])  
@@ -287,14 +318,26 @@ def _go_furs(species: str, groups: list, reserve_data: bytearray) -> None:
 
 def _diamond_furs(species: str, groups: list, reserve_data: bytearray) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
-  if "furs" in species_config and "male" in species_config["furs"]:
-    diamond_furs = _dict_values(species_config["furs"]["male"])
+  diamond_gender = _diamond_gender(species_config)
+  if "furs" in species_config and diamond_gender in species_config["furs"]:
+    diamond_furs = _dict_values(species_config["furs"][diamond_gender])
   else:
     raise Exception("Furs have not been loaded for this species yet.")
-  _process_furs(species, species_config, diamond_furs, groups, reserve_data, _create_diamond)
+  _process_furs(species, species_config, diamond_furs, groups, reserve_data, _create_diamond, gender=diamond_gender)
+
+def _furs(species: str, groups: list, reserve_data: bytearray) -> None:
+  species_config = config.ANIMALS[species]["diamonds"]
+  diamond_gender = _diamond_gender(species_config)
+  if "furs" in species_config and diamond_gender in species_config["furs"]:
+    diamond_furs = _dict_values(species_config["furs"][diamond_gender])
+  else:
+    raise Exception("Furs have not been loaded for this species yet.")
+  _process_furs(species, species_config, diamond_furs, groups, reserve_data, _create_fur, gender=diamond_gender)
 
 def _process_some(species, species_config: dict, groups: list, reserve_data: bytearray, modifier: int, percentage: bool, cb: callable, kwargs: dict = {}, gender: str = "male") -> None:
   eligible_animals = _get_eligible_animals(groups, species, gender=gender)
+  if len(eligible_animals) == 0:
+    raise NoAnimalsException(f"There are not enough {get_species_name(species)} to process")
   if percentage:
     animal_cnt = round((modifier / 100) * len(eligible_animals))
   else:
@@ -312,8 +355,16 @@ def _diamond_some(species: str, groups: list, reserve_data: bytearray, modifier:
   diamond_gender = _diamond_gender(species_config)
   _process_some(species, species_config, groups, reserve_data, modifier, percentage, _create_diamond, { "rares": rares }, gender=diamond_gender)
 
+def _furs_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False) -> None:
+  species_config = config.ANIMALS[species]["diamonds"]
+  diamond_gender = _diamond_gender(species_config)
+  _process_some(species, species_config, groups, reserve_data, modifier, percentage, _create_fur, gender=diamond_gender)
+
 def _male_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False) -> None:
   _process_some(species, {}, groups, reserve_data, modifier, percentage, _create_male, gender = "female")  
+  
+def _female_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False) -> None:
+  _process_some(species, {}, groups, reserve_data, modifier, percentage, _create_female, gender = "male")  
   
 def mod(reserve_name: str, reserve_details: ParsedAdfFile, species: str, strategy: str, modifier: int = None, percentage: bool = False, rares: bool = False, verbose = False):
   species_details = _species(reserve_name, reserve_details.adf, species)
@@ -342,6 +393,15 @@ def mod(reserve_name: str, reserve_details: ParsedAdfFile, species: str, strateg
   elif (strategy == config.Strategy.males):
     _male_some(species, groups, reserve_data, modifier, percentage)
     print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now males![/green]")  
+  elif (strategy == config.Strategy.females):
+    _female_some(species, groups, reserve_data, modifier, percentage)
+    print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now females![/green]") 
+  elif (strategy == config.Strategy.furs):
+    _furs(species, groups, reserve_data)
+    print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now random furs![/green]") 
+  elif (strategy == config.Strategy.furs_some):
+    _furs_some(species, groups, reserve_data, modifier, percentage)
+    print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now random furs![/green]") 
   else:
     print(f"[red]Unknown strategy: {strategy}")  
 

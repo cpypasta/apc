@@ -60,19 +60,30 @@ def bad_scores(path: Path) -> None:
       print(animal_key, animal)
       
 def seed_animals() -> None:
-  reserve_name = "vurhonga"
-  species = "sidestriped_jackal"
-  seed = 6000  
-  reserve = adf.load_reserve(reserve_name, True, False)
+  reserve_name = "cuatro"
+  species = "wild_boar"
+  seed = 0
+  gender = 1
+  reserve = adf.load_reserve(reserve_name, False, False)
   while True:    
     species_details = populations._species(reserve_name, reserve.adf, species)
     groups = species_details.value["Groups"].value  
     start_seed = seed
-    seed = populations.diamond_test_seed(species, groups, reserve.decompressed.data, seed)
+    seed = populations.diamond_test_seed(species, groups, reserve.decompressed.data, seed, gender)
     reserve.decompressed.save(config.MOD_DIR_PATH, False)
     entered = input(f"[{start_seed} to {seed}] press any key to continue; q to quit: ")
     if entered == "q":
       break
+
+def verify_seeds(seeds: List[int]) -> None:
+  reserve_name = "cuatro"
+  species = "beceite_ibex" 
+  reserve = adf.load_reserve(reserve_name, False, False)
+  species_details = populations._species(reserve_name, reserve.adf, species)
+  groups = species_details.value["Groups"].value
+  populations.diamond_test_seeds(species, groups, reserve.decompressed.data, seeds)
+  reserve.decompressed.save(config.MOD_DIR_PATH, False)
+  print("done")
 
 def calc_seed(furs: List[int]) -> None:
   total = sum(furs)
@@ -99,6 +110,6 @@ if __name__ == "__main__":
   # names = extract_reserve_names(Path().cwd() / "config/reserve_details.json")
   # Path(Path().cwd() / "config/reserve_names.json").write_text(json.dumps(names, indent=2))
   # bad_scores(Path().cwd() / "config/animal_details.json")
-  # seed_animals()
+  seed_animals()
+  # verify_seeds([10023, 10028, 580, 3534, 6685, 6690])
   # calc_seed([24930,37350,33,33,37350])
-  calc_seed([25000,100,74700,100,100])

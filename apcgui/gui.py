@@ -12,7 +12,7 @@ translate = tgui.gettext
 DEFAULT_FONT = "_ 14"
 MEDIUM_FONT = "_ 13"
 SMALL_FONT = "_ 11"
-PROGRESS_DELAY = 0.5
+PROGRESS_DELAY = 0.3
 VIEW_MODDED="(viewing modded)"
 
 RESERVE_COLUMNS = [
@@ -74,8 +74,11 @@ def _highlight_values(data: list) -> list:
 
 def _disable_diamonds(window: sg.Window, disabled: bool) -> None:
   window["diamonds"].update(disabled = disabled)  
+  window["others"].update(disabled = disabled)    
   window["diamond_value"].update(disabled = disabled)
   window["male_value"].update(disabled = disabled)
+  window["female_value"].update(disabled = disabled)
+  window["rare_fur_value"].update(disabled = disabled)
 
 def _disable_go(window: sg.Window, disabled: bool) -> None:
   window["great_ones"].update(disabled = disabled)  
@@ -130,6 +133,12 @@ def _viewing_modded(window: sg.Window) -> bool:
 def _is_male_enabled(window: sg.Window, value: int) -> bool:
   return not window["male_value"].Disabled and value != 0 
 
+def _is_female_enabled(window: sg.Window, value: int) -> bool:
+  return not window["female_value"].Disabled and value != 0 
+
+def _is_furs_enabled(window: sg.Window, value: int) -> bool:
+  return _is_diamond_enabled(window, value)
+
 def _is_diamond_enabled(window: sg.Window, value: int) -> bool:
   print(window["diamonds"].Disabled, value)
   return not window["diamonds"].Disabled and value != 0
@@ -151,7 +160,7 @@ def _mod(reserve_key: str, species: str, strategy: Strategy, window: sg.Window, 
   is_modded = _viewing_modded(window)
   try:
     reserve_details = adf.load_reserve(reserve_key, mod=is_modded)
-  except adf.FileNotFound as ex:
+  except Exception as ex:
     _show_error(window, ex)
     return
   window["progress"].update(25)
@@ -190,15 +199,21 @@ def _copy_file(filename: Path, destination: Path) -> None:
   print("copy", filename, "to", destination)
   return shutil.copy2(filename, destination)
 
+def _backup_exists(filename: Path) -> bool:
+  return (BACKUP_DIR_PATH / filename.name).exists()
+
 def _load_mod(window: sg.Window, filename: Path) -> None:
   window["reserve_note"].update("")
   try:
-    game_file = get_save_path() / filename.name
-    if game_file.exists():
-      backup_path = _copy_file(game_file, BACKUP_DIR_PATH)
-      if not backup_path:
-        _show_warning(window, f"failed to backup game {game_file}")
-        return
+    if not _backup_exists(filename):
+      game_file = get_save_path() / filename.name
+      if game_file.exists():
+        backup_path = _copy_file(game_file, BACKUP_DIR_PATH)
+        if not backup_path:
+          _show_warning(window, f"failed to backup game {game_file}")
+          return
+    else:
+      print("backup already exists")
     _progress(window, 50)
     game_path = _copy_file(filename, get_save_path())
     if not game_path:
@@ -235,6 +250,7 @@ def _unload_mod(window: sg.Window, filename: Path) -> None:
   _progress(window, 0)
 
 def _process_list_mods(window: sg.Window, reserve_name: str = None) -> list:
+  window["reserve_note"].update("")
   _show_mod_list(window)
   window["progress"].update(30)
   mods = _list_mods(window)
@@ -329,8 +345,10 @@ def main():
                 [sg.T(" ", font="_ 3", p=(0,0))],
                 [sg.Column([
                   [sg.T("Males:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="male_value")],
+                  [sg.T("Females:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="female_value")],
                   [sg.T("Great Ones"+":", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="go_value")],
-                  [sg.T("Diamonds:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="diamond_value")]
+                  [sg.T("Diamonds:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="diamond_value")],
+                  [sg.T("Rare Furs:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="rare_fur_value")]
                 ] , expand_x=True)],
                 [sg.Checkbox("include rare furs", k="furs", font=MEDIUM_FONT, tooltip="Will include rare furs if available")],
                 [sg.Checkbox("update by percentage", k="by_percentage", font=MEDIUM_FONT, tooltip="Use numbers provided above as percentage of animals")],
@@ -340,6 +358,7 @@ def main():
                 [sg.T("(one of each fur)", font=SMALL_FONT, p=(5,0))],
                 [sg.Button("Great Ones", expand_x=True, disabled=True, k="great_ones")],
                 [sg.Button("Diamonds", expand_x=True, disabled=True, k="diamonds")],
+                [sg.Button("Others", expand_x=True, disabled=True, k="others")],
                 [sg.T(" ", font="_ 3", p=(0,0))]
               ], k="mod_tab"),
               sg.Tab("Explore", [
@@ -365,12 +384,12 @@ def main():
         ]
     ]
 
-    window = sg.Window('Animal Population Changer', layout, resizable=True, font=DEFAULT_FONT, icon=logo.value, size=(1200, 730))
+    window = sg.Window('Animal Population Changer', layout, resizable=True, font=DEFAULT_FONT, icon=logo.value, size=(1200, 750))
     reserve_details = None
 
     while True:
         event, values = window.read()
-        print(event, values)
+        # print(event, values)
 
         if event == sg.WIN_CLOSED:
             break 
@@ -452,14 +471,21 @@ def main():
           elif event == "show_reserve":
             _show_reserve_description(window)
           elif event == "update_animals":
-            use_rares = values["furs"]
+            male_value = int(values["male_value"]) if values["male_value"].isdigit() else 0
+            female_value = int(values["female_value"]) if values["female_value"].isdigit() else 0
             go_value = int(values["go_value"]) if values["go_value"].isdigit() else 0
             diamond_value = int(values["diamond_value"]) if values["diamond_value"].isdigit() else 0
-            male_value = int(values["male_value"]) if values["male_value"].isdigit() else 0
-            use_percent = values["by_percentage"]
+            rare_fur_value = int(values["rare_fur_value"]) if values["rare_fur_value"].isdigit() else 0
             go_strategy = Strategy.go_all if (go_value == 100 and use_percent) else Strategy.go_some
             diamond_strategy = Strategy.diamond_all if (diamond_value == 100 and use_percent) else Strategy.diamond_some
+            rare_fur_strategy = Strategy.furs_some
+            use_rares = values["furs"]
+            use_percent = values["by_percentage"]
             
+            if _is_female_enabled(window, female_value):
+              print("modding females")
+              _mod(reserve_key, species, Strategy.females, window, female_value, False, use_percent)
+              window["male_value"].update("0")                
             if _is_male_enabled(window, male_value):
               print("modding males")
               _mod(reserve_key, species, Strategy.males, window, male_value, False, use_percent)
@@ -469,12 +495,17 @@ def main():
               _mod(reserve_key, species, go_strategy, window, go_value, use_rares, use_percent)        
             if _is_diamond_enabled(window, diamond_value):
               print("modding diamonds")
-              _mod(reserve_key, species, diamond_strategy, window, diamond_value, use_rares, use_percent)                    
+              _mod(reserve_key, species, diamond_strategy, window, diamond_value, use_rares, use_percent)   
+            if _is_furs_enabled(window, rare_fur_value):
+              print("modding rare furs")
+              _mod(reserve_key, species, rare_fur_strategy, window, rare_fur_value, True, use_percent)                                  
             _disable_new_reserve(window)
           elif event == "great_ones":
             _mod(reserve_key, species, Strategy.go_furs, window, 0, True, False)             
           elif event == "diamonds":
             _mod(reserve_key, species, Strategy.diamond_furs, window, 0, True, False)   
+          elif event == "others":
+            _mod(reserve_key, species, Strategy.furs, window, 0, True, False)               
           elif event == "load_modded":
             window["modded_reserves"].update(values["load_modded"])  
           elif event == "list_mods":

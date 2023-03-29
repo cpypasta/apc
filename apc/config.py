@@ -76,6 +76,9 @@ class Strategy(str, Enum):
    diamond_furs = "diamond-furs"
    diamond_some = "diamond-some"
    males = "males"
+   furs = "furs"
+   furs_some = "furs-some"
+   females = "females"
 
 class GreatOnes(str, Enum):
    moose = "moose"

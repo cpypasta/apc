@@ -106,7 +106,16 @@
       "score_high": 207.864,
       "weight_low": 103.991,
       "weight_high": 110.0,
-      "furs": {},
+      "furs": {
+        "male": {
+          "grey": 0,
+          "brown_hybrid": 2500,
+          "gray_brown": 5006,
+          "orange": 7512,
+          "albino": 10018,
+          "melanistic": 10023
+        }
+      },
       "levels": [
         [
           35.0,
@@ -733,7 +742,16 @@
       "score_high": 7.0,
       "weight_low": 6.74,
       "weight_high": 7.0,
-      "furs": {},
+      "furs": {
+        "female": {
+          "light_brown": 0,
+          "dark_brown": 3482,
+          "albino": 5001,
+          "melanistic": 5006,
+          "grey": 5011,
+          "brown": 7517
+        }
+      },
       "levels": [
         [
           2.0,
@@ -1162,7 +1180,16 @@
       "score_high": 106.719,
       "weight_low": 96.631,
       "weight_high": 102.0,
-      "furs": {},
+      "furs": {
+        "male": {
+          "grey": 0,
+          "gray_brown": 2495,
+          "light_grey": 5001,
+          "brown_hybrid": 7507,
+          "albino": 10013,
+          "melanistic": 10018
+        }
+      },
       "levels": [
         [
           35.0,
@@ -1340,7 +1367,15 @@
       "score_high": 191.36,
       "weight_low": 57.591,
       "weight_high": 60.0,
-      "furs": {},
+      "furs": {
+        "male": {
+          "light_brown": 0,
+          "melanistic": 3325,
+          "brown": 3330,
+          "albino": 6665,
+          "grey": 6675
+        }
+      },
       "levels": [
         [
           30.0,
@@ -1360,7 +1395,7 @@
         ],
         [
           57.591,
-          59.99
+          60
         ]
       ]
     }
@@ -1371,7 +1406,17 @@
       "score_high": 40.0,
       "weight_low": 47.991,
       "weight_high": 50.0,
-      "furs": {},
+      "furs": {
+        "male": {
+          "melanistic": 0,
+          "gray_brown": 90,
+          "albino": 7490,
+          "pristine": 7496,
+          "winter": 7506,
+          "grey": 7672,
+          "olive": 10020
+        }
+      },
       "levels": [
         [
           30.0,
@@ -1755,7 +1800,17 @@
       "score_high": 21.9,
       "weight_low": 2.865,
       "weight_high": 3.0,
-      "furs": {},
+      "furs": {
+        "male": {
+          "white_brown": 0,
+          "molting": 3746,
+          "albino": 5001,
+          "brown": 5004,
+          "grey": 8762,
+          "leucistic": 10016,
+          "melanistic": 10020
+        }
+      },
       "levels": [
         [
           0.5,
@@ -1976,7 +2031,12 @@
       "weight_high": 240.0,
       "furs": {
         "male": {
-          "piebald": 631703144
+          "albino": 10023,
+          "piebald": 10028,
+          "light_brown": 580,
+          "dark_brown": 3534,
+          "melanistic": 6685,
+          "brown": 6690
         },
         "female": {
           "melanistic": 2838816491
@@ -2183,7 +2243,16 @@
       "score_high": 87.697,
       "weight_low": 33.94,
       "weight_high": 35.0,
-      "furs": {},
+      "furs": {
+        "male": {
+          "dark_brown": 0,
+          "dark_grey": 3334,
+          "brown": 6668,
+          "piebald": 10003,
+          "albino": 10023,
+          "melanistic": 10028
+        }
+      },
       "levels": [
         [
           14.0,
@@ -2206,7 +2275,16 @@
       "score_high": 113.517,
       "weight_low": 67.191,
       "weight_high": 70.0,
-      "furs": {},
+      "furs": {
+        "male": {
+          "brown": 0,
+          "gray_brown": 2500,
+          "brown_hybrid": 5006,
+          "melanistic": 7512,
+          "grey": 7517,
+          "albino": 10023
+        }
+      },
       "levels": [
         [
           35.0,
@@ -2393,7 +2471,16 @@
       "score_high": 95.387,
       "weight_low": 83.291,
       "weight_high": 87.5,
-      "furs": {},
+      "furs": {
+        "male": {
+          "brown_hybrid": 0,
+          "orange": 2498,
+          "melanistic": 5002,
+          "albino": 5008,
+          "light_grey": 5030,
+          "gray_brown": 7596
+        }
+      },
       "levels": [
         [
           35.0,
@@ -2413,7 +2500,7 @@
         ],
         [
           83.291,
-          87.49
+          87.5
         ]
       ]
     }
@@ -2655,7 +2742,15 @@
       "score_high": 159.5,
       "weight_low": 222.791,
       "weight_high": 240.0,
-      "furs": {},
+      "furs": {
+        "male": {
+          "light_brown": 498,
+          "blackgold": 3323,
+          "melanistic": 6678,
+          "albino": 6683,
+          "brown": 6689
+        }
+      },
       "levels": [
         [
           25.0,
@@ -2675,7 +2770,7 @@
         ],
         [
           222.791,
-          239.99
+          240
         ]
       ]
     }
