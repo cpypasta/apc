@@ -19,6 +19,8 @@ The following mods are possible with this tool:
 
 The modded population files can be found in a `mods` folder in the same directory you are running the tool.
 
+I release updates of this tool to [NexusMods](https://www.nexusmods.com/thehuntercallofthewild/mods/225).
+
 ## Caveats:
 This tool was tested on Windows 11 with the game installed via Steam. It is smart enough to also look where Epic Games saves it files too. If your game files are saved somewhere else besides where Steam or Epic saves them, use the `apc set-save [SAVE_PATH]` command to tell the tool which path to use in the CLI or the "configure path" in the GUI.
 
