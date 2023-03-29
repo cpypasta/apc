@@ -1,9 +1,8 @@
 import PySimpleGUI as sg
 import sys, traceback, time, os, re, shutil
 from apc import populations, adf
-from apc.config import valid_go_species, Strategy, MOD_DIR_PATH, save_path, get_save_path, get_population_file_name, get_reserve_species_key, get_population_name, BACKUP_DIR_PATH
+from apc.config import valid_go_species, Strategy, MOD_DIR_PATH, save_path, get_save_path, get_population_file_name, get_reserve_species_key, get_population_name, BACKUP_DIR_PATH, valid_fur_species, format_key
 from apcgui import __version__, logo, tgui, use_languages
-from apc.utils import format_key
 from typing import List
 from pathlib import Path
 
@@ -73,12 +72,17 @@ def _highlight_values(data: list) -> list:
   return data
 
 def _disable_diamonds(window: sg.Window, disabled: bool) -> None:
-  window["diamonds"].update(disabled = disabled)  
-  window["others"].update(disabled = disabled)    
   window["diamond_value"].update(disabled = disabled)
   window["male_value"].update(disabled = disabled)
   window["female_value"].update(disabled = disabled)
+
+def _disable_furs(window: sg.Window, disabled: bool) -> None:
   window["rare_fur_value"].update(disabled = disabled)
+  window["furs"].update(disabled = disabled)
+  window["others"].update(disabled = disabled)
+  window["diamonds"].update(disabled = disabled)
+  if disabled:
+    window["furs"].update(False)
 
 def _disable_go(window: sg.Window, disabled: bool) -> None:
   window["great_ones"].update(disabled = disabled)  
@@ -86,6 +90,7 @@ def _disable_go(window: sg.Window, disabled: bool) -> None:
 
 def _disable_new_reserve(window: sg.Window) -> None:
   _disable_diamonds(window, True)
+  _disable_furs(window, True)
   _disable_go(window, True)  
   window["show_animals"].update(disabled=True)
   window["update_animals"].update(disabled=True)
@@ -137,11 +142,10 @@ def _is_female_enabled(window: sg.Window, value: int) -> bool:
   return not window["female_value"].Disabled and value != 0 
 
 def _is_furs_enabled(window: sg.Window, value: int) -> bool:
-  return _is_diamond_enabled(window, value)
+  return not window["rare_fur_value"].Disabled and value != 0
 
 def _is_diamond_enabled(window: sg.Window, value: int) -> bool:
-  print(window["diamonds"].Disabled, value)
-  return not window["diamonds"].Disabled and value != 0
+  return not window["diamond_value"].Disabled and value != 0
 
 def _is_go_enabled(window: sg.Window, value: int) -> bool:
   return not window["great_ones"].Disabled and value != 0
@@ -173,12 +177,13 @@ def _mod(reserve_key: str, species: str, strategy: Strategy, window: sg.Window, 
   window["reserve_description"].update(_highlight_values(modded_reserve_description))
   window["progress"].update(75)
   window["reserve_warning"].update(VIEW_MODDED)
-  window["reserve_note"].update(f"{format_key(species).upper()} ({strategy}) Saved: \"{MOD_DIR_PATH / get_population_file_name(reserve_key)}\"")
+  window["reserve_note"].update(f"{format_key(species).upper()} ({format_key(strategy)}) Saved: \"{MOD_DIR_PATH / get_population_file_name(reserve_key)}\"")
   window["progress"].update(100)
   time.sleep(PROGRESS_DELAY)
   window["progress"].update(0)  
   window["show_animals"].update(disabled=True)
   window["update_animals"].update(disabled=True)
+  window["modded_reserves"].update(True)
 
 def _list_mods(window: sg.Window) -> List[List[str]]:
   if not MOD_DIR_PATH.exists():
@@ -344,14 +349,14 @@ def main():
               sg.Tab("Mod", [
                 [sg.T(" ", font="_ 3", p=(0,0))],
                 [sg.Column([
+                  [sg.Checkbox("update by percentage", k="by_percentage", font=MEDIUM_FONT, tooltip="Use numbers provided above as percentage of animals")],
                   [sg.T("Males:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="male_value")],
                   [sg.T("Females:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="female_value")],
                   [sg.T("Great Ones"+":", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="go_value")],
                   [sg.T("Diamonds:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="diamond_value")],
+                  [sg.Checkbox("include rare furs", k="furs", font=MEDIUM_FONT, tooltip="Will include rare furs")],
                   [sg.T("Rare Furs:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="rare_fur_value")]
-                ] , expand_x=True)],
-                [sg.Checkbox("include rare furs", k="furs", font=MEDIUM_FONT, tooltip="Will include rare furs if available")],
-                [sg.Checkbox("update by percentage", k="by_percentage", font=MEDIUM_FONT, tooltip="Use numbers provided above as percentage of animals")],
+                ] , expand_x=True)],                
                 [sg.Button("Update Animals", expand_x=True, disabled=True, k="update_animals")],
                 [sg.T(" ", font="_ 3", p=(0,0))],
                 [sg.T("Just the Furs:")],
@@ -426,13 +431,15 @@ def main():
                 species_name = reserve_description[row][0] if reserve_description else ""
                 species = get_reserve_species_key(species_name, reserve_key)
                 print(f"species clicked: {species}")
-                _disable_diamonds(window, True)
-                _disable_go(window, True)
                 window["reserve_note"].update("")
+                _disable_go(window, True)
+                _disable_furs(window, True)
                 _disable_diamonds(window, False)
                 window["show_animals"].update(disabled=False)
                 if valid_go_species(species):
                   _disable_go(window, False)
+                if valid_fur_species(species):
+                  _disable_furs(window, False)
             elif event[0] == "mod_list" and event[1] == "+CLICKED+":
               row, _ = event[2]
               if row != None and row >= 0:
@@ -471,6 +478,7 @@ def main():
           elif event == "show_reserve":
             _show_reserve_description(window)
           elif event == "update_animals":
+            use_percent = values["by_percentage"]
             male_value = int(values["male_value"]) if values["male_value"].isdigit() else 0
             female_value = int(values["female_value"]) if values["female_value"].isdigit() else 0
             go_value = int(values["go_value"]) if values["go_value"].isdigit() else 0
@@ -479,9 +487,8 @@ def main():
             go_strategy = Strategy.go_all if (go_value == 100 and use_percent) else Strategy.go_some
             diamond_strategy = Strategy.diamond_all if (diamond_value == 100 and use_percent) else Strategy.diamond_some
             rare_fur_strategy = Strategy.furs_some
-            use_rares = values["furs"]
-            use_percent = values["by_percentage"]
-            
+            use_rares = values["furs"] if not window["furs"].Disabled else False
+
             if _is_female_enabled(window, female_value):
               print("modding females")
               _mod(reserve_key, species, Strategy.females, window, female_value, False, use_percent)

@@ -25,10 +25,6 @@ def update_float(data_bytes: bytearray, offset: int, new_value: float) -> None:
     for i in range(0, 4):
         data_bytes[offset + i] = hex_float[i]
 
-def format_key(key: str) -> str:
-  key = [s.capitalize() for s in key.split("_")]
-  return " ".join(key)
-
 # TODO: all people calling this should stop and call config
 def unformat_key(value: str) -> str:
   parts = value.lower().split(" ")
@@ -38,7 +34,7 @@ def extract_animal_names(path: Path) -> dict:
   data = json.load(path.open())
   names = {}
   for animal in data.keys():
-    names[animal] = { "animal_name": format_key(animal) }
+    names[animal] = { "animal_name": config.format_key(animal) }
   return {
     "animal_names": names
   }

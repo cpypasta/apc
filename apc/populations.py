@@ -1,11 +1,10 @@
 import random
-from apc.utils import update_float, update_uint, format_key
+from apc.utils import update_float, update_uint
 from deca.ff_adf import Adf, AdfValue
 from apc import config, adf
 from rich import print
 from apc.adf import ParsedAdfFile, load_reserve
-from apc.config import get_animal_fur_by_seed, get_species_name, get_reserve_name, get_level_name, get_reserve, valid_species_for_reserve
-from apc.utils import format_key
+from apc.config import get_animal_fur_by_seed, get_species_name, get_reserve_name, get_level_name, get_reserve, valid_species_for_reserve, format_key
 from typing import List
 
 class Animal:

@@ -145,6 +145,10 @@ YES = translate("Yes")
 MODDED = translate("Modded")
 SPECIES_NAME_KEY = translate("Species (key)")
 
+def format_key(key: str) -> str:
+  key = [s.capitalize() for s in re.split("_|-", key)]
+  return " ".join(key)
+
 def load_config(config_path: Path) -> int: 
   config_path.read_text()
 
@@ -208,9 +212,9 @@ def get_animal_fur_by_seed(species: str, gender: str, seed: int) -> str:
   go_key = _get_fur(go_furs, seed)
   diamond_key = _get_fur(diamond_furs, seed)
   if go_key:
-    return go_key
+    return format_key(go_key)
   elif diamond_key:
-    return diamond_key
+    return format_key(diamond_key)
   else:
     return "-"
 
@@ -222,7 +226,12 @@ def valid_species(species: str) -> bool:
 
 def valid_go_species(species: str) -> bool:
     return species in GreatOnes.__members__
-  
+
+def valid_fur_species(species_key: str) -> bool:
+  animal_species = ANIMALS[species_key]["diamonds"]
+  gender = animal_species["gender"] if "gender" in animal_species else "male"
+  return "furs" in animal_species and gender in animal_species["furs"]
+
 def get_population_file_name(reserve: str):
     index = RESERVES[reserve]["index"]
     return f"animal_population_{index}"
