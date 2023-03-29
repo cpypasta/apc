@@ -8,15 +8,14 @@ This tool can make all species a diamond and the appropriate species a Great one
 1. Black Bear
 1. Moose
 1. Bobcat
+1. All species at Cuatro Colinas
 
 The following mods are possible with this tool:
-1. Make all males Great Ones.
-1. Make a Great One male for every fur type (e.g., since moose have 6 furs, this would make 6 males a Great One).
-1. Make some males a Great One, where you tell the tool what percentage you want to be a Great One.
-1. Make all males a Diamond, with the option of including rare furs. This will not affect Great Ones.
-1. Make a Diamond for every fur type, which includes rare fur types.
-1. Make some males a Diamond, with the option of including rare furs, where you tell the tool what percentage you want to be a Diamond.
+1. Make an animal a Great Ones.
+1. Make an animal a Diamond.
+1. Make animal have a rare fur.
 1. Make a female animal a male.
+1. Make a male a female.
 
 The modded population files can be found in a `mods` folder in the same directory you are running the tool.
 
