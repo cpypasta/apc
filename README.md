@@ -5,7 +5,7 @@ A tool that allows anyone to change the animal population on all the reserves in
 This tool can make all species a diamond, the appropriate species a Great one, or have a rare fur.
 
 The following mods are possible with this tool:
-1. Make an animal a Great Ones.
+1. Make an animal a Great One.
 1. Make an animal a Diamond.
 1. Make an animal have a rare fur.
 1. Make a female animal a male.
@@ -40,11 +40,16 @@ You can install a developer version by using:
 pip install .
 ```
 
-If you want to build a wheel:
+If you want to build from a wheel:
 ```sh
 pip install -U build
 python -m build
 pip install dist/apc-0.1.0-py3-none-any.whl
+```
+
+If you want to build directly from GitHub:
+```sh
+pip install -e git+https://github.com/rollerb/apc.git#egg=apc
 ```
 
 If you want to build an executable for the CLI (i.e., from Windows):
