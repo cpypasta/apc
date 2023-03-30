@@ -1,2 +1,3 @@
 include apc/config/*.json
 include apc/locale/*/LC_MESSAGES/apc.mo
+include apcgui/locale/*/LC_MESSAGES/apcgui.mo

@@ -130,6 +130,7 @@ def _show_reserve_description(window: sg.Window) -> None:
     window["mod_tab"].update(disabled=False)
     window["mod_tab"].select()
     window["explore_tab"].update(disabled=False)    
+    window["party_tab"].update(disabled=False)
     window["reserve_note"].update("")
     window["load_mod"].update(disabled=True)
     window["unload_mod"].update(disabled=True)    
@@ -140,10 +141,10 @@ def _show_mod_list(window: sg.Window) -> None:
   window["show_reserve"].update(visible=True)
   window["mod_tab"].update(disabled=True)
   window["explore_tab"].update(disabled=True)
+  window["party_tab"].update(disabled=True)
   window["load_mod"].update(disabled=True)
   window["unload_mod"].update(disabled=True)
   
-
 def _viewing_modded(window: sg.Window) -> bool:
   return window['reserve_warning'].get() == VIEW_MODDED  
 
@@ -386,7 +387,7 @@ def main():
                 [sg.Button("Diamond Party", expand_x=True, disabled=True, k="diamond_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))],
                 [sg.Button("We All Party", expand_x=True, disabled=True, k="everyone_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))],
                 [sg.Button("Fur Party", expand_x=True, disabled=True, k="fur_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))]
-              ]),
+              ], k="party_tab"),
               sg.Tab("Explore", [
                 [sg.T(" ", font="_ 3", p=(0,0))],
                 [sg.Checkbox("diamonds and Great Ones", font=MEDIUM_FONT, default=True, k="good_ones")],
