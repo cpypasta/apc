@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 from enum import Enum
 from apc import __app_name__, t
+from typing import List
 
 translate = t.gettext
 
@@ -173,6 +174,10 @@ def get_species_key(species_name: str) -> str:
       return animal_name_key
   return None
 
+def get_species_furs(species_key: str, gender: str) -> List[str]:
+  species = get_species(species_key)
+  return list(species["diamonds"]["furs"][gender].values())
+
 def get_reserve_species_name(species_key: str, reserve_key: str) -> str:
   renames = get_reserve_species_renames(reserve_key)
   species_key = renames[species_key] if species_key in renames else species_key
@@ -192,11 +197,14 @@ def get_reserve_species_key(species_name: str, reserve_key: str) -> str:
 def get_reserve_name(key: str) -> str:
   return translate(RESERVE_NAMES[key]["reserve_name"])
 
-def get_reserve(reserve_name: str) -> dict:
-  return RESERVES[reserve_name]
+def get_reserve(reserve_key: str) -> dict:
+  return RESERVES[reserve_key]
 
-def get_species(species_name: str) -> dict:
-  return ANIMALS[species_name]
+def get_reserve_species(reserve_key: str) -> dict:
+  return get_reserve(reserve_key)["species"]
+
+def get_species(species_key: str) -> dict:
+  return ANIMALS[species_key]
 
 def get_diamond_gender(species_name: str) -> str:
   species_config = get_species(species_name)["diamonds"]

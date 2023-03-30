@@ -328,12 +328,10 @@ def _diamond_furs(species: str, groups: list, reserve_data: bytearray) -> None:
 
 def _furs(species: str, groups: list, reserve_data: bytearray) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
-  diamond_gender = config.get_diamond_gender(species)
-  if "furs" in species_config and diamond_gender in species_config["furs"]:
-    diamond_furs = _dict_values(species_config["furs"][diamond_gender])
-  else:
-    raise Exception("Furs have not been loaded for this species yet.")
-  _process_furs(species, species_config, diamond_furs, groups, reserve_data, _create_fur, gender=diamond_gender)
+  male_furs = config.get_species_furs(species, "male")
+  female_furs = config.get_species_furs(species, "female")
+  _process_furs(species, species_config, male_furs, groups, reserve_data, _create_fur, gender="male")
+  _process_furs(species, species_config, female_furs, groups, reserve_data, _create_fur, gender="female")
 
 def _process_some(species, species_config: dict, groups: list, reserve_data: bytearray, modifier: int, percentage: bool, cb: callable, kwargs: dict = {}, gender: str = "male") -> None:
   eligible_animals = _get_eligible_animals(groups, species, gender=gender)
@@ -358,8 +356,7 @@ def _diamond_some(species: str, groups: list, reserve_data: bytearray, modifier:
 
 def _furs_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
-  diamond_gender = config.get_diamond_gender(species)
-  _process_some(species, species_config, groups, reserve_data, modifier, percentage, _create_fur, gender=diamond_gender)
+  _process_some(species, species_config, groups, reserve_data, modifier, percentage, _create_fur, gender="both")
 
 def _male_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False) -> None:
   _process_some(species, {}, groups, reserve_data, modifier, percentage, _create_male, gender = "female")  
