@@ -2,32 +2,26 @@
 
 A tool that allows anyone to change the animal population on all the reserves in theHunter: Call of the Wild (COTW). You can choose to use the CLI tool or the GUI.
 
-This tool can make all species a diamond and the appropriate species a Great one. Currently, the tool only supports rare furs for the following species:
-1. Red Deer
-1. Whitetail Deer
-1. Black Bear
-1. Moose
-1. Bobcat
-1. All species at Cuatro Colinas
+This tool can make all species a diamond, the appropriate species a Great one, or have a rare fur.
 
 The following mods are possible with this tool:
 1. Make an animal a Great Ones.
 1. Make an animal a Diamond.
-1. Make animal have a rare fur.
+1. Make an animal have a rare fur.
 1. Make a female animal a male.
 1. Make a male a female.
 
-The modded population files can be found in a `mods` folder in the same directory you are running the tool.
+The modded population files can be found in a `mods` folder in the same directory you are running the tool. 
 
-I release updates of this tool to [NexusMods](https://www.nexusmods.com/thehuntercallofthewild/mods/225).
+To download the latest releases of this tool, go to [NexusMods](https://www.nexusmods.com/thehuntercallofthewild/mods/225) where you can also post bugs and have a conversation with the COTW modding community.
 
-## Caveats:
-This tool was tested on Windows 11 with the game installed via Steam. It is smart enough to also look where Epic Games saves it files too. If your game files are saved somewhere else besides where Steam or Epic saves them, use the `apc set-save [SAVE_PATH]` command to tell the tool which path to use in the CLI or the "configure path" in the GUI.
-
-Not all furs are defined in the tool. It is a work in progress, and it takes a lot of time, so expect some gaps.
+## Limitations:
+* This tool was tested on Windows 11 with the game installed via Steam. It is smart enough to also look where Epic Games saves its files too. If your game files are saved somewhere else besides where Steam or Epic saves them, use the `apc set-save [SAVE_PATH]` if you are using the CLI or the `Configure Game Path` in the GUI.
+* The species that use the newer TruRACS trophy system may not become a diamond. This is an area where I am still doing research to figure out how exactly to manipulate.
+* If you use the executables (EXE) files, your system may complain there is a virus. This is not true, but the `pyinstaller` package that builds the executable is often used by hackers, and so it is being flagged. To avoid this, simply install the tool from the `wheel` file or build it from source.
 ## How To Build
 
-| Note: This code was built and tested with Python 3.10.10.
+> Note: This code was built and tested with Python 3.10.10.
 
 To install dependencies:
 ```sh
@@ -63,7 +57,7 @@ pyinstaller --add-data "apc/config;config" --add-data "apc/locale;locale" apc.py
 If you want to build an executable for the GUI (i.e., from Windows):
 ```sh
 pip install -U pyinstaller
-pyinstaller --noconsole --add-data "apc/config;config" --add-data "apc/locale;locale" apcgui.py
+pyinstaller --noconsole --add-data "apc/config;config" --add-data "apc/locale;locale" --add-data "apcgui/locale;locale" apcgui.py
 ./dist/apcgui/apcgui.exe
 ```
 
@@ -125,9 +119,9 @@ Then to add one of each moose Great One furs to the population:
 apc mod layton moose go-furs
 ```
 
-I also want to add some diamonds (30%) with rare furs, so I'm going to use the `-m` option to modify again and the `-r` option to include rare furs:
+I also want to add some diamonds (30%) with rare furs, so I'm going to use the `-m` option to modify again; the `-r` option to include rare furs; and the `-p` option to treat the 30 as a percentage:
 ```sh
-apc mod -mr layton moose diamond-some 30
+apc mod -mpr layton moose diamond-some 30
 ```
 
 Look at the diamond animals you have created (the `-g` flag tells the tool to only show Great Ones and diamonds):
