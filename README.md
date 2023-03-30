@@ -32,7 +32,7 @@ python -m PySimpleGUI.PySimpleGUI upgrade
 You can run the packages directly by using:
 ```sh
 python -m apc
-pytonn -m apcgui
+pyton -m apcgui
 ```
 
 You can install a developer version by using:
