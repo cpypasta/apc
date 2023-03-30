@@ -51,9 +51,6 @@ def _dict_values(dict):
 def _random_choice(choices):
    return random.choice(_dict_values(choices))
 
-def _diamond_gender(species_config: dict) -> str:
-  return species_config["gender"] if "gender" in species_config else "male"  
-
 def reserve_keys() -> list:
   return list(dict.keys(config.RESERVES))
 
@@ -86,7 +83,7 @@ def _is_diamond(animal: Animal) -> bool:
   known_species = config.valid_species(animal.species)
   diamond_config = config.ANIMALS[animal.species]["diamonds"]
   diamond_score = diamond_config["score_low"] if known_species else config.HIGH_NUMBER
-  diamond_gender = _diamond_gender(diamond_config)
+  diamond_gender = config.get_diamond_gender(animal.species)
   return animal.score >= diamond_score and (animal.gender == diamond_gender or diamond_gender == "both")
 
 def find_animals(species: str, modded = False, good = False, verbose = False, top: bool = False) -> list:
@@ -271,7 +268,7 @@ def _go_all(species: str, groups: list, reserve_data: bytearray) -> None:
 
 def _diamond_all(species: str, groups: list, reserve_data: bytearray, rares: bool = False) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
-  diamond_gender = _diamond_gender(species_config)
+  diamond_gender = config.get_diamond_gender(species)
   _process_all(species, species_config, groups, reserve_data, _create_diamond, { "rares": rares }, gender=diamond_gender)
 
 def diamond_test_seed(species: str, groups: list, data: bytearray, seed: int, gender: int = 1) -> None:
@@ -322,7 +319,7 @@ def _go_furs(species: str, groups: list, reserve_data: bytearray) -> None:
 
 def _diamond_furs(species: str, groups: list, reserve_data: bytearray) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
-  diamond_gender = _diamond_gender(species_config)
+  diamond_gender = config.get_diamond_gender(species)
   if "furs" in species_config and diamond_gender in species_config["furs"]:
     diamond_furs = _dict_values(species_config["furs"][diamond_gender])
   else:
@@ -331,7 +328,7 @@ def _diamond_furs(species: str, groups: list, reserve_data: bytearray) -> None:
 
 def _furs(species: str, groups: list, reserve_data: bytearray) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
-  diamond_gender = _diamond_gender(species_config)
+  diamond_gender = config.get_diamond_gender(species)
   if "furs" in species_config and diamond_gender in species_config["furs"]:
     diamond_furs = _dict_values(species_config["furs"][diamond_gender])
   else:
@@ -356,12 +353,12 @@ def _go_some(species: str, groups: list, reserve_data: bytearray, modifier: int 
 
 def _diamond_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False, rares: bool = False) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
-  diamond_gender = _diamond_gender(species_config)
+  diamond_gender = config.get_diamond_gender(species)
   _process_some(species, species_config, groups, reserve_data, modifier, percentage, _create_diamond, { "rares": rares }, gender=diamond_gender)
 
 def _furs_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
-  diamond_gender = _diamond_gender(species_config)
+  diamond_gender = config.get_diamond_gender(species)
   _process_some(species, species_config, groups, reserve_data, modifier, percentage, _create_fur, gender=diamond_gender)
 
 def _male_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False) -> None:

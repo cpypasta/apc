@@ -195,6 +195,13 @@ def get_reserve_name(key: str) -> str:
 def get_reserve(reserve_name: str) -> dict:
   return RESERVES[reserve_name]
 
+def get_species(species_name: str) -> dict:
+  return ANIMALS[species_name]
+
+def get_diamond_gender(species_name: str) -> str:
+  species_config = get_species(species_name)["diamonds"]
+  return species_config["gender"] if "gender" in species_config else "male"  
+
 def _get_fur(furs: dict, seed: int) -> str:
   try:
     return next(key for key, value in furs.items() if value == seed)
