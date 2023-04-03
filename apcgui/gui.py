@@ -417,7 +417,7 @@ def main():
     
     while True:
         event, values = window.read()
-        print(event, values)
+        # print(event, values)
 
         if event == sg.WIN_CLOSED:
             break 
