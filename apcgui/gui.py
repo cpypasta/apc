@@ -437,6 +437,13 @@ def main():
               window["progress"].update(50)            
             except adf.FileNotFound as ex:
               _show_error(window, ex)    
+              reserve_details = None
+              window["reserve_description"].update([])
+              window["go_party"].update(disabled=True)
+              window["diamond_party"].update(disabled=True)
+              window["everyone_party"].update(disabled=True)
+              window["fur_party"].update(disabled=True)              
+              window["show_animals"].update(disabled=True)              
               continue
             reserve_description = populations.describe_reserve(reserve_key, reserve_details.adf)
             _disable_go_parties(window, reserve_key)
