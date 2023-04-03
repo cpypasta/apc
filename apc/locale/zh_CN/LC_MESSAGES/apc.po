@@ -1,13 +1,14 @@
-# Chinese (Simplified, China) translations for PROJECT.
-# Copyright (C) 2023 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# PROJECT 的简体中文翻译模板
+# 版权所有 (C) 2023 组织
+# 该文件在与 PROJECT 项目相同的许可下分发
+# 第一作者 <EMAIL@ADDRESS>，2023 年
+# 汉化作者：娱乐至上
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-02 23:56-0500\n"
+"POT-Creation-Date: 2023-04-03 12:21-0500\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hans_CN\n"
@@ -18,727 +19,755 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: apc/config.py:104
-msgid "Trivial"
-msgstr ""
-
-#: apc/config.py:106
-msgid "Minor"
-msgstr ""
-
-#: apc/config.py:108
-msgid "Very Easy"
-msgstr ""
-
-#: apc/config.py:110
-msgid "Easy"
-msgstr ""
-
-#: apc/config.py:112
-msgid "Medium"
-msgstr ""
-
-#: apc/config.py:114
-msgid "Hard"
-msgstr ""
-
-#: apc/config.py:116
-msgid "Very Hard"
-msgstr ""
-
-#: apc/config.py:118
-msgid "Mythical"
-msgstr ""
-
-#: apc/config.py:120
-msgid "Legendary"
-msgstr ""
-
-#: apc/config.py:122 apc/config.py:141
-msgid "Great One"
-msgstr ""
-
 #: apc/config.py:125
-msgid "Animal Population Changer"
-msgstr ""
-
-#: apc/config.py:126
-msgid "Species"
-msgstr ""
+msgid "Trivial"
+msgstr "微不足道"
 
 #: apc/config.py:127
-msgid "Animals"
-msgstr ""
-
-#: apc/config.py:128
-msgid "Male"
-msgstr ""
+msgid "Minor"
+msgstr "小菜一碟"
 
 #: apc/config.py:129
-msgid "Males"
-msgstr ""
-
-#: apc/config.py:130
-msgid "Female"
-msgstr ""
+msgid "Very Easy"
+msgstr "非常简单"
 
 #: apc/config.py:131
-msgid "Females"
-msgstr ""
-
-#: apc/config.py:132
-msgid "High Weight"
-msgstr ""
+msgid "Easy"
+msgstr "简单"
 
 #: apc/config.py:133
-msgid "High Score"
-msgstr ""
-
-#: apc/config.py:134
-msgid "Level"
-msgstr ""
+msgid "Medium"
+msgstr "中等"
 
 #: apc/config.py:135
-msgid "Gender"
-msgstr ""
-
-#: apc/config.py:136
-msgid "Weight"
-msgstr ""
+msgid "Hard"
+msgstr "困难"
 
 #: apc/config.py:137
-msgid "Score"
-msgstr ""
-
-#: apc/config.py:138
-msgid "Visual Seed"
-msgstr ""
+msgid "Very Hard"
+msgstr "非常困难"
 
 #: apc/config.py:139
-msgid "Fur"
-msgstr ""
+msgid "Mythical"
+msgstr "神秘"
 
-#: apc/config.py:140
-msgid "Diamond"
-msgstr ""
+#: apc/config.py:141
+msgid "Legendary"
+msgstr "传说"
 
-#: apc/config.py:142
-msgid "Summary"
-msgstr ""
-
-#: apc/config.py:143
-msgid "Reserve"
-msgstr ""
-
-#: apc/config.py:144
-msgid "Reserves"
-msgstr ""
-
-#: apc/config.py:145
-msgid "Reserve Name (key)"
-msgstr ""
+#: apc/config.py:143 apc/config.py:162
+msgid "Great One"
+msgstr "奇珍异兽"
 
 #: apc/config.py:146
-msgid "Yes"
-msgstr ""
+msgid "Animal Population Changer"
+msgstr "动物种群调整器"
 
 #: apc/config.py:147
-msgid "Modded"
-msgstr ""
+msgid "Species"
+msgstr "物种"
 
 #: apc/config.py:148
-msgid "Species (key)"
-msgstr ""
+msgid "Animals"
+msgstr "动物"
 
 #: apc/config.py:149
-msgid "viewing modded"
-msgstr ""
+msgid "Male"
+msgstr "雄性"
 
 #: apc/config.py:150
-msgid "Please copy and paste as a new bug on Nexusmods here"
-msgstr ""
+msgid "Males"
+msgstr "雄性"
 
 #: apc/config.py:151
-msgid "Error"
-msgstr ""
+msgid "Female"
+msgstr "雌性"
 
 #: apc/config.py:152
-msgid "Unexpected Error"
-msgstr ""
+msgid "Females"
+msgstr "雌性"
 
 #: apc/config.py:153
-msgid "Warning"
-msgstr ""
+msgid "High Weight"
+msgstr "最高公斤"
 
 #: apc/config.py:154
-msgid "Saved"
-msgstr ""
+msgid "High Score"
+msgstr "评分"
 
 #: apc/config.py:155
-msgid "does not exist"
-msgstr ""
+msgid "Level"
+msgstr "等级"
 
 #: apc/config.py:156
-msgid "failed to backup game"
-msgstr ""
+msgid "Gender"
+msgstr "性别"
 
 #: apc/config.py:157
-msgid "failed to load backup file"
-msgstr ""
+msgid "Weight"
+msgstr "公斤"
 
 #: apc/config.py:158
-msgid "failed to load mod"
-msgstr ""
+msgid "Score"
+msgstr "分数"
 
 #: apc/config.py:159
-msgid "failed to unload mod"
-msgstr ""
+msgid "Visual Seed"
+msgstr "视觉种子"
 
 #: apc/config.py:160
-msgid "Mod has been loaded"
-msgstr ""
+msgid "Fur"
+msgstr "毛皮"
 
 #: apc/config.py:161
-msgid "Mod has been unloaded"
-msgstr ""
-
-#: apc/config.py:162
-msgid "Version"
-msgstr ""
+msgid "Diamond"
+msgstr "钻石"
 
 #: apc/config.py:163
-msgid "Hunting Reserve"
-msgstr ""
+msgid "Summary"
+msgstr "摘要"
 
 #: apc/config.py:164
-msgid "update by percentage"
-msgstr ""
+msgid "Reserve"
+msgstr "保留"
 
 #: apc/config.py:165
-msgid "More Males"
-msgstr ""
+msgid "Reserves"
+msgstr "储备"
 
 #: apc/config.py:166
-msgid "More Females"
-msgstr ""
+msgid "Reserve Name (key)"
+msgstr "储备名称（键）"
 
 #: apc/config.py:167
-msgid "Great Ones"
-msgstr ""
+msgid "Yes"
+msgstr "确定"
 
 #: apc/config.py:168
-msgid "Diamonds"
-msgstr ""
+msgid "Modded"
+msgstr "模组化"
 
 #: apc/config.py:169
-msgid "include rare furs"
-msgstr ""
+msgid "Species (key)"
+msgstr "生物种类 (键)"
 
 #: apc/config.py:170
-msgid "All Furs"
-msgstr ""
+msgid "viewing modded"
+msgstr "查看修改后的模组"
 
 #: apc/config.py:171
-msgid "Reset"
-msgstr ""
+msgid "Please copy and paste as a new bug on Nexusmods here"
+msgstr "请将其复制并粘贴到Nexusmods上一份新的错误报告中"
 
 #: apc/config.py:172
-msgid "Update Animals"
-msgstr ""
+msgid "Error"
+msgstr "错误"
 
 #: apc/config.py:173
-msgid "Just the Furs"
-msgstr ""
+msgid "Unexpected Error"
+msgstr "意外错误"
 
 #: apc/config.py:174
-msgid "one of each fur"
-msgstr ""
+msgid "Warning"
+msgstr "警告"
 
 #: apc/config.py:175
-msgid "Others"
-msgstr ""
+msgid "Saved"
+msgstr "已保存"
 
 #: apc/config.py:176
-msgid "Party"
-msgstr ""
+msgid "does not exist"
+msgstr "不存在"
 
 #: apc/config.py:177
-msgid "Great One Party"
-msgstr ""
+msgid "failed to backup game"
+msgstr "备份游戏失败"
 
 #: apc/config.py:178
-msgid "Diamond Party"
-msgstr ""
+msgid "failed to load backup file"
+msgstr "加载备份文件失败"
 
 #: apc/config.py:179
-msgid "We All Party"
-msgstr ""
+msgid "failed to load mod"
+msgstr "加载模组失败"
 
 #: apc/config.py:180
-msgid "Fur Party"
-msgstr ""
+msgid "failed to unload mod"
+msgstr "卸载模组失败"
 
 #: apc/config.py:181
-msgid "Explore"
-msgstr ""
+msgid "Mod has been loaded"
+msgstr "模组已加载"
 
 #: apc/config.py:182
-msgid "diamonds and Great Ones"
-msgstr ""
+msgid "Mod has been unloaded"
+msgstr "模组已卸载"
 
 #: apc/config.py:183
-msgid "look at modded animals"
-msgstr ""
+msgid "Version"
+msgstr "版本"
 
 #: apc/config.py:184
-msgid "look at all reserves"
-msgstr ""
+msgid "Hunting Reserve"
+msgstr "狩猎预留地"
 
 #: apc/config.py:185
-msgid "only top 10 scores"
-msgstr ""
+msgid "update by percentage"
+msgstr "按百分比更新"
 
 #: apc/config.py:186
-msgid "Show Animals"
-msgstr ""
+msgid "More Males"
+msgstr "更多雄性动物"
 
 #: apc/config.py:187
-msgid "Files"
-msgstr ""
+msgid "More Females"
+msgstr "更多雌性动物"
 
 #: apc/config.py:188
-msgid "Configure Game Path"
-msgstr ""
+msgid "Great Ones"
+msgstr "奇珍异兽"
 
 #: apc/config.py:189
-msgid "List Mods"
-msgstr ""
+msgid "Diamonds"
+msgstr "钻石"
 
 #: apc/config.py:190
-msgid "Load Mod"
-msgstr ""
+msgid "include rare furs"
+msgstr "包括稀有毛皮"
 
 #: apc/config.py:191
-msgid "Unload Mod"
-msgstr ""
+msgid "All Furs"
+msgstr "所有毛皮"
 
 #: apc/config.py:192
-msgid "Select the folder where the game saves your files"
-msgstr ""
+msgid "Reset"
+msgstr "重置"
 
 #: apc/config.py:193
-msgid "Saves Path"
-msgstr ""
+msgid "Update Animals"
+msgstr "更新动物"
 
 #: apc/config.py:194
-msgid "Game path saved"
-msgstr ""
+msgid "Just the Furs"
+msgstr "仅毛皮"
 
 #: apc/config.py:195
-msgid "Are you sure you want to overwrite your game file with the modded one?"
-msgstr ""
+msgid "one of each fur"
+msgstr "每一种毛皮只有一件"
 
 #: apc/config.py:196
-msgid "Don't worry, a backup copy will be made."
-msgstr ""
+msgid "Others"
+msgstr "其他"
 
 #: apc/config.py:197
+msgid "Party"
+msgstr "生成"
+
+#: apc/config.py:198
+msgid "Great One Party"
+msgstr "奇珍异兽生成"
+
+#: apc/config.py:199
+msgid "Diamond Party"
+msgstr "钻石生成"
+
+#: apc/config.py:200
+msgid "We All Party"
+msgstr "一键生成"
+
+#: apc/config.py:201
+msgid "Fur Party"
+msgstr "毛皮生成"
+
+#: apc/config.py:202
+msgid "Explore"
+msgstr "探索"
+
+#: apc/config.py:203
+msgid "diamonds and Great Ones"
+msgstr "钻石和奇珍异兽"
+
+#: apc/config.py:204
+msgid "look at modded animals"
+msgstr "查看修改后的动物"
+
+#: apc/config.py:205
+msgid "look at all reserves"
+msgstr "查看所有预留地"
+
+#: apc/config.py:206
+msgid "only top 10 scores"
+msgstr "仅查看前10名分数"
+
+#: apc/config.py:207
+msgid "Show Animals"
+msgstr "展示动物"
+
+#: apc/config.py:208
+msgid "Files"
+msgstr "文件"
+
+#: apc/config.py:209
+msgid "Configure Game Path"
+msgstr "配置游戏路径"
+
+#: apc/config.py:210
+msgid "List Mods"
+msgstr "列出模组"
+
+#: apc/config.py:211
+msgid "Load Mod"
+msgstr "加载模组"
+
+#: apc/config.py:212
+msgid "Unload Mod"
+msgstr "卸载模组"
+
+#: apc/config.py:213
+msgid "Select the folder where the game saves your files"
+msgstr "选择游戏保存文件的文件夹"
+
+#: apc/config.py:214
+msgid "Saves Path"
+msgstr "存档路径"
+
+#: apc/config.py:215
+msgid "Game path saved"
+msgstr "游戏路径已保存"
+
+#: apc/config.py:216
+msgid "Are you sure you want to overwrite your game file with the modded one?"
+msgstr "您确定要用修改后的游戏文件覆盖原来的游戏文件吗？"
+
+#: apc/config.py:217
+msgid "Don't worry, a backup copy will be made."
+msgstr "别担心，备份副本会被创建。"
+
+#: apc/config.py:218
 msgid "Confirmation"
-msgstr ""
+msgstr "确认"
 
 #: apc/config.py:219
-msgid "animal_name"
+msgid "Mod"
 msgstr ""
 
-#: apc/config.py:241
+#: apc/config.py:220
+msgid "view modded version"
+msgstr ""
+
+#: apc/config.py:221
+msgid "Loaded"
+msgstr ""
+
+#: apc/config.py:222
+msgid "Modded File"
+msgstr ""
+
+#: apc/config.py:223
+msgid "Back to Reserve"
+msgstr ""
+
+#: apc/config.py:224
+msgid "update translations"
+msgstr ""
+
+#: apc/config.py:246
+msgid "animal_name"
+msgstr "动物名称"
+
+#: apc/config.py:268
 msgid "reserve_name"
+msgstr "预留地名称"
+
+#: apc/config.py:335
+msgid "name"
 msgstr ""
 
 #: apc/config/animal_names.json:4
 msgid "American Alligator"
-msgstr ""
+msgstr "美洲短吻鳄"
 
 #: apc/config/animal_names.json:7
 msgid "Antelope Jackrabbit"
-msgstr ""
+msgstr "羚羊兔"
 
 #: apc/config/animal_names.json:10
 msgid "Axis Deer"
-msgstr ""
+msgstr "斑轴鹿"
 
 #: apc/config/animal_names.json:13
 msgid "Beceite Ibex"
-msgstr ""
+msgstr "贝赛特山羊"
 
 #: apc/config/animal_names.json:16
 msgid "Bighorn Sheep"
-msgstr ""
+msgstr "大角羊"
 
 #: apc/config/animal_names.json:19
 msgid "Black Bear"
-msgstr ""
+msgstr "黑熊"
 
 #: apc/config/animal_names.json:22
 msgid "Black Grouse"
-msgstr ""
+msgstr "黑琴鸡"
 
 #: apc/config/animal_names.json:25
 msgid "Blackbuck"
-msgstr ""
+msgstr "黑羚"
 
 #: apc/config/animal_names.json:28
 msgid "Blacktail Deer"
-msgstr ""
+msgstr "黑尾鹿"
 
 #: apc/config/animal_names.json:31
 msgid "Blue Wildebeest"
-msgstr ""
+msgstr "蓝角马"
 
 #: apc/config/animal_names.json:34
 msgid "Bobcat"
-msgstr ""
+msgstr "山猫"
 
 #: apc/config/animal_names.json:37
 msgid "Canada Goose"
-msgstr ""
+msgstr "黑额黑雁"
 
 #: apc/config/animal_names.json:40
 msgid "Cape Buffalo"
-msgstr ""
+msgstr "好望角水牛"
 
 #: apc/config/animal_names.json:43
 msgid "Caribou"
-msgstr ""
+msgstr "北美驯鹿"
 
 #: apc/config/animal_names.json:46
 msgid "Chamois"
-msgstr ""
+msgstr "臆羚"
 
 #: apc/config/animal_names.json:49
 msgid "Cinnamon Teal"
-msgstr ""
+msgstr "桂江水鸭"
 
 #: apc/config/animal_names.json:52
 msgid "Collared Peccary"
-msgstr ""
+msgstr "領西貒"
 
 #: apc/config/animal_names.json:55
 msgid "Coyote"
-msgstr ""
+msgstr "郊狼"
 
 #: apc/config/animal_names.json:58
 msgid "Eastern Cottontail Rabbit"
-msgstr ""
+msgstr "棉尾兔"
 
 #: apc/config/animal_names.json:61
 msgid "Eastern Wild Turkey"
-msgstr ""
+msgstr "东部火鸡"
 
 #: apc/config/animal_names.json:64
 msgid "Eu Bison"
-msgstr ""
+msgstr "欧洲野牛"
 
 #: apc/config/animal_names.json:67
 msgid "Eu Hare"
-msgstr ""
+msgstr "欧洲薮兔"
 
 #: apc/config/animal_names.json:70
 msgid "Eu Rabbit"
-msgstr ""
+msgstr "欧洲野兔"
 
 #: apc/config/animal_names.json:73
 msgid "Eurasian Brown Bear"
-msgstr ""
+msgstr "棕熊"
 
 #: apc/config/animal_names.json:76
 msgid "Eurasian Lynx"
-msgstr ""
+msgstr "欧亚猞猁"
 
 #: apc/config/animal_names.json:79
 msgid "Eurasian Teal"
-msgstr ""
+msgstr "绿翅鸭"
 
 #: apc/config/animal_names.json:82
 msgid "Eurasian Wigeon"
-msgstr ""
+msgstr "赤颈鸭"
 
 #: apc/config/animal_names.json:85
 msgid "Fallow Deer"
-msgstr ""
+msgstr "黄鹿"
 
 #: apc/config/animal_names.json:88
 msgid "Feral Goat"
-msgstr ""
+msgstr "野山羊"
 
 #: apc/config/animal_names.json:91
 msgid "Feral Pig"
-msgstr ""
+msgstr "野猪"
 
 #: apc/config/animal_names.json:94
 msgid "Gemsbok"
-msgstr ""
+msgstr "南非剑羚"
 
 #: apc/config/animal_names.json:97
 msgid "Goldeneye"
-msgstr ""
+msgstr "鹊鸭"
 
 #: apc/config/animal_names.json:100
 msgid "Gray Fox"
-msgstr ""
+msgstr "灰狐"
 
 #: apc/config/animal_names.json:103
 msgid "Gray Wolf"
-msgstr ""
+msgstr "灰狼"
 
 #: apc/config/animal_names.json:106
 msgid "Gredos Ibex"
-msgstr ""
+msgstr "格雷多斯山羊"
 
 #: apc/config/animal_names.json:109
 msgid "Green Wing Teal"
-msgstr ""
+msgstr "美洲绿翅鸭"
 
 #: apc/config/animal_names.json:112
 msgid "Greylag Goose"
-msgstr ""
+msgstr "灰雁"
 
 #: apc/config/animal_names.json:115
 msgid "Grizzly Bear"
-msgstr ""
+msgstr "灰熊"
 
 #: apc/config/animal_names.json:118
 msgid "Harlequin Duck"
-msgstr ""
+msgstr "丑鸭"
 
 #: apc/config/animal_names.json:121
 msgid "Hazel Grouse"
-msgstr ""
+msgstr "花尾棒鸡"
 
 #: apc/config/animal_names.json:124
 msgid "Iberian Mouflon"
-msgstr ""
+msgstr "伊比利亚山羊"
 
 #: apc/config/animal_names.json:127
 msgid "Iberian Wolf"
-msgstr ""
+msgstr "伊比利亚狼"
 
 #: apc/config/animal_names.json:130
 msgid "Jackrabbit"
-msgstr ""
+msgstr "白尾兔"
 
 #: apc/config/animal_names.json:133
 msgid "Lesser Kudu"
-msgstr ""
+msgstr "小旋角羚"
 
 #: apc/config/animal_names.json:136
 msgid "Lion"
-msgstr ""
+msgstr "狮子"
 
 #: apc/config/animal_names.json:139
 msgid "Mallard"
-msgstr ""
+msgstr "绿头鸭"
 
 #: apc/config/animal_names.json:142
 msgid "Mexican Bobcat"
-msgstr ""
+msgstr "墨西哥山猫"
 
 #: apc/config/animal_names.json:145
 msgid "Moose"
-msgstr ""
+msgstr "驼鹿"
 
 #: apc/config/animal_names.json:148
 msgid "Mountain Goat"
-msgstr ""
+msgstr "北美野山羊"
 
 #: apc/config/animal_names.json:151
 msgid "Mountain Hare"
-msgstr ""
+msgstr "雪兔"
 
 #: apc/config/animal_names.json:154
 msgid "Mountain Lion"
-msgstr ""
+msgstr "美洲狮"
 
 #: apc/config/animal_names.json:157
 msgid "Mule Deer"
-msgstr ""
+msgstr "螺鹿"
 
 #: apc/config/animal_names.json:160
 msgid "Northern Bobwhite Quail"
-msgstr ""
+msgstr "山齿鹑"
 
 #: apc/config/animal_names.json:163
 msgid "Pheasant"
-msgstr ""
+msgstr "环颈雉鸡"
 
 #: apc/config/animal_names.json:166
 msgid "Plains Bison"
-msgstr ""
+msgstr "平原野牛"
 
 #: apc/config/animal_names.json:169
 msgid "Prong Horn"
-msgstr ""
+msgstr "叉角羚"
 
 #: apc/config/animal_names.json:172
 msgid "Puma"
-msgstr ""
+msgstr "美洲狮"
 
 #: apc/config/animal_names.json:175
 msgid "Raccoon"
-msgstr ""
+msgstr "北美淀熊"
 
 #: apc/config/animal_names.json:178
 msgid "Raccoon Dog"
-msgstr ""
+msgstr "貉"
 
 #: apc/config/animal_names.json:181
 msgid "Red Deer"
-msgstr ""
+msgstr "赤鹿"
 
 #: apc/config/animal_names.json:184
 msgid "Red Fox"
-msgstr ""
+msgstr "赤狐"
 
 #: apc/config/animal_names.json:187
 msgid "Reindeer"
-msgstr ""
+msgstr "驯鹿"
 
 #: apc/config/animal_names.json:190
 msgid "Rio Grande Turkey"
-msgstr ""
+msgstr "格兰德火鸡"
 
 #: apc/config/animal_names.json:193
 msgid "Rock Ptarmigan"
-msgstr ""
+msgstr "岩雷鸟"
 
 #: apc/config/animal_names.json:196
 msgid "Rockymountain Elk"
-msgstr ""
+msgstr "落基山麋鹿"
 
 #: apc/config/animal_names.json:199
 msgid "Roe Deer"
-msgstr ""
+msgstr "狍鹿"
 
 #: apc/config/animal_names.json:202
 msgid "Ronda Ibex"
-msgstr ""
+msgstr "朗达山羊"
 
 #: apc/config/animal_names.json:205
 msgid "Roosevelt Elk"
-msgstr ""
+msgstr "罗斯福麋鹿"
 
 #: apc/config/animal_names.json:208
 msgid "Scrub Hare"
-msgstr ""
+msgstr "藪兔"
 
 #: apc/config/animal_names.json:211
 msgid "Siberian Musk Deer"
-msgstr ""
+msgstr "西伯利亚原麝"
 
 #: apc/config/animal_names.json:214
 msgid "Sidestriped Jackal"
-msgstr ""
+msgstr "侧纹胡狼"
 
 #: apc/config/animal_names.json:217
 msgid "Sika Deer"
-msgstr ""
+msgstr "梅花鹿"
 
 #: apc/config/animal_names.json:220
 msgid "Southeastern Ibex"
-msgstr ""
+msgstr "东南部山羊"
 
 #: apc/config/animal_names.json:223
 msgid "Springbok"
-msgstr ""
+msgstr "跳羚"
 
 #: apc/config/animal_names.json:226
 msgid "Tufted Duck"
-msgstr ""
+msgstr "凤头潜鸭"
 
 #: apc/config/animal_names.json:229
 msgid "Tundra Bean Goose"
-msgstr ""
+msgstr "冻原豆雁"
 
 #: apc/config/animal_names.json:232
 msgid "Warthog"
-msgstr ""
+msgstr "疣猪"
 
 #: apc/config/animal_names.json:235
 msgid "Water Buffalo"
-msgstr ""
+msgstr "水牛"
 
 #: apc/config/animal_names.json:238
 msgid "Western Capercaillie"
-msgstr ""
+msgstr "西方松鸡"
 
 #: apc/config/animal_names.json:241
 msgid "Whitetail Deer"
-msgstr ""
+msgstr "白尾鹿"
 
 #: apc/config/animal_names.json:244
 msgid "Wild Boar"
-msgstr ""
+msgstr "野猪"
 
 #: apc/config/animal_names.json:247
 msgid "Wild Hog"
-msgstr ""
+msgstr "野猪"
 
 #: apc/config/animal_names.json:250
 msgid "Wild Turkey"
-msgstr ""
+msgstr "火鸡"
 
 #: apc/config/animal_names.json:253
 msgid "Willow Ptarmigan"
-msgstr ""
+msgstr "柳雷鸟"
 
 #: apc/config/reserve_names.json:4
 msgid "Hirschfelden"
-msgstr ""
+msgstr "赫费希尔登"
 
 #: apc/config/reserve_names.json:7
 msgid "Layton Lake"
-msgstr ""
+msgstr "莱顿湖区"
 
 #: apc/config/reserve_names.json:10
 msgid "Medved-Taiga National Park"
-msgstr ""
+msgstr "梅德韦泰嘉"
 
 #: apc/config/reserve_names.json:13
 msgid "Vurhonga Savanna"
-msgstr ""
+msgstr "乌尔霍加热带草原"
 
 #: apc/config/reserve_names.json:16
 msgid "Parque Fernando"
-msgstr ""
+msgstr "费尔南多帕克"
 
 #: apc/config/reserve_names.json:19
 msgid "Yukon Valley"
-msgstr ""
+msgstr "育空河谷"
 
 #: apc/config/reserve_names.json:22
 msgid "Cuatro Colinas Game Reserve"
-msgstr ""
+msgstr "夸特罗科利纳斯"
 
 #: apc/config/reserve_names.json:25
 msgid "Sivler Ridge Peaks"
-msgstr ""
+msgstr "银岭峰"
 
 #: apc/config/reserve_names.json:28
 msgid "Te Awaroa National Park"
-msgstr ""
+msgstr "蒂阿瓦罗"
 
 #: apc/config/reserve_names.json:31
 msgid "Rancho del Arroyo"
-msgstr ""
+msgstr "阿罗约牧场"
 
 #: apc/config/reserve_names.json:34
 msgid "Mississippi Acres Preserve"
-msgstr ""
+msgstr "密西西比阿克里斯"
 
 #: apc/config/reserve_names.json:37
 msgid "Revontuli Coast"
-msgstr ""
+msgstr "雷文图里海岸"
 
 #: apc/config/reserve_names.json:40
 msgid "New England Mountains"
-msgstr ""
+msgstr "新英格兰山脉"
 

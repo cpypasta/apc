@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-import sys, traceback, time, os, re, shutil
+import sys, traceback, time, os, re, shutil, subprocess
 from apc import populations, adf, config
 from apc.config import valid_go_species, Strategy, MOD_DIR_PATH, save_path, get_save_path, get_population_file_name, get_population_name, BACKUP_DIR_PATH, valid_fur_species, format_key, get_reserve_species, get_diamond_gender, get_species_name
 from apcgui import __version__, logo, use_languages
@@ -295,18 +295,18 @@ def main():
             [sg.T(save_path_value, font=SMALL_FONT, k="save_path")],
           ]), 
           sg.Push(),
-          sg.T(f"{config.VERSION}: {__version__} ({use_languages[0]})", font=SMALL_FONT, p=((0,0),(0,60)))
+          sg.T(f"{config.VERSION}: {__version__} ({use_languages[0]})", font=SMALL_FONT, p=((0,0),(0,60)), right_click_menu=['',[f'{config.UPDATE_TRANSLATIONS}::update_translations']])
         ],
         [
           sg.Column([[sg.T(f"{config.HUNTING_RESERVE}:", p=((0,10), (10,0))), 
                       sg.Combo(reserve_names, s=(reserve_name_size,len(reserve_names)), k="reserve_name", enable_events=True, metadata=reserve_keys, p=((0,0), (10,0)))
                     ]]),          
-          sg.Column([[sg.Button("Back to Reserve", k="show_reserve", font=SMALL_FONT, visible=False, p=((0,0), (10,0)))]]),          
+          sg.Column([[sg.Button(config.BACK_TO_RESERVE, k="show_reserve", font=SMALL_FONT, visible=False, p=((0,0), (10,0)))]]),          
         ],
         [
           sg.Column([
             [
-              sg.Column([[sg.Checkbox("view modded version", k="load_modded", font=MEDIUM_FONT, enable_events=True, p=((155,0), (5,0)))]], p=(0,0)), 
+              sg.Column([[sg.Checkbox(config.VIEW_MODDED_VERSION, k="load_modded", font=MEDIUM_FONT, enable_events=True, p=((0,0), (5,0)))]], p=(0,0)), 
               sg.Column([[sg.T("", text_color="orange", k="reserve_warning", font=MEDIUM_FONT, p=((5,0), (5,0)))]], p=(0,0)),
               sg.Column([[sg.T("", k="species_name", text_color="orange", justification="r", expand_x=True, p=((0,0),(0,0)))]], expand_x=True, p=(0,0))
             ]        
@@ -343,7 +343,7 @@ def main():
             ),
             sg.Table(
               [], 
-              ["Reserve", "Loaded", "Modded File"],
+              [config.RESERVE, config.LOADED, config.MODDED_FILE],
               font=MEDIUM_FONT, 
               header_background_color="brown",              
               expand_x=True, 
@@ -362,7 +362,7 @@ def main():
         ], expand_x=True, expand_y=True),
           sg.Column([[
             sg.TabGroup([[
-              sg.Tab("Mod", [
+              sg.Tab(config.MOD, [
                 [sg.T(" ", font="_ 3", p=(0,0))],
                 [sg.Column([
                   [sg.Checkbox(config.UPDATE_BY_PERCENTAGE, k="by_percentage", font=MEDIUM_FONT)],
@@ -417,7 +417,7 @@ def main():
     
     while True:
         event, values = window.read()
-        # print(event, values)
+        print(event, values)
 
         if event == sg.WIN_CLOSED:
             break 
@@ -591,6 +591,10 @@ def main():
           elif event == "fur_party":
             for species in get_reserve_species(reserve_key):
               _mod(reserve_key, species, Strategy.furs_some, window, 100, rares=True, percentage=True)
+          elif "::" in event:
+            _value, key = event.split("::")
+            if key == "update_translations":
+              subprocess.Popen(f"pybabel compile --domain=apc --directory={config.APP_DIR_PATH / 'locale'}", shell=True)
         except Exception:
           _show_error_window(traceback.format_exc())
     

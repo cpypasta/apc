@@ -18,15 +18,16 @@ def get_languages() -> list:
     use_languages = env_language.split(':')
   else:
     use_languages = [default_locale]
-  if "en_US" not in use_languages:
-    use_languages.append("en_US")
   
   use_languages = list(filter(lambda x: x in supported_languages, use_languages))  
+  if len(use_languages) == 0:
+    use_languages = ["en_US"]
+    
   return use_languages
 
 LOCALE_PATH = Path(getattr(sys, '_MEIPASS', Path(__file__).resolve().parent)) / "locale/"
 use_languages = get_languages()
-t = gettext.translation("apc", localedir=LOCALE_PATH, languages=["en_US"])
+t = gettext.translation("apc", localedir=LOCALE_PATH, languages=use_languages)
 translate = t.gettext
 
 def _find_saves_path() -> str:
@@ -215,6 +216,12 @@ PATH_SAVED = translate("Game path saved")
 CONFIRM_LOAD_MOD = translate("Are you sure you want to overwrite your game file with the modded one?")
 BACKUP_WILL_BE_MADE = translate("Don't worry, a backup copy will be made.")
 CONFIRMATION = translate("Confirmation")
+MOD = translate("Mod")
+VIEW_MODDED_VERSION = translate("view modded version")
+LOADED = translate("Loaded")
+MODDED_FILE = translate("Modded File")
+BACK_TO_RESERVE = translate("Back to Reserve")
+UPDATE_TRANSLATIONS = translate("update translations")
 
 def format_key(key: str) -> str:
   key = [s.capitalize() for s in re.split("_|-", key)]
@@ -325,5 +332,5 @@ def get_population_name(filename: str):
   for _reserve, details in RESERVES.items():
     reserve_filename = f"animal_population_{details['index']}"
     if reserve_filename == filename:
-      return details["name"]
+      return translate(details["name"])
   return None
