@@ -52,15 +52,13 @@ def _random_choice(choices):
    return random.choice(_dict_values(choices))
 
 def reserve_keys() -> list:
-  return list(dict.keys(config.RESERVES))
+  return config.reserve_keys()
 
 def reserves(include_keys = False) -> list:
-   keys = reserve_keys()
-   return [f"{get_reserve_name(r)}{' (' + r + ')' if include_keys else ''}" for r in keys]
+   return config.reserves(include_keys)
 
-def species_key(reserve_name: str, include_keys = False) -> list:
-   species_keys = config.RESERVES[reserve_name]["species"]
-   return [f"{get_species_name(s)}{' (' + s + ')' if include_keys else ''}" for s in species_keys]
+def species(reserve_key: str, include_keys = False) -> list:
+   return config.species(reserve_key, include_keys)
 
 def _get_populations(reserve_details: Adf) -> list:
   populations = reserve_details.table_instance_full_values[0].value["Populations"].value
@@ -367,7 +365,7 @@ def _female_some(species: str, groups: list, reserve_data: bytearray, modifier: 
 def mod(reserve_name: str, reserve_details: ParsedAdfFile, species: str, strategy: str, modifier: int = None, percentage: bool = False, rares: bool = False, verbose = False):
   species_details = _species(reserve_name, reserve_details.adf, species)
   groups = species_details.value["Groups"].value
-  species_name = format_key(species)
+  species_name = config.get_species_name(species)
   reserve_data = reserve_details.decompressed.data
 
   if (strategy == config.Strategy.go_all):

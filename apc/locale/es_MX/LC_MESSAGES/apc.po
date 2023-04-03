@@ -1,4 +1,4 @@
-# German (Germany) translations for PROJECT.
+# Spanish (Mexico) translations for PROJECT.
 # Copyright (C) 2023 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2023-04-02 23:56-0500\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: de_DE\n"
-"Language-Team: de_DE <LL@li.org>\n"
+"Language: es_MX\n"
+"Language-Team: es_MX <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"

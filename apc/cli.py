@@ -1,7 +1,7 @@
 from typing import Optional
 from rich import print
 from rich.console import Console
-from apc import commands, config
+from apc import commands, config, utils
 from apc.adf import FileNotFound
 from apc import __app_name__, __version__, config
 import typer
@@ -71,7 +71,7 @@ def animals(
 
 @app.command(help="Shows all the species found at a reserve")
 def species(reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch)) -> None:
-  species = commands.species_key(reserve_name)
+  species = commands.species(reserve_name)
   console.print(species)
 
 @app.command(help="Modify the animals for a specific reserve and species")

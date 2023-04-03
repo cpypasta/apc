@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-25 14:39-0500\n"
+"POT-Creation-Date: 2023-04-02 23:56-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,135 +17,339 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: apc/config.py:90
+#: apc/config.py:104
 msgid "Trivial"
 msgstr ""
 
-#: apc/config.py:92
+#: apc/config.py:106
 msgid "Minor"
 msgstr ""
 
-#: apc/config.py:94
+#: apc/config.py:108
 msgid "Very Easy"
 msgstr ""
 
-#: apc/config.py:96
+#: apc/config.py:110
 msgid "Easy"
 msgstr ""
 
-#: apc/config.py:98
+#: apc/config.py:112
 msgid "Medium"
 msgstr ""
 
-#: apc/config.py:100
+#: apc/config.py:114
 msgid "Hard"
 msgstr ""
 
-#: apc/config.py:102
+#: apc/config.py:116
 msgid "Very Hard"
 msgstr ""
 
-#: apc/config.py:104
+#: apc/config.py:118
 msgid "Mythical"
 msgstr ""
 
-#: apc/config.py:106
+#: apc/config.py:120
 msgid "Legendary"
 msgstr ""
 
-#: apc/config.py:108 apc/config.py:126
+#: apc/config.py:122 apc/config.py:141
 msgid "Great One"
 msgstr ""
 
-#: apc/config.py:111
+#: apc/config.py:125
+msgid "Animal Population Changer"
+msgstr ""
+
+#: apc/config.py:126
 msgid "Species"
 msgstr ""
 
-#: apc/config.py:112
+#: apc/config.py:127
 msgid "Animals"
 msgstr ""
 
-#: apc/config.py:113
+#: apc/config.py:128
 msgid "Male"
 msgstr ""
 
-#: apc/config.py:114
+#: apc/config.py:129
 msgid "Males"
 msgstr ""
 
-#: apc/config.py:115
+#: apc/config.py:130
 msgid "Female"
 msgstr ""
 
-#: apc/config.py:116
+#: apc/config.py:131
 msgid "Females"
 msgstr ""
 
-#: apc/config.py:117
+#: apc/config.py:132
 msgid "High Weight"
 msgstr ""
 
-#: apc/config.py:118
+#: apc/config.py:133
 msgid "High Score"
 msgstr ""
 
-#: apc/config.py:119
+#: apc/config.py:134
 msgid "Level"
 msgstr ""
 
-#: apc/config.py:120
+#: apc/config.py:135
 msgid "Gender"
 msgstr ""
 
-#: apc/config.py:121
+#: apc/config.py:136
 msgid "Weight"
 msgstr ""
 
-#: apc/config.py:122
+#: apc/config.py:137
 msgid "Score"
 msgstr ""
 
-#: apc/config.py:123
+#: apc/config.py:138
 msgid "Visual Seed"
 msgstr ""
 
-#: apc/config.py:124
+#: apc/config.py:139
 msgid "Fur"
 msgstr ""
 
-#: apc/config.py:125
+#: apc/config.py:140
 msgid "Diamond"
 msgstr ""
 
-#: apc/config.py:127
+#: apc/config.py:142
 msgid "Summary"
 msgstr ""
 
-#: apc/config.py:128
+#: apc/config.py:143
+msgid "Reserve"
+msgstr ""
+
+#: apc/config.py:144
 msgid "Reserves"
 msgstr ""
 
-#: apc/config.py:129
+#: apc/config.py:145
 msgid "Reserve Name (key)"
 msgstr ""
 
-#: apc/config.py:130
+#: apc/config.py:146
 msgid "Yes"
 msgstr ""
 
-#: apc/config.py:131
+#: apc/config.py:147
 msgid "Modded"
 msgstr ""
 
-#: apc/config.py:132
+#: apc/config.py:148
 msgid "Species (key)"
 msgstr ""
 
-#: apc/config.py:146
+#: apc/config.py:149
+msgid "viewing modded"
+msgstr ""
+
+#: apc/config.py:150
+msgid "Please copy and paste as a new bug on Nexusmods here"
+msgstr ""
+
+#: apc/config.py:151
+msgid "Error"
+msgstr ""
+
+#: apc/config.py:152
+msgid "Unexpected Error"
+msgstr ""
+
+#: apc/config.py:153
+msgid "Warning"
+msgstr ""
+
+#: apc/config.py:154
+msgid "Saved"
+msgstr ""
+
+#: apc/config.py:155
+msgid "does not exist"
+msgstr ""
+
+#: apc/config.py:156
+msgid "failed to backup game"
+msgstr ""
+
+#: apc/config.py:157
+msgid "failed to load backup file"
+msgstr ""
+
+#: apc/config.py:158
+msgid "failed to load mod"
+msgstr ""
+
+#: apc/config.py:159
+msgid "failed to unload mod"
+msgstr ""
+
+#: apc/config.py:160
+msgid "Mod has been loaded"
+msgstr ""
+
+#: apc/config.py:161
+msgid "Mod has been unloaded"
+msgstr ""
+
+#: apc/config.py:162
+msgid "Version"
+msgstr ""
+
+#: apc/config.py:163
+msgid "Hunting Reserve"
+msgstr ""
+
+#: apc/config.py:164
+msgid "update by percentage"
+msgstr ""
+
+#: apc/config.py:165
+msgid "More Males"
+msgstr ""
+
+#: apc/config.py:166
+msgid "More Females"
+msgstr ""
+
+#: apc/config.py:167
+msgid "Great Ones"
+msgstr ""
+
+#: apc/config.py:168
+msgid "Diamonds"
+msgstr ""
+
+#: apc/config.py:169
+msgid "include rare furs"
+msgstr ""
+
+#: apc/config.py:170
+msgid "All Furs"
+msgstr ""
+
+#: apc/config.py:171
+msgid "Reset"
+msgstr ""
+
+#: apc/config.py:172
+msgid "Update Animals"
+msgstr ""
+
+#: apc/config.py:173
+msgid "Just the Furs"
+msgstr ""
+
+#: apc/config.py:174
+msgid "one of each fur"
+msgstr ""
+
+#: apc/config.py:175
+msgid "Others"
+msgstr ""
+
+#: apc/config.py:176
+msgid "Party"
+msgstr ""
+
+#: apc/config.py:177
+msgid "Great One Party"
+msgstr ""
+
+#: apc/config.py:178
+msgid "Diamond Party"
+msgstr ""
+
+#: apc/config.py:179
+msgid "We All Party"
+msgstr ""
+
+#: apc/config.py:180
+msgid "Fur Party"
+msgstr ""
+
+#: apc/config.py:181
+msgid "Explore"
+msgstr ""
+
+#: apc/config.py:182
+msgid "diamonds and Great Ones"
+msgstr ""
+
+#: apc/config.py:183
+msgid "look at modded animals"
+msgstr ""
+
+#: apc/config.py:184
+msgid "look at all reserves"
+msgstr ""
+
+#: apc/config.py:185
+msgid "only top 10 scores"
+msgstr ""
+
+#: apc/config.py:186
+msgid "Show Animals"
+msgstr ""
+
+#: apc/config.py:187
+msgid "Files"
+msgstr ""
+
+#: apc/config.py:188
+msgid "Configure Game Path"
+msgstr ""
+
+#: apc/config.py:189
+msgid "List Mods"
+msgstr ""
+
+#: apc/config.py:190
+msgid "Load Mod"
+msgstr ""
+
+#: apc/config.py:191
+msgid "Unload Mod"
+msgstr ""
+
+#: apc/config.py:192
+msgid "Select the folder where the game saves your files"
+msgstr ""
+
+#: apc/config.py:193
+msgid "Saves Path"
+msgstr ""
+
+#: apc/config.py:194
+msgid "Game path saved"
+msgstr ""
+
+#: apc/config.py:195
+msgid "Are you sure you want to overwrite your game file with the modded one?"
+msgstr ""
+
+#: apc/config.py:196
+msgid "Don't worry, a backup copy will be made."
+msgstr ""
+
+#: apc/config.py:197
+msgid "Confirmation"
+msgstr ""
+
+#: apc/config.py:219
 msgid "animal_name"
 msgstr ""
 
-#: apc/config.py:149
+#: apc/config.py:241
 msgid "reserve_name"
 msgstr ""
 
@@ -350,130 +554,138 @@ msgid "Mountain Hare"
 msgstr ""
 
 #: apc/config/animal_names.json:154
-msgid "Mule Deer"
+msgid "Mountain Lion"
 msgstr ""
 
 #: apc/config/animal_names.json:157
-msgid "Northern Bobwhite Quail"
+msgid "Mule Deer"
 msgstr ""
 
 #: apc/config/animal_names.json:160
-msgid "Pheasant"
+msgid "Northern Bobwhite Quail"
 msgstr ""
 
 #: apc/config/animal_names.json:163
-msgid "Plains Bison"
+msgid "Pheasant"
 msgstr ""
 
 #: apc/config/animal_names.json:166
-msgid "Prong Horn"
+msgid "Plains Bison"
 msgstr ""
 
 #: apc/config/animal_names.json:169
-msgid "Puma"
+msgid "Prong Horn"
 msgstr ""
 
 #: apc/config/animal_names.json:172
-msgid "Raccoon"
+msgid "Puma"
 msgstr ""
 
 #: apc/config/animal_names.json:175
-msgid "Raccoon Dog"
+msgid "Raccoon"
 msgstr ""
 
 #: apc/config/animal_names.json:178
-msgid "Red Deer"
+msgid "Raccoon Dog"
 msgstr ""
 
 #: apc/config/animal_names.json:181
-msgid "Red Fox"
+msgid "Red Deer"
 msgstr ""
 
 #: apc/config/animal_names.json:184
-msgid "Reindeer"
+msgid "Red Fox"
 msgstr ""
 
 #: apc/config/animal_names.json:187
-msgid "Rio Grande Turkey"
+msgid "Reindeer"
 msgstr ""
 
 #: apc/config/animal_names.json:190
-msgid "Rock Ptarmigan"
+msgid "Rio Grande Turkey"
 msgstr ""
 
 #: apc/config/animal_names.json:193
-msgid "Rockymountain Elk"
+msgid "Rock Ptarmigan"
 msgstr ""
 
 #: apc/config/animal_names.json:196
-msgid "Roe Deer"
+msgid "Rockymountain Elk"
 msgstr ""
 
 #: apc/config/animal_names.json:199
-msgid "Ronda Ibex"
+msgid "Roe Deer"
 msgstr ""
 
 #: apc/config/animal_names.json:202
-msgid "Roosevelt Elk"
+msgid "Ronda Ibex"
 msgstr ""
 
 #: apc/config/animal_names.json:205
-msgid "Scrub Hare"
+msgid "Roosevelt Elk"
 msgstr ""
 
 #: apc/config/animal_names.json:208
-msgid "Siberian Musk Deer"
+msgid "Scrub Hare"
 msgstr ""
 
 #: apc/config/animal_names.json:211
-msgid "Sidestriped Jackal"
+msgid "Siberian Musk Deer"
 msgstr ""
 
 #: apc/config/animal_names.json:214
-msgid "Sika Deer"
+msgid "Sidestriped Jackal"
 msgstr ""
 
 #: apc/config/animal_names.json:217
-msgid "Southeastern Ibex"
+msgid "Sika Deer"
 msgstr ""
 
 #: apc/config/animal_names.json:220
-msgid "Springbok"
+msgid "Southeastern Ibex"
 msgstr ""
 
 #: apc/config/animal_names.json:223
-msgid "Tufted Duck"
+msgid "Springbok"
 msgstr ""
 
 #: apc/config/animal_names.json:226
-msgid "Tundra Bean Goose"
+msgid "Tufted Duck"
 msgstr ""
 
 #: apc/config/animal_names.json:229
-msgid "Warthog"
+msgid "Tundra Bean Goose"
 msgstr ""
 
 #: apc/config/animal_names.json:232
-msgid "Water Buffalo"
+msgid "Warthog"
 msgstr ""
 
 #: apc/config/animal_names.json:235
-msgid "Western Capercaillie"
+msgid "Water Buffalo"
 msgstr ""
 
 #: apc/config/animal_names.json:238
-msgid "Whitetail Deer"
+msgid "Western Capercaillie"
 msgstr ""
 
 #: apc/config/animal_names.json:241
-msgid "Wild Boar"
+msgid "Whitetail Deer"
 msgstr ""
 
 #: apc/config/animal_names.json:244
-msgid "Wild Turkey"
+msgid "Wild Boar"
 msgstr ""
 
 #: apc/config/animal_names.json:247
+msgid "Wild Hog"
+msgstr ""
+
+#: apc/config/animal_names.json:250
+msgid "Wild Turkey"
+msgstr ""
+
+#: apc/config/animal_names.json:253
 msgid "Willow Ptarmigan"
 msgstr ""
 

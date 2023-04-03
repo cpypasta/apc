@@ -2,11 +2,31 @@ import os
 import re
 import json
 import sys
+import locale
+import gettext
 from pathlib import Path
 from enum import Enum
-from apc import __app_name__, t
+from apc import __app_name__
 from typing import List
 
+def get_languages() -> list:
+  supported_languages = ["en_US", "de_DE", "zh_CN", "ru_RU", "es_MX"]
+
+  default_locale, _ = locale.getdefaultlocale()
+  env_language = os.environ.get("LANGUAGE")
+  if env_language:
+    use_languages = env_language.split(':')
+  else:
+    use_languages = [default_locale]
+  if "en_US" not in use_languages:
+    use_languages.append("en_US")
+  
+  use_languages = list(filter(lambda x: x in supported_languages, use_languages))  
+  return use_languages
+
+LOCALE_PATH = Path(getattr(sys, '_MEIPASS', Path(__file__).resolve().parent)) / "locale/"
+use_languages = get_languages()
+t = gettext.translation("apc", localedir=LOCALE_PATH, languages=["en_US"])
 translate = t.gettext
 
 def _find_saves_path() -> str:
@@ -122,6 +142,7 @@ def get_level_name(level: Levels):
     return translate("Great One")
   return None
 
+APC = translate("Animal Population Changer")
 SPECIES = translate("Species")
 ANIMALS_TITLE = translate("Animals")
 MALE = translate("Male")
@@ -145,6 +166,55 @@ RESERVE_NAME_KEY = translate("Reserve Name (key)")
 YES = translate("Yes")
 MODDED = translate("Modded")
 SPECIES_NAME_KEY = translate("Species (key)")
+VIEWING_MODDED = translate("viewing modded")
+NEW_BUG = translate("Please copy and paste as a new bug on Nexusmods here")
+ERROR = translate("Error")
+UNEXPECTED_ERROR = translate("Unexpected Error")
+WARNING = translate("Warning")
+SAVED = translate("Saved")
+DOES_NOT_EXIST = translate("does not exist")
+FAILED_TO_BACKUP = translate("failed to backup game")
+FAILED_TO_LOAD_BACKUP = translate("failed to load backup file")
+FAILED_TO_LOAD_MOD = translate("failed to load mod")
+FAILED_TO_UNLOAD_MOD = translate("failed to unload mod")
+MOD_LOADED = translate("Mod has been loaded")
+MOD_UNLOADED = translate("Mod has been unloaded")
+VERSION = translate("Version")
+HUNTING_RESERVE = translate("Hunting Reserve")
+UPDATE_BY_PERCENTAGE = translate("update by percentage")
+MORE_MALES = translate("More Males")
+MORE_FEMALES = translate("More Females")
+GREATONES = translate("Great Ones")
+DIAMONDS = translate("Diamonds")
+INCLUDE_RARE_FURS = translate("include rare furs")
+ALL_FURS = translate("All Furs")
+RESET = translate("Reset")
+UPDATE_ANIMALS = translate("Update Animals")
+JUST_FURS = translate("Just the Furs")
+ONE_OF_EACH_FUR = translate("one of each fur")
+OTHERS = translate("Others")
+PARTY = translate("Party")
+GREATONE_PARTY = translate("Great One Party")
+DIAMOND_PARTY = translate("Diamond Party")
+WE_ALL_PARTY = translate("We All Party")
+FUR_PARTY = translate("Fur Party")
+EXPLORE = translate("Explore")
+DIAMONDS_AND_GREATONES = translate("diamonds and Great Ones")
+LOOK_MODDED_ANIMALS = translate("look at modded animals")
+LOOK_ALL_RESERVES = translate("look at all reserves")
+ONLY_TOP_SCORES = translate("only top 10 scores")
+SHOW_ANIMALS = translate("Show Animals")
+FILES = translate("Files")
+CONFIGURE_GAME_PATH = translate("Configure Game Path")
+LIST_MODS = translate("List Mods")
+LOAD_MOD = translate("Load Mod")
+UNLOAD_MOD = translate("Unload Mod")
+SELECT_FOLDER = translate("Select the folder where the game saves your files")
+SAVES_PATH_TITLE = translate("Saves Path")
+PATH_SAVED = translate("Game path saved")
+CONFIRM_LOAD_MOD = translate("Are you sure you want to overwrite your game file with the modded one?")
+BACKUP_WILL_BE_MADE = translate("Don't worry, a backup copy will be made.")
+CONFIRMATION = translate("Confirmation")
 
 def format_key(key: str) -> str:
   key = [s.capitalize() for s in re.split("_|-", key)]
@@ -168,6 +238,10 @@ def get_reserve_species_renames(reserve_key: str) -> dict:
 def get_species_name(key: str) -> str:
   return translate(ANIMAL_NAMES[key]["animal_name"])
 
+def species(reserve_key: str, include_keys = False) -> list:
+   species_keys = RESERVES[reserve_key]["species"]
+   return [f"{get_species_name(s)}{' (' + s + ')' if include_keys else ''}" for s in species_keys]
+
 def get_species_key(species_name: str) -> str:
   for animal_name_key, names in ANIMAL_NAMES.items():
     if names["animal_name"] == species_name:
@@ -182,20 +256,16 @@ def get_reserve_species_name(species_key: str, reserve_key: str) -> str:
   renames = get_reserve_species_renames(reserve_key)
   species_key = renames[species_key] if species_key in renames else species_key
   return get_species_name(species_key)
-
-def get_reserve_species_key(species_name: str, reserve_key: str) -> str:
-  reserve = get_reserve(reserve_key)
-  species_key = get_species_key(species_name)
-  if species_key in reserve["species"]:
-    return species_key
-  renames = get_reserve_species_renames(reserve_key)
-  for name, rename in renames.items():
-    if rename == species_key:
-      return name
-  return None    
   
 def get_reserve_name(key: str) -> str:
   return translate(RESERVE_NAMES[key]["reserve_name"])
+
+def reserve_keys() -> list:
+  return list(dict.keys(RESERVES))
+
+def reserves(include_keys = False) -> list:
+   keys = list(dict.keys(RESERVES))
+   return [f"{get_reserve_name(r)}{' (' + r + ')' if include_keys else ''}" for r in keys]  
 
 def get_reserve(reserve_key: str) -> dict:
   return RESERVES[reserve_key]
@@ -216,7 +286,7 @@ def _get_fur(furs: dict, seed: int) -> str:
   except:
     return None
 
-def get_animal_fur_by_seed(species: str, gender: str, seed: int) -> str:
+def get_animal_fur_by_seed(species: str, gender: str, seed: int) -> str: # TODO: translations?
   if species not in ANIMALS:
      return "-"
 

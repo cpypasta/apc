@@ -1,17 +1,6 @@
-import gettext
-import locale
-import sys
-import os
-from pathlib import Path
+from apc import config
 
-LOCALE_PATH = Path(getattr(sys, '_MEIPASS', Path(__file__).resolve().parent)) / "locale/"
-default_locale, _ = locale.getdefaultlocale()
-env_language = os.environ.get("LANGUAGE")
-if env_language:
-  use_languages = env_language.split(':')
-else:
-  use_languages = [default_locale]
-tgui = gettext.translation("apcgui", localedir=LOCALE_PATH, languages=["en_US"])
+use_languages = config.get_languages()
 
 __app_name__ = "apcgui"
-__version__ = "1.0.0"
+__version__ = "1.0.1"

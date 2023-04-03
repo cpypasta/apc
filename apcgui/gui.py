@@ -1,44 +1,42 @@
 import PySimpleGUI as sg
 import sys, traceback, time, os, re, shutil
-from apc import populations, adf
-from apc.config import valid_go_species, Strategy, MOD_DIR_PATH, save_path, get_save_path, get_population_file_name, get_reserve_species_key, get_population_name, BACKUP_DIR_PATH, valid_fur_species, format_key, get_reserve_species, get_diamond_gender
-from apcgui import __version__, logo, tgui, use_languages
+from apc import populations, adf, config
+from apc.config import valid_go_species, Strategy, MOD_DIR_PATH, save_path, get_save_path, get_population_file_name, get_population_name, BACKUP_DIR_PATH, valid_fur_species, format_key, get_reserve_species, get_diamond_gender, get_species_name
+from apcgui import __version__, logo, use_languages
 from typing import List
 from pathlib import Path
-
-translate = tgui.gettext
 
 DEFAULT_FONT = "_ 14"
 MEDIUM_FONT = "_ 13"
 BUTTON_FONT = "_ 13"
 SMALL_FONT = "_ 11"
 PROGRESS_DELAY = 0.3
-VIEW_MODDED="(viewing modded)"
+VIEW_MODDED=f"({config.VIEWING_MODDED})"
 
 RESERVE_COLUMNS = [
-    "Species", 
-    "Animals",
-    "Males",
-    "Females",
-    "High Weight",
-    "High Score", 
-    "Diamonds", 
-    "Great Ones" 
+    config.SPECIES, 
+    config.ANIMALS_TITLE,
+    config.MALES,
+    config.FEMALES,
+    config.HIGH_WEIGHT,
+    config.HIGH_SCORE, 
+    config.DIAMOND, 
+    config.GREATONE 
 ]
 SPECIES_COLUMNS = [
-  "Reserve",
-  "Level",
-  "Gender",
-  "Weight",
-  "Score",
-  "Visual Seed",
-  "Fur",
-  "Diamond",
-  "Great One"
+  config.RESERVE,
+  config.LEVEL,
+  config.GENDER,
+  config.WEIGHT,
+  config.SCORE,
+  config.VISUALSEED,
+  config.FUR,
+  config.DIAMOND,
+  config.GREATONE
 ]
 
-reserve_keys = populations.reserve_keys()
-reserve_names = populations.reserves()
+reserve_keys = config.reserve_keys()
+reserve_names = config.reserves()
 reserve_name_size = len(max(reserve_names, key = len))
 save_path_value = get_save_path()
 
@@ -47,12 +45,12 @@ def _progress(window: sg.Window, value: int) -> None:
 
 def _show_error_window(error):
   layout = [
-    [sg.T("Please copy and paste as a new bug on Nexusmods here:")],
+    [sg.T(f"{config.NEW_BUG}:")],
     [sg.Multiline("https://www.nexusmods.com/thehuntercallofthewild/mods/225?tab=bugs", expand_x=True, no_scrollbar=True, disabled=True)],
-    [sg.T("ERROR:")],
+    [sg.T(f"{config.ERROR}:")],
     [sg.Multiline(error, expand_x=True, expand_y=True, disabled=True)]
   ]
-  window = sg.Window("Unexpected Error", layout, modal=True, size=(600, 300), icon=logo.value)
+  window = sg.Window(config.UNEXPECTED_ERROR, layout, modal=True, size=(600, 300), icon=logo.value)
   while True:
     event, _values = window.read()
     if event == sg.WIN_CLOSED:
@@ -109,14 +107,17 @@ def _disable_go_parties(window: sg.Window, reserve_key: str) -> None:
   window["go_party"].update(disabled=(not found))
     
 def _reserve_key_from_name(name: str) -> str:
-  return reserve_keys[reserve_names.index(name)]  # TODO: won't work when translations come
+  return reserve_keys[reserve_names.index(name)]
+
+def _species_key_from_name(reserve_key: str, row: int) -> str:
+  return get_reserve_species(reserve_key)[row]
 
 def _show_species_description(window: sg.Window, species_name: str, is_modded: bool) -> None:
     window["reserve_description"].update(visible=False)
     window["modding"].update(visible=False)
     window["species_description"].update(visible=True)
     window["show_reserve"].update(visible=True)
-    window["species_name"].update(f"{species_name.upper()}{' (modded)' if is_modded else ''}")
+    window["species_name"].update(f"{species_name.upper()}{f' ({config.MODDED})' if is_modded else ''}")
     window["mod_list"].update(visible=False)
 
 def _show_reserve_description(window: sg.Window) -> None:
@@ -165,12 +166,12 @@ def _is_go_enabled(window: sg.Window, value: int) -> bool:
 
 def _show_error(window: sg.Window, ex: adf.FileNotFound) -> None:
   window["progress"].update(0)      
-  window["reserve_note"].update(f"Error: {ex}")      
+  window["reserve_note"].update(f"{config.ERROR}: {ex}")      
   print("ERROR", traceback.print_exc(file=sys.stdout))   
    
 def _show_warning(window: sg.Window, message: str) -> None:
   window["progress"].update(0)      
-  window["reserve_note"].update(f"Warning: {message}")
+  window["reserve_note"].update(f"{config.WARNING}: {message}")
 
 def _mod(reserve_key: str, species: str, strategy: Strategy, window: sg.Window, modifier: int, rares: bool, percentage: bool) -> None:
   print((reserve_key, species, strategy.value, modifier, rares, percentage))
@@ -190,7 +191,7 @@ def _mod(reserve_key: str, species: str, strategy: Strategy, window: sg.Window, 
   window["reserve_description"].update(_highlight_values(modded_reserve_description))
   window["progress"].update(75)
   window["reserve_warning"].update(VIEW_MODDED)
-  window["reserve_note"].update(f"{format_key(species).upper()} ({format_key(strategy)}) Saved: \"{MOD_DIR_PATH / get_population_file_name(reserve_key)}\"")
+  window["reserve_note"].update(f"{get_species_name(species).upper()} ({format_key(strategy)}) {config.SAVED}: \"{MOD_DIR_PATH / get_population_file_name(reserve_key)}\"")
   window["progress"].update(100)
   time.sleep(PROGRESS_DELAY)
   window["progress"].update(0)  
@@ -200,7 +201,7 @@ def _mod(reserve_key: str, species: str, strategy: Strategy, window: sg.Window, 
 
 def _list_mods(window: sg.Window) -> List[List[str]]:
   if not MOD_DIR_PATH.exists():
-    return _show_warning(window, f"{MOD_DIR_PATH} does not exist.")
+    return _show_warning(window, f"{MOD_DIR_PATH} {config.DOES_NOT_EXIST}.")
   
   file_format = re.compile(r"^.*animal_population_\d+$")
   items = os.scandir(MOD_DIR_PATH)
@@ -209,7 +210,7 @@ def _list_mods(window: sg.Window) -> List[List[str]]:
     item_path = MOD_DIR_PATH / item.name
     if item.is_file() and file_format.match(item.name):
       already_loaded = (BACKUP_DIR_PATH / item.name).exists()
-      already_loaded = "Yes" if already_loaded else "-"
+      already_loaded = config.YES if already_loaded else "-"
       mods.append([get_population_name(item.name), already_loaded, item_path])
   return mods
 
@@ -228,21 +229,21 @@ def _load_mod(window: sg.Window, filename: Path) -> None:
       if game_file.exists():
         backup_path = _copy_file(game_file, BACKUP_DIR_PATH)
         if not backup_path:
-          _show_warning(window, f"failed to backup game {game_file}")
+          _show_warning(window, f"{config.FAILED_TO_BACKUP} {game_file}")
           return
     else:
       print("backup already exists")
     _progress(window, 50)
     game_path = _copy_file(filename, get_save_path())
     if not game_path:
-      _show_warning(window, f"failed to load mod {filename}")
+      _show_warning(window, f"{config.FAILED_TO_LOAD_MOD} {filename}")
       return    
     _progress(window, 100)
-    sg.PopupOK("Mod has been loaded", font=DEFAULT_FONT, icon=logo.value, title="Mod Loaded")
+    sg.PopupOK(config.MOD_LOADED, font=DEFAULT_FONT, icon=logo.value, title=config.MOD_LOADED)
     time.sleep(PROGRESS_DELAY)
   except Exception:
     print(traceback.format_exc())
-    _show_warning(window, "failed to load mod")    
+    _show_warning(window, {config.FAILED_TO_LOAD_MOD})    
   _progress(window, 0)
 
 def _unload_mod(window: sg.Window, filename: Path) -> None:
@@ -251,20 +252,20 @@ def _unload_mod(window: sg.Window, filename: Path) -> None:
     backup_file = BACKUP_DIR_PATH / filename.name
     game_path = get_save_path()
     if not backup_file.exists():
-      _show_warning(window, f"{backup_file} does not exist")
+      _show_warning(window, f"{backup_file} {config.DOES_NOT_EXIST}")
       return
     game_path = _copy_file(backup_file, game_path)    
     if not game_path:
-      _show_warning(window, f"failed to load backup file to {game_path}")
+      _show_warning(window, f"{config.FAILED_TO_LOAD_BACKUP} {game_path}")
       return
     _progress(window, 50)
     os.remove(backup_file)
     _progress(window, 100)
-    sg.PopupOK("Mod has been unloaded", font=DEFAULT_FONT, icon=logo.value, title="Mod Unloaded")
+    sg.PopupOK(config.MOD_UNLOADED, font=DEFAULT_FONT, icon=logo.value, title=config.MOD_UNLOADED)
     time.sleep(PROGRESS_DELAY)
   except Exception:
     print(traceback.format_exc())
-    _show_warning(window, f"failed to unload mod")    
+    _show_warning(window, f"{config.FAILED_TO_UNLOAD_MOD}")    
   _progress(window, 0)
 
 def _process_list_mods(window: sg.Window, reserve_name: str = None) -> list:
@@ -290,14 +291,14 @@ def main():
         [
           sg.Image(logo.value), 
           sg.Column([
-            [sg.T(translate('Animal Population Changer'), expand_x=True, font="_ 24")],
+            [sg.T(config.APC, expand_x=True, font="_ 24")],
             [sg.T(save_path_value, font=SMALL_FONT, k="save_path")],
           ]), 
           sg.Push(),
-          sg.T(f"version: {__version__} ({use_languages[0]})", font=SMALL_FONT, p=((0,0),(0,60)))
+          sg.T(f"{config.VERSION}: {__version__} ({use_languages[0]})", font=SMALL_FONT, p=((0,0),(0,60)))
         ],
         [
-          sg.Column([[sg.T("Hunting Reserve:", p=((0,10), (10,0))), 
+          sg.Column([[sg.T(f"{config.HUNTING_RESERVE}:", p=((0,10), (10,0))), 
                       sg.Combo(reserve_names, s=(reserve_name_size,len(reserve_names)), k="reserve_name", enable_events=True, metadata=reserve_keys, p=((0,0), (10,0)))
                     ]]),          
           sg.Column([[sg.Button("Back to Reserve", k="show_reserve", font=SMALL_FONT, visible=False, p=((0,0), (10,0)))]]),          
@@ -364,44 +365,44 @@ def main():
               sg.Tab("Mod", [
                 [sg.T(" ", font="_ 3", p=(0,0))],
                 [sg.Column([
-                  [sg.Checkbox("update by percentage", k="by_percentage", font=MEDIUM_FONT, tooltip="Use numbers provided above as percentage of animals")],
-                  [sg.T("More Males:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="male_value")],
-                  [sg.T("More Females:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="female_value")],
-                  [sg.T("Great Ones"+":", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="go_value")],
-                  [sg.T("Diamonds:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="diamond_value")],
-                  [sg.Checkbox("include rare furs", k="furs", font=MEDIUM_FONT, tooltip="Will include rare furs")],
-                  [sg.T("All Furs:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="rare_fur_value")]
+                  [sg.Checkbox(config.UPDATE_BY_PERCENTAGE, k="by_percentage", font=MEDIUM_FONT)],
+                  [sg.T(f"{config.MORE_MALES}:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="male_value")],
+                  [sg.T(f"{config.MORE_FEMALES}:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="female_value")],
+                  [sg.T(f"{config.GREATONES}:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="go_value")],
+                  [sg.T(f"{config.DIAMONDS}:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="diamond_value")],
+                  [sg.Checkbox(config.INCLUDE_RARE_FURS, k="furs", font=MEDIUM_FONT)],
+                  [sg.T(f"{config.ALL_FURS}:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="rare_fur_value")]
                 ] , expand_x=True)],                
-                [sg.Button("Reset", k="reset", font=BUTTON_FONT), sg.Button("Update Animals", expand_x=True, disabled=True, k="update_animals", font=BUTTON_FONT)],
+                [sg.Button(config.RESET, k="reset", font=BUTTON_FONT), sg.Button(config.UPDATE_ANIMALS, expand_x=True, disabled=True, k="update_animals", font=BUTTON_FONT)],
                 [sg.T(" ", font="_ 3", p=(0,0))],
-                [sg.T("Just the Furs:")],
-                [sg.T("(one of each fur)", font=SMALL_FONT, p=(5,0))],
-                [sg.Button("Great Ones", expand_x=True, disabled=True, k="great_ones", font=BUTTON_FONT)],
-                [sg.Button("Diamonds", expand_x=True, disabled=True, k="diamonds", font=BUTTON_FONT)],
-                [sg.Button("Others", expand_x=True, disabled=True, k="others", font=BUTTON_FONT)],
+                [sg.T(f"{config.JUST_FURS}:")],
+                [sg.T(f"({config.ONE_OF_EACH_FUR})", font=SMALL_FONT, p=(5,0))],
+                [sg.Button(config.GREATONES, expand_x=True, disabled=True, k="great_ones", font=BUTTON_FONT)],
+                [sg.Button(config.DIAMONDS, expand_x=True, disabled=True, k="diamonds", font=BUTTON_FONT)],
+                [sg.Button(config.OTHERS, expand_x=True, disabled=True, k="others", font=BUTTON_FONT)],
                 [sg.T(" ", font="_ 3", p=(0,0))]
               ], k="mod_tab"),
-              sg.Tab("Party", [
+              sg.Tab(config.PARTY, [
                 [sg.T(" ", font="_ 3", p=(0,0))],
-                [sg.Button("Great One Party", expand_x=True, disabled=True, k="go_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))],
-                [sg.Button("Diamond Party", expand_x=True, disabled=True, k="diamond_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))],
-                [sg.Button("We All Party", expand_x=True, disabled=True, k="everyone_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))],
-                [sg.Button("Fur Party", expand_x=True, disabled=True, k="fur_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))]
+                [sg.Button(config.GREATONE_PARTY, expand_x=True, disabled=True, k="go_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))],
+                [sg.Button(config.DIAMOND_PARTY, expand_x=True, disabled=True, k="diamond_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))],
+                [sg.Button(config.WE_ALL_PARTY, expand_x=True, disabled=True, k="everyone_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))],
+                [sg.Button(config.FUR_PARTY, expand_x=True, disabled=True, k="fur_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))]
               ], k="party_tab"),
-              sg.Tab("Explore", [
+              sg.Tab(config.EXPLORE, [
                 [sg.T(" ", font="_ 3", p=(0,0))],
-                [sg.Checkbox("diamonds and Great Ones", font=MEDIUM_FONT, default=True, k="good_ones")],
-                [sg.Checkbox("look at modded animals", font=MEDIUM_FONT, k="modded_reserves")],
-                [sg.Checkbox("look at all reserves", font=MEDIUM_FONT, k="all_reserves")],
-                [sg.Checkbox("only top 10 scores", font=MEDIUM_FONT, k="top_scores")],
-                [sg.Button("Show Animals", expand_x=True, k="show_animals", disabled=True, font=BUTTON_FONT)]
+                [sg.Checkbox(config.DIAMONDS_AND_GREATONES, font=MEDIUM_FONT, default=True, k="good_ones")],
+                [sg.Checkbox(config.LOOK_MODDED_ANIMALS, font=MEDIUM_FONT, k="modded_reserves")],
+                [sg.Checkbox(config.LOOK_ALL_RESERVES, font=MEDIUM_FONT, k="all_reserves")],
+                [sg.Checkbox(config.ONLY_TOP_SCORES, font=MEDIUM_FONT, k="top_scores")],
+                [sg.Button(config.SHOW_ANIMALS, expand_x=True, k="show_animals", disabled=True, font=BUTTON_FONT)]
               ], k="explore_tab"),
-              sg.Tab("Files", [
+              sg.Tab(config.FILES, [
                 [sg.T(" ", font="_ 3", p=(0,0))],
-                [sg.Button("Configure Game Path", expand_x=True, k="set_save", font=BUTTON_FONT)],
-                [sg.Button("List Mods", expand_x=True, k="list_mods", font=BUTTON_FONT)],
-                [sg.Button("Load Mod", expand_x=True, k="load_mod", disabled=True, font=BUTTON_FONT)],
-                [sg.Button("Unload Mod", expand_x=True, k="unload_mod", disabled=True, font=BUTTON_FONT)],
+                [sg.Button(config.CONFIGURE_GAME_PATH, expand_x=True, k="set_save", font=BUTTON_FONT)],
+                [sg.Button(config.LIST_MODS, expand_x=True, k="list_mods", font=BUTTON_FONT)],
+                [sg.Button(config.LOAD_MOD, expand_x=True, k="load_mod", disabled=True, font=BUTTON_FONT)],
+                [sg.Button(config.UNLOAD_MOD, expand_x=True, k="unload_mod", disabled=True, font=BUTTON_FONT)],
               ])
             ]], p=(0,5))
           ]], vertical_alignment="top", p=(0,0), k="modding")         
@@ -411,7 +412,7 @@ def main():
         ]
     ]
 
-    window = sg.Window('Animal Population Changer', layout, resizable=True, font=DEFAULT_FONT, icon=logo.value, size=(1200, 770))
+    window = sg.Window(config.APC, layout, resizable=True, font=DEFAULT_FONT, icon=logo.value, size=(1200, 770))
     reserve_details = None
     
     while True:
@@ -462,7 +463,7 @@ def main():
               if row != None and row >= 0:
                 window["update_animals"].update(disabled=False)
                 species_name = reserve_description[row][0] if reserve_description else ""
-                species = get_reserve_species_key(species_name, reserve_key)
+                species = _species_key_from_name(reserve_key, row)
                 print(f"species clicked: {species}")
                 window["reserve_note"].update("")
                 _disable_go(window, True)
@@ -478,13 +479,13 @@ def main():
               if row != None and row >= 0:
                 selected_mod = mods[row]
                 window["load_mod"].update(disabled=False)
-                window["unload_mod"].update(disabled=selected_mod[1] != "Yes")                
+                window["unload_mod"].update(disabled=selected_mod[1] != config.YES)                
           elif event == "set_save":
-            provided_path = sg.popup_get_folder("Select the folder where the game saves your files:", title="Saves Path", icon=logo.value, font=DEFAULT_FONT)
+            provided_path = sg.popup_get_folder(f"{config.SELECT_FOLDER}:", title=config.SAVES_PATH_TITLE, icon=logo.value, font=DEFAULT_FONT)
             if provided_path:
               save_path(provided_path)
               window["save_path"].update(provided_path)
-              window["reserve_note"].update(f"Game path saved")
+              window["reserve_note"].update(config.PATH_SAVED)
           elif event == "show_animals":
             print((reserve_key, species))                  
             is_modded = values["modded_reserves"]
@@ -549,7 +550,7 @@ def main():
           elif event == "list_mods":
             mods = _process_list_mods(window, reserve_name)
           elif event == "load_mod":
-            confirm = sg.PopupOKCancel(f"Are you sure you want to overwrite your {selected_mod[0]} game file with the modded one? \n\nDon't worry, a backup copy will be made.\n", title="Confirmation", icon=logo.value, font=DEFAULT_FONT)
+            confirm = sg.PopupOKCancel(f"{config.CONFIRM_LOAD_MOD} \n\n{config.BACKUP_WILL_BE_MADE}\n", title=config.CONFIRMATION, icon=logo.value, font=DEFAULT_FONT)
             if confirm == "OK":
               _load_mod(window, selected_mod[2])
               mods = _process_list_mods(window)

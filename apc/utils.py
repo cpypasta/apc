@@ -21,7 +21,7 @@ def update_float(data_bytes: bytearray, offset: int, new_value: float) -> None:
     for i in range(0, 4):
         data_bytes[offset + i] = hex_float[i]
 
-# TODO: all people calling this should stop and call config
 def unformat_key(value: str) -> str:
+  """do not use in production code"""
   parts = value.lower().split(" ")
   return "_".join(parts)
