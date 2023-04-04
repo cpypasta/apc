@@ -37,6 +37,31 @@ def _show_error_window(error):
     if event == sg.WIN_CLOSED:
       break 
 
+def _show_popup(message: str, title: str, ok: str, cancel: str = None) -> str:
+  buttons = [sg.Button(ok, k="ok", font=DEFAULT_FONT)]
+  if cancel:
+    buttons.append(sg.Button(cancel, k="cancel", font=DEFAULT_FONT))
+  
+  layout = [
+    [sg.T(message, font=DEFAULT_FONT, p=(0,10))],
+    [buttons]
+  ]
+  window = sg.Window(title, layout, modal=True, icon=logo.value)
+  response = None
+  while True:
+    event, _values = window.read()
+    if event == sg.WIN_CLOSED:
+      response = "cancel"
+      break
+    if event == "ok":
+      response = "ok"
+      break
+    elif event == "cancel":
+      response = "cancel"
+      break
+  window.close()
+  return response
+
 def _highlight_values(data: list) -> list:
   diamond_index = 6
   go_index = 7
@@ -220,7 +245,7 @@ def _load_mod(window: sg.Window, filename: Path) -> None:
       _show_warning(window, f"{config.FAILED_TO_LOAD_MOD} {filename}")
       return    
     _progress(window, 100)
-    sg.PopupOK(config.MOD_LOADED, font=DEFAULT_FONT, icon=logo.value, title=config.MOD_LOADED)
+    _show_popup(config.MOD_LOADED, config.MOD_LOADED, config.OK)
     time.sleep(PROGRESS_DELAY)
   except Exception:
     print(traceback.format_exc())
@@ -242,7 +267,7 @@ def _unload_mod(window: sg.Window, filename: Path) -> None:
     _progress(window, 50)
     os.remove(backup_file)
     _progress(window, 100)
-    sg.PopupOK(config.MOD_UNLOADED, font=DEFAULT_FONT, icon=logo.value, title=config.MOD_UNLOADED)
+    _show_popup(config.MOD_UNLOADED, config.MOD_UNLOADED, config.OK)
     time.sleep(PROGRESS_DELAY)
   except Exception:
     print(traceback.format_exc())
@@ -307,7 +332,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
             [sg.T(save_path_value, font=SMALL_FONT, k="save_path")],
           ]), 
           sg.Push(),
-          sg.T(f"{config.VERSION}: {__version__} (default: {config.default_locale}, using: {config.use_languages[0]})", font=SMALL_FONT, p=((0,0),(0,60)), right_click_menu=['',[f'{config.UPDATE_TRANSLATIONS}::update_translations', config.SWITCH_LANGUAGE, [f"{x}::switch_language" for x in config.SUPPORTED_LANGUAGES]]])
+          sg.T(f"{config.VERSION}: {__version__} ({config.DEFAULT}: {config.default_locale}, {config.USING}: {config.use_languages[0]})", font=SMALL_FONT, p=((0,0),(0,60)), right_click_menu=['',[f'{config.UPDATE_TRANSLATIONS}::update_translations', config.SWITCH_LANGUAGE, [f"{x}::switch_language" for x in config.SUPPORTED_LANGUAGES]]])
         ],
         [
           sg.Column([[sg.T(f"{config.HUNTING_RESERVE}:", p=((0,10), (10,0))), 
@@ -571,8 +596,8 @@ def main() -> None:
         elif event == "list_mods":
           mods = _process_list_mods(window, reserve_name)
         elif event == "load_mod":
-          confirm = sg.PopupOKCancel(f"{config.CONFIRM_LOAD_MOD} \n\n{config.BACKUP_WILL_BE_MADE}\n", title=config.CONFIRMATION, icon=logo.value, font=DEFAULT_FONT)
-          if confirm == "OK":
+          confirm = _show_popup(f"{config.CONFIRM_LOAD_MOD} \n\n{config.BACKUP_WILL_BE_MADE}\n", config.CONFIRMATION, config.OK, config.CANCEL)
+          if confirm == "ok":
             _load_mod(window, selected_mod[2])
             mods = _process_list_mods(window)
         elif event == "unload_mod":
@@ -616,7 +641,7 @@ def main() -> None:
           value, key = event.split("::")
           if key == "update_translations":
             subprocess.Popen(f"pybabel compile --domain=apc --directory={config.APP_DIR_PATH / 'locale'}", shell=True)
-            sg.Popup(config.PLEASE_RESTART, icon=logo.value, font=DEFAULT_FONT, title=config.APC)
+            _show_popup(config.PLEASE_RESTART, config.APC, config.OK)
           elif key == "switch_language":
             config.update_language(value)
             window = main_window(window)

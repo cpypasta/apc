@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-04 13:18-0500\n"
+"POT-Creation-Date: 2023-04-04 16:19-0500\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de_DE\n"
@@ -82,7 +82,7 @@ msgstr "Fel"
 msgid "Diamond"
 msgstr "Diaman"
 
-#: apc/config.py:70 apc/config.py:319
+#: apc/config.py:70 apc/config.py:327
 msgid "Great One"
 msgstr "Sagenumwobe"
 
@@ -344,51 +344,67 @@ msgstr "sprache wechseln"
 msgid "Please restart to see changes"
 msgstr "Bitte starten Sie neu, um die Änderungen zu sehen"
 
-#: apc/config.py:301
+#: apc/config.py:200
+msgid "default"
+msgstr "standard"
+
+#: apc/config.py:202
+msgid "using"
+msgstr "verwenden"
+
+#: apc/config.py:204
+msgid "OK"
+msgstr "OK"
+
+#: apc/config.py:206
+msgid "Cancel"
+msgstr "Stornieren"
+
+#: apc/config.py:309
 msgid "Trivial"
 msgstr "Gewöchnlic"
 
-#: apc/config.py:303
+#: apc/config.py:311
 msgid "Minor"
 msgstr "Geringfügi"
 
-#: apc/config.py:305
+#: apc/config.py:313
 msgid "Very Easy"
 msgstr "Sehr Einfac"
 
-#: apc/config.py:307
+#: apc/config.py:315
 msgid "Easy"
 msgstr "Einfac"
 
-#: apc/config.py:309
+#: apc/config.py:317
 msgid "Medium"
 msgstr "Durchschnittlic"
 
-#: apc/config.py:311
+#: apc/config.py:319
 msgid "Hard"
 msgstr "Schwe"
 
-#: apc/config.py:313
+#: apc/config.py:321
 msgid "Very Hard"
 msgstr "Sehr Schwe"
 
-#: apc/config.py:315
+#: apc/config.py:323
 msgid "Mythical"
 msgstr "Mythisc"
 
-#: apc/config.py:317
+#: apc/config.py:325
 msgid "Legendary"
 msgstr "Legendär"
 
-#: apc/config.py:342
+#: apc/config.py:350
 msgid "animal_name"
 msgstr "tier_nam"
 
-#: apc/config.py:364
+#: apc/config.py:372
 msgid "reserve_name"
 msgstr "Reservat_nam"
 
-#: apc/config.py:431
+#: apc/config.py:439
 msgid "name"
 msgstr "nam"
 

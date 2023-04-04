@@ -196,6 +196,14 @@ def setup_translations() -> None:
   SWITCH_LANGUAGE = translate("switch language")    
   global PLEASE_RESTART
   PLEASE_RESTART = translate("Please restart to see changes")
+  global DEFAULT
+  DEFAULT = translate("default")
+  global USING
+  USING = translate("using")
+  global OK
+  OK = translate("OK")
+  global CANCEL
+  CANCEL = translate("Cancel")  
 setup_translations()
 
 def update_language(locale: str) -> None:

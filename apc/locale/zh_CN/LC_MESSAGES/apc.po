@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-04 13:18-0500\n"
+"POT-Creation-Date: 2023-04-04 16:19-0500\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hans_CN\n"
@@ -29,7 +29,7 @@ msgstr "物种"
 
 #: apc/config.py:42
 msgid "Animals"
-msgstr "动物"
+msgstr "总数量"
 
 #: apc/config.py:44
 msgid "Male"
@@ -53,7 +53,7 @@ msgstr "最高公斤"
 
 #: apc/config.py:54
 msgid "High Score"
-msgstr "评分"
+msgstr "最高评分"
 
 #: apc/config.py:56
 msgid "Level"
@@ -83,7 +83,7 @@ msgstr "毛皮"
 msgid "Diamond"
 msgstr "钻石"
 
-#: apc/config.py:70 apc/config.py:319
+#: apc/config.py:70 apc/config.py:327
 msgid "Great One"
 msgstr "奇珍异兽"
 
@@ -173,7 +173,7 @@ msgstr "版本"
 
 #: apc/config.py:114
 msgid "Hunting Reserve"
-msgstr "狩猎预留地"
+msgstr "狩猎地图列表"
 
 #: apc/config.py:116
 msgid "update by percentage"
@@ -181,19 +181,19 @@ msgstr "按百分比更新"
 
 #: apc/config.py:118
 msgid "More Males"
-msgstr "更多雄性动物"
+msgstr "雄性转换数"
 
 #: apc/config.py:120
 msgid "More Females"
-msgstr "更多雌性动物"
+msgstr "雌性转换数"
 
 #: apc/config.py:122
 msgid "Great Ones"
-msgstr "奇珍异兽"
+msgstr "奇珍异兽增加"
 
 #: apc/config.py:124
 msgid "Diamonds"
-msgstr "钻石"
+msgstr "钻石增加"
 
 #: apc/config.py:126
 msgid "include rare furs"
@@ -209,7 +209,7 @@ msgstr "重置"
 
 #: apc/config.py:132
 msgid "Update Animals"
-msgstr "更新动物"
+msgstr "开始转变"
 
 #: apc/config.py:134
 msgid "Just the Furs"
@@ -229,11 +229,11 @@ msgstr "生成"
 
 #: apc/config.py:142
 msgid "Great One Party"
-msgstr "奇珍异兽生成"
+msgstr "奇珍异兽全生成"
 
 #: apc/config.py:144
 msgid "Diamond Party"
-msgstr "钻石生成"
+msgstr "钻石全生成"
 
 #: apc/config.py:146
 msgid "We All Party"
@@ -241,7 +241,7 @@ msgstr "一键生成"
 
 #: apc/config.py:148
 msgid "Fur Party"
-msgstr "毛皮生成"
+msgstr "毛皮全生成"
 
 #: apc/config.py:150
 msgid "Explore"
@@ -257,7 +257,7 @@ msgstr "查看修改后的动物"
 
 #: apc/config.py:156
 msgid "look at all reserves"
-msgstr "查看所有预留地"
+msgstr "查看所有狩猎地图"
 
 #: apc/config.py:158
 msgid "only top 10 scores"
@@ -301,11 +301,11 @@ msgstr "游戏路径已保存"
 
 #: apc/config.py:178
 msgid "Are you sure you want to overwrite your game file with the modded one?"
-msgstr "您确定要用修改后的游戏文件覆盖原来的游戏文件吗？"
+msgstr "确定要用修改过的游戏文件覆盖原本的游戏文件吗？"
 
 #: apc/config.py:180
 msgid "Don't worry, a backup copy will be made."
-msgstr "别担心，备份副本会被创建。"
+msgstr "无需担心原文件丢失，本程序会自动备份一份原始文件的副本。"
 
 #: apc/config.py:182
 msgid "Confirmation"
@@ -313,83 +313,99 @@ msgstr "确认"
 
 #: apc/config.py:184
 msgid "Mod"
-msgstr ""
+msgstr "转变"
 
 #: apc/config.py:186
 msgid "view modded version"
-msgstr ""
+msgstr "查看修改后的文件"
 
 #: apc/config.py:188
 msgid "Loaded"
-msgstr ""
+msgstr "已加载"
 
 #: apc/config.py:190
 msgid "Modded File"
-msgstr ""
+msgstr "修改后的文件"
 
 #: apc/config.py:192
 msgid "Back to Reserve"
-msgstr ""
+msgstr "返回原界面"
 
 #: apc/config.py:194
 msgid "update translations"
-msgstr ""
+msgstr "刷新语言包"
 
 #: apc/config.py:196
 msgid "switch language"
-msgstr ""
+msgstr "切换语言包"
 
 #: apc/config.py:198
 msgid "Please restart to see changes"
-msgstr ""
+msgstr "请重启以查看语言变化"
 
-#: apc/config.py:301
+#: apc/config.py:200
+msgid "default"
+msgstr "默认"
+
+#: apc/config.py:202
+msgid "using"
+msgstr "正在使用"
+
+#: apc/config.py:204
+msgid "OK"
+msgstr "确定"
+
+#: apc/config.py:206
+msgid "Cancel"
+msgstr "取消"
+
+#: apc/config.py:309
 msgid "Trivial"
 msgstr "微不足道"
 
-#: apc/config.py:303
+#: apc/config.py:311
 msgid "Minor"
 msgstr "小菜一碟"
 
-#: apc/config.py:305
+#: apc/config.py:313
 msgid "Very Easy"
 msgstr "非常简单"
 
-#: apc/config.py:307
+#: apc/config.py:315
 msgid "Easy"
 msgstr "简单"
 
-#: apc/config.py:309
+#: apc/config.py:317
 msgid "Medium"
 msgstr "中等"
 
-#: apc/config.py:311
+#: apc/config.py:319
 msgid "Hard"
 msgstr "困难"
 
-#: apc/config.py:313
+#: apc/config.py:321
 msgid "Very Hard"
 msgstr "非常困难"
 
-#: apc/config.py:315
+#: apc/config.py:323
 msgid "Mythical"
 msgstr "神秘"
 
-#: apc/config.py:317
+#: apc/config.py:325
 msgid "Legendary"
 msgstr "传说"
 
-#: apc/config.py:342
+#: apc/config.py:350
 msgid "animal_name"
 msgstr "动物名称"
 
-#: apc/config.py:364
+#: apc/config.py:372
 msgid "reserve_name"
-msgstr "预留地名称"
+msgstr "狩猎地图名称"
 
-#: apc/config.py:431
+#: apc/config.py:439
 msgid "name"
-msgstr ""
+msgstr "名称"
 
 #: apc/config/animal_names.json:4
 msgid "American Alligator"
@@ -741,7 +757,7 @@ msgstr "梅德韦泰嘉"
 
 #: apc/config/reserve_names.json:13
 msgid "Vurhonga Savanna"
-msgstr "乌尔霍加热带草原"
+msgstr "乌尔霍加"
 
 #: apc/config/reserve_names.json:16
 msgid "Parque Fernando"
@@ -761,7 +777,7 @@ msgstr "银岭峰"
 
 #: apc/config/reserve_names.json:28
 msgid "Te Awaroa National Park"
-msgstr "蒂阿瓦罗"
+msgstr "蒂阿拉罗瓦"
 
 #: apc/config/reserve_names.json:31
 msgid "Rancho del Arroyo"
