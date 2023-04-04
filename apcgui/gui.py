@@ -2,7 +2,7 @@ import PySimpleGUI as sg
 import sys, traceback, time, os, re, shutil, subprocess
 from apc import populations, adf, config
 from apc.config import valid_go_species, Strategy, MOD_DIR_PATH, save_path, get_save_path, get_population_file_name, get_population_name, BACKUP_DIR_PATH, valid_fur_species, format_key, get_reserve_species, get_diamond_gender, get_species_name
-from apcgui import __version__, logo, use_languages
+from apcgui import __version__, logo, config
 from typing import List
 from pathlib import Path
 
@@ -13,35 +13,16 @@ SMALL_FONT = "_ 11"
 PROGRESS_DELAY = 0.3
 VIEW_MODDED=f"({config.VIEWING_MODDED})"
 
-RESERVE_COLUMNS = [
-    config.SPECIES, 
-    config.ANIMALS_TITLE,
-    config.MALES,
-    config.FEMALES,
-    config.HIGH_WEIGHT,
-    config.HIGH_SCORE, 
-    config.DIAMOND, 
-    config.GREATONE 
-]
-SPECIES_COLUMNS = [
-  config.RESERVE,
-  config.LEVEL,
-  config.GENDER,
-  config.WEIGHT,
-  config.SCORE,
-  config.VISUALSEED,
-  config.FUR,
-  config.DIAMOND,
-  config.GREATONE
-]
+RESERVE_COLUMNS = None
+SPECIES_COLUMNS = None
 
 reserve_keys = config.reserve_keys()
-reserve_names = config.reserves()
-reserve_name_size = len(max(reserve_names, key = len))
+reserve_names = None
+reserve_name_size = None
 save_path_value = get_save_path()
 
 def _progress(window: sg.Window, value: int) -> None:
- window["progress"].update(int)   
+ window["progress"].update(value)   
 
 def _show_error_window(error):
   layout = [
@@ -284,9 +265,36 @@ def _process_list_mods(window: sg.Window, reserve_name: str = None) -> list:
   window["progress"].update(0)
   return mods 
 
-def main():
-    sg.theme("DarkAmber")
+def main_window(my_window: sg.Window = None) -> sg.Window:
+    global reserve_names
+    reserve_names = config.reserves()
+    global reserve_name_size
+    reserve_name_size = len(max(reserve_names, key = len))
 
+    global RESERVE_COLUMNS
+    RESERVE_COLUMNS = [
+        config.SPECIES, 
+        config.ANIMALS_TITLE,
+        config.MALES,
+        config.FEMALES,
+        config.HIGH_WEIGHT,
+        config.HIGH_SCORE, 
+        config.DIAMOND, 
+        config.GREATONE 
+    ]
+    global SPECIES_COLUMNS
+    SPECIES_COLUMNS = [
+      config.RESERVE,
+      config.LEVEL,
+      config.GENDER,
+      config.WEIGHT,
+      config.SCORE,
+      config.VISUALSEED,
+      config.FUR,
+      config.DIAMOND,
+      config.GREATONE
+    ]  
+  
     layout = [
         [
           sg.Image(logo.value), 
@@ -295,7 +303,7 @@ def main():
             [sg.T(save_path_value, font=SMALL_FONT, k="save_path")],
           ]), 
           sg.Push(),
-          sg.T(f"{config.VERSION}: {__version__} ({use_languages[0]})", font=SMALL_FONT, p=((0,0),(0,60)), right_click_menu=['',[f'{config.UPDATE_TRANSLATIONS}::update_translations']])
+          sg.T(f"{config.VERSION}: {__version__} (default: {config.default_locale}, using: {config.use_languages[0]})", font=SMALL_FONT, p=((0,0),(0,60)), right_click_menu=['',[f'{config.UPDATE_TRANSLATIONS}::update_translations', config.SWITCH_LANGUAGE, [f"{x}::switch_language" for x in config.SUPPORTED_LANGUAGES]]])
         ],
         [
           sg.Column([[sg.T(f"{config.HUNTING_RESERVE}:", p=((0,10), (10,0))), 
@@ -413,192 +421,204 @@ def main():
     ]
 
     window = sg.Window(config.APC, layout, resizable=True, font=DEFAULT_FONT, icon=logo.value, size=(1200, 770))
-    reserve_details = None
     
-    while True:
-        event, values = window.read()
-        # print(event, values)
+    if my_window is not None:
+      my_window.close()
+    return window
+    
+def main() -> None:
+  sg.theme("DarkAmber")
+    
+  window = main_window()
+  reserve_details = None
 
-        if event == sg.WIN_CLOSED:
-            break 
-        
-        try:
-          reserve_name = values["reserve_name"] if "reserve_name" in values else None
-          if event == "reserve_name" and reserve_name:
-            _show_reserve_description(window)        
-            is_modded = values["load_modded"]
-            if is_modded:
-              window["reserve_warning"].update(VIEW_MODDED)            
-            else:
-              window["reserve_warning"].update("")
-            window["reserve_note"].update("")   
-            reserve_key = _reserve_key_from_name(reserve_name)
-            try:
-              reserve_details = adf.load_reserve(reserve_key, mod=is_modded)
-              window["progress"].update(50)            
-            except adf.FileNotFound as ex:
-              _show_error(window, ex)    
-              reserve_details = None
-              window["reserve_description"].update([])
-              window["go_party"].update(disabled=True)
-              window["diamond_party"].update(disabled=True)
-              window["everyone_party"].update(disabled=True)
-              window["fur_party"].update(disabled=True)              
-              window["show_animals"].update(disabled=True)              
-              continue
-            reserve_description = populations.describe_reserve(reserve_key, reserve_details.adf)
-            _disable_go_parties(window, reserve_key)
-            window["diamond_party"].update(disabled=False)
-            window["everyone_party"].update(disabled=False)
-            window["fur_party"].update(disabled=False)
-            window["progress"].update(90)
-            window["reserve_description"].update(_highlight_values(reserve_description))
-            window["progress"].update(100)
-            time.sleep(PROGRESS_DELAY)
-            window["progress"].update(0)
-            _disable_new_reserve(window)
-          elif isinstance(event, tuple):
-            if event[0] == "reserve_description" and event[1] == "+CLICKED+" and reserve_name:
-              row, _ = event[2]
-              if row != None and row >= 0:
-                window["update_animals"].update(disabled=False)
-                species_name = reserve_description[row][0] if reserve_description else ""
-                species = _species_key_from_name(reserve_key, row)
-                print(f"species clicked: {species}")
-                window["reserve_note"].update("")
-                _disable_go(window, True)
-                _disable_furs(window, True)
-                _disable_diamonds(window, False)
-                window["show_animals"].update(disabled=False)
-                if valid_go_species(species):
-                  _disable_go(window, False)
-                if valid_fur_species(species):
-                  _disable_furs(window, False)
-            elif event[0] == "mod_list" and event[1] == "+CLICKED+":
-              row, _ = event[2]
-              if row != None and row >= 0:
-                selected_mod = mods[row]
-                window["load_mod"].update(disabled=False)
-                window["unload_mod"].update(disabled=selected_mod[1] != config.YES)                
-          elif event == "set_save":
-            provided_path = sg.popup_get_folder(f"{config.SELECT_FOLDER}:", title=config.SAVES_PATH_TITLE, icon=logo.value, font=DEFAULT_FONT)
-            if provided_path:
-              save_path(provided_path)
-              window["save_path"].update(provided_path)
-              window["reserve_note"].update(config.PATH_SAVED)
-          elif event == "show_animals":
-            print((reserve_key, species))                  
-            is_modded = values["modded_reserves"]
-            is_top = values["top_scores"]
-            window['reserve_warning'].update(visible=False)
-            try:
-              reserve_details = adf.load_reserve(reserve_key, mod=is_modded)
-            except adf.FileNotFound as ex:
-              _show_error(window, ex)
-              continue
-            window["progress"].update(30)
-            if values["all_reserves"]:            
-              species_description = populations.find_animals(species, modded=is_modded, good=values["good_ones"], top=is_top)
-            else:
-              species_description = populations.describe_animals(reserve_key, species, reserve_details.adf, good=values["good_ones"], top=is_top)
-            window["progress"].update(60)
-            window["species_description"].update(species_description)
-            window["progress"].update(100)
-            _show_species_description(window, species_name, is_modded)        
-            time.sleep(PROGRESS_DELAY)
-            window["progress"].update(0)
-          elif event == "show_reserve":
-            _show_reserve_description(window)
-          elif event == "update_animals":
-            use_percent = values["by_percentage"]
-            male_value = int(values["male_value"]) if values["male_value"].isdigit() else 0
-            female_value = int(values["female_value"]) if values["female_value"].isdigit() else 0
-            go_value = int(values["go_value"]) if values["go_value"].isdigit() else 0
-            diamond_value = int(values["diamond_value"]) if values["diamond_value"].isdigit() else 0
-            rare_fur_value = int(values["rare_fur_value"]) if values["rare_fur_value"].isdigit() else 0
-            go_strategy = Strategy.go_all if (go_value == 100 and use_percent) else Strategy.go_some
-            diamond_strategy = Strategy.diamond_all if (diamond_value == 100 and use_percent) else Strategy.diamond_some
-            rare_fur_strategy = Strategy.furs_some
-            use_rares = values["furs"] if not window["furs"].Disabled else False
+  while True:
+      event, values = window.read()
+      # print(event, values)
 
-            if _is_female_enabled(window, female_value):
-              print("modding females")
-              _mod(reserve_key, species, Strategy.females, window, female_value, False, use_percent)
-              window["male_value"].update("0")                
-            if _is_male_enabled(window, male_value):
-              print("modding males")
-              _mod(reserve_key, species, Strategy.males, window, male_value, False, use_percent)
-              window["male_value"].update("0")                                 
-            if _is_go_enabled(window, go_value):
-              print("modding go")
-              _mod(reserve_key, species, go_strategy, window, go_value, use_rares, use_percent)        
-            if _is_diamond_enabled(window, diamond_value):
-              print("modding diamonds")
-              _mod(reserve_key, species, diamond_strategy, window, diamond_value, use_rares, use_percent)   
-            if _is_furs_enabled(window, rare_fur_value):
-              print("modding rare furs")
-              _mod(reserve_key, species, rare_fur_strategy, window, rare_fur_value, True, use_percent)                                  
-            _disable_new_reserve(window)
-          elif event == "great_ones":
-            _mod(reserve_key, species, Strategy.go_furs, window, 0, True, False)             
-          elif event == "diamonds":
-            _mod(reserve_key, species, Strategy.diamond_furs, window, 0, True, False)   
-          elif event == "others":
-            _mod(reserve_key, species, Strategy.furs, window, 0, True, False)               
-          elif event == "load_modded":
-            window["modded_reserves"].update(values["load_modded"])  
-          elif event == "list_mods":
-            mods = _process_list_mods(window, reserve_name)
-          elif event == "load_mod":
-            confirm = sg.PopupOKCancel(f"{config.CONFIRM_LOAD_MOD} \n\n{config.BACKUP_WILL_BE_MADE}\n", title=config.CONFIRMATION, icon=logo.value, font=DEFAULT_FONT)
-            if confirm == "OK":
-              _load_mod(window, selected_mod[2])
-              mods = _process_list_mods(window)
-          elif event == "unload_mod":
-            _unload_mod(window, selected_mod[2])
+      if event == sg.WIN_CLOSED:
+          break 
+      
+      try:
+        reserve_name = values["reserve_name"] if "reserve_name" in values else None
+        if event == "reserve_name" and reserve_name:
+          _show_reserve_description(window)        
+          is_modded = values["load_modded"]
+          if is_modded:
+            window["reserve_warning"].update(VIEW_MODDED)            
+          else:
+            window["reserve_warning"].update("")
+          window["reserve_note"].update("")   
+          reserve_key = _reserve_key_from_name(reserve_name)
+          try:
+            reserve_details = adf.load_reserve(reserve_key, mod=is_modded)
+            window["progress"].update(50)            
+          except adf.FileNotFound as ex:
+            _show_error(window, ex)    
+            reserve_details = None
+            window["reserve_description"].update([])
+            window["go_party"].update(disabled=True)
+            window["diamond_party"].update(disabled=True)
+            window["everyone_party"].update(disabled=True)
+            window["fur_party"].update(disabled=True)              
+            window["show_animals"].update(disabled=True)              
+            continue
+          reserve_description = populations.describe_reserve(reserve_key, reserve_details.adf)
+          _disable_go_parties(window, reserve_key)
+          window["diamond_party"].update(disabled=False)
+          window["everyone_party"].update(disabled=False)
+          window["fur_party"].update(disabled=False)
+          window["progress"].update(90)
+          window["reserve_description"].update(_highlight_values(reserve_description))
+          window["progress"].update(100)
+          time.sleep(PROGRESS_DELAY)
+          window["progress"].update(0)
+          _disable_new_reserve(window)
+        elif isinstance(event, tuple):
+          if event[0] == "reserve_description" and event[1] == "+CLICKED+" and reserve_name:
+            row, _ = event[2]
+            if row != None and row >= 0:
+              window["update_animals"].update(disabled=False)
+              species_name = reserve_description[row][0] if reserve_description else ""
+              species = _species_key_from_name(reserve_key, row)
+              print(f"species clicked: {species}")
+              window["reserve_note"].update("")
+              _disable_go(window, True)
+              _disable_furs(window, True)
+              _disable_diamonds(window, False)
+              window["show_animals"].update(disabled=False)
+              if valid_go_species(species):
+                _disable_go(window, False)
+              if valid_fur_species(species):
+                _disable_furs(window, False)
+          elif event[0] == "mod_list" and event[1] == "+CLICKED+":
+            row, _ = event[2]
+            if row != None and row >= 0:
+              selected_mod = mods[row]
+              window["load_mod"].update(disabled=False)
+              window["unload_mod"].update(disabled=selected_mod[1] != config.YES)                
+        elif event == "set_save":
+          provided_path = sg.popup_get_folder(f"{config.SELECT_FOLDER}:", title=config.SAVES_PATH_TITLE, icon=logo.value, font=DEFAULT_FONT)
+          if provided_path:
+            save_path(provided_path)
+            window["save_path"].update(provided_path)
+            window["reserve_note"].update(config.PATH_SAVED)
+        elif event == "show_animals":
+          print((reserve_key, species))                  
+          is_modded = values["modded_reserves"]
+          is_top = values["top_scores"]
+          window['reserve_warning'].update(visible=False)
+          try:
+            reserve_details = adf.load_reserve(reserve_key, mod=is_modded)
+          except adf.FileNotFound as ex:
+            _show_error(window, ex)
+            continue
+          window["progress"].update(30)
+          if values["all_reserves"]:            
+            species_description = populations.find_animals(species, modded=is_modded, good=values["good_ones"], top=is_top)
+          else:
+            species_description = populations.describe_animals(reserve_key, species, reserve_details.adf, good=values["good_ones"], top=is_top)
+          window["progress"].update(60)
+          window["species_description"].update(species_description)
+          window["progress"].update(100)
+          _show_species_description(window, species_name, is_modded)        
+          time.sleep(PROGRESS_DELAY)
+          window["progress"].update(0)
+        elif event == "show_reserve":
+          _show_reserve_description(window)
+        elif event == "update_animals":
+          use_percent = values["by_percentage"]
+          male_value = int(values["male_value"]) if values["male_value"].isdigit() else 0
+          female_value = int(values["female_value"]) if values["female_value"].isdigit() else 0
+          go_value = int(values["go_value"]) if values["go_value"].isdigit() else 0
+          diamond_value = int(values["diamond_value"]) if values["diamond_value"].isdigit() else 0
+          rare_fur_value = int(values["rare_fur_value"]) if values["rare_fur_value"].isdigit() else 0
+          go_strategy = Strategy.go_all if (go_value == 100 and use_percent) else Strategy.go_some
+          diamond_strategy = Strategy.diamond_all if (diamond_value == 100 and use_percent) else Strategy.diamond_some
+          rare_fur_strategy = Strategy.furs_some
+          use_rares = values["furs"] if not window["furs"].Disabled else False
+
+          if _is_female_enabled(window, female_value):
+            print("modding females")
+            _mod(reserve_key, species, Strategy.females, window, female_value, False, use_percent)
+            window["male_value"].update("0")                
+          if _is_male_enabled(window, male_value):
+            print("modding males")
+            _mod(reserve_key, species, Strategy.males, window, male_value, False, use_percent)
+            window["male_value"].update("0")                                 
+          if _is_go_enabled(window, go_value):
+            print("modding go")
+            _mod(reserve_key, species, go_strategy, window, go_value, use_rares, use_percent)        
+          if _is_diamond_enabled(window, diamond_value):
+            print("modding diamonds")
+            _mod(reserve_key, species, diamond_strategy, window, diamond_value, use_rares, use_percent)   
+          if _is_furs_enabled(window, rare_fur_value):
+            print("modding rare furs")
+            _mod(reserve_key, species, rare_fur_strategy, window, rare_fur_value, True, use_percent)                                  
+          _disable_new_reserve(window)
+        elif event == "great_ones":
+          _mod(reserve_key, species, Strategy.go_furs, window, 0, True, False)             
+        elif event == "diamonds":
+          _mod(reserve_key, species, Strategy.diamond_furs, window, 0, True, False)   
+        elif event == "others":
+          _mod(reserve_key, species, Strategy.furs, window, 0, True, False)               
+        elif event == "load_modded":
+          window["modded_reserves"].update(values["load_modded"])  
+        elif event == "list_mods":
+          mods = _process_list_mods(window, reserve_name)
+        elif event == "load_mod":
+          confirm = sg.PopupOKCancel(f"{config.CONFIRM_LOAD_MOD} \n\n{config.BACKUP_WILL_BE_MADE}\n", title=config.CONFIRMATION, icon=logo.value, font=DEFAULT_FONT)
+          if confirm == "OK":
+            _load_mod(window, selected_mod[2])
             mods = _process_list_mods(window)
-          elif event == "reset":
-            window["male_value"].update("0")
-            window["female_value"].update("0")
-            window["go_value"].update("0")
-            window["diamond_value"].update("0")
-            window["rare_fur_value"].update("0")
-            window["by_percentage"].update(False)
-            window["furs"].update(False)
-          elif event == "go_party":
-            go_species = _get_go_species(reserve_key)
-            for species in go_species:
-              _mod(reserve_key, species, Strategy.males, window, 100, rares=False, percentage=True)
-              _mod(reserve_key, species, Strategy.go_all, window, 100, rares=False, percentage=True)
-            _disable_new_reserve(window)
-          elif event == "diamond_party":
-            for species in get_reserve_species(reserve_key):
-              diamond_gender = get_diamond_gender(species)
-              if diamond_gender == "male":
-                _mod(reserve_key, species, Strategy.males, window, 100, rares=True, percentage=True)
-              elif diamond_gender == "female":
-                _mod(reserve_key, species, Strategy.females, window, 100, rares=True, percentage=True)
-              _mod(reserve_key, species, Strategy.diamond_all, window, 100, rares=True, percentage=True)
-            _disable_new_reserve(window)
-          elif event == "everyone_party":
-            go_species = _get_go_species(reserve_key)
-            for species in get_reserve_species(reserve_key):
-              if species in go_species:
-                _mod(reserve_key, species, Strategy.go_some, window, 10, rares=False, percentage=True)
-              _mod(reserve_key, species, Strategy.diamond_some, window, 50, rares=True, percentage=True)
-              _mod(reserve_key, species, Strategy.furs_some, window, 100, rares=True, percentage=True)
-            _disable_new_reserve(window)
-          elif event == "fur_party":
-            for species in get_reserve_species(reserve_key):
-              _mod(reserve_key, species, Strategy.furs_some, window, 100, rares=True, percentage=True)
-          elif "::" in event:
-            _value, key = event.split("::")
-            if key == "update_translations":
-              subprocess.Popen(f"pybabel compile --domain=apc --directory={config.APP_DIR_PATH / 'locale'}", shell=True)
-        except Exception:
-          _show_error_window(traceback.format_exc())
-    
-    window.close()
+        elif event == "unload_mod":
+          _unload_mod(window, selected_mod[2])
+          mods = _process_list_mods(window)
+        elif event == "reset":
+          window["male_value"].update("0")
+          window["female_value"].update("0")
+          window["go_value"].update("0")
+          window["diamond_value"].update("0")
+          window["rare_fur_value"].update("0")
+          window["by_percentage"].update(False)
+          window["furs"].update(False)
+        elif event == "go_party":
+          go_species = _get_go_species(reserve_key)
+          for species in go_species:
+            _mod(reserve_key, species, Strategy.males, window, 100, rares=False, percentage=True)
+            _mod(reserve_key, species, Strategy.go_all, window, 100, rares=False, percentage=True)
+          _disable_new_reserve(window)
+        elif event == "diamond_party":
+          for species in get_reserve_species(reserve_key):
+            diamond_gender = get_diamond_gender(species)
+            if diamond_gender == "male":
+              _mod(reserve_key, species, Strategy.males, window, 100, rares=True, percentage=True)
+            elif diamond_gender == "female":
+              _mod(reserve_key, species, Strategy.females, window, 100, rares=True, percentage=True)
+            _mod(reserve_key, species, Strategy.diamond_all, window, 100, rares=True, percentage=True)
+          _disable_new_reserve(window)
+        elif event == "everyone_party":
+          go_species = _get_go_species(reserve_key)
+          for species in get_reserve_species(reserve_key):
+            if species in go_species:
+              _mod(reserve_key, species, Strategy.go_some, window, 10, rares=False, percentage=True)
+            _mod(reserve_key, species, Strategy.diamond_some, window, 50, rares=True, percentage=True)
+            _mod(reserve_key, species, Strategy.furs_some, window, 100, rares=True, percentage=True)
+          _disable_new_reserve(window)
+        elif event == "fur_party":
+          for species in get_reserve_species(reserve_key):
+            _mod(reserve_key, species, Strategy.furs_some, window, 100, rares=True, percentage=True)
+        elif "::" in event:
+          value, key = event.split("::")
+          if key == "update_translations":
+            subprocess.Popen(f"pybabel compile --domain=apc --directory={config.APP_DIR_PATH / 'locale'}", shell=True)
+          elif key == "switch_language":
+            config.update_language(value)
+            window = main_window(window)
+      except Exception:
+        _show_error_window(traceback.format_exc())
+  
+  window.close()  
 
 if __name__ == "__main__":
     main()

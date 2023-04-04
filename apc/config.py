@@ -9,26 +9,200 @@ from enum import Enum
 from apc import __app_name__
 from typing import List
 
-def get_languages() -> list:
-  supported_languages = ["en_US", "de_DE", "zh_CN", "ru_RU", "es_MX"]
+SUPPORTED_LANGUAGES = ["en_US", "de_DE", "zh_CN", "ru_RU", "es_MX"]
+default_locale = None
 
+def get_languages() -> list:
+  global default_locale
   default_locale, _ = locale.getdefaultlocale()
   env_language = os.environ.get("LANGUAGE")
+  global use_languages
   if env_language:
     use_languages = env_language.split(':')
   else:
     use_languages = [default_locale]
   
-  use_languages = list(filter(lambda x: x in supported_languages, use_languages))  
+  use_languages = list(filter(lambda x: x in SUPPORTED_LANGUAGES, use_languages))  
   if len(use_languages) == 0:
     use_languages = ["en_US"]
     
-  return use_languages
+  return (default_locale, use_languages)
 
 LOCALE_PATH = Path(getattr(sys, '_MEIPASS', Path(__file__).resolve().parent)) / "locale/"
-use_languages = get_languages()
+_default, use_languages = get_languages()
 t = gettext.translation("apc", localedir=LOCALE_PATH, languages=use_languages)
 translate = t.gettext
+
+def setup_translations() -> None:
+  global APC 
+  APC = translate("Animal Population Changer")
+  global SPECIES
+  SPECIES = translate("Species")
+  global ANIMALS_TITLE
+  ANIMALS_TITLE = translate("Animals")
+  global MALE
+  MALE = translate("Male")
+  global MALES
+  MALES = translate("Males")
+  global FEMALE
+  FEMALE = translate("Female")
+  global FEMALES
+  FEMALES = translate("Females")
+  global HIGH_WEIGHT
+  HIGH_WEIGHT = translate("High Weight")
+  global HIGH_SCORE
+  HIGH_SCORE = translate("High Score")
+  global LEVEL
+  LEVEL = translate("Level")
+  global GENDER
+  GENDER = translate("Gender")
+  global WEIGHT
+  WEIGHT = translate("Weight")
+  global SCORE
+  SCORE = translate("Score")
+  global VISUALSEED
+  VISUALSEED = translate("Visual Seed")
+  global FUR
+  FUR = translate("Fur")
+  global DIAMOND
+  DIAMOND = translate("Diamond")
+  global GREATONE
+  GREATONE = translate("Great One")
+  global SUMMARY
+  SUMMARY = translate("Summary")
+  global RESERVE
+  RESERVE = translate("Reserve")
+  global RESERVES_TITLE
+  RESERVES_TITLE = translate("Reserves")
+  global RESERVE_NAME_KEY
+  RESERVE_NAME_KEY = translate("Reserve Name (key)")
+  global YES
+  YES = translate("Yes")
+  global MODDED
+  MODDED = translate("Modded")
+  global SPECIES_NAME_KEY
+  SPECIES_NAME_KEY = translate("Species (key)")
+  global VIEWING_MODDED
+  VIEWING_MODDED = translate("viewing modded")
+  global NEW_BUG
+  NEW_BUG = translate("Please copy and paste as a new bug on Nexusmods here")
+  global ERROR
+  ERROR = translate("Error")
+  global UNEXPECTED_ERROR
+  UNEXPECTED_ERROR = translate("Unexpected Error")
+  global WARNING
+  WARNING = translate("Warning")
+  global SAVED
+  SAVED = translate("Saved")
+  global DOES_NOT_EXIST
+  DOES_NOT_EXIST = translate("does not exist")
+  global FAILED_TO_BACKUP
+  FAILED_TO_BACKUP = translate("failed to backup game")
+  global FAILED_TO_LOAD_BACKUP
+  FAILED_TO_LOAD_BACKUP = translate("failed to load backup file")
+  global FAILED_TO_LOAD_MOD
+  FAILED_TO_LOAD_MOD = translate("failed to load mod")
+  global FAILED_TO_UNLOAD_MOD
+  FAILED_TO_UNLOAD_MOD = translate("failed to unload mod")
+  global MOD_LOADED
+  MOD_LOADED = translate("Mod has been loaded")
+  global MOD_UNLOADED
+  MOD_UNLOADED = translate("Mod has been unloaded")
+  global VERSION
+  VERSION = translate("Version")
+  global HUNTING_RESERVE
+  HUNTING_RESERVE = translate("Hunting Reserve")
+  global UPDATE_BY_PERCENTAGE
+  UPDATE_BY_PERCENTAGE = translate("update by percentage")
+  global MORE_MALES
+  MORE_MALES = translate("More Males")
+  global MORE_FEMALES
+  MORE_FEMALES = translate("More Females")
+  global GREATONES
+  GREATONES = translate("Great Ones")
+  global DIAMONDS
+  DIAMONDS = translate("Diamonds")
+  global INCLUDE_RARE_FURS
+  INCLUDE_RARE_FURS = translate("include rare furs")
+  global ALL_FURS
+  ALL_FURS = translate("All Furs")
+  global RESET
+  RESET = translate("Reset")
+  global UPDATE_ANIMALS
+  UPDATE_ANIMALS = translate("Update Animals")
+  global JUST_FURS
+  JUST_FURS = translate("Just the Furs")
+  global ONE_OF_EACH_FUR
+  ONE_OF_EACH_FUR = translate("one of each fur")
+  global OTHERS
+  OTHERS = translate("Others")
+  global PARTY
+  PARTY = translate("Party")
+  global GREATONE_PARTY
+  GREATONE_PARTY = translate("Great One Party")
+  global DIAMOND_PARTY
+  DIAMOND_PARTY = translate("Diamond Party")
+  global WE_ALL_PARTY
+  WE_ALL_PARTY = translate("We All Party")
+  global FUR_PARTY
+  FUR_PARTY = translate("Fur Party")
+  global EXPLORE
+  EXPLORE = translate("Explore")
+  global DIAMONDS_AND_GREATONES
+  DIAMONDS_AND_GREATONES = translate("diamonds and Great Ones")
+  global LOOK_MODDED_ANIMALS
+  LOOK_MODDED_ANIMALS = translate("look at modded animals")
+  global LOOK_ALL_RESERVES
+  LOOK_ALL_RESERVES = translate("look at all reserves")
+  global ONLY_TOP_SCORES
+  ONLY_TOP_SCORES = translate("only top 10 scores")
+  global SHOW_ANIMALS
+  SHOW_ANIMALS = translate("Show Animals")
+  global FILES
+  FILES = translate("Files")
+  global CONFIGURE_GAME_PATH
+  CONFIGURE_GAME_PATH = translate("Configure Game Path")
+  global LIST_MODS
+  LIST_MODS = translate("List Mods")
+  global LOAD_MOD
+  LOAD_MOD = translate("Load Mod")
+  global UNLOAD_MOD
+  UNLOAD_MOD = translate("Unload Mod")
+  global SELECT_FOLDER
+  SELECT_FOLDER = translate("Select the folder where the game saves your files")
+  global SAVES_PATH_TITLE
+  SAVES_PATH_TITLE = translate("Saves Path")
+  global PATH_SAVED
+  PATH_SAVED = translate("Game path saved")
+  global CONFIRM_LOAD_MOD
+  CONFIRM_LOAD_MOD = translate("Are you sure you want to overwrite your game file with the modded one?")
+  global BACKUP_WILL_BE_MADE
+  BACKUP_WILL_BE_MADE = translate("Don't worry, a backup copy will be made.")
+  global CONFIRMATION
+  CONFIRMATION = translate("Confirmation")
+  global MOD
+  MOD = translate("Mod")
+  global VIEW_MODDED_VERSION
+  VIEW_MODDED_VERSION = translate("view modded version")
+  global LOADED
+  LOADED = translate("Loaded")
+  global MODDED_FILE
+  MODDED_FILE = translate("Modded File")
+  global BACK_TO_RESERVE
+  BACK_TO_RESERVE = translate("Back to Reserve")
+  global UPDATE_TRANSLATIONS
+  UPDATE_TRANSLATIONS = translate("update translations")
+  global SWITCH_LANGUAGE
+  SWITCH_LANGUAGE = translate("switch language")    
+setup_translations()
+
+def update_language(locale: str) -> None:
+  global use_languages
+  use_languages = [locale]
+  t = gettext.translation("apc", localedir=LOCALE_PATH, languages=use_languages)
+  global translate
+  translate = t.gettext
+  setup_translations()
 
 def _find_saves_path() -> str:
     steam_saves = Path().home() / "Documents/Avalanche Studios/COTW/Saves"
@@ -142,86 +316,6 @@ def get_level_name(level: Levels):
   if level == Levels.GREAT_ONE:
     return translate("Great One")
   return None
-
-APC = translate("Animal Population Changer")
-SPECIES = translate("Species")
-ANIMALS_TITLE = translate("Animals")
-MALE = translate("Male")
-MALES = translate("Males")
-FEMALE = translate("Female")
-FEMALES = translate("Females")
-HIGH_WEIGHT = translate("High Weight")
-HIGH_SCORE = translate("High Score")
-LEVEL = translate("Level")
-GENDER = translate("Gender")
-WEIGHT = translate("Weight")
-SCORE = translate("Score")
-VISUALSEED = translate("Visual Seed")
-FUR = translate("Fur")
-DIAMOND = translate("Diamond")
-GREATONE = translate("Great One")
-SUMMARY = translate("Summary")
-RESERVE = translate("Reserve")
-RESERVES_TITLE = translate("Reserves")
-RESERVE_NAME_KEY = translate("Reserve Name (key)")
-YES = translate("Yes")
-MODDED = translate("Modded")
-SPECIES_NAME_KEY = translate("Species (key)")
-VIEWING_MODDED = translate("viewing modded")
-NEW_BUG = translate("Please copy and paste as a new bug on Nexusmods here")
-ERROR = translate("Error")
-UNEXPECTED_ERROR = translate("Unexpected Error")
-WARNING = translate("Warning")
-SAVED = translate("Saved")
-DOES_NOT_EXIST = translate("does not exist")
-FAILED_TO_BACKUP = translate("failed to backup game")
-FAILED_TO_LOAD_BACKUP = translate("failed to load backup file")
-FAILED_TO_LOAD_MOD = translate("failed to load mod")
-FAILED_TO_UNLOAD_MOD = translate("failed to unload mod")
-MOD_LOADED = translate("Mod has been loaded")
-MOD_UNLOADED = translate("Mod has been unloaded")
-VERSION = translate("Version")
-HUNTING_RESERVE = translate("Hunting Reserve")
-UPDATE_BY_PERCENTAGE = translate("update by percentage")
-MORE_MALES = translate("More Males")
-MORE_FEMALES = translate("More Females")
-GREATONES = translate("Great Ones")
-DIAMONDS = translate("Diamonds")
-INCLUDE_RARE_FURS = translate("include rare furs")
-ALL_FURS = translate("All Furs")
-RESET = translate("Reset")
-UPDATE_ANIMALS = translate("Update Animals")
-JUST_FURS = translate("Just the Furs")
-ONE_OF_EACH_FUR = translate("one of each fur")
-OTHERS = translate("Others")
-PARTY = translate("Party")
-GREATONE_PARTY = translate("Great One Party")
-DIAMOND_PARTY = translate("Diamond Party")
-WE_ALL_PARTY = translate("We All Party")
-FUR_PARTY = translate("Fur Party")
-EXPLORE = translate("Explore")
-DIAMONDS_AND_GREATONES = translate("diamonds and Great Ones")
-LOOK_MODDED_ANIMALS = translate("look at modded animals")
-LOOK_ALL_RESERVES = translate("look at all reserves")
-ONLY_TOP_SCORES = translate("only top 10 scores")
-SHOW_ANIMALS = translate("Show Animals")
-FILES = translate("Files")
-CONFIGURE_GAME_PATH = translate("Configure Game Path")
-LIST_MODS = translate("List Mods")
-LOAD_MOD = translate("Load Mod")
-UNLOAD_MOD = translate("Unload Mod")
-SELECT_FOLDER = translate("Select the folder where the game saves your files")
-SAVES_PATH_TITLE = translate("Saves Path")
-PATH_SAVED = translate("Game path saved")
-CONFIRM_LOAD_MOD = translate("Are you sure you want to overwrite your game file with the modded one?")
-BACKUP_WILL_BE_MADE = translate("Don't worry, a backup copy will be made.")
-CONFIRMATION = translate("Confirmation")
-MOD = translate("Mod")
-VIEW_MODDED_VERSION = translate("view modded version")
-LOADED = translate("Loaded")
-MODDED_FILE = translate("Modded File")
-BACK_TO_RESERVE = translate("Back to Reserve")
-UPDATE_TRANSLATIONS = translate("update translations")
 
 def format_key(key: str) -> str:
   key = [s.capitalize() for s in re.split("_|-", key)]

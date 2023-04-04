@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-03 12:21-0500\n"
+"POT-Creation-Date: 2023-04-04 11:36-0500\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru_RU\n"
@@ -19,367 +19,371 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: apc/config.py:125
-msgid "Trivial"
-msgstr ""
-
-#: apc/config.py:127
-msgid "Minor"
-msgstr ""
-
-#: apc/config.py:129
-msgid "Very Easy"
-msgstr ""
-
-#: apc/config.py:131
-msgid "Easy"
-msgstr ""
-
-#: apc/config.py:133
-msgid "Medium"
-msgstr ""
-
-#: apc/config.py:135
-msgid "Hard"
-msgstr ""
-
-#: apc/config.py:137
-msgid "Very Hard"
-msgstr ""
-
-#: apc/config.py:139
-msgid "Mythical"
-msgstr ""
-
-#: apc/config.py:141
-msgid "Legendary"
-msgstr ""
-
-#: apc/config.py:143 apc/config.py:162
-msgid "Great One"
-msgstr ""
-
-#: apc/config.py:146
+#: apc/config.py:38
 msgid "Animal Population Changer"
 msgstr ""
 
-#: apc/config.py:147
+#: apc/config.py:40
 msgid "Species"
 msgstr ""
 
-#: apc/config.py:148
+#: apc/config.py:42
 msgid "Animals"
 msgstr ""
 
-#: apc/config.py:149
+#: apc/config.py:44
 msgid "Male"
 msgstr ""
 
-#: apc/config.py:150
+#: apc/config.py:46
 msgid "Males"
 msgstr ""
 
-#: apc/config.py:151
+#: apc/config.py:48
 msgid "Female"
 msgstr ""
 
-#: apc/config.py:152
+#: apc/config.py:50
 msgid "Females"
 msgstr ""
 
-#: apc/config.py:153
+#: apc/config.py:52
 msgid "High Weight"
 msgstr ""
 
-#: apc/config.py:154
+#: apc/config.py:54
 msgid "High Score"
 msgstr ""
 
-#: apc/config.py:155
+#: apc/config.py:56
 msgid "Level"
 msgstr ""
 
-#: apc/config.py:156
+#: apc/config.py:58
 msgid "Gender"
 msgstr ""
 
-#: apc/config.py:157
+#: apc/config.py:60
 msgid "Weight"
 msgstr ""
 
-#: apc/config.py:158
+#: apc/config.py:62
 msgid "Score"
 msgstr ""
 
-#: apc/config.py:159
+#: apc/config.py:64
 msgid "Visual Seed"
 msgstr ""
 
-#: apc/config.py:160
+#: apc/config.py:66
 msgid "Fur"
 msgstr ""
 
-#: apc/config.py:161
+#: apc/config.py:68
 msgid "Diamond"
 msgstr ""
 
-#: apc/config.py:163
+#: apc/config.py:70 apc/config.py:317
+msgid "Great One"
+msgstr ""
+
+#: apc/config.py:72
 msgid "Summary"
 msgstr ""
 
-#: apc/config.py:164
+#: apc/config.py:74
 msgid "Reserve"
 msgstr ""
 
-#: apc/config.py:165
+#: apc/config.py:76
 msgid "Reserves"
 msgstr ""
 
-#: apc/config.py:166
+#: apc/config.py:78
 msgid "Reserve Name (key)"
 msgstr ""
 
-#: apc/config.py:167
+#: apc/config.py:80
 msgid "Yes"
 msgstr ""
 
-#: apc/config.py:168
+#: apc/config.py:82
 msgid "Modded"
 msgstr ""
 
-#: apc/config.py:169
+#: apc/config.py:84
 msgid "Species (key)"
 msgstr ""
 
-#: apc/config.py:170
+#: apc/config.py:86
 msgid "viewing modded"
 msgstr ""
 
-#: apc/config.py:171
+#: apc/config.py:88
 msgid "Please copy and paste as a new bug on Nexusmods here"
 msgstr ""
 
-#: apc/config.py:172
+#: apc/config.py:90
 msgid "Error"
 msgstr ""
 
-#: apc/config.py:173
+#: apc/config.py:92
 msgid "Unexpected Error"
 msgstr ""
 
-#: apc/config.py:174
+#: apc/config.py:94
 msgid "Warning"
 msgstr ""
 
-#: apc/config.py:175
+#: apc/config.py:96
 msgid "Saved"
 msgstr ""
 
-#: apc/config.py:176
+#: apc/config.py:98
 msgid "does not exist"
 msgstr ""
 
-#: apc/config.py:177
+#: apc/config.py:100
 msgid "failed to backup game"
 msgstr ""
 
-#: apc/config.py:178
+#: apc/config.py:102
 msgid "failed to load backup file"
 msgstr ""
 
-#: apc/config.py:179
+#: apc/config.py:104
 msgid "failed to load mod"
 msgstr ""
 
-#: apc/config.py:180
+#: apc/config.py:106
 msgid "failed to unload mod"
 msgstr ""
 
-#: apc/config.py:181
+#: apc/config.py:108
 msgid "Mod has been loaded"
 msgstr ""
 
-#: apc/config.py:182
+#: apc/config.py:110
 msgid "Mod has been unloaded"
 msgstr ""
 
-#: apc/config.py:183
+#: apc/config.py:112
 msgid "Version"
 msgstr ""
 
-#: apc/config.py:184
+#: apc/config.py:114
 msgid "Hunting Reserve"
 msgstr ""
 
-#: apc/config.py:185
+#: apc/config.py:116
 msgid "update by percentage"
 msgstr ""
 
-#: apc/config.py:186
+#: apc/config.py:118
 msgid "More Males"
 msgstr ""
 
-#: apc/config.py:187
+#: apc/config.py:120
 msgid "More Females"
 msgstr ""
 
-#: apc/config.py:188
+#: apc/config.py:122
 msgid "Great Ones"
 msgstr ""
 
-#: apc/config.py:189
+#: apc/config.py:124
 msgid "Diamonds"
 msgstr ""
 
-#: apc/config.py:190
+#: apc/config.py:126
 msgid "include rare furs"
 msgstr ""
 
-#: apc/config.py:191
+#: apc/config.py:128
 msgid "All Furs"
 msgstr ""
 
-#: apc/config.py:192
+#: apc/config.py:130
 msgid "Reset"
 msgstr ""
 
-#: apc/config.py:193
+#: apc/config.py:132
 msgid "Update Animals"
 msgstr ""
 
-#: apc/config.py:194
+#: apc/config.py:134
 msgid "Just the Furs"
 msgstr ""
 
-#: apc/config.py:195
+#: apc/config.py:136
 msgid "one of each fur"
 msgstr ""
 
-#: apc/config.py:196
+#: apc/config.py:138
 msgid "Others"
 msgstr ""
 
-#: apc/config.py:197
+#: apc/config.py:140
 msgid "Party"
 msgstr ""
 
-#: apc/config.py:198
+#: apc/config.py:142
 msgid "Great One Party"
 msgstr ""
 
-#: apc/config.py:199
+#: apc/config.py:144
 msgid "Diamond Party"
 msgstr ""
 
-#: apc/config.py:200
+#: apc/config.py:146
 msgid "We All Party"
 msgstr ""
 
-#: apc/config.py:201
+#: apc/config.py:148
 msgid "Fur Party"
 msgstr ""
 
-#: apc/config.py:202
+#: apc/config.py:150
 msgid "Explore"
 msgstr ""
 
-#: apc/config.py:203
+#: apc/config.py:152
 msgid "diamonds and Great Ones"
 msgstr ""
 
-#: apc/config.py:204
+#: apc/config.py:154
 msgid "look at modded animals"
 msgstr ""
 
-#: apc/config.py:205
+#: apc/config.py:156
 msgid "look at all reserves"
 msgstr ""
 
-#: apc/config.py:206
+#: apc/config.py:158
 msgid "only top 10 scores"
 msgstr ""
 
-#: apc/config.py:207
+#: apc/config.py:160
 msgid "Show Animals"
 msgstr ""
 
-#: apc/config.py:208
+#: apc/config.py:162
 msgid "Files"
 msgstr ""
 
-#: apc/config.py:209
+#: apc/config.py:164
 msgid "Configure Game Path"
 msgstr ""
 
-#: apc/config.py:210
+#: apc/config.py:166
 msgid "List Mods"
 msgstr ""
 
-#: apc/config.py:211
+#: apc/config.py:168
 msgid "Load Mod"
 msgstr ""
 
-#: apc/config.py:212
+#: apc/config.py:170
 msgid "Unload Mod"
 msgstr ""
 
-#: apc/config.py:213
+#: apc/config.py:172
 msgid "Select the folder where the game saves your files"
 msgstr ""
 
-#: apc/config.py:214
+#: apc/config.py:174
 msgid "Saves Path"
 msgstr ""
 
-#: apc/config.py:215
+#: apc/config.py:176
 msgid "Game path saved"
 msgstr ""
 
-#: apc/config.py:216
+#: apc/config.py:178
 msgid "Are you sure you want to overwrite your game file with the modded one?"
 msgstr ""
 
-#: apc/config.py:217
+#: apc/config.py:180
 msgid "Don't worry, a backup copy will be made."
 msgstr ""
 
-#: apc/config.py:218
+#: apc/config.py:182
 msgid "Confirmation"
 msgstr ""
 
-#: apc/config.py:219
+#: apc/config.py:184
 msgid "Mod"
 msgstr ""
 
-#: apc/config.py:220
+#: apc/config.py:186
 msgid "view modded version"
 msgstr ""
 
-#: apc/config.py:221
+#: apc/config.py:188
 msgid "Loaded"
 msgstr ""
 
-#: apc/config.py:222
+#: apc/config.py:190
 msgid "Modded File"
 msgstr ""
 
-#: apc/config.py:223
+#: apc/config.py:192
 msgid "Back to Reserve"
 msgstr ""
 
-#: apc/config.py:224
+#: apc/config.py:194
 msgid "update translations"
 msgstr ""
 
-#: apc/config.py:246
+#: apc/config.py:196
+msgid "switch language"
+msgstr ""
+
+#: apc/config.py:299
+msgid "Trivial"
+msgstr ""
+
+#: apc/config.py:301
+msgid "Minor"
+msgstr ""
+
+#: apc/config.py:303
+msgid "Very Easy"
+msgstr ""
+
+#: apc/config.py:305
+msgid "Easy"
+msgstr ""
+
+#: apc/config.py:307
+msgid "Medium"
+msgstr ""
+
+#: apc/config.py:309
+msgid "Hard"
+msgstr ""
+
+#: apc/config.py:311
+msgid "Very Hard"
+msgstr ""
+
+#: apc/config.py:313
+msgid "Mythical"
+msgstr ""
+
+#: apc/config.py:315
+msgid "Legendary"
+msgstr ""
+
+#: apc/config.py:340
 msgid "animal_name"
 msgstr ""
 
-#: apc/config.py:268
+#: apc/config.py:362
 msgid "reserve_name"
 msgstr ""
 
-#: apc/config.py:335
+#: apc/config.py:429
 msgid "name"
 msgstr ""
 
