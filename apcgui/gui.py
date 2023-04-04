@@ -11,7 +11,7 @@ MEDIUM_FONT = "_ 13"
 BUTTON_FONT = "_ 13"
 SMALL_FONT = "_ 11"
 PROGRESS_DELAY = 0.3
-VIEW_MODDED=f"({config.VIEWING_MODDED})"
+VIEW_MODDED=None
 
 RESERVE_COLUMNS = None
 SPECIES_COLUMNS = None
@@ -270,6 +270,9 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
     reserve_names = config.reserves()
     global reserve_name_size
     reserve_name_size = len(max(reserve_names, key = len))
+
+    global VIEW_MODDED
+    VIEW_MODDED=f"({config.VIEWING_MODDED})"
 
     global RESERVE_COLUMNS
     RESERVE_COLUMNS = [
