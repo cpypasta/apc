@@ -194,6 +194,8 @@ def setup_translations() -> None:
   UPDATE_TRANSLATIONS = translate("update translations")
   global SWITCH_LANGUAGE
   SWITCH_LANGUAGE = translate("switch language")    
+  global PLEASE_RESTART
+  PLEASE_RESTART = translate("Please restart to see changes")
 setup_translations()
 
 def update_language(locale: str) -> None:

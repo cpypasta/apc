@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-04 11:36-0500\n"
+"POT-Creation-Date: 2023-04-04 13:18-0500\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en_US\n"
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Diamond"
 msgstr ""
 
-#: apc/config.py:70 apc/config.py:317
+#: apc/config.py:70 apc/config.py:319
 msgid "Great One"
 msgstr ""
 
@@ -338,51 +338,55 @@ msgstr ""
 msgid "switch language"
 msgstr ""
 
-#: apc/config.py:299
-msgid "Trivial"
+#: apc/config.py:198
+msgid "Please restart to see changes"
 msgstr ""
 
 #: apc/config.py:301
-msgid "Minor"
+msgid "Trivial"
 msgstr ""
 
 #: apc/config.py:303
-msgid "Very Easy"
+msgid "Minor"
 msgstr ""
 
 #: apc/config.py:305
-msgid "Easy"
+msgid "Very Easy"
 msgstr ""
 
 #: apc/config.py:307
-msgid "Medium"
+msgid "Easy"
 msgstr ""
 
 #: apc/config.py:309
-msgid "Hard"
+msgid "Medium"
 msgstr ""
 
 #: apc/config.py:311
-msgid "Very Hard"
+msgid "Hard"
 msgstr ""
 
 #: apc/config.py:313
-msgid "Mythical"
+msgid "Very Hard"
 msgstr ""
 
 #: apc/config.py:315
+msgid "Mythical"
+msgstr ""
+
+#: apc/config.py:317
 msgid "Legendary"
 msgstr ""
 
-#: apc/config.py:340
+#: apc/config.py:342
 msgid "animal_name"
 msgstr ""
 
-#: apc/config.py:362
+#: apc/config.py:364
 msgid "reserve_name"
 msgstr ""
 
-#: apc/config.py:429
+#: apc/config.py:431
 msgid "name"
 msgstr ""
 

@@ -270,6 +270,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
     reserve_names = config.reserves()
     global reserve_name_size
     reserve_name_size = len(max(reserve_names, key = len))
+    reserve_name_size = 27 if reserve_name_size < 27 else reserve_name_size
 
     global VIEW_MODDED
     VIEW_MODDED=f"({config.VIEWING_MODDED})"
@@ -615,6 +616,7 @@ def main() -> None:
           value, key = event.split("::")
           if key == "update_translations":
             subprocess.Popen(f"pybabel compile --domain=apc --directory={config.APP_DIR_PATH / 'locale'}", shell=True)
+            sg.Popup(config.PLEASE_RESTART, icon=logo.value, font=DEFAULT_FONT, title=config.APC)
           elif key == "switch_language":
             config.update_language(value)
             window = main_window(window)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-04 11:36-0500\n"
+"POT-Creation-Date: 2023-04-04 13:18-0500\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hans_CN\n"
@@ -83,7 +83,7 @@ msgstr "毛皮"
 msgid "Diamond"
 msgstr "钻石"
 
-#: apc/config.py:70 apc/config.py:317
+#: apc/config.py:70 apc/config.py:319
 msgid "Great One"
 msgstr "奇珍异兽"
 
@@ -339,51 +339,55 @@ msgstr ""
 msgid "switch language"
 msgstr ""
 
-#: apc/config.py:299
+#: apc/config.py:198
+msgid "Please restart to see changes"
+msgstr ""
+
+#: apc/config.py:301
 msgid "Trivial"
 msgstr "微不足道"
 
-#: apc/config.py:301
+#: apc/config.py:303
 msgid "Minor"
 msgstr "小菜一碟"
 
-#: apc/config.py:303
+#: apc/config.py:305
 msgid "Very Easy"
 msgstr "非常简单"
 
-#: apc/config.py:305
+#: apc/config.py:307
 msgid "Easy"
 msgstr "简单"
 
-#: apc/config.py:307
+#: apc/config.py:309
 msgid "Medium"
 msgstr "中等"
 
-#: apc/config.py:309
+#: apc/config.py:311
 msgid "Hard"
 msgstr "困难"
 
-#: apc/config.py:311
+#: apc/config.py:313
 msgid "Very Hard"
 msgstr "非常困难"
 
-#: apc/config.py:313
+#: apc/config.py:315
 msgid "Mythical"
 msgstr "神秘"
 
-#: apc/config.py:315
+#: apc/config.py:317
 msgid "Legendary"
 msgstr "传说"
 
-#: apc/config.py:340
+#: apc/config.py:342
 msgid "animal_name"
 msgstr "动物名称"
 
-#: apc/config.py:362
+#: apc/config.py:364
 msgid "reserve_name"
 msgstr "预留地名称"
 
-#: apc/config.py:429
+#: apc/config.py:431
 msgid "name"
 msgstr ""
 
