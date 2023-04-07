@@ -9,14 +9,14 @@
         "male": {
           "piebald": 0,
           "olive": 19,
-          "dark brown": 7467,
+          "dark_brown": 7467,
           "albino": 10013,
           "melanistic": 10023
         },
         "female": {
           "piebald": 0,
           "olive": 19,
-          "dark brown": 7467,
+          "dark_brown": 7467,
           "albino": 10013,
           "melanistic": 10023
         }
@@ -69,7 +69,7 @@
       "weight_high": 4.7,
       "furs": {
         "male": {
-          "dark brown": 0,
+          "dark_brown": 0,
           "gray": 1248,
           "brown": 5006,
           "mottled": 8764,
@@ -77,7 +77,7 @@
           "melanistic": 10023
         },
         "female": {
-          "dark brown": 0,
+          "dark_brown": 0,
           "gray": 1248,
           "brown": 5006,
           "mottled": 8764,
@@ -250,7 +250,8 @@
         "fabled_glacier": 2742609257,
         "fabled_chestnut": 3087602548,
         "fabled_cream": 3631307431,
-        "fabled_spotted": 1868463965
+        "fabled_spotted": 1868463965,
+        "fabled_spirit": 0
       }
     },
     "diamonds": {
@@ -673,7 +674,7 @@
         "male": {
           "light_brown": 0,
           "melanistic": 4991,
-          "dark brown": 4994,
+          "dark_brown": 4994,
           "albino": 9996,
           "piebald": 10000,
           "leucistic": 10020
@@ -681,7 +682,7 @@
         "female": {
           "light_brown": 0,
           "melanistic": 5001,
-          "dark brown": 5004,
+          "dark_brown": 5004,
           "albino": 10017,
           "leucistic": 10020
         }
@@ -722,7 +723,7 @@
           "honeytones": 1243,
           "melanistic": 2497,
           "leucistic": 2502,
-          "dark brown": 2522,
+          "dark_brown": 2522,
           "albino": 6270,
           "gray_brown": 6275
         },
@@ -731,7 +732,7 @@
           "honeytones": 1243,
           "melanistic": 2497,
           "leucistic": 2502,
-          "dark brown": 2522,
+          "dark_brown": 2522,
           "albino": 6270,
           "gray_brown": 6275
         }
@@ -809,7 +810,7 @@
           "leucistic": 8744,
           "melanistic": 8754,
           "ochre": 8759,
-          "dark brown": 8769,
+          "dark_brown": 8769,
           "albino": 10023
         },
         "female": {
@@ -819,7 +820,7 @@
           "leucistic": 8744,
           "melanistic": 8754,
           "ochre": 8759,
-          "dark brown": 8769,
+          "dark_brown": 8769,
           "albino": 10023
         }
       },
@@ -867,7 +868,7 @@
           "gray_brown": 9,
           "orange": 3344,
           "albino": 6678,
-          "light gray": 6683,
+          "light_gray": 6683,
           "melanistic": 10018
         }
       },
@@ -923,7 +924,7 @@
           "light_brown": 0,
           "gray": 1253,
           "leucistic": 5001,
-          "light gray": 5011,
+          "light_gray": 5011,
           "brown": 6265,
           "melanistic": 10023,
           "albino": 10028
@@ -932,7 +933,7 @@
           "light_brown": 0,
           "gray": 1253,
           "leucistic": 5001,
-          "light gray": 5011,
+          "light_gray": 5011,
           "brown": 6265,
           "melanistic": 10023,
           "albino": 10028
@@ -1005,14 +1006,14 @@
       "furs": {
         "male": {
           "brown": 0,
-          "dark brown": 3329,
+          "dark_brown": 3329,
           "melanistic": 6663,
           "piebald": 6668,
           "light_brown": 6689,
           "albino": 10023
         },
         "female": {
-          "dark brown": 0,
+          "dark_brown": 0,
           "light_brown": 3329,
           "melanistic": 6663,
           "piebald": 6668,
@@ -1054,7 +1055,7 @@
       "furs": {
         "male": {
           "light_brown": 0,
-          "dark brown": 2495,
+          "dark_brown": 2495,
           "albino": 5001,
           "melanistic": 5006,
           "gray": 5011,
@@ -1062,7 +1063,7 @@
         },
         "female": {
           "light_brown": 0,
-          "dark brown": 2495,
+          "dark_brown": 2495,
           "albino": 5001,
           "melanistic": 5006,
           "gray": 5011,
@@ -1093,24 +1094,24 @@
       "weight_high": 2.6,
       "furs": {
         "male": {
-          "dark brown": 0,
+          "dark_brown": 0,
           "light_brown": 3747,
           "leucistic": 5001,
           "albino": 5006,
           "melanistic": 5011,
           "brown": 5021,
           "tan": 6275,
-          "light gray": 10023
+          "light_gray": 10023
         },
         "female": {
-          "dark brown": 0,
+          "dark_brown": 0,
           "light_brown": 3747,
           "leucistic": 5001,
           "albino": 5006,
           "melanistic": 5011,
           "brown": 5021,
           "tan": 6275,
-          "light gray": 10023
+          "light_gray": 10023
         }
       },
       "levels": [
@@ -1138,7 +1139,7 @@
       "furs": {
         "male": {
           "gray": 0,
-          "dark brown": 491,
+          "dark_brown": 491,
           "cinnamon": 992,
           "spirit": 3491,
           "melanistic": 3993,
@@ -1151,7 +1152,7 @@
         "female": {
           "gray": 0,
           "cinnamon": 491,
-          "dark brown": 2989,
+          "dark_brown": 2989,
           "spirit": 3491,
           "melanistic": 3993,
           "albino": 4012,
@@ -1354,7 +1355,7 @@
           "spotted_dark": 0,
           "spotted": 2302,
           "melanistic": 6157,
-          "spotted red": 6162,
+          "spotted_red": 6162,
           "albino": 10017
         }
       },
@@ -1390,7 +1391,7 @@
       "weight_high": 50.0,
       "furs": {
         "male": {
-          "dark brown": 0,
+          "dark_brown": 0,
           "albino": 1873,
           "blonde": 1878,
           "white_brown": 3752,
@@ -1445,7 +1446,7 @@
           "brown_hybrid": 1243,
           "albino": 3747,
           "blackgold": 3757,
-          "dark brown": 5006,
+          "dark_brown": 5006,
           "brown": 8754,
           "pink": 10003
         },
@@ -1487,14 +1488,14 @@
       "weight_high": 240.0,
       "furs": {
         "male": {
-          "light gray": 0,
+          "light_gray": 0,
           "gray": 4991,
           "dark": 9993,
           "gold": 10003,
           "beige": 10013
         },
         "female": {
-          "light gray": 0,
+          "light_gray": 0,
           "gray": 4991,
           "dark": 9993,
           "gold": 10003,
@@ -1569,7 +1570,7 @@
       "weight_high": 6.8,
       "furs": {
         "male": {
-          "two tones": 0,
+          "two_tones": 0,
           "piebald": 1248,
           "red": 1255,
           "albino": 2509,
@@ -1578,7 +1579,7 @@
           "melanistic": 10023
         },
         "female": {
-          "two tones": 0,
+          "two_tones": 0,
           "piebald": 1248,
           "red": 1255,
           "albino": 2509,
@@ -1701,14 +1702,14 @@
         "male": {
           "gray": 0,
           "gray_brown": 2495,
-          "light gray": 5001,
+          "light_gray": 5001,
           "brown_hybrid": 7507,
           "albino": 10013,
           "melanistic": 10018
         },
         "female": {
           "light_brown": 0,
-          "light gray": 3329,
+          "light_gray": 3329,
           "buff": 6669,
           "albino": 10010,
           "melanistic": 10016
@@ -1891,7 +1892,7 @@
         "female": {
           "dark_grey": 0,
           "dark": 6668,
-          "dark brown": 6681,
+          "dark_brown": 6681,
           "albino": 10019,
           "gray": 10023
         }
@@ -2114,7 +2115,7 @@
         "female": {
           "dusky": 0,
           "red_brown": 6,
-          "dark brown": 16,
+          "dark_brown": 16,
           "gray": 5020,
           "albino": 10023
         }
@@ -2152,14 +2153,14 @@
       "furs": {
         "male": {
           "light_brown": 0,
-          "dark brown": 2497,
+          "dark_brown": 2497,
           "tan": 2507,
           "albino": 10003,
           "blonde": 10013
         },
         "female": {
           "light_brown": 0,
-          "dark brown": 2497,
+          "dark_brown": 2497,
           "tan": 2507,
           "albino": 10003,
           "blonde": 10013
@@ -2341,7 +2342,7 @@
         "female": {
           "brown": 0,
           "albino": 3323,
-          "dark brown": 3329,
+          "dark_brown": 3329,
           "tan": 6663,
           "piebald": 9998,
           "melanistic": 10018
@@ -2380,7 +2381,7 @@
       "furs": {
         "male": {
           "light_brown": 0,
-          "light gray": 2495,
+          "light_gray": 2495,
           "white": 5001,
           "albino": 7507,
           "beige": 7512,
@@ -2388,7 +2389,7 @@
         },
         "female": {
           "light_brown": 0,
-          "light gray": 2495,
+          "light_gray": 2495,
           "white": 5001,
           "albino": 7507,
           "beige": 7512,
@@ -2428,8 +2429,8 @@
       "weight_high": 6.0,
       "furs": {
         "male": {
-          "dark brown": 0,
-          "light gray": 2487,
+          "dark_brown": 0,
+          "light_gray": 2487,
           "albino": 4986,
           "molting": 4996,
           "white": 5003,
@@ -2437,8 +2438,8 @@
           "dark_grey": 7518
         },
         "female": {
-          "dark brown": 0,
-          "light gray": 2487,
+          "dark_brown": 0,
+          "light_gray": 2487,
           "albino": 4986,
           "molting": 4996,
           "white": 5003,
@@ -2596,7 +2597,7 @@
         "male": {
           "brown": 0,
           "dark": 2140,
-          "light gray": 4288,
+          "light_gray": 4288,
           "leucistic": 7153,
           "light_brown": 7156,
           "melanistic": 10020,
@@ -2605,7 +2606,7 @@
         "female": {
           "brown": 0,
           "dark": 2140,
-          "light gray": 4288,
+          "light_gray": 4288,
           "leucistic": 7153,
           "light_brown": 7156,
           "melanistic": 10020,
@@ -2807,7 +2808,7 @@
           "gray": 15,
           "light_brown": 4289,
           "piebald": 8564,
-          "dark brown": 8567,
+          "dark_brown": 8567,
           "black_white": 8593,
           "albino": 10023
         },
@@ -2816,7 +2817,7 @@
           "gray": 15,
           "light_brown": 4289,
           "piebald": 8564,
-          "dark brown": 8567,
+          "dark_brown": 8567,
           "black_white": 8593,
           "albino": 10023
         }
@@ -2880,13 +2881,13 @@
         "male": {
           "piebald": 0,
           "light_brown": 14,
-          "dark brown": 3349,
+          "dark_brown": 3349,
           "melanistic": 6683,
           "brown": 6689,
           "albino": 10023
         },
         "female": {
-          "dark brown": 0,
+          "dark_brown": 0,
           "albino": 3323,
           "piebald": 3329,
           "melanistic": 3349,
@@ -3006,7 +3007,7 @@
       "weight_high": 182.0,
       "furs": {
         "male": {
-          "dark brown": 0,
+          "dark_brown": 0,
           "albino": 5001,
           "light_brown": 5006,
           "leucistic": 10008,
@@ -3130,14 +3131,14 @@
       "weight_high": 480.0,
       "furs": {
         "male": {
-          "light gray": 0,
+          "light_gray": 0,
           "brown": 2507,
           "light_brown": 6255,
           "piebald": 10003,
           "albino": 10023
         },
         "female": {
-          "light gray": 0,
+          "light_gray": 0,
           "brown": 2507,
           "light_brown": 6255,
           "piebald": 10003,
@@ -3176,7 +3177,7 @@
       "weight_high": 35.0,
       "furs": {
         "male": {
-          "dark brown": 0,
+          "dark_brown": 0,
           "dark_grey": 3334,
           "brown": 6668,
           "piebald": 10003,
@@ -3315,13 +3316,13 @@
           "gray": 0,
           "chestnut": 313,
           "brown": 5155,
-          "light gray": 9997
+          "light_gray": 9997
         },
         "female": {
           "gray": 0,
           "chestnut": 313,
           "brown": 5155,
-          "light gray": 9997
+          "light_gray": 9997
         }
       },
       "levels": [
@@ -3349,7 +3350,7 @@
       "furs": {
         "male": {
           "gray_brown": 0,
-          "dark brown": 4996,
+          "dark_brown": 4996,
           "albino": 9998,
           "piebald": 10003,
           "melanistic": 10023
@@ -3453,7 +3454,7 @@
           "spotted": 7484,
           "albino": 8739,
           "spotted_dark": 8749,
-          "spotted red": 10003
+          "spotted_red": 10003
         },
         "female": {
           "black": 0,
@@ -3461,7 +3462,7 @@
           "spotted": 7484,
           "albino": 8739,
           "spotted_dark": 8749,
-          "spotted red": 10003
+          "spotted_red": 10003
         }
       },
       "levels": [
@@ -3500,7 +3501,7 @@
           "orange": 2495,
           "melanistic": 5001,
           "albino": 5006,
-          "light gray": 5011,
+          "light_gray": 5011,
           "gray_brown": 7517
         },
         "female": {
@@ -3624,13 +3625,13 @@
           "dark_grey": 0,
           "leucistic": 1244,
           "brown": 1251,
-          "light gray": 8761
+          "light_gray": 8761
         },
         "female": {
           "dark_grey": 0,
           "leucistic": 1244,
           "brown": 1251,
-          "light gray": 8761
+          "light_gray": 8761
         }
       },
       "levels": [
@@ -3822,13 +3823,13 @@
           "brown": 3344,
           "melanistic": 6678,
           "albino": 6683,
-          "dark brown": 6689
+          "dark_brown": 6689
         },
         "female": {
           "piebald": 0,
           "brown": 9,
           "melanistic": 3344,
-          "dark brown": 3349,
+          "dark_brown": 3349,
           "albino": 6683,
           "red_brown": 6689
         }
@@ -3866,7 +3867,7 @@
         "female": {
           "blackgold": 0,
           "brown": 9,
-          "dark brown": 3344,
+          "dark_brown": 3344,
           "light_brown": 6678,
           "melanistic": 10013,
           "albino": 10018
@@ -3907,7 +3908,7 @@
           "leucistic": 0,
           "melanistic": 5,
           "brown": 9,
-          "dark brown": 6005,
+          "dark_brown": 6005,
           "light_brown": 8012,
           "albino": 10019
         },
@@ -3915,7 +3916,7 @@
           "leucistic": 0,
           "melanistic": 5,
           "brown": 9,
-          "dark brown": 6005,
+          "dark_brown": 6005,
           "light_brown": 8012,
           "albino": 10019
         }

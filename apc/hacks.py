@@ -20,7 +20,25 @@ def extract_reserve_names(path: Path) -> dict:
   return {
     "reserve_names": names
   }  
-  
+
+def extract_furs_names(path: Path) -> dict:
+  data = json.load(path.open())
+  fur_names = {}
+  for animal in list(data.keys()):
+    for _gender, furs in data[animal]["diamonds"]["furs"].items():
+      for fur in furs.keys():        
+        if fur not in fur_names:
+          fur_name = config.format_key(fur)
+          fur_names[fur] = { "fur_name": fur_name }
+    if "go" in data[animal]:
+      for fur in data[animal]["go"]["furs"].keys():
+        if fur not in fur_names:
+          fur_name = config.format_key(fur)
+          fur_names[fur] = { "fur_name": fur_name }
+  return {
+    "fur_names": fur_names
+  }
+
 def bad_scores(path: Path) -> None:
   data = json.load(path.open())
   for animal_key in data.keys():
@@ -328,4 +346,6 @@ def merge_furs_into_animals() -> None:
   Path("apc/config/animal_details.json").write_text(json.dumps(animals, indent=2))
 
 if __name__ == "__main__":
-  merge_furs_into_animals()
+  furs = extract_furs_names(config.APP_DIR_PATH / "config/animal_details.json")
+  print(config.APP_DIR_PATH / "config/fur_names.json")
+  Path(config.APP_DIR_PATH / "config/fur_names.json").write_text(json.dumps(furs, indent=2))

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-04 16:19-0500\n"
+"POT-Creation-Date: 2023-04-06 21:34-0500\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hans_CN\n"
@@ -83,7 +83,7 @@ msgstr "毛皮"
 msgid "Diamond"
 msgstr "钻石"
 
-#: apc/config.py:70 apc/config.py:327
+#: apc/config.py:70 apc/config.py:328
 msgid "Great One"
 msgstr "奇珍异兽"
 
@@ -359,51 +359,51 @@ msgstr "确定"
 msgid "Cancel"
 msgstr "取消"
 
-#: apc/config.py:309
+#: apc/config.py:310
 msgid "Trivial"
 msgstr "微不足道"
 
-#: apc/config.py:311
+#: apc/config.py:312
 msgid "Minor"
 msgstr "小菜一碟"
 
-#: apc/config.py:313
+#: apc/config.py:314
 msgid "Very Easy"
 msgstr "非常简单"
 
-#: apc/config.py:315
+#: apc/config.py:316
 msgid "Easy"
 msgstr "简单"
 
-#: apc/config.py:317
+#: apc/config.py:318
 msgid "Medium"
 msgstr "中等"
 
-#: apc/config.py:319
+#: apc/config.py:320
 msgid "Hard"
 msgstr "困难"
 
-#: apc/config.py:321
+#: apc/config.py:322
 msgid "Very Hard"
 msgstr "非常困难"
 
-#: apc/config.py:323
+#: apc/config.py:324
 msgid "Mythical"
 msgstr "神秘"
 
-#: apc/config.py:325
+#: apc/config.py:326
 msgid "Legendary"
 msgstr "传说"
 
-#: apc/config.py:350
-msgid "animal_name"
-msgstr "动物名称"
+#: apc/config.py:355
+msgid "fur_name"
+msgstr ""
 
-#: apc/config.py:372
+#: apc/config.py:377
 msgid "reserve_name"
 msgstr "狩猎地图名称"
 
-#: apc/config.py:439
+#: apc/config.py:444
 msgid "name"
 msgstr "名称"
 
@@ -743,6 +743,318 @@ msgstr "火鸡"
 msgid "Willow Ptarmigan"
 msgstr "柳雷鸟"
 
+#: apc/config/fur_names.json:4
+msgid "Piebald"
+msgstr ""
+
+#: apc/config/fur_names.json:7
+msgid "Olive"
+msgstr ""
+
+#: apc/config/fur_names.json:10
+msgid "Dark Brown"
+msgstr ""
+
+#: apc/config/fur_names.json:13
+msgid "Albino"
+msgstr ""
+
+#: apc/config/fur_names.json:16
+msgid "Melanistic"
+msgstr ""
+
+#: apc/config/fur_names.json:19
+msgid "Gray"
+msgstr ""
+
+#: apc/config/fur_names.json:22
+msgid "Brown"
+msgstr ""
+
+#: apc/config/fur_names.json:25
+msgid "Mottled"
+msgstr ""
+
+#: apc/config/fur_names.json:28
+msgid "Spotted"
+msgstr ""
+
+#: apc/config/fur_names.json:31
+msgid "Dark"
+msgstr ""
+
+#: apc/config/fur_names.json:34
+msgid "Orange"
+msgstr ""
+
+#: apc/config/fur_names.json:37
+msgid "Brown Hybrid"
+msgstr ""
+
+#: apc/config/fur_names.json:40
+msgid "Gray Brown"
+msgstr ""
+
+#: apc/config/fur_names.json:43
+msgid "Light Brown"
+msgstr ""
+
+#: apc/config/fur_names.json:46
+msgid "Buff"
+msgstr ""
+
+#: apc/config/fur_names.json:49
+msgid "Black"
+msgstr ""
+
+#: apc/config/fur_names.json:52
+msgid "Bronze"
+msgstr ""
+
+#: apc/config/fur_names.json:55
+msgid "Dusky"
+msgstr ""
+
+#: apc/config/fur_names.json:58
+msgid "Cinnamon"
+msgstr ""
+
+#: apc/config/fur_names.json:61
+msgid "Blonde"
+msgstr ""
+
+#: apc/config/fur_names.json:64
+msgid "Fabled Glacier"
+msgstr ""
+
+#: apc/config/fur_names.json:67
+msgid "Fabled Chestnut"
+msgstr ""
+
+#: apc/config/fur_names.json:70
+msgid "Fabled Cream"
+msgstr ""
+
+#: apc/config/fur_names.json:73
+msgid "Fabled Spotted"
+msgstr ""
+
+#: apc/config/fur_names.json:76
+msgid "Fabled Spirit"
+msgstr ""
+
+#: apc/config/fur_names.json:79
+msgid "Leucistic"
+msgstr ""
+
+#: apc/config/fur_names.json:82
+msgid "Gold"
+msgstr ""
+
+#: apc/config/fur_names.json:85
+msgid "Dark Grey"
+msgstr ""
+
+#: apc/config/fur_names.json:88
+msgid "Tan"
+msgstr ""
+
+#: apc/config/fur_names.json:91
+msgid "Crowned"
+msgstr ""
+
+#: apc/config/fur_names.json:94
+msgid "Blue"
+msgstr ""
+
+#: apc/config/fur_names.json:97
+msgid "Red"
+msgstr ""
+
+#: apc/config/fur_names.json:100
+msgid "Lg leucist."
+msgstr ""
+
+#: apc/config/fur_names.json:103
+msgid "Bald leuc."
+msgstr ""
+
+#: apc/config/fur_names.json:106
+msgid "Honeytones"
+msgstr ""
+
+#: apc/config/fur_names.json:109
+msgid "Beige"
+msgstr ""
+
+#: apc/config/fur_names.json:112
+msgid "Ochre"
+msgstr ""
+
+#: apc/config/fur_names.json:115
+msgid "Light Gray"
+msgstr ""
+
+#: apc/config/fur_names.json:118
+msgid "Light Bronze"
+msgstr ""
+
+#: apc/config/fur_names.json:121
+msgid "Spirit"
+msgstr ""
+
+#: apc/config/fur_names.json:124
+msgid "Red Brown"
+msgstr ""
+
+#: apc/config/fur_names.json:127
+msgid "Dark Green"
+msgstr ""
+
+#: apc/config/fur_names.json:130
+msgid "Light Green"
+msgstr ""
+
+#: apc/config/fur_names.json:133
+msgid "Hybrid Blue"
+msgstr ""
+
+#: apc/config/fur_names.json:136
+msgid "Hybrid Green"
+msgstr ""
+
+#: apc/config/fur_names.json:139
+msgid "Eclipse"
+msgstr ""
+
+#: apc/config/fur_names.json:142
+msgid "Hybrid"
+msgstr ""
+
+#: apc/config/fur_names.json:145
+msgid "Spotted Dark"
+msgstr ""
+
+#: apc/config/fur_names.json:148
+msgid "Spotted Red"
+msgstr ""
+
+#: apc/config/fur_names.json:151
+msgid "White Brown"
+msgstr ""
+
+#: apc/config/fur_names.json:154
+msgid "Black Brown"
+msgstr ""
+
+#: apc/config/fur_names.json:157
+msgid "Black White"
+msgstr ""
+
+#: apc/config/fur_names.json:160
+msgid "White"
+msgstr ""
+
+#: apc/config/fur_names.json:163
+msgid "Mixed"
+msgstr ""
+
+#: apc/config/fur_names.json:166
+msgid "Black Spots"
+msgstr ""
+
+#: apc/config/fur_names.json:169
+msgid "Blackgold"
+msgstr ""
+
+#: apc/config/fur_names.json:172
+msgid "Pink"
+msgstr ""
+
+#: apc/config/fur_names.json:175
+msgid "Two Tones"
+msgstr ""
+
+#: apc/config/fur_names.json:178
+msgid "Eggwhite"
+msgstr ""
+
+#: apc/config/fur_names.json:181
+msgid "Pale"
+msgstr ""
+
+#: apc/config/fur_names.json:184
+msgid "Pristine"
+msgstr ""
+
+#: apc/config/fur_names.json:187
+msgid "Winter"
+msgstr ""
+
+#: apc/config/fur_names.json:190
+msgid "Fabled Two Tone"
+msgstr ""
+
+#: apc/config/fur_names.json:193
+msgid "Fabled Birch"
+msgstr ""
+
+#: apc/config/fur_names.json:196
+msgid "Fabled Oak"
+msgstr ""
+
+#: apc/config/fur_names.json:199
+msgid "Fabled Speckled"
+msgstr ""
+
+#: apc/config/fur_names.json:202
+msgid "Fabled Spruce"
+msgstr ""
+
+#: apc/config/fur_names.json:205
+msgid "Fabled Ashen"
+msgstr ""
+
+#: apc/config/fur_names.json:208
+msgid "Molting"
+msgstr ""
+
+#: apc/config/fur_names.json:211
+msgid "Dilute"
+msgstr ""
+
+#: apc/config/fur_names.json:214
+msgid "Dark Red"
+msgstr ""
+
+#: apc/config/fur_names.json:217
+msgid "Piebald Grey"
+msgstr ""
+
+#: apc/config/fur_names.json:220
+msgid "Piebald Blnd"
+msgstr ""
+
+#: apc/config/fur_names.json:223
+msgid "Lightbuff"
+msgstr ""
+
+#: apc/config/fur_names.json:226
+msgid "Bicolor"
+msgstr ""
+
+#: apc/config/fur_names.json:229
+msgid "Chestnut"
+msgstr ""
+
+#: apc/config/fur_names.json:232
+msgid "Cream"
+msgstr ""
+
+#: apc/config/fur_names.json:235
+msgid "Bright"
+msgstr ""
+
 #: apc/config/reserve_names.json:4
 msgid "Hirschfelden"
 msgstr "赫费希尔登"
@@ -772,7 +1084,7 @@ msgid "Cuatro Colinas Game Reserve"
 msgstr "夸特罗科利纳斯"
 
 #: apc/config/reserve_names.json:25
-msgid "Sivler Ridge Peaks"
+msgid "Silver Ridge Peaks"
 msgstr "银岭峰"
 
 #: apc/config/reserve_names.json:28
@@ -794,4 +1106,3 @@ msgstr "雷文图里海岸"
 #: apc/config/reserve_names.json:40
 msgid "New England Mountains"
 msgstr "新英格兰山脉"
-

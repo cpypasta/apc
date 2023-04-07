@@ -9,7 +9,7 @@ from enum import Enum
 from apc import __app_name__
 from typing import List
 
-SUPPORTED_LANGUAGES = ["en_US", "de_DE", "zh_CN", "ru_RU", "es_MX"]
+SUPPORTED_LANGUAGES = ["en_US", "de_DE", "zh_CN", "ru_RU", "es_ES"]
 default_locale = None
 
 def get_languages() -> list:
@@ -256,6 +256,7 @@ HIGH_NUMBER = 100000
 
 ANIMAL_NAMES = json.load((CONFIG_PATH / "animal_names.json").open())["animal_names"]
 RESERVE_NAMES = json.load((CONFIG_PATH / "reserve_names.json").open())["reserve_names"]
+FUR_NAMES = json.load((CONFIG_PATH / "fur_names.json").open())["fur_names"]
 RESERVES = json.load((CONFIG_PATH / "reserve_details.json").open())
 ANIMALS = json.load((CONFIG_PATH / "animal_details.json").open())
 
@@ -347,7 +348,11 @@ def get_reserve_species_renames(reserve_key: str) -> dict:
   return reserve["renames"] if "renames" in reserve else {}
 
 def get_species_name(key: str) -> str:
-  return translate(ANIMAL_NAMES[key]["animal_name"])
+  is_unique = species_unique_to_reserve(key)
+  return F"{translate(ANIMAL_NAMES[key]['animal_name'])}{' ⋆' if is_unique else ''}"
+
+def get_fur_name(key: str) -> str:
+  return translate(FUR_NAMES[key]["fur_name"])
 
 def species(reserve_key: str, include_keys = False) -> list:
    species_keys = RESERVES[reserve_key]["species"]
@@ -397,7 +402,7 @@ def _get_fur(furs: dict, seed: int) -> str:
   except:
     return None
 
-def get_animal_fur_by_seed(species: str, gender: str, seed: int) -> str: # TODO: translations?
+def get_animal_fur_by_seed(species: str, gender: str, seed: int) -> str:
   if species not in ANIMALS:
      return "-"
 
@@ -408,9 +413,9 @@ def get_animal_fur_by_seed(species: str, gender: str, seed: int) -> str: # TODO:
   go_key = _get_fur(go_furs, seed)
   diamond_key = _get_fur(diamond_furs, seed)
   if go_key:
-    return format_key(go_key)
+    return get_fur_name(go_key)
   elif diamond_key:
-    return format_key(diamond_key)
+    return get_fur_name(diamond_key)
   else:
     return "-"
 
@@ -438,3 +443,10 @@ def get_population_name(filename: str):
     if reserve_filename == filename:
       return translate(details["name"])
   return None
+
+def species_unique_to_reserve(species_key: str) -> bool:
+  cnt = 0
+  for _reserve_key, reserve_details in RESERVES.items():
+    if species_key in reserve_details["species"]:
+      cnt += 1
+  return (cnt == 1)
