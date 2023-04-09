@@ -73,7 +73,7 @@ msgstr "Рейтинг"
 
 #: apc/config.py:64
 msgid "Visual Seed"
-msgstr "Спавн"
+msgstr "Спаун"
 
 #: apc/config.py:66
 msgid "Fur"
@@ -157,7 +157,7 @@ msgstr "не удалось загрузить мод"
 
 #: apc/config.py:106
 msgid "failed to unload mod"
-msgstr ""
+msgstr "Не удалось выгрузить мод"
 
 #: apc/config.py:108
 msgid "Mod has been loaded"
@@ -397,7 +397,7 @@ msgstr "Легендарный"
 
 #: apc/config.py:355
 msgid "fur_name"
-msgstr ""
+msgstr "Мех"
 
 #: apc/config.py:377
 msgid "reserve_name"
@@ -745,315 +745,315 @@ msgstr "Белая куропатка"
 
 #: apc/config/fur_names.json:4
 msgid "Piebald"
-msgstr ""
+msgstr "Разношёрстный"
 
 #: apc/config/fur_names.json:7
 msgid "Olive"
-msgstr ""
+msgstr "Оливка"
 
 #: apc/config/fur_names.json:10
 msgid "Dark Brown"
-msgstr ""
+msgstr "Тёмно-коричневый"
 
 #: apc/config/fur_names.json:13
 msgid "Albino"
-msgstr ""
+msgstr "Альбинос"
 
 #: apc/config/fur_names.json:16
 msgid "Melanistic"
-msgstr ""
+msgstr "Меланизм"
 
 #: apc/config/fur_names.json:19
 msgid "Gray"
-msgstr ""
+msgstr "Серый"
 
 #: apc/config/fur_names.json:22
 msgid "Brown"
-msgstr ""
+msgstr "Бурый"
 
 #: apc/config/fur_names.json:25
 msgid "Mottled"
-msgstr ""
+msgstr "Пятнистый"
 
 #: apc/config/fur_names.json:28
 msgid "Spotted"
-msgstr ""
+msgstr "В крапинку"
 
 #: apc/config/fur_names.json:31
 msgid "Dark"
-msgstr ""
+msgstr "Темный"
 
 #: apc/config/fur_names.json:34
 msgid "Orange"
-msgstr ""
+msgstr "Оранжевый"
 
 #: apc/config/fur_names.json:37
 msgid "Brown Hybrid"
-msgstr ""
+msgstr "Коричневый"
 
 #: apc/config/fur_names.json:40
 msgid "Gray Brown"
-msgstr ""
+msgstr "Серо-коричневый"
 
 #: apc/config/fur_names.json:43
 msgid "Light Brown"
-msgstr ""
+msgstr "Светло-коричневый"
 
 #: apc/config/fur_names.json:46
 msgid "Buff"
-msgstr ""
+msgstr "Бежевый"
 
 #: apc/config/fur_names.json:49
 msgid "Black"
-msgstr ""
+msgstr "Черный"
 
 #: apc/config/fur_names.json:52
 msgid "Bronze"
-msgstr ""
+msgstr "Бронза"
 
 #: apc/config/fur_names.json:55
 msgid "Dusky"
-msgstr ""
+msgstr "Темный"
 
 #: apc/config/fur_names.json:58
 msgid "Cinnamon"
-msgstr ""
+msgstr "Коричный"
 
 #: apc/config/fur_names.json:61
 msgid "Blonde"
-msgstr ""
+msgstr "Светлый"
 
 #: apc/config/fur_names.json:64
 msgid "Fabled Glacier"
-msgstr ""
+msgstr "Лег. с подпал."
 
 #: apc/config/fur_names.json:67
 msgid "Fabled Chestnut"
-msgstr ""
+msgstr "Лег. каштановый"
 
 #: apc/config/fur_names.json:70
 msgid "Fabled Cream"
-msgstr ""
+msgstr "Лег. песочный"
 
 #: apc/config/fur_names.json:73
 msgid "Fabled Spotted"
-msgstr ""
+msgstr "Лег. в крапинку"
 
 #: apc/config/fur_names.json:76
 msgid "Fabled Spirit"
-msgstr ""
+msgstr "Лег. выгоревший"
 
 #: apc/config/fur_names.json:79
 msgid "Leucistic"
-msgstr ""
+msgstr "В крапинку"
 
 #: apc/config/fur_names.json:82
 msgid "Gold"
-msgstr ""
+msgstr "Золотистый"
 
 #: apc/config/fur_names.json:85
 msgid "Dark Grey"
-msgstr ""
+msgstr "Тёмно-серый"
 
 #: apc/config/fur_names.json:88
 msgid "Tan"
-msgstr ""
+msgstr "Рыже-коричневый"
 
 #: apc/config/fur_names.json:91
 msgid "Crowned"
-msgstr ""
+msgstr "Увенчанный"
 
 #: apc/config/fur_names.json:94
 msgid "Blue"
-msgstr ""
+msgstr "Голубой"
 
 #: apc/config/fur_names.json:97
 msgid "Red"
-msgstr ""
+msgstr "Рыжий"
 
 #: apc/config/fur_names.json:100
 msgid "Lg leucist."
-msgstr ""
+msgstr "Св.сер в крапинку"
 
 #: apc/config/fur_names.json:103
 msgid "Bald leuc."
-msgstr ""
+msgstr "Б.гол. в крапинку"
 
 #: apc/config/fur_names.json:106
 msgid "Honeytones"
-msgstr ""
+msgstr "Медовый"
 
 #: apc/config/fur_names.json:109
 msgid "Beige"
-msgstr ""
+msgstr "Бежевый"
 
 #: apc/config/fur_names.json:112
 msgid "Ochre"
-msgstr ""
+msgstr "Коричневато-жёлтый"
 
 #: apc/config/fur_names.json:115
 msgid "Light Gray"
-msgstr ""
+msgstr "Светло-серый"
 
 #: apc/config/fur_names.json:118
 msgid "Light Bronze"
-msgstr ""
+msgstr "Светло-бронзовый"
 
 #: apc/config/fur_names.json:121
 msgid "Spirit"
-msgstr ""
+msgstr "Призрак"
 
 #: apc/config/fur_names.json:124
 msgid "Red Brown"
-msgstr ""
+msgstr "Красно-коричневый"
 
 #: apc/config/fur_names.json:127
 msgid "Dark Green"
-msgstr ""
+msgstr "Тёмно-зелёный"
 
 #: apc/config/fur_names.json:130
 msgid "Light Green"
-msgstr ""
+msgstr "Светло-зелёный"
 
 #: apc/config/fur_names.json:133
 msgid "Hybrid Blue"
-msgstr ""
+msgstr "Гибридный-голубой"
 
 #: apc/config/fur_names.json:136
 msgid "Hybrid Green"
-msgstr ""
+msgstr "Гибридный-зелёный"
 
 #: apc/config/fur_names.json:139
 msgid "Eclipse"
-msgstr ""
+msgstr "Летний"
 
 #: apc/config/fur_names.json:142
 msgid "Hybrid"
-msgstr ""
+msgstr "Гибридный"
 
 #: apc/config/fur_names.json:145
 msgid "Spotted Dark"
-msgstr ""
+msgstr "Тёмный в крапинку"
 
 #: apc/config/fur_names.json:148
 msgid "Spotted Red"
-msgstr ""
+msgstr "Красный в крапинку"
 
 #: apc/config/fur_names.json:151
 msgid "White Brown"
-msgstr ""
+msgstr "Бело-коричневый"
 
 #: apc/config/fur_names.json:154
 msgid "Black Brown"
-msgstr ""
+msgstr "Чёрно-коричневый"
 
 #: apc/config/fur_names.json:157
 msgid "Black White"
-msgstr ""
+msgstr "Чёрно-белый"
 
 #: apc/config/fur_names.json:160
 msgid "White"
-msgstr ""
+msgstr "Белый"
 
 #: apc/config/fur_names.json:163
 msgid "Mixed"
-msgstr ""
+msgstr "Смешанный"
 
 #: apc/config/fur_names.json:166
 msgid "Black Spots"
-msgstr ""
+msgstr "Черные пятна"
 
 #: apc/config/fur_names.json:169
 msgid "Blackgold"
-msgstr ""
+msgstr "Чёрный с золотом"
 
 #: apc/config/fur_names.json:172
 msgid "Pink"
-msgstr ""
+msgstr "Розовый"
 
 #: apc/config/fur_names.json:175
 msgid "Two Tones"
-msgstr ""
+msgstr "Двухцветный"
 
 #: apc/config/fur_names.json:178
 msgid "Eggwhite"
-msgstr ""
+msgstr "Белоснежный"
 
 #: apc/config/fur_names.json:181
 msgid "Pale"
-msgstr ""
+msgstr "Светлый"
 
 #: apc/config/fur_names.json:184
 msgid "Pristine"
-msgstr ""
+msgstr "Чистота"
 
 #: apc/config/fur_names.json:187
 msgid "Winter"
-msgstr ""
+msgstr "Зима"
 
 #: apc/config/fur_names.json:190
 msgid "Fabled Two Tone"
-msgstr ""
+msgstr "Лег. двухцветный"
 
 #: apc/config/fur_names.json:193
 msgid "Fabled Birch"
-msgstr ""
+msgstr "Лег. березовый"
 
 #: apc/config/fur_names.json:196
 msgid "Fabled Oak"
-msgstr ""
+msgstr "Лег. дубовый"
 
 #: apc/config/fur_names.json:199
 msgid "Fabled Speckled"
-msgstr ""
+msgstr "Лег. в крапинку"
 
 #: apc/config/fur_names.json:202
 msgid "Fabled Spruce"
-msgstr ""
+msgstr "Лег. еловый"
 
 #: apc/config/fur_names.json:205
 msgid "Fabled Ashen"
-msgstr ""
+msgstr "Лег. пепельный"
 
 #: apc/config/fur_names.json:208
 msgid "Molting"
-msgstr ""
+msgstr "Линяющий"
 
 #: apc/config/fur_names.json:211
 msgid "Dilute"
-msgstr ""
+msgstr "Выцветший"
 
 #: apc/config/fur_names.json:214
 msgid "Dark Red"
-msgstr ""
+msgstr "Тёмно-красный"
 
 #: apc/config/fur_names.json:217
 msgid "Piebald Grey"
-msgstr ""
+msgstr "Серый разношёрстный"
 
 #: apc/config/fur_names.json:220
 msgid "Piebald Blnd"
-msgstr ""
+msgstr "Русый разношёрстный"
 
 #: apc/config/fur_names.json:223
 msgid "Lightbuff"
-msgstr ""
+msgstr "Светло-бежевый"
 
 #: apc/config/fur_names.json:226
 msgid "Bicolor"
-msgstr ""
+msgstr "Двухцветный"
 
 #: apc/config/fur_names.json:229
 msgid "Chestnut"
-msgstr ""
+msgstr "Каштановый"
 
 #: apc/config/fur_names.json:232
 msgid "Cream"
-msgstr ""
+msgstr "Песочный"
 
 #: apc/config/fur_names.json:235
 msgid "Bright"
-msgstr ""
+msgstr "Светлый"
 
 #: apc/config/reserve_names.json:4
 msgid "Hirschfelden"
