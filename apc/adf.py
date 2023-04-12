@@ -32,6 +32,8 @@ class ParsedAdfFile():
 
 def _get_file_name(reserve: str, mod: bool):
     save_path = config.MOD_DIR_PATH if mod else config.get_save_path()
+    if save_path is None:
+        raise FileNotFound("Please configure your game save path")
     filename = save_path / config.get_population_file_name(reserve)
     if not filename.exists():
         raise FileNotFound(f'{filename} does not exist')

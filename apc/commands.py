@@ -90,6 +90,7 @@ def species(reserve_name: str) -> Table:
 def describe_reserve(reserve_name: str, modded: bool, include_species = True, verbose = False) -> Table:
   reserve_details = adf.load_reserve(reserve_name, modded, verbose=verbose)
   reserve_description = populations.describe_reserve(reserve_name, reserve_details.adf, include_species, verbose=verbose)
+  reserve_description = [x[2:] for x in reserve_description]
   return _create_reserve_table(reserve_name, reserve_description, modded)
 
 def describe_animals(reserve_name: str, species: str, good: bool = False, modded: bool = False, verbose: bool = False, top: bool = False) -> Table:

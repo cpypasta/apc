@@ -1,2 +1,2 @@
 __app_name__ = "apc"
-__version__ = "1.0.3"
+__version__ = "1.0.4"

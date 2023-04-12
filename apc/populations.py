@@ -1,4 +1,4 @@
-import random
+import random, re
 from apc.utils import update_float, update_uint
 from deca.ff_adf import Adf, AdfValue
 from apc import config, adf
@@ -147,6 +147,7 @@ def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = T
       print(f"processing {len(populations)} species...")
 
     rows = []
+    keys = []
     total_cnt = 0
     population_cnt = 0
     for population in populations:
@@ -163,7 +164,8 @@ def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = T
       known_species = species_key in config.ANIMALS.keys()
       diamond_weight = config.ANIMALS[species_key]["diamonds"]["weight_low"] if known_species else config.HIGH_NUMBER
       diamond_score = config.ANIMALS[species_key]["diamonds"]["score_low"] if known_species else config.HIGH_NUMBER
-      species_name = config.get_reserve_species_name(species_key, reserve_key)
+      species_level = len(config.ANIMALS[species_key]["diamonds"]["levels"])
+      species_name = f"{species_level}. {config.get_reserve_species_name(species_key, reserve_key)}"
       population_cnt += 1
 
       if verbose and diamond_score != config.HIGH_NUMBER:
@@ -194,6 +196,8 @@ def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = T
             diamond_cnt += 1
 
       rows.append([
+        species_key,
+        species_level,
         species_name, 
         animal_cnt,
         male_cnt,
@@ -204,7 +208,7 @@ def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = T
         go_cnt
       ])
 
-    return rows
+    return sorted(rows, key = lambda x: x[1])
 
 def _get_eligible_animals(groups: list, species: str, gender: str = "male") -> list:
   eligible_animals = []
@@ -318,10 +322,8 @@ def _go_furs(species: str, groups: list, reserve_data: bytearray) -> None:
 def _diamond_furs(species: str, groups: list, reserve_data: bytearray) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
   diamond_gender = config.get_diamond_gender(species)
-  if "furs" in species_config and diamond_gender in species_config["furs"]:
-    diamond_furs = _dict_values(species_config["furs"][diamond_gender])
-  else:
-    raise Exception("Furs have not been loaded for this species yet.")
+  diamond_furs = config.get_species_furs(species, diamond_gender)
+
   _process_furs(species, species_config, diamond_furs, groups, reserve_data, _create_diamond, gender=diamond_gender)
 
 def _furs(species: str, groups: list, reserve_data: bytearray) -> None:

@@ -194,7 +194,7 @@ def _mod(reserve_key: str, species: str, strategy: Strategy, window: sg.Window, 
     _show_error(window, ex)
     return
   window["progress"].update(50)
-  window["reserve_description"].update(_highlight_values(modded_reserve_description))
+  window["reserve_description"].update(_highlight_values(_format_reserve_description(modded_reserve_description)))
   window["progress"].update(75)
   window["reserve_warning"].update(VIEW_MODDED)
   window["reserve_note"].update(f"{get_species_name(species).upper()} ({format_key(strategy)}) {config.SAVED}: \"{MOD_DIR_PATH / get_population_file_name(reserve_key)}\"")
@@ -289,6 +289,12 @@ def _process_list_mods(window: sg.Window, reserve_name: str = None) -> list:
   time.sleep(PROGRESS_DELAY)
   window["progress"].update(0)
   return mods 
+
+def _format_reserve_description(reserve_description: List) -> List:
+  rows = []
+  for row in reserve_description:
+    rows.append(row[2:])
+  return rows
 
 def main_window(my_window: sg.Window = None) -> sg.Window:
     global reserve_names
@@ -498,7 +504,7 @@ def main() -> None:
           window["everyone_party"].update(disabled=False)
           window["fur_party"].update(disabled=False)
           window["progress"].update(90)
-          window["reserve_description"].update(_highlight_values(reserve_description))
+          window["reserve_description"].update(_highlight_values(_format_reserve_description(reserve_description)))
           window["progress"].update(100)
           time.sleep(PROGRESS_DELAY)
           window["progress"].update(0)
@@ -508,9 +514,8 @@ def main() -> None:
             row, _ = event[2]
             if row != None and row >= 0:
               window["update_animals"].update(disabled=False)
-              species_name = reserve_description[row][0] if reserve_description else ""
-              species = _species_key_from_name(reserve_key, row)
-              print(f"species clicked: {species}")
+              species_name = reserve_description[row][2] if reserve_description else ""
+              species = reserve_description[row][0] if reserve_description else ""
               window["reserve_note"].update("")
               _disable_go(window, True)
               _disable_furs(window, True)
@@ -533,7 +538,6 @@ def main() -> None:
             window["save_path"].update(provided_path)
             window["reserve_note"].update(config.PATH_SAVED)
         elif event == "show_animals":
-          print((reserve_key, species))                  
           is_modded = values["modded_reserves"]
           is_top = values["top_scores"]
           window['reserve_warning'].update(visible=False)

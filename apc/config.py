@@ -366,7 +366,12 @@ def get_species_key(species_name: str) -> str:
 
 def get_species_furs(species_key: str, gender: str) -> List[str]:
   species = get_species(species_key)
-  return list(species["diamonds"]["furs"][gender].values())
+  if gender == "both":
+    males = list(species["diamonds"]["furs"]["male"].values())
+    females = list(species["diamonds"]["furs"]["female"].values())
+    return males + females
+  else:
+    return list(species["diamonds"]["furs"][gender].values())
 
 def get_reserve_species_name(species_key: str, reserve_key: str) -> str:
   renames = get_reserve_species_renames(reserve_key)
@@ -429,9 +434,7 @@ def valid_go_species(species: str) -> bool:
     return species in GreatOnes.__members__
 
 def valid_fur_species(species_key: str) -> bool:
-  animal_species = ANIMALS[species_key]["diamonds"]
-  gender = animal_species["gender"] if "gender" in animal_species else "male"
-  return "furs" in animal_species and gender in animal_species["furs"]
+  return True
 
 def get_population_file_name(reserve: str):
     index = RESERVES[reserve]["index"]
