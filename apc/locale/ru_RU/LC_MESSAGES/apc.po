@@ -1005,7 +1005,7 @@ msgstr "Лег. дубовый"
 
 #: apc/config/fur_names.json:199
 msgid "Fabled Speckled"
-msgstr "Лег. в крапинку"
+msgstr "Лег. пятнистый"
 
 #: apc/config/fur_names.json:202
 msgid "Fabled Spruce"
@@ -1061,7 +1061,7 @@ msgstr "Хиршфельден"
 
 #: apc/config/reserve_names.json:7
 msgid "Layton Lake"
-msgstr "Лейтон лейкс"
+msgstr "Лейтон лейк"
 
 #: apc/config/reserve_names.json:10
 msgid "Medved-Taiga National Park"
