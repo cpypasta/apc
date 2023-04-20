@@ -123,7 +123,7 @@ def setup_translations() -> None:
   global DIAMONDS
   DIAMONDS = translate("Diamonds")
   global INCLUDE_RARE_FURS
-  INCLUDE_RARE_FURS = translate("include rare furs")
+  INCLUDE_RARE_FURS = translate("include diamond rare furs")
   global ALL_FURS
   ALL_FURS = translate("All Furs")
   global RESET
@@ -286,6 +286,7 @@ class Strategy(str, Enum):
    furs = "furs"
    furs_some = "furs-some"
    females = "females"
+   add = "add"
 
 class GreatOnes(str, Enum):
    moose = "moose"

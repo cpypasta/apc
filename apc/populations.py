@@ -1,7 +1,7 @@
-import random, re
+import random
 from apc.utils import update_float, update_uint
 from deca.ff_adf import Adf, AdfValue
-from apc import config, adf
+from apc import config, adf, adf_profile
 from rich import print
 from apc.adf import ParsedAdfFile, load_reserve
 from apc.config import get_animal_fur_by_seed, get_species_name, get_reserve_name, get_level_name, get_reserve, valid_species_for_reserve, format_key
@@ -210,6 +210,11 @@ def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = T
 
     return sorted(rows, key = lambda x: x[1])
 
+def _create_new_animal(animals: List[Animal]) -> adf_profile.Animal:
+  chosen_animal = random.choice(animals)
+  seed = random.uniform(0.000001, 0.099999)
+  return adf_profile.Animal(chosen_animal.gender, chosen_animal.weight+seed, chosen_animal.score, False, chosen_animal.visual_seed)
+
 def _get_eligible_animals(groups: list, species: str, gender: str = "male") -> list:
   eligible_animals = []
   for group in groups:
@@ -363,45 +368,59 @@ def _male_some(species: str, groups: list, reserve_data: bytearray, modifier: in
   
 def _female_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False) -> None:
   _process_some(species, {}, groups, reserve_data, modifier, percentage, _create_female, gender = "male")  
-  
-def mod(reserve_name: str, reserve_details: ParsedAdfFile, species: str, strategy: str, modifier: int = None, percentage: bool = False, rares: bool = False, verbose = False):
-  species_details = _species(reserve_name, reserve_details.adf, species)
+
+def _add_animals(groups: list, reserve_name: str, species_key: str, modifier: int, verbose: bool, mod: bool) -> None:
+  eligible_animals = _get_eligible_animals(groups, species_key, "both")
+  animals = []
+  if modifier:
+    for i in range(modifier):
+      animals.append(_create_new_animal(eligible_animals))
+  else:
+    animals.append(_create_new_animal(eligible_animals))
+  adf.add_animals_to_reserve(reserve_name, species_key, animals, verbose, mod)
+
+def mod(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, strategy: str, modifier: int = None, percentage: bool = False, rares: bool = False, verbose = False, mod: bool = False):
+  species_details = _species(reserve_name, reserve_details.adf, species_key)
   groups = species_details.value["Groups"].value
-  species_name = config.get_species_name(species)
+  species_name = config.get_species_name(species_key)
   reserve_data = reserve_details.decompressed.data
 
   if (strategy == config.Strategy.go_all):
-    _go_all(species, groups, reserve_data)
+    _go_all(species_key, groups, reserve_data)
     print(f"[green]All {species_name} are now Great Ones![/green]")
   elif (strategy == config.Strategy.go_furs):
-    _go_furs(species, groups, reserve_data)
+    _go_furs(species_key, groups, reserve_data)
     print(f"[green]All {species_name} Great One furs have been added![/green]")
   elif (strategy == config.Strategy.go_some):
-    _go_some(species, groups, reserve_data, modifier, percentage)
+    _go_some(species_key, groups, reserve_data, modifier, percentage)
     print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now Great Ones![/green]")
   elif (strategy == config.Strategy.diamond_all):
-    _diamond_all(species, groups, reserve_data, rares)
+    _diamond_all(species_key, groups, reserve_data, rares)
     print(f"[green]All {species_name} are now Diamonds![/green]")  
   elif (strategy == config.Strategy.diamond_furs):
-    _diamond_furs(species, groups, reserve_data)
+    _diamond_furs(species_key, groups, reserve_data)
     print(f"[green]All {species_name} are now Diamonds![/green]")
   elif (strategy == config.Strategy.diamond_some):
-    _diamond_some(species, groups, reserve_data, modifier, percentage, rares)
+    _diamond_some(species_key, groups, reserve_data, modifier, percentage, rares)
     print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now Diamonds![/green]")  
   elif (strategy == config.Strategy.males):
-    _male_some(species, groups, reserve_data, modifier, percentage)
+    _male_some(species_key, groups, reserve_data, modifier, percentage)
     print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now males![/green]")  
   elif (strategy == config.Strategy.females):
-    _female_some(species, groups, reserve_data, modifier, percentage)
+    _female_some(species_key, groups, reserve_data, modifier, percentage)
     print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now females![/green]") 
   elif (strategy == config.Strategy.furs):
-    _furs(species, groups, reserve_data)
+    _furs(species_key, groups, reserve_data)
     print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now random furs![/green]") 
   elif (strategy == config.Strategy.furs_some):
-    _furs_some(species, groups, reserve_data, modifier, percentage)
+    _furs_some(species_key, groups, reserve_data, modifier, percentage)
     print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now random furs![/green]") 
+  elif (strategy == config.Strategy.add):
+    _add_animals(groups, reserve_name, species_key, modifier, verbose, mod)
+    print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} have been added![/green]") 
   else:
     print(f"[red]Unknown strategy: {strategy}")  
 
-  reserve_details.decompressed.save(config.MOD_DIR_PATH, verbose=verbose)
+  if strategy != config.Strategy.add:
+    reserve_details.decompressed.save(config.MOD_DIR_PATH, verbose=verbose)
   return describe_reserve(reserve_name, load_reserve(reserve_name, True, verbose=verbose).adf, verbose=verbose)

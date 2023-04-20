@@ -1,9 +1,9 @@
-import zlib
-import contextlib
+import zlib, contextlib, random, math
 from deca.file import ArchiveFile
 from deca.ff_adf import Adf
 from pathlib import Path
 from apc import config
+from apc.adf_profile import *
 
 class FileNotFound(Exception):
     pass
@@ -30,7 +30,7 @@ class ParsedAdfFile():
         self.decompressed = decompressed
         self.adf = adf
 
-def _get_file_name(reserve: str, mod: bool):
+def _get_file_name(reserve: str, mod: bool) -> Path:
     save_path = config.MOD_DIR_PATH if mod else config.get_save_path()
     if save_path is None:
         raise FileNotFound("Please configure your game save path")
@@ -103,6 +103,31 @@ def _decompress_adf_file(filename: Path, verbose = False) -> DecompressedAdfFile
         decompressed_data_bytes
     )
 
+def _update_non_instance_offsets(data: bytearray, profile: dict, added_size: int) -> None:
+  offsets_to_update = [
+    (profile["header_instance_offset"], profile["instance_header_start"]),
+    (profile["header_typedef_offset"], profile["typedef_start"]),
+    (profile["header_nametable_offset"], profile["nametable_start"]),
+    (profile["header_total_size_offset"], profile["total_size"]),
+    (profile["instance_header_start"]+12, profile["details"]["instance_offsets"]["instances"][0]["size"])
+  ]
+  for offset in offsets_to_update:
+    write_value(data, create_u32(offset[1] + added_size), offset[0])
+
+def _insert_animal(data: bytearray, animal: Animal, array: AdfArray) -> None:
+  write_value(data, create_u32(read_u32(data[array.header_length_offset:array.header_length_offset+4])+1), array.header_length_offset)
+  animal_bytes = animal.to_bytes()
+  data[array.array_org_end_offset:array.array_org_end_offset] = animal_bytes
+
+def _update_instance_arrays(data: bytearray, animal_arrays: List[AdfArray], target_array: AdfArray, size: int):
+  for animal_array in animal_arrays:
+    if animal_array.array_start_offset >= target_array.array_end_offset and animal_array.array_start_offset != 0:
+      animal_array.array_start_offset = animal_array.array_start_offset + size
+      animal_array.array_end_offset = animal_array.array_end_offset + size
+      animal_array.rel_array_start_offset = animal_array.rel_array_start_offset + size
+      write_value(data, create_u32(animal_array.rel_array_start_offset), animal_array.header_array_offset)
+
+
 def parse_adf(filename: Path, suffix: str = None, verbose = False) -> Adf:
     if verbose:
         print(f"Parsing {filename}")
@@ -116,3 +141,30 @@ def load_adf(filename: Path, verbose = False) -> ParsedAdfFile:
 def load_reserve(reserve_name: str, mod: bool = False, verbose = False) -> ParsedAdfFile:
     filename = _get_file_name(reserve_name, mod)
     return load_adf(filename, verbose=verbose)
+
+def add_animals_to_reserve(reserve_name: str, species_key: str, animals: List[Animal], verbose: bool, mod: bool) -> None:
+  if len(animals) == 0:
+    return
+  org_filename = _get_file_name(reserve_name, mod)
+  decompressed_adf = _decompress_adf_file(org_filename, verbose=verbose)
+  profile = create_profile(decompressed_adf.filename)
+  population_index = config.RESERVES[reserve_name]["species"].index(species_key)
+  animal_arrays, other_arrays = find_arrays(profile)
+  all_arrays = animal_arrays+other_arrays
+  eligible_animal_arrays = [x for x in animal_arrays if x.population == population_index]
+  eligible_animal_arrays = sorted(eligible_animal_arrays, key=lambda x: x.array_start_offset, reverse=True)
+  reserve_data = decompressed_adf.data
+  
+  total_size = animals[0].size * len(animals)
+  _update_non_instance_offsets(reserve_data, profile, total_size)
+  n = 1 if len(animals) < len(eligible_animal_arrays) else math.ceil(len(animals) / len(eligible_animal_arrays))
+  animal_chunks = [animals[i:i + n] for i in range(0, len(animals), n)]
+  for i, animal_chunk in enumerate(animal_chunks):
+    chosen_array = eligible_animal_arrays[i]
+    for animal in animal_chunk:
+      _update_instance_arrays(reserve_data, all_arrays, chosen_array, animal.size)
+  for i, animal_chunk in enumerate(animal_chunks):
+    chosen_array = eligible_animal_arrays[i]    
+    for animal in animal_chunk:
+      _insert_animal(reserve_data, animal, chosen_array)
+  decompressed_adf.save(config.MOD_DIR_PATH, verbose=verbose)

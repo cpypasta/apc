@@ -70,8 +70,8 @@ def animals(
      _show_filenotfound(ex)
 
 @app.command(help="Shows all the species found at a reserve")
-def species(reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch)) -> None:
-  species = commands.species(reserve_name)
+def species_key(reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch)) -> None:
+  species = commands.species_key(reserve_name)
   console.print(species)
 
 @app.command(help="Modify the animals for a specific reserve and species")
@@ -79,7 +79,7 @@ def mod(
    reserve_name: config.Reserve = typer.Argument(config.Reserve.hirsch), 
    species: str = typer.Argument(...),
    strategy: config.Strategy = typer.Argument(...),
-   modifier: int = typer.Argument(None, help="used to modify strategy", min=1, max=100),
+   modifier: int = typer.Argument(None, help="used to modify strategy", min=1, max=300),
    rares: Optional[bool] = typer.Option(False, "--rares", "-r", help="Include rare and super rare furs"),
    modded: Optional[bool] = typer.Option(False, "--modded", "-m", help="Use modded version of the reserve"),
    percentage: Optional[bool] = typer.Option(False, "--percent", "-p", help="Treat modifier as a percentage")

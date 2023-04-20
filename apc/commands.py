@@ -77,7 +77,7 @@ def reserves() -> Table:
 
   return utils.list_to_table(reserve_names, table)
 
-def species(reserve_name: str) -> Table:
+def species_key(reserve_name: str) -> Table:
   species = [[species_name] for species_name in populations.species(reserve_name, True)]
   table = Table(
     title=f"[green]{config.get_reserve_name(reserve_name)} {config.SPECIES}[/green]", 
@@ -109,7 +109,8 @@ def mod(reserve_name: str, species: str, strategy: str, modifier: int = None, pe
     if rares:
       print("[yellow]Will use rare fur types when modding...[/yellow]")
   reserve_details = adf.load_reserve(reserve_name, modded, verbose=verbose)
-  reserve_description = populations.mod(reserve_name, reserve_details, species, strategy, modifier, percentage, rares, verbose=verbose)
+  reserve_description = populations.mod(reserve_name, reserve_details, species, strategy, modifier, percentage, rares, verbose=verbose, mod=modded)
+  reserve_description = [x[2:] for x in reserve_description]
   return _create_reserve_table(reserve_name, reserve_description, True)
 
 def parse(filename: str, verbose = False) -> None:
