@@ -378,6 +378,9 @@ def _add_animals(groups: list, reserve_name: str, species_key: str, modifier: in
   else:
     animals.append(_create_new_animal(eligible_animals))
   adf.add_animals_to_reserve(reserve_name, species_key, animals, verbose, mod)
+  
+def _remove_animals(reserve_name: str, species_key: str, modifier: int, verbose: bool, mod: bool) -> None:
+  adf.remove_animals_from_reserve(reserve_name, species_key, modifier, verbose, mod)
 
 def mod(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, strategy: str, modifier: int = None, percentage: bool = False, rares: bool = False, verbose = False, mod: bool = False):
   species_details = _species(reserve_name, reserve_details.adf, species_key)
@@ -417,10 +420,13 @@ def mod(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, str
     print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now random furs![/green]") 
   elif (strategy == config.Strategy.add):
     _add_animals(groups, reserve_name, species_key, modifier, verbose, mod)
-    print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} have been added![/green]") 
+    print(f"[green]All {modifier} {species_name} have been added![/green]")   
+  elif (strategy == config.Strategy.remove):
+    _remove_animals(reserve_name, species_key, modifier, verbose, mod)
+    print(f"[green]All {modifier} {species_name} have been removed![/green]") 
   else:
     print(f"[red]Unknown strategy: {strategy}")  
 
-  if strategy != config.Strategy.add:
+  if strategy not in (config.Strategy.add, config.Strategy.remove):
     reserve_details.decompressed.save(config.MOD_DIR_PATH, verbose=verbose)
   return describe_reserve(reserve_name, load_reserve(reserve_name, True, verbose=verbose).adf, verbose=verbose)

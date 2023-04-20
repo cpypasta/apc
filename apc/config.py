@@ -287,6 +287,7 @@ class Strategy(str, Enum):
    furs_some = "furs-some"
    females = "females"
    add = "add"
+   remove = "remove"
 
 class GreatOnes(str, Enum):
    moose = "moose"
