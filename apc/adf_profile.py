@@ -352,6 +352,7 @@ def profile_header(data: bytearray) -> dict:
   instance_offset = read_u32(header[12:16])
   typedef_count = read_u32(header[16:20])
   typedef_offset = read_u32(header[20:24])
+  stringhash_offset = read_u32(header[28:32])
   nametable_count = read_u32(header[32:36])
   nametable_offset = read_u32(header[36:40])
   total_size = read_u32(header[40:44])  
@@ -364,9 +365,11 @@ def profile_header(data: bytearray) -> dict:
     "nametable_offset": nametable_offset,
     "instance_count": instance_count,
     "instance_offset": instance_offset,
+    "stringhash_offset": stringhash_offset,
     "header_start": 0,
     "header_instance_offset": 12,
     "header_typedef_offset": 20,
+    "header_stringhash_offset": 28,
     "header_nametable_offset": 36,
     "header_total_size_offset": 40,
     "header_end": 64
@@ -394,6 +397,7 @@ def create_profile(filename: Path) -> None:
     "header_start": 0,
     "header_instance_offset": 12,
     "header_typedef_offset": 20,
+    "header_stringhash_offset": 28,
     "header_nametable_offset": 36,
     "header_total_size_offset": 40,
     "header_end": 64,

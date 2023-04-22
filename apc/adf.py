@@ -146,7 +146,34 @@ def load_reserve(reserve_name: str, mod: bool = False, verbose = False) -> Parse
     filename = _get_file_name(reserve_name, mod)
     return load_adf(filename, verbose=verbose)
 
+# TODO: EXPERIMENT
 def add_animals_to_reserve(reserve_name: str, species_key: str, animals: List[Animal], verbose: bool, mod: bool) -> None:
+  if len(animals) == 0:
+    return
+  org_filename = _get_file_name(reserve_name, mod)
+  decompressed_adf = _decompress_adf_file(org_filename, verbose=verbose)
+  profile = create_profile(decompressed_adf.filename)
+  population_index = config.RESERVES[reserve_name]["species"].index(species_key)
+  animal_arrays, other_arrays = find_arrays(profile)
+  all_arrays = animal_arrays+other_arrays
+  eligible_animal_arrays = [x for x in animal_arrays if x.population == population_index]
+  eligible_animal_arrays = sorted(eligible_animal_arrays, key=lambda x: x.array_start_offset, reverse=True)
+  reserve_data = decompressed_adf.data
+  
+  # _update_non_instance_offsets(reserve_data, profile, 32)
+  # reserve_data[193712+8:193712+12] = create_u32(read_u32(reserve_data[193712+8:193712+12])+1) # increase array length
+  # print("updating", read_u32(reserve_data[120:124]), "to", 217192+4-96)
+  # reserve_data[120:120+4] = create_u32(217192+32-96) # increase array offset, hunting pressure
+  # animal = Animal("male", 1.0, 1.0, False, 1234)
+  # reserve_data[217192:217192] = animal.to_bytes() # add element to array
+  
+  # reserve_data[-1:-1] = bytearray(struct.pack("B", 23))
+  
+  reserve_data[284338:284339] = bytearray(struct.pack("c", "y".encode()))
+  
+  decompressed_adf.save(config.MOD_DIR_PATH, verbose=verbose)
+
+def add_animals_to_reserve2(reserve_name: str, species_key: str, animals: List[Animal], verbose: bool, mod: bool) -> None:
   if len(animals) == 0:
     return
   org_filename = _get_file_name(reserve_name, mod)
