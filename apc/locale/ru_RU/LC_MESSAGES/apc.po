@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-06 21:34-0500\n"
+"POT-Creation-Date: 2023-04-27 17:51-0500\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru_RU\n"
@@ -83,7 +83,7 @@ msgstr "Мех"
 msgid "Diamond"
 msgstr "Бриллиант"
 
-#: apc/config.py:70 apc/config.py:328
+#: apc/config.py:70 apc/config.py:350
 msgid "Great One"
 msgstr "Великий"
 
@@ -196,8 +196,8 @@ msgid "Diamonds"
 msgstr "Бриллианты"
 
 #: apc/config.py:126
-msgid "include rare furs"
-msgstr "включая редкие меха"
+msgid "include diamond rare furs"
+msgstr ""
 
 #: apc/config.py:128
 msgid "All Furs"
@@ -359,51 +359,91 @@ msgstr "Хорошо"
 msgid "Cancel"
 msgstr "Отменить"
 
-#: apc/config.py:310
+#: apc/config.py:208
+msgid "Modify Animals"
+msgstr ""
+
+#: apc/config.py:210
+msgid "Furs"
+msgstr ""
+
+#: apc/config.py:212
+msgid "Modify Animal Furs"
+msgstr ""
+
+#: apc/config.py:214
+msgid "Male Furs"
+msgstr ""
+
+#: apc/config.py:216
+msgid "Female Furs"
+msgstr ""
+
+#: apc/config.py:218
+msgid "Change All Species"
+msgstr ""
+
+#: apc/config.py:220
+msgid "Explore Animals"
+msgstr ""
+
+#: apc/config.py:222
+msgid "Manage Modded Reserves"
+msgstr ""
+
+#: apc/config.py:224
+msgid "viewing modded mod"
+msgstr ""
+
+#: apc/config.py:226
+msgid "use all furs"
+msgstr ""
+
+#: apc/config.py:332
 msgid "Trivial"
 msgstr "Тривиальный"
 
-#: apc/config.py:312
+#: apc/config.py:334
 msgid "Minor"
 msgstr "Незначительный"
 
-#: apc/config.py:314
+#: apc/config.py:336
 msgid "Very Easy"
 msgstr "Очень лёгкий"
 
-#: apc/config.py:316
+#: apc/config.py:338
 msgid "Easy"
 msgstr "Лёгкий"
 
-#: apc/config.py:318
+#: apc/config.py:340
 msgid "Medium"
 msgstr "Средний"
 
-#: apc/config.py:320
+#: apc/config.py:342
 msgid "Hard"
 msgstr "Высокий"
 
-#: apc/config.py:322
+#: apc/config.py:344
 msgid "Very Hard"
 msgstr "Очень высокий"
 
-#: apc/config.py:324
+#: apc/config.py:346
 msgid "Mythical"
 msgstr "Мифический"
 
-#: apc/config.py:326
+#: apc/config.py:348
 msgid "Legendary"
 msgstr "Легендарный"
 
-#: apc/config.py:355
+#: apc/config.py:377
 msgid "fur_name"
 msgstr "Мех"
 
-#: apc/config.py:377
+#: apc/config.py:411
 msgid "reserve_name"
 msgstr "Заказник"
 
-#: apc/config.py:444
+#: apc/config.py:483
 msgid "name"
 msgstr "имя"
 
@@ -1106,3 +1146,7 @@ msgstr "Побережье Ревонтули"
 #: apc/config/reserve_names.json:40
 msgid "New England Mountains"
 msgstr "Горы Новой Англии"
+
+#~ msgid "include rare furs"
+#~ msgstr "включая редкие меха"
+

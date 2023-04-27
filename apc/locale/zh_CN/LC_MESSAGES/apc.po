@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-06 21:34-0500\n"
-"PO-Revision-Date: 2023-04-02 23:55-0500\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_Hans_CN\n"
+"POT-Creation-Date: 2023-04-27 17:51-0500\n"
+"PO-Revision-Date: 2023-04-17 17:13+0800\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
@@ -83,7 +83,7 @@ msgstr "毛皮"
 msgid "Diamond"
 msgstr "钻石"
 
-#: apc/config.py:70 apc/config.py:328
+#: apc/config.py:70 apc/config.py:350
 msgid "Great One"
 msgstr "奇珍异兽"
 
@@ -196,8 +196,8 @@ msgid "Diamonds"
 msgstr "钻石增加"
 
 #: apc/config.py:126
-msgid "include rare furs"
-msgstr "包括稀有毛皮"
+msgid "include diamond rare furs"
+msgstr ""
 
 #: apc/config.py:128
 msgid "All Furs"
@@ -359,51 +359,91 @@ msgstr "确定"
 msgid "Cancel"
 msgstr "取消"
 
-#: apc/config.py:310
+#: apc/config.py:208
+msgid "Modify Animals"
+msgstr ""
+
+#: apc/config.py:210
+msgid "Furs"
+msgstr ""
+
+#: apc/config.py:212
+msgid "Modify Animal Furs"
+msgstr ""
+
+#: apc/config.py:214
+msgid "Male Furs"
+msgstr ""
+
+#: apc/config.py:216
+msgid "Female Furs"
+msgstr ""
+
+#: apc/config.py:218
+msgid "Change All Species"
+msgstr ""
+
+#: apc/config.py:220
+msgid "Explore Animals"
+msgstr ""
+
+#: apc/config.py:222
+msgid "Manage Modded Reserves"
+msgstr ""
+
+#: apc/config.py:224
+msgid "viewing modded mod"
+msgstr ""
+
+#: apc/config.py:226
+msgid "use all furs"
+msgstr ""
+
+#: apc/config.py:332
 msgid "Trivial"
 msgstr "微不足道"
 
-#: apc/config.py:312
+#: apc/config.py:334
 msgid "Minor"
 msgstr "小菜一碟"
 
-#: apc/config.py:314
+#: apc/config.py:336
 msgid "Very Easy"
 msgstr "非常简单"
 
-#: apc/config.py:316
+#: apc/config.py:338
 msgid "Easy"
 msgstr "简单"
 
-#: apc/config.py:318
+#: apc/config.py:340
 msgid "Medium"
 msgstr "中等"
 
-#: apc/config.py:320
+#: apc/config.py:342
 msgid "Hard"
 msgstr "困难"
 
-#: apc/config.py:322
+#: apc/config.py:344
 msgid "Very Hard"
 msgstr "非常困难"
 
-#: apc/config.py:324
+#: apc/config.py:346
 msgid "Mythical"
 msgstr "神秘"
 
-#: apc/config.py:326
+#: apc/config.py:348
 msgid "Legendary"
 msgstr "传说"
 
-#: apc/config.py:355
+#: apc/config.py:377
 msgid "fur_name"
 msgstr "毛皮颜色"
 
-#: apc/config.py:377
+#: apc/config.py:411
 msgid "reserve_name"
 msgstr "狩猎区名称"
 
-#: apc/config.py:444
+#: apc/config.py:483
 msgid "name"
 msgstr "名称"
 
@@ -757,11 +797,11 @@ msgstr "深棕色"
 
 #: apc/config/fur_names.json:13
 msgid "Albino"
-msgstr "白化病"
+msgstr "白化"
 
 #: apc/config/fur_names.json:16
 msgid "Melanistic"
-msgstr "黑化病"
+msgstr "黑化"
 
 #: apc/config/fur_names.json:19
 msgid "Gray"
@@ -825,23 +865,23 @@ msgstr "金黄色"
 
 #: apc/config/fur_names.json:64
 msgid "Fabled Glacier"
-msgstr "传说中的冰川色"
+msgstr "珍惜冰川色"
 
 #: apc/config/fur_names.json:67
 msgid "Fabled Chestnut"
-msgstr "传说中的栗色"
+msgstr "珍惜栗色"
 
 #: apc/config/fur_names.json:70
 msgid "Fabled Cream"
-msgstr "传说中的奶油色"
+msgstr "珍惜奶油色"
 
 #: apc/config/fur_names.json:73
 msgid "Fabled Spotted"
-msgstr "传说中的斑点色"
+msgstr "珍惜斑点色"
 
 #: apc/config/fur_names.json:76
 msgid "Fabled Spirit"
-msgstr "传说中的幽灵色"
+msgstr "珍惜幽灵色"
 
 #: apc/config/fur_names.json:79
 msgid "Leucistic"
@@ -873,11 +913,11 @@ msgstr "红色"
 
 #: apc/config/fur_names.json:100
 msgid "Lg leucist."
-msgstr "大型白化病"
+msgstr "大型白化"
 
 #: apc/config/fur_names.json:103
 msgid "Bald leuc."
-msgstr "秃白病"
+msgstr "秃白"
 
 #: apc/config/fur_names.json:106
 msgid "Honeytones"
@@ -993,27 +1033,27 @@ msgstr "冬季色"
 
 #: apc/config/fur_names.json:190
 msgid "Fabled Two Tone"
-msgstr "传说中的双色调"
+msgstr "珍惜双色调"
 
 #: apc/config/fur_names.json:193
 msgid "Fabled Birch"
-msgstr "传说中的桦树皮色"
+msgstr "珍惜桦树皮色"
 
 #: apc/config/fur_names.json:196
 msgid "Fabled Oak"
-msgstr "传说中的橡木色"
+msgstr "珍惜橡木色"
 
 #: apc/config/fur_names.json:199
 msgid "Fabled Speckled"
-msgstr "传说中的斑点色"
+msgstr "珍惜斑点色"
 
 #: apc/config/fur_names.json:202
 msgid "Fabled Spruce"
-msgstr "传说中的云杉色"
+msgstr "珍惜云杉色"
 
 #: apc/config/fur_names.json:205
 msgid "Fabled Ashen"
-msgstr "传说中的灰色"
+msgstr "珍惜灰色"
 
 #: apc/config/fur_names.json:208
 msgid "Molting"
@@ -1106,3 +1146,10 @@ msgstr "雷文图里海岸"
 #: apc/config/reserve_names.json:40
 msgid "New England Mountains"
 msgstr "新英格兰山脉"
+
+#~ msgid "include rare furs"
+#~ msgstr "包括稀有毛皮"
+
+#~ msgid "Browse"
+#~ msgstr "浏览"
+

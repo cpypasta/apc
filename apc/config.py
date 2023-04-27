@@ -204,6 +204,27 @@ def setup_translations() -> None:
   OK = translate("OK")
   global CANCEL
   CANCEL = translate("Cancel")  
+  global MODIFY_ANIMALS
+  MODIFY_ANIMALS = translate("Modify Animals")
+  global FURS
+  FURS = translate("Furs")
+  global MODIFY_ANIMAL_FURS
+  MODIFY_ANIMAL_FURS = translate("Modify Animal Furs")
+  global MALE_FURS
+  MALE_FURS = translate("Male Furs")
+  global FEMALE_FURS
+  FEMALE_FURS = translate("Female Furs")
+  global CHANGE_ALL_SPECIES
+  CHANGE_ALL_SPECIES = translate("Change All Species")
+  global EXPLORE_ANIMALS
+  EXPLORE_ANIMALS = translate("Explore Animals")
+  global MANAGE_MODDED_RESERVES
+  MANAGE_MODDED_RESERVES = translate("Manage Modded Reserves")
+  global VIEWING_LOADED_MOD
+  VIEWING_LOADED_MOD = translate("viewing modded mod")
+  global USE_ALL_FURS
+  USE_ALL_FURS = translate("use all furs")
+  
 setup_translations()
 
 def update_language(locale: str) -> None:

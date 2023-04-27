@@ -371,7 +371,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
     global VIEW_MODDED
     VIEW_MODDED=f"({config.VIEWING_MODDED})"
     global VIEW_MOD_LOADED
-    VIEW_MOD_LOADED=f"(viewing loaded mod)"
+    VIEW_MOD_LOADED=f"({config.VIEWING_LOADED_MOD})"
 
     global RESERVE_COLUMNS
     RESERVE_COLUMNS = [
@@ -474,7 +474,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
             sg.TabGroup([[
               sg.Tab(config.MOD, [
                 [sg.T(" ", font="_ 3", p=(0,0))],
-                [sg.T(textwrap.fill("Modify Animals", 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
+                [sg.T(textwrap.fill(config.MODIFY_ANIMALS, 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
                 [sg.Column([
                   [sg.T(f"{config.MORE_MALES}:", font=DEFAULT_FONT)],
                   [sg.Slider((0,0), orientation="h", p=((20,10),(0,10)), k="male_value", enable_events=True)],
@@ -489,15 +489,15 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
                 [sg.Button(config.RESET, k="reset", font=BUTTON_FONT), sg.Button(config.UPDATE_ANIMALS, expand_x=True, disabled=True, k="update_animals", font=BUTTON_FONT)],
                 [sg.T(" ", font="_ 3", p=(0,0))],
               ], k="mod_tab"),
-              sg.Tab("Furs", [
+              sg.Tab(config.FURS, [
                 [sg.T(" ", font="_ 3", p=(0,0))],
-                [sg.T(textwrap.fill("Modify Animal Furs", 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
-                [sg.T("Male Furs:", p=((10,0),(0,0)))],
-                [sg.Checkbox("use all furs", k="male_all_furs", font=MEDIUM_FONT, p=((10,0),(0,0)))],
+                [sg.T(textwrap.fill(config.MODIFY_ANIMAL_FURS, 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
+                [sg.T(f"{config.MALE_FURS}:", p=((10,0),(0,0)))],
+                [sg.Checkbox(config.USE_ALL_FURS, k="male_all_furs", font=MEDIUM_FONT, p=((10,0),(0,0)))],
                 [sg.Listbox([], k="male_furs", expand_x=True, p=((10,10),(0,0)), s=(None, 4), select_mode=sg.LISTBOX_SELECT_MODE_MULTIPLE)],
                 [sg.Slider((0,0), orientation="h", p=((10,10),(10,20)), k="male_fur_animals_cnt")],                
-                [sg.T("Female Furs:", p=((10,0),(10,0)))],
-                [sg.Checkbox("use all furs", k="female_all_furs", font=MEDIUM_FONT, p=((10,0),(0,0)))],
+                [sg.T(f"{config.FEMALE_FURS}:", p=((10,0),(10,0)))],
+                [sg.Checkbox(config.USE_ALL_FURS, k="female_all_furs", font=MEDIUM_FONT, p=((10,0),(0,0)))],
                 [sg.Listbox([], k="female_furs", expand_x=True, p=((10,10),(0,0)), s=(None, 4), select_mode=sg.LISTBOX_SELECT_MODE_MULTIPLE)],
                 [sg.Slider((0,0), orientation="h", p=((10,10),(10,20)), k="female_fur_animals_cnt")],
                 [sg.Button(config.RESET, k="fur_reset", font=BUTTON_FONT, p=((10,0),(0,0))), sg.Button(config.UPDATE_ANIMALS, expand_x=True, disabled=True, k="fur_update_animals", font=BUTTON_FONT, p=((10,10),(0,0)))],
@@ -505,7 +505,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
               ], k="fur_tab"),
               sg.Tab(config.PARTY, [
                 [sg.T(" ", font="_ 3", p=(0,0))],
-                [sg.T(textwrap.fill("Quickly Change All Species", 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
+                [sg.T(textwrap.fill(config.CHANGE_ALL_SPECIES, 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
                 [sg.Button(config.GREATONE_PARTY, expand_x=True, disabled=True, k="go_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))],
                 [sg.Button(config.DIAMOND_PARTY, expand_x=True, disabled=True, k="diamond_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))],
                 [sg.Button(config.WE_ALL_PARTY, expand_x=True, disabled=True, k="everyone_party", font=BUTTON_FONT, button_color=(sg.theme_button_color()[1], "brown"))],
@@ -513,7 +513,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
               ], k="party_tab"),
               sg.Tab(config.EXPLORE, [
                 [sg.T(" ", font="_ 3", p=(0,0))],
-                [sg.T(textwrap.fill("Explore Animals", 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
+                [sg.T(textwrap.fill(config.EXPLORE_ANIMALS, 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
                 [sg.Checkbox(config.DIAMONDS_AND_GREATONES, font=MEDIUM_FONT, default=True, k="good_ones")],
                 [sg.Checkbox(config.LOOK_MODDED_ANIMALS, font=MEDIUM_FONT, k="modded_reserves")],
                 [sg.Checkbox(config.LOOK_ALL_RESERVES, font=MEDIUM_FONT, k="all_reserves")],
@@ -522,7 +522,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
               ], k="explore_tab"),
               sg.Tab(config.FILES, [
                 [sg.T(" ", font="_ 3", p=(0,0))],
-                [sg.T(textwrap.fill("Manage Modded Reserves", 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
+                [sg.T(textwrap.fill(config.MANAGE_MODDED_RESERVES, 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
                 [sg.Button(config.CONFIGURE_GAME_PATH, expand_x=True, k="set_save", font=BUTTON_FONT)],
                 [sg.Button(config.LIST_MODS, expand_x=True, k="list_mods", font=BUTTON_FONT)],
                 [sg.Button(config.LOAD_MOD, expand_x=True, k="load_mod", disabled=True, font=BUTTON_FONT)],
