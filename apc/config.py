@@ -405,8 +405,8 @@ def get_reserve_species(reserve_key: str) -> dict:
 def get_species(species_key: str) -> dict:
   return ANIMALS[species_key]
 
-def get_diamond_gender(species_name: str) -> str:
-  species_config = get_species(species_name)["diamonds"]
+def get_diamond_gender(species_key: str) -> str:
+  species_config = get_species(species_key)["diamonds"]
   return species_config["gender"] if "gender" in species_config else "male"  
 
 def _get_fur(furs: dict, seed: int) -> str:
@@ -447,6 +447,13 @@ def valid_fur_species(species_key: str) -> bool:
 def get_population_file_name(reserve: str):
     index = RESERVES[reserve]["index"]
     return f"animal_population_{index}"
+  
+def get_population_reserve_key(filename: str):
+  for _reserve, details in RESERVES.items():
+    reserve_filename = f"animal_population_{details['index']}"
+    if reserve_filename == filename:
+      return _reserve
+  return None
   
 def get_population_name(filename: str):
   for _reserve, details in RESERVES.items():

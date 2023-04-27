@@ -12,6 +12,7 @@ BUTTON_FONT = "_ 13"
 SMALL_FONT = "_ 11"
 PROGRESS_DELAY = 0.3
 VIEW_MODDED=None
+VIEW_MOD_LOADED=None
 
 RESERVE_COLUMNS = None
 SPECIES_COLUMNS = None
@@ -20,6 +21,7 @@ reserve_keys = config.reserve_keys()
 reserve_names = None
 reserve_name_size = None
 save_path_value = get_save_path()
+reserve_description = None
 
 def _progress(window: sg.Window, value: int) -> None:
  window["progress"].update(value)   
@@ -201,8 +203,9 @@ def _mod_furs(window: sg.Window, reserve_key: str, species_key: str, male_fur_ke
   window["progress"].update(0)
   _reset_furs(window)
 
-def _mod(reserve_key: str, species: str, strategy: Strategy, window: sg.Window, modifier: int, rares: bool) -> None:
+def _mod(reserve_key: str, species: str, strategy: Strategy, window: sg.Window, modifier: int, rares: bool, percentage: bool = False) -> None:
   print((reserve_key, species, strategy.value, modifier, rares))
+  global reserve_description
   is_modded = _viewing_modded(window)
   try:
     reserve_details = adf.load_reserve(reserve_key, mod=is_modded)
@@ -211,12 +214,12 @@ def _mod(reserve_key: str, species: str, strategy: Strategy, window: sg.Window, 
     return
   window["progress"].update(25)
   try:
-    modded_reserve_description = populations.mod(reserve_key, reserve_details, species, strategy.value, rares=rares, modifier=modifier)
+    reserve_description = populations.mod(reserve_key, reserve_details, species, strategy.value, rares=rares, modifier=modifier, percentage=percentage)
   except Exception as ex:    
     _show_error(window, ex)
     return
   window["progress"].update(50)
-  window["reserve_description"].update(_highlight_values(_format_reserve_description(modded_reserve_description)))
+  window["reserve_description"].update(_highlight_values(_format_reserve_description(reserve_description)))
   window["progress"].update(75)
   window["reserve_warning"].update(VIEW_MODDED)
   window["reserve_note"].update(f"{get_species_name(species).upper()} ({format_key(strategy)}) {config.SAVED}: \"{MOD_DIR_PATH / get_population_file_name(reserve_key)}\"")
@@ -239,9 +242,15 @@ def _list_mods(window: sg.Window) -> List[List[str]]:
     item_path = MOD_DIR_PATH / item.name
     if item.is_file() and file_format.match(item.name):
       already_loaded = (BACKUP_DIR_PATH / item.name).exists()
-      already_loaded = config.YES if already_loaded else "-"
-      mods.append([get_population_name(item.name), already_loaded, item_path])
+      already_loaded_name = config.YES if already_loaded else "-"
+      mods.append([get_population_name(item.name), already_loaded_name, item_path, item.name, already_loaded])
   return mods
+
+def _is_reserve_mod_loaded(reserve_key: str, window: sg.Window) -> bool:
+  mods = _list_mods(window)
+  for mod in mods:
+    if config.get_population_reserve_key(mod[3]) == reserve_key:      
+      return mod[4]
 
 def _copy_file(filename: Path, destination: Path) -> None:
   print("copy", filename, "to", destination)
@@ -319,6 +328,13 @@ def _format_reserve_description(reserve_description: List) -> List:
     rows.append(row[2:])
   return rows
 
+def _reset_mod(window: sg.Window) -> None:
+  window["male_value"].update(0)
+  window["female_value"].update(0)
+  window["go_value"].update(0)
+  window["diamond_value"].update(0)
+  window["furs"].update(False)  
+
 def _reset_furs(window: sg.Window) -> None:
   window["male_all_furs"].update(False)
   window["female_all_furs"].update(False)
@@ -326,6 +342,24 @@ def _reset_furs(window: sg.Window) -> None:
   window["female_furs"].update(set_to_index=[])
   window["male_fur_animals_cnt"].update(0)  
   window["female_fur_animals_cnt"].update(0)  
+
+def _update_mod_animal_counts(window: sg.Window, species: str, female_cnt: int, male_cnt: int, go_cnt: int, changing: str = None) -> None:
+  if changing == None:
+    window["male_value"].update(value=0, range=(0, female_cnt))
+  if changing == None:
+    window["female_value"].update(value=0, range=(0, male_cnt - go_cnt))
+  if changing != "go":
+    if valid_go_species(species):
+      window["go_value"].update(value=0, range=(0, male_cnt - go_cnt))
+    else:
+      window["go_value"].update(value=0, range=(0, 0))
+  diamond_gender = config.get_diamond_gender(species)
+  if diamond_gender == "both":
+    window["diamond_value"].update(value=0, range=(0, male_cnt + female_cnt))
+  elif diamond_gender == "male":
+    window["diamond_value"].update(value=0, range=(0, male_cnt - go_cnt))
+  else:
+    window["diamond_value"].update(value=0, range=(0, female_cnt))    
 
 def main_window(my_window: sg.Window = None) -> sg.Window:
     global reserve_names
@@ -336,6 +370,8 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
 
     global VIEW_MODDED
     VIEW_MODDED=f"({config.VIEWING_MODDED})"
+    global VIEW_MOD_LOADED
+    VIEW_MOD_LOADED=f"(viewing loaded mod)"
 
     global RESERVE_COLUMNS
     RESERVE_COLUMNS = [
@@ -440,11 +476,15 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
                 [sg.T(" ", font="_ 3", p=(0,0))],
                 [sg.T(textwrap.fill("Modify Animals", 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
                 [sg.Column([
-                  [sg.T(f"{config.MORE_MALES}:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="male_value")],
-                  [sg.T(f"{config.MORE_FEMALES}:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="female_value")],
-                  [sg.T(f"{config.GREATONES}:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="go_value")],
-                  [sg.T(f"{config.DIAMONDS}:", font=DEFAULT_FONT, expand_x=True), sg.Input(s=4, default_text="0", k="diamond_value")],
+                  [sg.T(f"{config.MORE_MALES}:", font=DEFAULT_FONT)],
+                  [sg.Slider((0,0), orientation="h", p=((20,10),(0,10)), k="male_value", enable_events=True)],
+                  [sg.T(f"{config.MORE_FEMALES}:", font=DEFAULT_FONT, p=((10,0),(0,10)))],
+                  [sg.Slider((0,0), orientation="h", p=((20,10),(0,20)), k="female_value", enable_events=True)],
+                  [sg.T(f"{config.GREATONES}:", font=DEFAULT_FONT, p=((10,0),(0,10)))],
+                  [sg.Slider((0,0), orientation="h", p=((20,10),(0,20)), k="go_value", enable_events=True)],                  
+                  [sg.T(f"{config.DIAMONDS}:", font=DEFAULT_FONT, p=((10,0),(0,10)))],
                   [sg.Checkbox(config.INCLUDE_RARE_FURS, k="furs", font=MEDIUM_FONT, p=((20,0),(0,0)))],
+                  [sg.Slider((0,0), orientation="h", p=((20,10),(0,20)), k="diamond_value", enable_events=True)],  
                 ] , expand_x=True)],                
                 [sg.Button(config.RESET, k="reset", font=BUTTON_FONT), sg.Button(config.UPDATE_ANIMALS, expand_x=True, disabled=True, k="update_animals", font=BUTTON_FONT)],
                 [sg.T(" ", font="_ 3", p=(0,0))],
@@ -507,6 +547,7 @@ def main() -> None:
     
   window = main_window()
   reserve_details = None
+  global reserve_description
 
   while True:
       event, values = window.read()
@@ -518,14 +559,14 @@ def main() -> None:
       try:
         reserve_name = values["reserve_name"] if "reserve_name" in values else None
         if event == "reserve_name" and reserve_name:
-          _show_reserve_description(window)        
+          _show_reserve_description(window)    
+          reserve_key = _reserve_key_from_name(reserve_name)    
           is_modded = values["load_modded"]
           if is_modded:
             window["reserve_warning"].update(VIEW_MODDED)            
           else:
-            window["reserve_warning"].update("")
+            window["reserve_warning"].update(VIEW_MOD_LOADED if _is_reserve_mod_loaded(reserve_key, window) else "")
           window["reserve_note"].update("")   
-          reserve_key = _reserve_key_from_name(reserve_name)
           try:
             reserve_details = adf.load_reserve(reserve_key, mod=is_modded)
             window["progress"].update(50)            
@@ -556,8 +597,7 @@ def main() -> None:
             if row != None and row >= 0:
               window["update_animals"].update(disabled=False)
               species_name = reserve_description[row][2] if reserve_description else ""
-              species = reserve_description[row][0] if reserve_description else ""
-              great_one_cnt = reserve_description[row][-1]
+              species = reserve_description[row][0] if reserve_description else ""              
               window["reserve_note"].update("")
               _disable_go(window, True)
               _disable_furs(window, True)
@@ -567,12 +607,18 @@ def main() -> None:
                 _disable_go(window, False)
               if valid_fur_species(species):
                 _disable_furs(window, False)
+
+              great_one_cnt = int(reserve_description[row][-1])
+              male_cnt = int(reserve_description[row][4])
+              female_cnt = int(reserve_description[row][5])
+              _update_mod_animal_counts(window, species, female_cnt, male_cnt, great_one_cnt)
+              
               male_fur_names, male_fur_keys = config.get_species_fur_names(species, "male")
               female_fur_names, female_fur_keys = config.get_species_fur_names(species, "female")
               window["male_furs"].update(values=male_fur_names)
               window["female_furs"].update(values=female_fur_names)
-              window["male_fur_animals_cnt"].update(value = 0, range=(0,int(reserve_description[row][4] - great_one_cnt))) 
-              window["female_fur_animals_cnt"].update(value = 0, range=(0,int(reserve_description[row][5])))
+              window["male_fur_animals_cnt"].update(value = 0, range=(0, male_cnt - great_one_cnt)) 
+              window["female_fur_animals_cnt"].update(value = 0, range=(0, female_cnt))
               window["male_all_furs"].update(False)
               window["female_all_furs"].update(False)
           elif event[0] == "mod_list" and event[1] == "+CLICKED+":
@@ -610,29 +656,28 @@ def main() -> None:
         elif event == "show_reserve":
           _show_reserve_description(window)
         elif event == "update_animals":
-          male_value = int(values["male_value"]) if values["male_value"].isdigit() else 0
-          female_value = int(values["female_value"]) if values["female_value"].isdigit() else 0
-          go_value = int(values["go_value"]) if values["go_value"].isdigit() else 0
-          diamond_value = int(values["diamond_value"]) if values["diamond_value"].isdigit() else 0
+          male_value = int(values["male_value"])
+          female_value = int(values["female_value"])
+          go_value = int(values["go_value"])
+          diamond_value = int(values["diamond_value"])
           go_strategy = Strategy.go_some
           diamond_strategy = Strategy.diamond_some
-          use_rares = values["furs"] if not window["furs"].Disabled else False
+          use_rares = values["furs"]
 
-          if _is_female_enabled(window, female_value):
-            print("modding females")
-            _mod(reserve_key, species, Strategy.females, window, female_value, False)
-            window["male_value"].update("0")                
           if _is_male_enabled(window, male_value):
             print("modding males")
             _mod(reserve_key, species, Strategy.males, window, male_value, False)
-            window["male_value"].update("0")                                 
+          if _is_female_enabled(window, female_value):
+            print("modding females")
+            _mod(reserve_key, species, Strategy.females, window, female_value, False)
           if _is_go_enabled(window, go_value):
             print("modding go")
             _mod(reserve_key, species, go_strategy, window, go_value, False)        
           if _is_diamond_enabled(window, diamond_value):
             print("modding diamonds")
             _mod(reserve_key, species, diamond_strategy, window, diamond_value, use_rares)                                   
-          _disable_new_reserve(window)     
+          _disable_new_reserve(window)   
+          _reset_mod(window)  
         elif event == "fur_update_animals":
           male_all_furs = values["male_all_furs"]
           female_all_furs = values["female_all_furs"]
@@ -661,12 +706,7 @@ def main() -> None:
           _unload_mod(window, selected_mod[2])
           mods = _process_list_mods(window)
         elif event == "reset":
-          window["male_value"].update("0")
-          window["female_value"].update("0")
-          window["go_value"].update("0")
-          window["diamond_value"].update("0")
-          window["rare_fur_value"].update("0")
-          window["furs"].update(False)
+          _reset_mod(window)
         elif event == "go_party":
           go_species = _get_go_species(reserve_key)
           for species in go_species:
@@ -701,6 +741,15 @@ def main() -> None:
           elif key == "switch_language":
             config.update_language(value)
             window = main_window(window)
+        elif event == "female_value":
+          new_female_cnt = int(values["female_value"])
+          _update_mod_animal_counts(window, species, female_cnt + new_female_cnt, male_cnt - new_female_cnt, great_one_cnt, changing="female")
+        elif event == "male_value":
+          new_male_cnt = int(values["male_value"])
+          _update_mod_animal_counts(window, species, female_cnt - new_male_cnt, male_cnt + new_male_cnt, great_one_cnt, changing="male")      
+        elif event == "go_value":
+          new_go_cnt = int(values["go_value"])
+          _update_mod_animal_counts(window, species, female_cnt, male_cnt, great_one_cnt + new_go_cnt, changing="go")               
       except Exception:
         _show_error_window(traceback.format_exc())
   
