@@ -7,7 +7,7 @@ import gettext
 from pathlib import Path
 from enum import Enum
 from apc import __app_name__
-from typing import List
+from typing import List, Tuple
 
 SUPPORTED_LANGUAGES = ["en_US", "de_DE", "zh_CN", "ru_RU", "es_ES"]
 default_locale = None
@@ -283,11 +283,10 @@ class Strategy(str, Enum):
    diamond_furs = "diamond-furs"
    diamond_some = "diamond-some"
    males = "males"
-   furs = "furs"
    furs_some = "furs-some"
    females = "females"
-   add = "add"
-   remove = "remove"
+  #  add = "add"
+  #  remove = "remove"
 
 class GreatOnes(str, Enum):
    moose = "moose"
@@ -356,6 +355,9 @@ def get_species_name(key: str) -> str:
 def get_fur_name(key: str) -> str:
   return translate(FUR_NAMES[key]["fur_name"])
 
+def get_fur_seed(species_key: str, fur_key: str, gender: str) -> int:
+  return get_species(species_key)["diamonds"]["furs"][gender][fur_key]
+
 def species(reserve_key: str, include_keys = False) -> list:
    species_keys = RESERVES[reserve_key]["species"]
    return [f"{get_species_name(s)}{' (' + s + ')' if include_keys else ''}" for s in species_keys]
@@ -374,6 +376,10 @@ def get_species_furs(species_key: str, gender: str) -> List[str]:
     return males + females
   else:
     return list(species["diamonds"]["furs"][gender].values())
+
+def get_species_fur_names(species_key: str, gender: str) -> Tuple[List[str],List[int]]:
+  species = get_species(species_key)
+  return ([get_fur_name(x) for x in list(species["diamonds"]["furs"][gender].keys())], [x for x in list(species["diamonds"]["furs"][gender].keys())])
 
 def get_reserve_species_name(species_key: str, reserve_key: str) -> str:
   renames = get_reserve_species_renames(reserve_key)

@@ -215,15 +215,18 @@ def _create_new_animal(animals: List[Animal]) -> adf_profile.Animal:
   seed = random.uniform(0.000001, 0.099999)
   return adf_profile.Animal(chosen_animal.gender, chosen_animal.weight+seed, chosen_animal.score, False, chosen_animal.visual_seed)
 
-def _get_eligible_animals(groups: list, species: str, gender: str = "male") -> list:
+def _get_eligible_animals(groups: list, species: str, gender: str = "male", include_diamonds: bool = False) -> list:
   eligible_animals = []
   for group in groups:
     animals = group.value["Animals"].value  
     for animal in animals:
       animal = Animal(animal, species)
-      if (not (_is_diamond(animal) or _is_go(animal))):
-        if animal.gender == gender or gender == "both":
-          eligible_animals.append(animal)
+      if (not _is_go(animal)):
+        if not include_diamonds and _is_diamond(animal):
+          continue
+        else:
+          if animal.gender == gender or gender == "both":
+            eligible_animals.append(animal)
   return eligible_animals
 
 def _create_go(animal: Animal, go_config: dict, data: bytearray, fur: int = None) -> None:
@@ -338,6 +341,20 @@ def _furs(species: str, groups: list, reserve_data: bytearray) -> None:
   _process_furs(species, species_config, male_furs, groups, reserve_data, _create_fur, gender="male")
   _process_furs(species, species_config, female_furs, groups, reserve_data, _create_fur, gender="female")
 
+def _update_with_furs(species_key: str, groups: list, reserve_data: bytearray, male_fur_keys: List[str], female_fur_keys: List[str], male_fur_cnt: int, female_fur_cnt: int) -> None:
+  species_config = config.ANIMALS[species_key]["diamonds"]
+  male_animals = _get_eligible_animals(groups, species_key, "male", include_diamonds=True)
+  male_animals = random.sample(male_animals, k = male_fur_cnt)
+  male_fur_seeds = [config.get_fur_seed(species_key, x, "male") for x in male_fur_keys]
+  female_animals = _get_eligible_animals(groups, species_key, "female", include_diamonds=True)
+  female_animals = random.sample(female_animals, k = female_fur_cnt)
+  female_fur_seeds = [config.get_fur_seed(species_key, x, "female") for x in female_fur_keys]
+  
+  for animal in male_animals:
+    _create_fur(animal, species_config, reserve_data, random.choice(male_fur_seeds))  
+  for animal in female_animals:
+    _create_fur(animal, species_config, reserve_data, random.choice(female_fur_seeds))
+
 def _process_some(species, species_config: dict, groups: list, reserve_data: bytearray, modifier: int, percentage: bool, cb: callable, kwargs: dict = {}, gender: str = "male") -> None:
   eligible_animals = _get_eligible_animals(groups, species, gender=gender)
   if len(eligible_animals) == 0:
@@ -382,11 +399,20 @@ def _add_animals(groups: list, reserve_name: str, species_key: str, modifier: in
 def _remove_animals(reserve_name: str, species_key: str, modifier: int, verbose: bool, mod: bool) -> None:
   adf.remove_animals_from_reserve(reserve_name, species_key, modifier, verbose, mod)
 
-def mod(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, strategy: str, modifier: int = None, percentage: bool = False, rares: bool = False, verbose = False, mod: bool = False):
+def mod_furs(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, male_fur_keys: List[str], female_fur_keys: List[str], male_fur_cnt: int, female_fur_cnt: int, verbose = False):
   species_details = _species(reserve_name, reserve_details.adf, species_key)
   groups = species_details.value["Groups"].value
   species_name = config.get_species_name(species_key)
   reserve_data = reserve_details.decompressed.data
+  _update_with_furs(species_key, groups, reserve_data, male_fur_keys, female_fur_keys, male_fur_cnt, female_fur_cnt)
+  print(f"[green]All {species_name} furs have been updated![/green]")
+  reserve_details.decompressed.save(config.MOD_DIR_PATH, verbose=verbose)
+
+def mod(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, strategy: str, modifier: int = None, percentage: bool = False, rares: bool = False, verbose = False, mod: bool = False):
+  species_details = _species(reserve_name, reserve_details.adf, species_key)
+  groups = species_details.value["Groups"].value
+  species_name = config.get_species_name(species_key)
+  reserve_data = reserve_details.decompressed.data  
 
   if (strategy == config.Strategy.go_all):
     _go_all(species_key, groups, reserve_data)
@@ -412,9 +438,6 @@ def mod(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, str
   elif (strategy == config.Strategy.females):
     _female_some(species_key, groups, reserve_data, modifier, percentage)
     print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now females![/green]") 
-  elif (strategy == config.Strategy.furs):
-    _furs(species_key, groups, reserve_data)
-    print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now random furs![/green]") 
   elif (strategy == config.Strategy.furs_some):
     _furs_some(species_key, groups, reserve_data, modifier, percentage)
     print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now random furs![/green]") 
@@ -426,7 +449,6 @@ def mod(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, str
     print(f"[green]All {modifier} {species_name} have been removed![/green]") 
   else:
     print(f"[red]Unknown strategy: {strategy}")  
-
-  if strategy not in (config.Strategy.add, config.Strategy.remove):
-    reserve_details.decompressed.save(config.MOD_DIR_PATH, verbose=verbose)
+  
+  reserve_details.decompressed.save(config.MOD_DIR_PATH, verbose=verbose)
   return describe_reserve(reserve_name, load_reserve(reserve_name, True, verbose=verbose).adf, verbose=verbose)
