@@ -119,6 +119,7 @@ def _show_species_description(window: sg.Window, species_name: str, is_modded: b
     window["modding"].update(visible=False)
     window["species_description"].update(visible=True)
     window["show_reserve"].update(visible=True)
+    window["exploring"].update(visible=True)
     window["species_name"].update(f"{species_name.upper()}{f' ({config.MODDED})' if is_modded else ''}")
     window["mod_list"].update(visible=False)
 
@@ -127,6 +128,7 @@ def _show_reserve_description(window: sg.Window) -> None:
     window["modding"].update(visible=True)
     window["species_description"].update(visible=False)
     window["show_reserve"].update(visible=False)
+    window["exploring"].update(visible=False)
     window["species_name"].update("")
     window['reserve_warning'].update(visible=True)   
     window["mod_list"].update(visible=False) 
@@ -391,7 +393,6 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
       config.GENDER,
       config.WEIGHT,
       config.SCORE,
-      config.VISUALSEED,
       config.FUR,
       config.DIAMOND,
       config.GREATONE
@@ -446,10 +447,10 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
               font=MEDIUM_FONT, 
               header_background_color="brown",
               visible=False,
-              col_widths=[17,7,2,4,4,7,9,4,4],
+              col_widths=[17,7,3,3,3,9,4,4],
               auto_size_columns=False,
               expand_y=True,
-              cols_justification=("l", "l", "c", "r", "r", "r", "l", "c", "c")
+              cols_justification=("l", "l", "c", "r", "r", "l", "c", "c")
             ),
             sg.Table(
               [], 
@@ -479,11 +480,12 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
                   [sg.T(f"{config.MORE_MALES}:", font=DEFAULT_FONT)],
                   [sg.Slider((0,0), orientation="h", p=((20,10),(0,10)), k="male_value", enable_events=True)],
                   [sg.T(f"{config.MORE_FEMALES}:", font=DEFAULT_FONT, p=((10,0),(0,10)))],
-                  [sg.Slider((0,0), orientation="h", p=((20,10),(0,20)), k="female_value", enable_events=True)],
+                  [sg.Slider((0,0), orientation="h", p=((20,10),(0,10)), k="female_value", enable_events=True)],
                   [sg.T(f"{config.GREATONES}:", font=DEFAULT_FONT, p=((10,0),(0,10)))],
-                  [sg.Slider((0,0), orientation="h", p=((20,10),(0,20)), k="go_value", enable_events=True)],                  
-                  [sg.T(f"{config.DIAMONDS}:", font=DEFAULT_FONT, p=((10,0),(0,10)))],
-                  [sg.Checkbox(config.INCLUDE_RARE_FURS, k="furs", font=MEDIUM_FONT, p=((20,0),(0,0)))],
+                  [sg.Slider((0,0), orientation="h", p=((20,10),(0,10)), k="go_value", enable_events=True)],                  
+                  [sg.T(f"{config.DIAMONDS}:", font=DEFAULT_FONT, p=((10,0),(0,10))), sg.T("", p=((0,0),(0,10)), k="diamond_gender", font=MEDIUM_FONT)],
+                  [sg.Checkbox(config.USE_ALL_FURS, k="diamond_all_furs", font=MEDIUM_FONT, p=((20,10),(0,10)))],
+                  [sg.Listbox([], k="diamond_furs", expand_x=True, p=((20,10),(0,10)), s=(None, 4), select_mode=sg.LISTBOX_SELECT_MODE_MULTIPLE)],                  
                   [sg.Slider((0,0), orientation="h", p=((20,10),(0,20)), k="diamond_value", enable_events=True)],  
                 ] , expand_x=True)],                
                 [sg.Button(config.RESET, k="reset", font=BUTTON_FONT), sg.Button(config.UPDATE_ANIMALS, expand_x=True, disabled=True, k="update_animals", font=BUTTON_FONT)],
@@ -514,7 +516,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
               sg.Tab(config.EXPLORE, [
                 [sg.T(" ", font="_ 3", p=(0,0))],
                 [sg.T(textwrap.fill(config.EXPLORE_ANIMALS, 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
-                [sg.Checkbox(config.DIAMONDS_AND_GREATONES, font=MEDIUM_FONT, default=True, k="good_ones")],
+                [sg.Checkbox(config.DIAMONDS_AND_GREATONES, font=MEDIUM_FONT, default=False, k="good_ones")],
                 [sg.Checkbox(config.LOOK_MODDED_ANIMALS, font=MEDIUM_FONT, k="modded_reserves")],
                 [sg.Checkbox(config.LOOK_ALL_RESERVES, font=MEDIUM_FONT, k="all_reserves")],
                 [sg.Checkbox(config.ONLY_TOP_SCORES, font=MEDIUM_FONT, k="top_scores")],
@@ -529,14 +531,32 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
                 [sg.Button(config.UNLOAD_MOD, expand_x=True, k="unload_mod", disabled=True, font=BUTTON_FONT)],
               ])
             ]], p=(0,5))
-          ]], vertical_alignment="top", p=(0,0), k="modding")         
+          ]], vertical_alignment="top", p=(0,0), k="modding"),
+          sg.Column([[
+            sg.Frame(None, [
+              [sg.T(" ", font="_ 3", p=(0,0))],
+              [sg.T(textwrap.fill("Animal Details", 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
+              [sg.T(f"{config.GREATONE}:", p=((10,0),(0,0)))],
+              [sg.Combo(["Yes", "No"], None, p=((20,0),(10,0)), k="animal_go")],
+              [sg.T(f"Gender:", p=((10,0),(10,0)))],
+              [sg.Combo(["Male", "Female"], None, p=((20,0),(10,0)), k="animal_gender")],
+              [sg.T(f"Weight:", p=((10,0),(10,0)))],
+              [sg.Slider((0,0), orientation="h", p=((20,10),(10,0)), k="animal_weight")],
+              [sg.T(f"Score:", p=((10,0),(10,0)))],
+              [sg.Slider((0,0), orientation="h", p=((20,10),(10,0)), k="animal_score")],              
+              [sg.T(f"Fur:", p=((10,0),(10,0)))],
+              [sg.Combo([],  p=((20,10),(10,20)), k="animal_fur", expand_x=True)],
+              [sg.Button(config.RESET, k="animal_reset", font=BUTTON_FONT), sg.Button("Update Animal", expand_x=True, disabled=True, k="update_animal", font=BUTTON_FONT)],                
+              [sg.T(" ", font="_ 3", p=(0,0))]
+            ], relief=sg.RELIEF_RAISED, p=(0,5))
+        ]], k="exploring", vertical_alignment="top", p=(0,0), visible=False)        
         ],               
         [
           sg.T("", text_color="orange", k="reserve_note")
         ]
     ]
 
-    window = sg.Window(config.APC, layout, resizable=True, font=DEFAULT_FONT, icon=logo.value, size=(1200, 820))
+    window = sg.Window(config.APC, layout, resizable=True, font=DEFAULT_FONT, icon=logo.value, size=(1200, 850))
     
     if my_window is not None:
       my_window.close()
@@ -615,12 +635,24 @@ def main() -> None:
               
               male_fur_names, male_fur_keys = config.get_species_fur_names(species, "male")
               female_fur_names, female_fur_keys = config.get_species_fur_names(species, "female")
+              diamond_gender = get_diamond_gender(species)
               window["male_furs"].update(values=male_fur_names)
               window["female_furs"].update(values=female_fur_names)
               window["male_fur_animals_cnt"].update(value = 0, range=(0, male_cnt - great_one_cnt)) 
               window["female_fur_animals_cnt"].update(value = 0, range=(0, female_cnt))
               window["male_all_furs"].update(False)
               window["female_all_furs"].update(False)
+              if diamond_gender == "male":
+                window["diamond_furs"].update(values=male_fur_names)
+                window["diamond_gender"].update(f"({config.MALES.lower()})")
+              elif diamond_gender == "female":
+                window["diamond_furs"].update(values=male_fur_names)
+                window["diamond_gender"].update(f"({config.FEMALES.lower()})")   
+              else:
+                male_labeled = [f"{x} (male)" for x in male_fur_names]
+                female_labeled = [f"{x} (female)" for x in male_fur_names]
+                window["diamond_furs"].update(values=male_labeled+female_labeled)
+                window["diamond_gender"].update(f"({config.MALES.lower()} and {config.FEMALES.lower()})")                                
           elif event[0] == "mod_list" and event[1] == "+CLICKED+":
             row, _ = event[2]
             if row != None and row >= 0:
@@ -662,7 +694,8 @@ def main() -> None:
           diamond_value = int(values["diamond_value"])
           go_strategy = Strategy.go_some
           diamond_strategy = Strategy.diamond_some
-          use_rares = values["furs"]
+          diamond_all_furs = values["diamond_all_furs"]
+          diamond_furs = values["diamond_furs"]
 
           if _is_male_enabled(window, male_value):
             print("modding males")

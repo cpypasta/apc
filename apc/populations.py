@@ -131,8 +131,7 @@ def describe_animals(reserve_name: str, species: str, reserve_details: Adf, good
             config.MALE if animal.gender == "male" else config.FEMALE,
             round(animal.weight,2),
             round(animal.score, 2),
-            animal.visual_seed,
-            get_animal_fur_by_seed(species, animal.gender, animal.visual_seed),
+            get_animal_fur_by_seed(species, animal.gender, animal.visual_seed, is_go),
             config.YES if is_diamond and not is_go else "-",
             config.YES if is_go else "-"
           ])
@@ -253,7 +252,7 @@ def _create_diamond(animal: Animal, species_config: dict, data: bytearray, rares
 
 def _create_fur(animal: Animal, species_config: dict, data: bytearray, fur: int = None) -> None:
   visual_seed = None
-  if fur:
+  if fur != None:
     visual_seed = fur
   elif "furs" in species_config and animal.gender in species_config["furs"]:
     visual_seed = _random_choice(species_config["furs"][animal.gender])  
@@ -333,13 +332,6 @@ def _diamond_furs(species: str, groups: list, reserve_data: bytearray) -> None:
   diamond_furs = config.get_species_furs(species, diamond_gender)
 
   _process_furs(species, species_config, diamond_furs, groups, reserve_data, _create_diamond, gender=diamond_gender)
-
-def _furs(species: str, groups: list, reserve_data: bytearray) -> None:
-  species_config = config.ANIMALS[species]["diamonds"]
-  male_furs = config.get_species_furs(species, "male")
-  female_furs = config.get_species_furs(species, "female")
-  _process_furs(species, species_config, male_furs, groups, reserve_data, _create_fur, gender="male")
-  _process_furs(species, species_config, female_furs, groups, reserve_data, _create_fur, gender="female")
 
 def _update_with_furs(species_key: str, groups: list, reserve_data: bytearray, male_fur_keys: List[str], female_fur_keys: List[str], male_fur_cnt: int, female_fur_cnt: int) -> None:
   species_config = config.ANIMALS[species_key]["diamonds"]

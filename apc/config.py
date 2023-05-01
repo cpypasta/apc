@@ -221,7 +221,7 @@ def setup_translations() -> None:
   global MANAGE_MODDED_RESERVES
   MANAGE_MODDED_RESERVES = translate("Manage Modded Reserves")
   global VIEWING_LOADED_MOD
-  VIEWING_LOADED_MOD = translate("viewing modded mod")
+  VIEWING_LOADED_MOD = translate("viewing loaded mod")
   global USE_ALL_FURS
   USE_ALL_FURS = translate("use all furs")
   
@@ -436,7 +436,7 @@ def _get_fur(furs: dict, seed: int) -> str:
   except:
     return None
 
-def get_animal_fur_by_seed(species: str, gender: str, seed: int) -> str:
+def get_animal_fur_by_seed(species: str, gender: str, seed: int, is_go: bool = False) -> str:
   if species not in ANIMALS:
      return "-"
 
@@ -446,7 +446,7 @@ def get_animal_fur_by_seed(species: str, gender: str, seed: int) -> str:
   diamond_furs = diamond_furs[gender] if gender in diamond_furs else []
   go_key = _get_fur(go_furs, seed)
   diamond_key = _get_fur(diamond_furs, seed)
-  if go_key:
+  if go_key and is_go:
     return get_fur_name(go_key)
   elif diamond_key:
     return get_fur_name(diamond_key)
