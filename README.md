@@ -2,7 +2,7 @@
 
 A tool that allows anyone to change the animal population on all the reserves in theHunter: Call of the Wild (COTW). You can choose to use the CLI tool or the GUI.
 
-![GUI](https://user-images.githubusercontent.com/2107385/235009956-e32b13a9-4f8a-4d3c-812b-c33a6ba59ab1.gif)
+![GUI](https://user-images.githubusercontent.com/2107385/235564467-159be4db-8b6b-45b4-821c-d85fe6b7d4b9.gif)
 
 This tool can make all species a diamond, the appropriate species a Great one, or have a rare fur.
 
