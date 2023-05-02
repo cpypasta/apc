@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-27 17:51-0500\n"
+"POT-Creation-Date: 2023-05-01 20:53-0500\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es_MX\n"
@@ -82,7 +82,7 @@ msgstr "El Pelaje"
 msgid "Diamond"
 msgstr "Diamante"
 
-#: apc/config.py:70 apc/config.py:350
+#: apc/config.py:70 apc/config.py:362
 msgid "Great One"
 msgstr "El Mejor"
 
@@ -393,58 +393,82 @@ msgid "Manage Modded Reserves"
 msgstr ""
 
 #: apc/config.py:224
-msgid "viewing modded mod"
+msgid "viewing loaded mod"
 msgstr ""
 
 #: apc/config.py:226
 msgid "use all furs"
 msgstr ""
 
-#: apc/config.py:332
+#: apc/config.py:228
+msgid "No"
+msgstr ""
+
+#: apc/config.py:230
+msgid "Animal Details"
+msgstr ""
+
+#: apc/config.py:232
+msgid "default is random fur"
+msgstr ""
+
+#: apc/config.py:234
+msgid "Update Animal"
+msgstr ""
+
+#: apc/config.py:236
+msgid "Top 10"
+msgstr ""
+
+#: apc/config.py:238
+msgid "Loaded Mod"
+msgstr ""
+
+#: apc/config.py:344
 msgid "Trivial"
 msgstr "Trivial"
 
-#: apc/config.py:334
+#: apc/config.py:346
 msgid "Minor"
 msgstr "Menor"
 
-#: apc/config.py:336
+#: apc/config.py:348
 msgid "Very Easy"
 msgstr "Bien Facil"
 
-#: apc/config.py:338
+#: apc/config.py:350
 msgid "Easy"
 msgstr "Facil"
 
-#: apc/config.py:340
+#: apc/config.py:352
 msgid "Medium"
 msgstr "Medio"
 
-#: apc/config.py:342
+#: apc/config.py:354
 msgid "Hard"
 msgstr "Duro"
 
-#: apc/config.py:344
+#: apc/config.py:356
 msgid "Very Hard"
 msgstr "Muy Duro"
 
-#: apc/config.py:346
+#: apc/config.py:358
 msgid "Mythical"
 msgstr "Mitico"
 
-#: apc/config.py:348
+#: apc/config.py:360
 msgid "Legendary"
 msgstr "Legendario"
 
-#: apc/config.py:377
+#: apc/config.py:389
 msgid "fur_name"
 msgstr ""
 
-#: apc/config.py:411
+#: apc/config.py:426
 msgid "reserve_name"
 msgstr "nombre_de_la_reserva"
 
-#: apc/config.py:483
+#: apc/config.py:498
 msgid "name"
 msgstr "nombre"
 
@@ -1150,4 +1174,7 @@ msgstr "Las Montañas De Nueva Inglaterra"
 
 #~ msgid "include rare furs"
 #~ msgstr "incluye pieles raras"
+
+#~ msgid "viewing modded mod"
+#~ msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-27 17:51-0500\n"
+"POT-Creation-Date: 2023-05-01 20:53-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,7 +81,7 @@ msgstr ""
 msgid "Diamond"
 msgstr ""
 
-#: apc/config.py:70 apc/config.py:350
+#: apc/config.py:70 apc/config.py:362
 msgid "Great One"
 msgstr ""
 
@@ -390,58 +390,82 @@ msgid "Manage Modded Reserves"
 msgstr ""
 
 #: apc/config.py:224
-msgid "viewing modded mod"
+msgid "viewing loaded mod"
 msgstr ""
 
 #: apc/config.py:226
 msgid "use all furs"
 msgstr ""
 
-#: apc/config.py:332
-msgid "Trivial"
+#: apc/config.py:228
+msgid "No"
 msgstr ""
 
-#: apc/config.py:334
-msgid "Minor"
+#: apc/config.py:230
+msgid "Animal Details"
 msgstr ""
 
-#: apc/config.py:336
-msgid "Very Easy"
+#: apc/config.py:232
+msgid "default is random fur"
 msgstr ""
 
-#: apc/config.py:338
-msgid "Easy"
+#: apc/config.py:234
+msgid "Update Animal"
 msgstr ""
 
-#: apc/config.py:340
-msgid "Medium"
+#: apc/config.py:236
+msgid "Top 10"
 msgstr ""
 
-#: apc/config.py:342
-msgid "Hard"
+#: apc/config.py:238
+msgid "Loaded Mod"
 msgstr ""
 
 #: apc/config.py:344
-msgid "Very Hard"
+msgid "Trivial"
 msgstr ""
 
 #: apc/config.py:346
-msgid "Mythical"
+msgid "Minor"
 msgstr ""
 
 #: apc/config.py:348
+msgid "Very Easy"
+msgstr ""
+
+#: apc/config.py:350
+msgid "Easy"
+msgstr ""
+
+#: apc/config.py:352
+msgid "Medium"
+msgstr ""
+
+#: apc/config.py:354
+msgid "Hard"
+msgstr ""
+
+#: apc/config.py:356
+msgid "Very Hard"
+msgstr ""
+
+#: apc/config.py:358
+msgid "Mythical"
+msgstr ""
+
+#: apc/config.py:360
 msgid "Legendary"
 msgstr ""
 
-#: apc/config.py:377
+#: apc/config.py:389
 msgid "fur_name"
 msgstr ""
 
-#: apc/config.py:411
+#: apc/config.py:426
 msgid "reserve_name"
 msgstr ""
 
-#: apc/config.py:483
+#: apc/config.py:498
 msgid "name"
 msgstr ""
 
