@@ -440,7 +440,7 @@ def mod_animal(reserve_details: ParsedAdfFile, species_key: str, animal: AdfAnim
     visual_seed = random.choice(config.get_species_furs(species_key, gender, go))
     print("Random:", visual_seed)
   else:
-    visual_seed = config.get_fur_seed(species_key, fur_key, gender)
+    visual_seed = config.get_fur_seed(species_key, fur_key, gender, go)
   _update_animal(reserve_details.decompressed.data, animal, go, gender, weight, score, visual_seed)
   print(f"[green]Animal has been updated![/green]")   
   reserve_details.decompressed.save(config.MOD_DIR_PATH)  

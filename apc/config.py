@@ -388,8 +388,11 @@ def get_species_name(key: str) -> str:
 def get_fur_name(key: str) -> str:
   return translate(FUR_NAMES[key]["fur_name"])
 
-def get_fur_seed(species_key: str, fur_key: str, gender: str) -> int:
-  return get_species(species_key)["diamonds"]["furs"][gender][fur_key]
+def get_fur_seed(species_key: str, fur_key: str, gender: str, go: bool) -> int:
+  if go:
+    return get_species(species_key)["go"]["furs"][fur_key]
+  else:
+    return get_species(species_key)["diamonds"]["furs"][gender][fur_key]
 
 def species(reserve_key: str, include_keys = False) -> list:
    species_keys = RESERVES[reserve_key]["species"]
