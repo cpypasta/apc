@@ -224,6 +224,18 @@ def setup_translations() -> None:
   VIEWING_LOADED_MOD = translate("viewing loaded mod")
   global USE_ALL_FURS
   USE_ALL_FURS = translate("use all furs")
+  global NO
+  NO = translate("No")
+  global ANIMAL_DETAILS
+  ANIMAL_DETAILS = translate("Animal Details")
+  global RANDOM_FUR
+  RANDOM_FUR = translate("default is random fur")
+  global UPDATE_ANIMAL
+  UPDATE_ANIMAL = translate("Update Animal")
+  global TOP_10
+  TOP_10 = translate("Top 10")
+  global LOADED_MOD
+  LOADED_MOD = translate("Loaded Mod")
   
 setup_translations()
 
@@ -389,18 +401,21 @@ def get_species_key(species_name: str) -> str:
       return animal_name_key
   return None
 
-def get_species_furs(species_key: str, gender: str) -> List[str]:
+def get_species_furs(species_key: str, gender: str, go: bool = False) -> List[str]:
   species = get_species(species_key)
-  if gender == "both":
+  if go:
+    return list(species["go"]["furs"].values())
+  elif gender == "both":
     males = list(species["diamonds"]["furs"]["male"].values())
     females = list(species["diamonds"]["furs"]["female"].values())
     return males + females
   else:
     return list(species["diamonds"]["furs"][gender].values())
 
-def get_species_fur_names(species_key: str, gender: str) -> Tuple[List[str],List[int]]:
+def get_species_fur_names(species_key: str, gender: str, go: bool = False) -> Tuple[List[str],List[int]]:
   species = get_species(species_key)
-  return ([get_fur_name(x) for x in list(species["diamonds"]["furs"][gender].keys())], [x for x in list(species["diamonds"]["furs"][gender].keys())])
+  species_config = species["go"]["furs"] if go else species["diamonds"]["furs"][gender]
+  return ([get_fur_name(x) for x in list(species_config.keys())], [x for x in list(species_config.keys())])
 
 def get_reserve_species_name(species_key: str, reserve_key: str) -> str:
   renames = get_reserve_species_renames(reserve_key)

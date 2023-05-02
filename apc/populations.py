@@ -7,7 +7,7 @@ from apc.adf import ParsedAdfFile, load_reserve
 from apc.config import get_animal_fur_by_seed, get_species_name, get_reserve_name, get_level_name, get_reserve, valid_species_for_reserve, format_key
 from typing import List
 
-class Animal:
+class AdfAnimal:
     def __init__(self, details: AdfValue, species: str) -> None:
       gender = "male" if details.value["Gender"].value == 1 else "female"
       self.gender = gender
@@ -74,10 +74,10 @@ def _find_animal_level(weight: float, levels: list) -> int:
       level = value_i + 1
   return level
 
-def _is_go(animal: Animal) -> bool:
+def _is_go(animal: AdfAnimal) -> bool:
   return animal.gender == "male" and animal.go
 
-def _is_diamond(animal: Animal) -> bool:
+def _is_diamond(animal: AdfAnimal) -> bool:
   known_species = config.valid_species(animal.species)
   diamond_config = config.ANIMALS[animal.species]["diamonds"]
   diamond_score = diamond_config["score_low"] if known_species else config.HIGH_NUMBER
@@ -118,7 +118,7 @@ def describe_animals(reserve_name: str, species: str, reserve_details: Adf, good
       animals = group.value["Animals"].value
 
       for animal in animals:
-        animal = Animal(animal, species)
+        animal = AdfAnimal(animal, species)
         is_diamond = _is_diamond(animal)
         is_go = _is_go(animal)
         
@@ -133,7 +133,8 @@ def describe_animals(reserve_name: str, species: str, reserve_details: Adf, good
             round(animal.score, 2),
             get_animal_fur_by_seed(species, animal.gender, animal.visual_seed, is_go),
             config.YES if is_diamond and not is_go else "-",
-            config.YES if is_go else "-"
+            config.YES if is_go else "-",
+            animal
           ])
 
     rows.sort(key=lambda x: x[4], reverse=True)
@@ -177,7 +178,7 @@ def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = T
         total_cnt += group_animal_cnt
 
         for animal in animals:
-          animal = Animal(animal, species_key)
+          animal = AdfAnimal(animal, species_key)
 
           if animal.gender == "male":
             male_cnt += 1
@@ -209,7 +210,7 @@ def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = T
 
     return sorted(rows, key = lambda x: x[1])
 
-def _create_new_animal(animals: List[Animal]) -> adf_profile.Animal:
+def _create_new_animal(animals: List[AdfAnimal]) -> adf_profile.Animal:
   chosen_animal = random.choice(animals)
   seed = random.uniform(0.000001, 0.099999)
   return adf_profile.Animal(chosen_animal.gender, chosen_animal.weight+seed, chosen_animal.score, False, chosen_animal.visual_seed)
@@ -219,7 +220,7 @@ def _get_eligible_animals(groups: list, species: str, gender: str = "male", incl
   for group in groups:
     animals = group.value["Animals"].value  
     for animal in animals:
-      animal = Animal(animal, species)
+      animal = AdfAnimal(animal, species)
       if (not _is_go(animal)):
         if not include_diamonds and _is_diamond(animal):
           continue
@@ -228,7 +229,14 @@ def _get_eligible_animals(groups: list, species: str, gender: str = "male", incl
             eligible_animals.append(animal)
   return eligible_animals
 
-def _create_go(animal: Animal, go_config: dict, data: bytearray, fur: int = None) -> None:
+def _update_animal(data: bytearray, animal: AdfAnimal, go: bool, gender: str, weight: float, score: float, visual_seed: int) -> None:
+  update_uint(data, animal.gender_offset, 1 if gender == "male" else 2)
+  update_float(data, animal.weight_offset, weight)
+  update_float(data, animal.score_offset, score)
+  update_uint(data, animal.go_offset, 1 if go else 0)
+  update_uint(data, animal.visual_seed_offset, visual_seed)   
+
+def _create_go(animal: AdfAnimal, go_config: dict, data: bytearray, fur: int = None) -> None:
   new_weight = _random_float(go_config["weight_low"], go_config["weight_high"])
   new_score = _random_float(go_config["score_low"], go_config["score_high"])
   visual_seed = fur if fur else _random_choice(go_config["furs"])
@@ -237,20 +245,20 @@ def _create_go(animal: Animal, go_config: dict, data: bytearray, fur: int = None
   update_uint(data, animal.go_offset, 1)
   update_uint(data, animal.visual_seed_offset, visual_seed) 
 
-def _create_diamond(animal: Animal, species_config: dict, data: bytearray, rares: bool = False, fur: int = None) -> None:
+def _create_diamond(animal: AdfAnimal, species_config: dict, data: bytearray, fur: int = None, rares: bool = False) -> None:
   new_weight = _random_float(species_config["weight_low"], species_config["weight_high"])
   new_score = _random_float(species_config["score_low"], species_config["score_high"])
   visual_seed = None
-  if fur:
+  if fur != None:
     visual_seed = fur
-  elif "furs" in species_config and animal.gender in species_config["furs"]:
+  elif rares:
     visual_seed = _random_choice(species_config["furs"][animal.gender])
   update_float(data, animal.weight_offset, new_weight)
   update_float(data, animal.score_offset, new_score)
-  if visual_seed and (rares or fur):
+  if visual_seed:
     update_uint(data, animal.visual_seed_offset, visual_seed)
 
-def _create_fur(animal: Animal, species_config: dict, data: bytearray, fur: int = None) -> None:
+def _create_fur(animal: AdfAnimal, species_config: dict, data: bytearray, fur: int = None) -> None:
   visual_seed = None
   if fur != None:
     visual_seed = fur
@@ -258,10 +266,10 @@ def _create_fur(animal: Animal, species_config: dict, data: bytearray, fur: int 
     visual_seed = _random_choice(species_config["furs"][animal.gender])  
   update_uint(data, animal.visual_seed_offset, visual_seed)
 
-def _create_male(animal: Animal, _config: dict, data: bytearray) -> None:
+def _create_male(animal: AdfAnimal, _config: dict, data: bytearray) -> None:
   update_uint(data, animal.gender_offset, 1)
   
-def _create_female(animal: Animal, _config: dict, data: bytearray) -> None:
+def _create_female(animal: AdfAnimal, _config: dict, data: bytearray) -> None:
   update_uint(data, animal.gender_offset, 2)
 
 def _process_all(species: str, species_config: dict, groups: list, reserve_data: bytearray, cb: callable, kwargs = {}, gender: str = "male") -> None:
@@ -285,7 +293,7 @@ def diamond_test_seed(species: str, groups: list, data: bytearray, seed: int, ge
   for group in groups:
     animals = group.value["Animals"].value  
     for animal in animals:
-      animal = Animal(animal, species)
+      animal = AdfAnimal(animal, species)
       eligible_animals.append(animal)
         
   for animal in eligible_animals:
@@ -301,7 +309,7 @@ def diamond_test_seeds(species: str, groups: list, data: bytearray, seeds: List[
   for group in groups:
     animals = group.value["Animals"].value  
     for animal in animals[:len(seeds)]:
-      animal = Animal(animal, species)
+      animal = AdfAnimal(animal, species)
       eligible_animals.append(animal)
         
   for animal_i, animal in enumerate(eligible_animals[:len(seeds)]):
@@ -391,7 +399,7 @@ def _add_animals(groups: list, reserve_name: str, species_key: str, modifier: in
 def _remove_animals(reserve_name: str, species_key: str, modifier: int, verbose: bool, mod: bool) -> None:
   adf.remove_animals_from_reserve(reserve_name, species_key, modifier, verbose, mod)
 
-def mod_furs(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, male_fur_keys: List[str], female_fur_keys: List[str], male_fur_cnt: int, female_fur_cnt: int, verbose = False):
+def mod_furs(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, male_fur_keys: List[str], female_fur_keys: List[str], male_fur_cnt: int, female_fur_cnt: int, verbose: bool = False) -> None:
   species_details = _species(reserve_name, reserve_details.adf, species_key)
   groups = species_details.value["Groups"].value
   species_name = config.get_species_name(species_key)
@@ -399,6 +407,43 @@ def mod_furs(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str
   _update_with_furs(species_key, groups, reserve_data, male_fur_keys, female_fur_keys, male_fur_cnt, female_fur_cnt)
   print(f"[green]All {species_name} furs have been updated![/green]")
   reserve_details.decompressed.save(config.MOD_DIR_PATH, verbose=verbose)
+
+def mod_diamonds(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, diamond_cnt: int, male_fur_keys: List[str], female_fur_keys: List[str]) -> list:
+  species_details = _species(reserve_name, reserve_details.adf, species_key)
+  groups = species_details.value["Groups"].value
+  species_name = config.get_species_name(species_key)
+  reserve_data = reserve_details.decompressed.data  
+  diamond_gender = config.get_diamond_gender(species_key) 
+  animals = _get_eligible_animals(groups, species_key, diamond_gender)
+  animals = random.choices(animals, k=diamond_cnt)
+  
+  species_config = config.ANIMALS[species_key]["diamonds"]
+  male_fur_seeds = [config.get_fur_seed(species_key, x, "male") for x in male_fur_keys]
+  female_fur_seeds = [config.get_fur_seed(species_key, x, "female") for x in female_fur_keys]
+  for animal in animals:
+    if diamond_gender == "male":
+      _create_diamond(animal, species_config, reserve_data, fur=random.choice(male_fur_seeds))
+    elif diamond_gender == "female":
+      _create_diamond(animal, species_config, reserve_data, fur=random.choice(female_fur_seeds))
+    else:
+      if random.choice(["male", "female"]) == "male":
+        _create_diamond(animal, species_config, reserve_data, fur=random.choice(male_fur_seeds))
+      else:
+        _create_diamond(animal, species_config, reserve_data, fur=random.choice(female_fur_seeds))
+            
+  print(f"[green]All {diamond_cnt} {species_name} diamonds have been added![/green]")   
+  reserve_details.decompressed.save(config.MOD_DIR_PATH)
+  return describe_reserve(reserve_name, load_reserve(reserve_name, True).adf)
+
+def mod_animal(reserve_details: ParsedAdfFile, species_key: str, animal: AdfAnimal, go: bool, gender: str, weight: float, score: float, fur_key: str) -> list:
+  if fur_key == None:
+    visual_seed = random.choice(config.get_species_furs(species_key, gender, go))
+    print("Random:", visual_seed)
+  else:
+    visual_seed = config.get_fur_seed(species_key, fur_key, gender)
+  _update_animal(reserve_details.decompressed.data, animal, go, gender, weight, score, visual_seed)
+  print(f"[green]Animal has been updated![/green]")   
+  reserve_details.decompressed.save(config.MOD_DIR_PATH)  
 
 def mod(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, strategy: str, modifier: int = None, percentage: bool = False, rares: bool = False, verbose = False, mod: bool = False):
   species_details = _species(reserve_name, reserve_details.adf, species_key)
