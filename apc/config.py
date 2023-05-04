@@ -388,7 +388,7 @@ def get_species_name(key: str) -> str:
 def get_fur_name(key: str) -> str:
   return translate(FUR_NAMES[key]["fur_name"])
 
-def get_fur_seed(species_key: str, fur_key: str, gender: str, go: bool) -> int:
+def get_fur_seed(species_key: str, fur_key: str, gender: str, go: bool = False) -> int:
   if go:
     return get_species(species_key)["go"]["furs"][fur_key]
   else:
