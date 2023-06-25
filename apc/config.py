@@ -326,6 +326,7 @@ class GreatOnes(str, Enum):
    black_bear = "black_bear"
    whitetail_deer = "whitetail_deer"
    red_deer = "red_deer"
+   fallow_deer = "fallow_deer"
 
 class Levels(int, Enum):
   TRIVIAL = 1

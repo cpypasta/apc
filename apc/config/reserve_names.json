@@ -38,6 +38,9 @@
     },
     "newengland": {
       "reserve_name": "New England Mountains"
+    },
+    "emerald": {
+      "reserve_name": "Emerald Coast"
     }
   }
 }

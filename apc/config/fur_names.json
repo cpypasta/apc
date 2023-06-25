@@ -233,6 +233,9 @@
     },
     "bright": {
       "fur_name": "Bright"
+    },
+    "fabled_hooded": {
+      "fur_name": "Fabled Hooded"
     }
   }
 }

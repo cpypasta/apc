@@ -46,6 +46,21 @@ def bad_scores(path: Path) -> None:
     if animal["diamonds"]["score_low"] > animal["diamonds"]["score_high"]:
       print(animal_key, animal)
 
+def analyze_reserve(path: Path) -> None:
+  pops = populations._get_populations(adf.load_adf(path, True).adf)
+  group_weight = {}
+  for p_i, p in enumerate(pops):
+    groups = p.value["Groups"].value
+    high_weight = 0
+    for g in groups:
+      animals = g.value["Animals"].value
+      for a in animals:
+        a = populations.AdfAnimal(a, "unknown")
+        if a.weight > high_weight:
+          high_weight = a.weight
+    group_weight[p_i] = high_weight
+  print(json.dumps(group_weight, indent=2))
+
 FURS_PATH = Path("scans/furs.json")
 
 class ApsAnimal:
@@ -346,6 +361,5 @@ def merge_furs_into_animals() -> None:
   Path("apc/config/animal_details.json").write_text(json.dumps(animals, indent=2))
 
 if __name__ == "__main__":
-  furs = extract_furs_names(config.APP_DIR_PATH / "config/animal_details.json")
-  print(config.APP_DIR_PATH / "config/fur_names.json")
-  Path(config.APP_DIR_PATH / "config/fur_names.json").write_text(json.dumps(furs, indent=2))
+  # analyze_reserve(config.get_save_path() / "animal_population_16")
+  seed_animals("emerald")

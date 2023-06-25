@@ -251,6 +251,30 @@
     },
     "willow_ptarmigan": {
       "animal_name": "Willow Ptarmigan"
-    }
+    },
+    "hog_deer": {
+      "animal_name": "Hog Deer"
+    },
+    "magpie_goose": {
+      "animal_name": "Magpie Goose"
+    },    
+    "eg_kangaroo": {
+      "animal_name": "Eastern Kangaroo"
+    },    
+    "sambar": {
+      "animal_name": "Sambar Deer"
+    },    
+    "banteng": {
+      "animal_name": "Banteng"
+    },    
+    "sw_crocodile": {
+      "animal_name": "Saltwater Crocodile"
+    },    
+    "stubble_quail": {
+      "animal_name": "Stubble Quail"
+    },
+    "javan_rusa": {
+      "animal_name": "Javan Rusa"
+    }  
   }
 }

@@ -1,7 +1,7 @@
-from apc import cli, __app_name__
+from apc import hacks
 
 def main():
-    cli.app(prog_name=__app_name__)
+  hacks.seed_animals("emerald")
 
 if __name__ == "__main__":
-    main()
+  main()

@@ -217,5 +217,25 @@
         "green_wing_teal",
         "whitetail_deer"
       ]        
+  },
+  "emerald": {
+    "name": "Emerald Coast",
+    "index": 16,
+    "species": [
+      "hog_deer",
+      "fallow_deer",
+      "red_deer",
+      "feral_pig",
+      "magpie_goose",
+      "eg_kangaroo",
+      "red_fox",
+      "sambar",
+      "banteng",
+      "sw_crocodile",
+      "feral_goat",
+      "stubble_quail",
+      "axis_deer",
+      "javan_rusa"
+    ]
   }
 }
