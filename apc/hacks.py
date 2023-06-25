@@ -253,7 +253,12 @@ def click_reserve(reserve_name: str) -> None:
     pyautogui.moveTo(512, 228, duration=0.2)
     pyautogui.dragTo(512, 282, duration=0.5)
     pyautogui.moveTo(403, 318)
-    click()    
+    click() 
+  if reserve_name == "emerald":
+    pyautogui.moveTo(512, 228, duration=0.2)
+    pyautogui.dragTo(512, 292, duration=0.5)
+    pyautogui.moveTo(403, 325)
+    click()     
     
   pyautogui.moveTo(500, 275, duration=0.2)
   doubleClick()    
@@ -363,3 +368,5 @@ def merge_furs_into_animals() -> None:
 if __name__ == "__main__":
   # analyze_reserve(config.get_save_path() / "animal_population_16")
   seed_animals("emerald")
+  # launch_aps()
+  # click_reserve("emerald")

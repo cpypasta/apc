@@ -13,4 +13,3 @@ dist
 ..spec
 apc/config/save_path.txt
 imgui.ini
-scans
