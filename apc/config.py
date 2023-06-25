@@ -119,9 +119,9 @@ def setup_translations() -> None:
   global MORE_FEMALES
   MORE_FEMALES = translate("More Females")
   global GREATONES
-  GREATONES = translate("Great Ones")
+  GREATONES = translate("More Great Ones")
   global DIAMONDS
-  DIAMONDS = translate("Diamonds")
+  DIAMONDS = translate("More Diamonds")
   global INCLUDE_RARE_FURS
   INCLUDE_RARE_FURS = translate("include diamond rare furs")
   global ALL_FURS
@@ -318,8 +318,8 @@ class Strategy(str, Enum):
    males = "males"
    furs_some = "furs-some"
    females = "females"
-  #  add = "add"
-  #  remove = "remove"
+   add = "add"
+   remove = "remove"
 
 class GreatOnes(str, Enum):
    moose = "moose"

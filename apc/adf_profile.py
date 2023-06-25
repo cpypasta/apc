@@ -20,7 +20,7 @@ STRUCTURE = 1
 ARRAY = 3
 
 class AdfArray:
-  def __init__(self, name: str, population: int, group: int, length: int, header_start_offset: int, header_length_offset: int, header_array_offset: int, array_start_offset: int, array_end_offset: int, rel_array_start_offset: int, rel_array_end_offset: int) -> None:
+  def __init__(self, name: str, population: int, group: int, length: int, header_start_offset: int, header_length_offset: int, header_array_offset: int, array_start_offset: int, array_end_offset: int, rel_array_start_offset: int, rel_array_end_offset: int, male_indices: List[int], female_indices: List[int]) -> None:
     self.name = name
     self.population = population
     self.group = group
@@ -34,6 +34,10 @@ class AdfArray:
     self.array_end_offset = array_end_offset
     self.rel_array_start_offset = rel_array_start_offset
     self.rel_array_end_offset = rel_array_end_offset
+    self.male_indices = male_indices
+    self.female_indices = female_indices
+    self.male_cnt = len(male_indices) if male_indices else 0
+    self.female_cnt = len(female_indices) if female_indices else 0
     
   def __repr__(self) -> str:
     return f"{self.name} ; Header Offset: {self.header_start_offset},{hex(self.header_start_offset)}; Data Offset: {self.array_start_offset},{hex(self.array_start_offset)}"
@@ -246,6 +250,7 @@ def read_instance(data: bytearray, offset: int, pointer: int, type_id: int, type
       pointer = org_pointer + type_def["size"]
     elif type_def["metatype"] == ARRAY:
       array_offset = read_u32(data[pos:pos+4])
+      flags = read_u32(data[pos+4:pos+8])
       length = read_u32(data[pos+8:pos+12]) 
       array_header_size = 12
       org_pos = pos
@@ -255,6 +260,7 @@ def read_instance(data: bytearray, offset: int, pointer: int, type_id: int, type
       value = { "Array": { 
         "name": type_def["name"], 
         "header_offset": (org_pos, org_pos+array_header_size),
+        "flags": flags,
         "length": length
       }}
       pointer = array_offset
@@ -325,9 +331,26 @@ def find_population_array_offsets(offsets: dict, result: List[dict] = [], org_pa
               find_population_array_offsets(value, result, path, key, i)
   return result
 
-def create_array(offset: dict, instance_offset: int, population: int = 0, group: int = 0) -> AdfArray:
+def parse_gender_cnt(data: bytearray, length: int, data_offset: int) -> dict:
+  male_indices = []
+  female_indices = []
+  for i in range(length):
+    animal_offset = data_offset+i*32
+    gender = read_u32(data[animal_offset:animal_offset+4])
+    if gender == 1:
+      male_indices.append(i)
+    else:
+      female_indices.append(i)
+  return (male_indices, female_indices)
+
+def create_array(offset: dict, instance_offset: int, data: bytearray = None, population: int = 0, group: int = 0) -> AdfArray:
   header_start_offset = offset["header"][0]
   value_start_offset, value_end_offset = offset["values"] if offset["values"] else (0,0)
+  if data:
+    male_indices, female_indices = parse_gender_cnt(data, offset["length"], value_start_offset)
+  else:
+    male_indices = None
+    female_indices = None
   return AdfArray(
     f"{offset['path']}{offset['key']};{offset['name']}",
     int(population), 
@@ -339,12 +362,14 @@ def create_array(offset: dict, instance_offset: int, population: int = 0, group:
     value_start_offset, 
     value_end_offset,
     value_start_offset-instance_offset, 
-    value_end_offset-instance_offset
+    value_end_offset-instance_offset,
+    male_indices,
+    female_indices
   )  
 
-def create_animal_array(offset: dict, instance_offset: int) -> AdfArray:
+def create_animal_array(offset: dict, instance_offset: int, data: bytearray) -> AdfArray:
   population, group = re.findall(r'\d+', offset["path"])
-  return create_array(offset, instance_offset, population, group)
+  return create_array(offset, instance_offset, data, population, group)
 
 def profile_header(data: bytearray) -> dict:
   header = data[:64]
@@ -416,10 +441,10 @@ def create_profile(filename: Path) -> None:
     }
   }
   
-def find_arrays(profile: dict) -> Tuple[List[AdfArray], List[AdfArray]]:
+def find_arrays(profile: dict, data: bytearray) -> Tuple[List[AdfArray], List[AdfArray]]:
   instance_offsets = profile["details"]["instance_offsets"]
   instance_offset = instance_offsets["instances"][0]["offset"][0]
-  array_offsets = find_population_array_offsets(instance_offsets["instances"][0]["0"])
-  animal_arrays = [create_animal_array(x, instance_offset) for x in array_offsets if x["key"] == 'Animals']
+  array_offsets = find_population_array_offsets(instance_offsets["instances"][0]["0"], [])
+  animal_arrays = [create_animal_array(x, instance_offset, data) for x in array_offsets if x["key"] == 'Animals']
   other_arrays = [create_array(x, instance_offset) for x in array_offsets if x["key"] != 'Animals']
   return (animal_arrays, other_arrays)

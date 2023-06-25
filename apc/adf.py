@@ -1,4 +1,4 @@
-import zlib, contextlib, random, math
+import zlib, contextlib, random, math, struct
 from deca.file import ArchiveFile
 from deca.ff_adf import Adf
 from pathlib import Path
@@ -15,9 +15,16 @@ class DecompressedAdfFile():
         self.file_header = file_header
         self.header = header
         self.data = data
+        self.org_size = len(header + data)
 
-    def save(self, destination: Path, verbose = False) -> None:
+    def save(self, destination: Path, verbose = False) -> None:        
         decompressed_data_bytes = self.header + self.data
+        new_size = len(decompressed_data_bytes)
+        if self.org_size != new_size:
+          print("Org:", self.org_size, "New:", new_size)
+          decompressed_size = struct.pack("I", new_size)
+          self.file_header[8:12] = decompressed_size
+          self.file_header[24:28] = decompressed_size
         commpressed_data_bytes = self.file_header + _compress_bytes(decompressed_data_bytes)
 
         adf_file = destination / self.basename
@@ -119,18 +126,22 @@ def _insert_animal(data: bytearray, animal: Animal, array: AdfArray) -> None:
   animal_bytes = animal.to_bytes()
   data[array.array_org_end_offset:array.array_org_end_offset] = animal_bytes
 
-def _remove_animal(data: bytearray, array: AdfArray) -> None:
+def _remove_animal(data: bytearray, array: AdfArray, index: int) -> None:
   write_value(data, create_u32(read_u32(data[array.header_length_offset:array.header_length_offset+4])-1), array.header_length_offset)
-  del data[array.array_org_end_offset-32:array.array_org_end_offset]
+  index_offset = array.array_org_start_offset + index * 32
+  del data[index_offset:index_offset+32]
 
 def _update_instance_arrays(data: bytearray, animal_arrays: List[AdfArray], target_array: AdfArray, size: int):
-  for animal_array in animal_arrays:
+  arrays_modded = []
+  for animal_array in animal_arrays:    
     if animal_array.array_start_offset >= target_array.array_end_offset and animal_array.array_start_offset != 0:
+      arrays_modded.append(animal_array)
       animal_array.array_start_offset = animal_array.array_start_offset + size
       animal_array.array_end_offset = animal_array.array_end_offset + size
       animal_array.rel_array_start_offset = animal_array.rel_array_start_offset + size
       write_value(data, create_u32(animal_array.rel_array_start_offset), animal_array.header_array_offset)
-
+    # if animal_array.header_start_offset >= target_array.array_end_offset:
+    #   print(animal_array)
 
 def parse_adf(filename: Path, suffix: str = None, verbose = False) -> Adf:
     if verbose:
@@ -146,45 +157,19 @@ def load_reserve(reserve_name: str, mod: bool = False, verbose = False) -> Parse
     filename = _get_file_name(reserve_name, mod)
     return load_adf(filename, verbose=verbose)
 
-# TODO: EXPERIMENT
 def add_animals_to_reserve(reserve_name: str, species_key: str, animals: List[Animal], verbose: bool, mod: bool) -> None:
+  print("add animals")
   if len(animals) == 0:
     return
   org_filename = _get_file_name(reserve_name, mod)
-  decompressed_adf = _decompress_adf_file(org_filename, verbose=verbose)
+  decompressed_adf = _decompress_adf_file(org_filename, verbose=True)
+  reserve_data = decompressed_adf.data
   profile = create_profile(decompressed_adf.filename)
-  population_index = config.RESERVES[reserve_name]["species"].index(species_key)
-  animal_arrays, other_arrays = find_arrays(profile)
+  population_index = config.RESERVES[reserve_name]["species"].index(species_key)  
+  animal_arrays, other_arrays = find_arrays(profile, reserve_data)
   all_arrays = animal_arrays+other_arrays
   eligible_animal_arrays = [x for x in animal_arrays if x.population == population_index]
   eligible_animal_arrays = sorted(eligible_animal_arrays, key=lambda x: x.array_start_offset, reverse=True)
-  reserve_data = decompressed_adf.data
-  
-  # _update_non_instance_offsets(reserve_data, profile, 32)
-  # reserve_data[193712+8:193712+12] = create_u32(read_u32(reserve_data[193712+8:193712+12])+1) # increase array length
-  # print("updating", read_u32(reserve_data[120:124]), "to", 217192+4-96)
-  # reserve_data[120:120+4] = create_u32(217192+32-96) # increase array offset, hunting pressure
-  # animal = Animal("male", 1.0, 1.0, False, 1234)
-  # reserve_data[217192:217192] = animal.to_bytes() # add element to array
-  
-  # reserve_data[-1:-1] = bytearray(struct.pack("B", 23))
-  
-  reserve_data[284338:284339] = bytearray(struct.pack("c", "y".encode()))
-  
-  decompressed_adf.save(config.MOD_DIR_PATH, verbose=verbose)
-
-def add_animals_to_reserve2(reserve_name: str, species_key: str, animals: List[Animal], verbose: bool, mod: bool) -> None:
-  if len(animals) == 0:
-    return
-  org_filename = _get_file_name(reserve_name, mod)
-  decompressed_adf = _decompress_adf_file(org_filename, verbose=verbose)
-  profile = create_profile(decompressed_adf.filename)
-  population_index = config.RESERVES[reserve_name]["species"].index(species_key)
-  animal_arrays, other_arrays = find_arrays(profile)
-  all_arrays = animal_arrays+other_arrays
-  eligible_animal_arrays = [x for x in animal_arrays if x.population == population_index]
-  eligible_animal_arrays = sorted(eligible_animal_arrays, key=lambda x: x.array_start_offset, reverse=True)
-  reserve_data = decompressed_adf.data
   
   total_size = animals[0].size * len(animals)
   _update_non_instance_offsets(reserve_data, profile, total_size)
@@ -198,20 +183,21 @@ def add_animals_to_reserve2(reserve_name: str, species_key: str, animals: List[A
     chosen_array = eligible_animal_arrays[i]    
     for animal in animal_chunk:
       _insert_animal(reserve_data, animal, chosen_array)
-  decompressed_adf.save(config.MOD_DIR_PATH, verbose=verbose)
+  decompressed_adf.save(config.MOD_DIR_PATH, verbose=True)
 
-def remove_animals_from_reserve(reserve_name: str, species_key: str, animal_cnt: int, verbose: bool, mod: bool) -> None:
+def remove_animals_from_reserve(reserve_name: str, species_key: str, animal_cnt: int, gender: str, verbose: bool, mod: bool) -> None:
+  print("remove animals")
   if animal_cnt == 0:
     return
   org_filename = _get_file_name(reserve_name, mod)
   decompressed_adf = _decompress_adf_file(org_filename, verbose=verbose)
   profile = create_profile(decompressed_adf.filename)
-  population_index = config.RESERVES[reserve_name]["species"].index(species_key)
-  animal_arrays, other_arrays = find_arrays(profile)
-  all_arrays = animal_arrays+other_arrays
-  eligible_animal_arrays = [x for x in animal_arrays if x.population == population_index]
-  eligible_animal_arrays = sorted(eligible_animal_arrays, key=lambda x: x.array_start_offset, reverse=True)
   reserve_data = decompressed_adf.data 
+  animal_arrays, other_arrays = find_arrays(profile, reserve_data)
+  all_arrays = animal_arrays+other_arrays
+  population_index = config.RESERVES[reserve_name]["species"].index(species_key)
+  eligible_animal_arrays = [x for x in animal_arrays if x.population == population_index and ((x.male_cnt > 0 and gender == "male") or (x.female_cnt > 0 and gender == "female"))]
+  eligible_animal_arrays = sorted(eligible_animal_arrays, key=lambda x: x.array_start_offset, reverse=True)
   animal_size = 32
   
   animals_left_to_remove = animal_cnt
@@ -221,9 +207,15 @@ def remove_animals_from_reserve(reserve_name: str, species_key: str, animal_cnt:
       break
     array_length = animal_array.length
     if array_length > 1:
-      remove_cnt = array_length - 1 if (array_length - 1) < animals_left_to_remove else animals_left_to_remove
-      arrays_to_remove_from.append((remove_cnt, animal_array))
-      animals_left_to_remove = animals_left_to_remove - remove_cnt
+      if gender == "male":
+        remove_cnt = animal_array.male_cnt - 1
+      else:
+        remove_cnt = animal_array.female_cnt - 1
+      if remove_cnt > animals_left_to_remove:
+        remove_cnt = animals_left_to_remove
+      if remove_cnt > 0:
+        arrays_to_remove_from.append((remove_cnt, animal_array))
+        animals_left_to_remove = animals_left_to_remove - remove_cnt
   if animals_left_to_remove > 0:
     raise Exception("Not enough animals to remove")
       
@@ -232,7 +224,10 @@ def remove_animals_from_reserve(reserve_name: str, species_key: str, animal_cnt:
   for remove_cnt, animal_array in arrays_to_remove_from:
     _update_instance_arrays(reserve_data, all_arrays, animal_array, -(animal_size*remove_cnt))
   for remove_cnt, animal_array in arrays_to_remove_from:
-    for i in range(remove_cnt):
-      _remove_animal(reserve_data, animal_array)\
+    remove_indices = animal_array.male_indices if gender == "male" else animal_array.female_indices
+    removed_cnt = 0
+    while removed_cnt < remove_cnt:      
+      _remove_animal(reserve_data, animal_array, remove_indices[remove_cnt-removed_cnt])
+      removed_cnt += 1
   
   decompressed_adf.save(config.MOD_DIR_PATH, verbose=verbose)

@@ -22,6 +22,11 @@ reserve_names = None
 reserve_name_size = None
 save_path_value = get_save_path()
 reserve_description = None
+species_group_details = None
+male_group_cnt = None
+female_group_cnt = None
+symbol_closed = "►"
+symbol_open = "▼"
 
 class Animal:
   def __init__(self, gender: str, weight: float, score: float, fur: str, go: bool, diamond_gender: str) -> None:
@@ -101,8 +106,7 @@ def _highlight_values(data: list) -> list:
 
 def _disable_diamonds(window: sg.Window, disabled: bool) -> None:
   window["diamond_value"].update(disabled = disabled)
-  window["male_value"].update(disabled = disabled)
-  window["female_value"].update(disabled = disabled)
+  window["gender_value"].update(disabled = disabled)
 
 def _disable_furs(window: sg.Window, disabled: bool) -> None:
   window["fur_update_animals"].update(disabled = disabled)
@@ -182,12 +186,6 @@ def _show_mod_list(window: sg.Window) -> None:
 def _viewing_modded(window: sg.Window) -> bool:
   return window['reserve_warning'].get() == VIEW_MODDED  
 
-def _is_male_enabled(window: sg.Window, value: int) -> bool:
-  return not window["male_value"].Disabled and value != 0 
-
-def _is_female_enabled(window: sg.Window, value: int) -> bool:
-  return not window["female_value"].Disabled and value != 0 
-
 def _is_diamond_enabled(window: sg.Window, value: int) -> bool:
   return value != 0
 
@@ -248,7 +246,7 @@ def _mod_diamonds(window: sg.Window, reserve_key: str, species_key: str, diamond
     return
   window["progress"].update(25)
   try:
-    reserve_description = populations.mod_diamonds(reserve_key, reserve_details, species_key, diamond_cnt, male_fur_keys, female_fur_keys)
+    reserve_description, _ = populations.mod_diamonds(reserve_key, reserve_details, species_key, diamond_cnt, male_fur_keys, female_fur_keys)
   except Exception as ex:    
     _show_error(window, ex)
     return
@@ -302,7 +300,7 @@ def _mod(reserve_key: str, species: str, strategy: Strategy, window: sg.Window, 
     return
   window["progress"].update(25)
   try:
-    reserve_description = populations.mod(reserve_key, reserve_details, species, strategy.value, rares=rares, modifier=modifier, percentage=percentage)
+    reserve_description, _ = populations.mod(reserve_key, reserve_details, species, strategy.value, rares=rares, modifier=modifier, percentage=percentage)
   except Exception as ex:    
     _show_error(window, ex)
     return
@@ -417,12 +415,17 @@ def _format_reserve_description(reserve_description: List) -> List:
   return rows
 
 def _reset_mod(window: sg.Window) -> None:
-  window["male_value"].update(0)
-  window["female_value"].update(0)
+  print("reset mod")
+  window["gender_value"].update(0, range=(0,0))
   window["go_value"].update(0)
   window["diamond_value"].update(0)
   window["diamond_all_furs"].update(False)
   window["diamond_furs"].update(set_to_index=[])
+  window["reserve_description"].update(select_rows=[])
+  
+def _clear_gender_values(window: sg.Window):
+  window["new_male_value"].update("0")
+  window["new_female_value"].update("0")
 
 def _reset_furs(window: sg.Window) -> None:
   window["male_all_furs"].update(False)
@@ -441,23 +444,26 @@ def _clear_animal_details(window: sg.Window) -> None:
   window["animal_weight_info"].update("")
   window["animal_score_info"].update("")
 
-def _update_mod_animal_counts(window: sg.Window, species: str, female_cnt: int, male_cnt: int, go_cnt: int, diamond_cnt: int, changing: str = None) -> None:
+def _update_mod_animal_counts(window: sg.Window, species: str, total_cnt: int, org_male_cnt: int, org_female_cnt: int, female_cnt: int, male_cnt: int, go_cnt: int, diamond_cnt: int, male_group_cnt: int, female_group_cnt: int, changing: str = None) -> None:  
+  # print("C:", changing, "M:", male_cnt, "F:", female_cnt, "D:", diamond_cnt, "G:", go_cnt)
+  window["new_female_value"].update(female_cnt)
+  window["new_male_value"].update(male_cnt)
   if changing == None:
-    window["male_value"].update(value=0, range=(0, female_cnt))
-  if changing == None:
-    window["female_value"].update(value=0, range=(0, male_cnt - go_cnt))
-  if changing != "go":
+    window["gender_value"].update(value=0, range=(-male_cnt, female_cnt))
+  if changing in ("male", "female") or changing == None:
     if valid_go_species(species):
       window["go_value"].update(value=0, range=(0, male_cnt - go_cnt))
     else:
       window["go_value"].update(value=0, range=(0, 0))
-  diamond_gender = config.get_diamond_gender(species)
-  if diamond_gender == "both":
-    window["diamond_value"].update(value=0, range=(0, male_cnt + female_cnt - diamond_cnt))
-  elif diamond_gender == "male":
-    window["diamond_value"].update(value=0, range=(0, male_cnt - go_cnt - diamond_cnt))
-  else:
-    window["diamond_value"].update(value=0, range=(0, female_cnt - diamond_cnt))    
+  if changing in ("male", "female", "go_value", None):
+    diamond_gender = config.get_diamond_gender(species)    
+    if diamond_gender == "both":
+      window["diamond_value"].update(value=0, range=(0, male_cnt + female_cnt - diamond_cnt))
+    elif diamond_gender == "male":
+      window["diamond_value"].update(value=0, range=(0, male_cnt - go_cnt - diamond_cnt))
+    elif diamond_gender == "female":
+      window["diamond_value"].update(value=0, range=(0, female_cnt - diamond_cnt))   
+     
     
 def _parse_animal_row(animal_description: list, diamond_gender: str) -> Animal:
   animal_gender = animal_description[2]
@@ -532,6 +538,22 @@ def _show_animals(window: sg.Window, values: dict, reserve_key: str, species: st
   window["progress"].update(0)
   return species_description, animal_details
 
+def _parse_species_groups(species_groups: dict, species_key: str):
+  global species_group_details
+  global male_group_cnt
+  global female_group_cnt
+    
+  species_group_details = species_groups[species_key]
+  male_group_cnt = len(species_group_details["male"])
+  female_group_cnt = len(species_group_details["female"])  
+  
+def _toggle_section_visible(window: sg.Window, section: str, visible: bool = None) -> bool:
+  opened = visible if visible != None else not window[section].visible
+  window[f"{section}_symbol"].update(f"{symbol_open if opened else symbol_closed}")
+  window[section].update(visible=opened)      
+  return opened
+  
+
 def main_window(my_window: sg.Window = None) -> sg.Window:
     global reserve_names
     reserve_names = config.reserves()
@@ -572,7 +594,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
           sg.Image(logo.value), 
           sg.Column([
             [sg.T(config.APC, expand_x=True, font="_ 24")],
-            [sg.T(save_path_value, font=SMALL_FONT, k="save_path")],
+            [sg.T(save_path_value, font=SMALL_FONT, k="save_path")]
           ]), 
           sg.Push(),
           sg.T(f"{config.VERSION}: {__version__} ({config.DEFAULT}: {config.default_locale}, {config.USING}: {config.use_languages[0]})", font=SMALL_FONT, p=((0,0),(0,60)), right_click_menu=['',[f'{config.UPDATE_TRANSLATIONS}::update_translations', config.SWITCH_LANGUAGE, [f"{x}::switch_language" for x in config.SUPPORTED_LANGUAGES]]])
@@ -647,31 +669,41 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
                 [sg.T(" ", font="_ 3", p=(0,0))],
                 [sg.T(textwrap.fill(config.MODIFY_ANIMALS, 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
                 [sg.Column([
-                  [sg.T(f"{config.MORE_MALES}:", font=DEFAULT_FONT)],
-                  [sg.Slider((0,0), orientation="h", p=((20,10),(0,10)), k="male_value", enable_events=True)],
-                  [sg.T(f"{config.MORE_FEMALES}:", font=DEFAULT_FONT, p=((10,0),(0,10)))],
-                  [sg.Slider((0,0), orientation="h", p=((20,10),(0,10)), k="female_value", enable_events=True)],
-                  [sg.T(f"{config.GREATONES}:", font=DEFAULT_FONT, p=((10,0),(0,10)))],
-                  [sg.Slider((0,0), orientation="h", p=((20,10),(0,10)), k="go_value", enable_events=True)],                  
-                  [sg.T(f"{config.DIAMONDS}:", font=DEFAULT_FONT, p=((10,0),(0,10))), sg.T("", p=((0,0),(0,10)), k="diamond_gender", font=MEDIUM_FONT, text_color="orange")],
-                  [sg.Checkbox(config.USE_ALL_FURS, k="diamond_all_furs", font=MEDIUM_FONT, p=((20,10),(0,10)))],
-                  [sg.Listbox([], k="diamond_furs", expand_x=True, p=((20,10),(0,10)), s=(None, 4), select_mode=sg.LISTBOX_SELECT_MODE_MULTIPLE)],                  
-                  [sg.Slider((0,0), orientation="h", p=((20,10),(0,20)), k="diamond_value", enable_events=True)],  
-                ] , expand_x=True)],                
+                  [sg.T(symbol_closed, k="gender_section_symbol", enable_events=True, text_color="orange"), sg.T("Gender Counts", k="gender_section_title", enable_events=True, text_color="orange")],
+                  [sg.pin(sg.Column([
+                    [sg.T("F", font=DEFAULT_FONT, p=((10, 5), (20,0))), sg.Slider((0,0), orientation="h", expand_x=True, k="gender_value", enable_events=True), sg.T("M", font=DEFAULT_FONT, p=((5, 10), (20,0)))],              
+                    [sg.T("0", p=((10, 0), (0, 0)), k="new_female_value"), sg.Push(), sg.T("0", p=((0, 10), (0, 0)), k="new_male_value")],
+                  ], k="gender_section", visible=False))],
+                  [sg.T(symbol_open, k="trophy_section_symbol", text_color="orange"), sg.T("Trophy Rating", k="trophy_section_title", enable_events=True, text_color="orange")],
+                  [sg.pin(sg.Column([                  
+                    [sg.T(f"{config.GREATONES}:", font=DEFAULT_FONT, p=((10,0),(0,10)))],
+                    [sg.Slider((0,0), orientation="h", p=((20,10),(0,10)), k="go_value", enable_events=True)],                  
+                    [sg.T(f"{config.DIAMONDS}:", font=DEFAULT_FONT, p=((10,0),(0,10))), sg.T("", p=((0,0),(0,10)), k="diamond_gender", font=MEDIUM_FONT, text_color="orange")],
+                    [sg.Checkbox(config.USE_ALL_FURS, k="diamond_all_furs", font=MEDIUM_FONT, p=((20,10),(0,10)))],
+                    [sg.Listbox([], k="diamond_furs", expand_x=True, p=((20,10),(0,10)), s=(None, 4), select_mode=sg.LISTBOX_SELECT_MODE_MULTIPLE)],                  
+                    [sg.Slider((0,0), orientation="h", p=((20,10),(0,20)), k="diamond_value", enable_events=True)],  
+                  ], k="trophy_section", visible=True))]
+                ] , expand_x=True, p=(0,0))],   
+                [sg.T(" ", font="_ 3", p=(0,0))],             
                 [sg.Button(config.RESET, k="reset", font=BUTTON_FONT), sg.Button(config.UPDATE_ANIMALS, expand_x=True, disabled=True, k="update_animals", font=BUTTON_FONT)],
                 [sg.T(" ", font="_ 3", p=(0,0))],
               ], k="mod_tab"),
               sg.Tab(config.FURS, [
                 [sg.T(" ", font="_ 3", p=(0,0))],
                 [sg.T(textwrap.fill(config.MODIFY_ANIMAL_FURS, 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=((10,0),(0,10)))],
-                [sg.T(f"{config.MALE_FURS}:", p=((10,0),(0,0)))],
-                [sg.Checkbox(config.USE_ALL_FURS, k="male_all_furs", font=MEDIUM_FONT, p=((10,0),(0,0)))],
-                [sg.Listbox([], k="male_furs", expand_x=True, p=((10,10),(0,0)), s=(None, 4), select_mode=sg.LISTBOX_SELECT_MODE_MULTIPLE)],
-                [sg.Slider((0,0), orientation="h", p=((10,10),(10,20)), k="male_fur_animals_cnt")],                
-                [sg.T(f"{config.FEMALE_FURS}:", p=((10,0),(10,0)))],
-                [sg.Checkbox(config.USE_ALL_FURS, k="female_all_furs", font=MEDIUM_FONT, p=((10,0),(0,0)))],
-                [sg.Listbox([], k="female_furs", expand_x=True, p=((10,10),(0,0)), s=(None, 4), select_mode=sg.LISTBOX_SELECT_MODE_MULTIPLE)],
-                [sg.Slider((0,0), orientation="h", p=((10,10),(10,20)), k="female_fur_animals_cnt")],
+                [sg.T(symbol_open, k="fur_male_section_symbol", enable_events=True, text_color="orange"), sg.T(config.MALE_FURS, k="fur_male_section_title", enable_events=True, text_color="orange")],
+                [sg.pin(sg.Column([
+                    [sg.Checkbox(config.USE_ALL_FURS, k="male_all_furs", font=MEDIUM_FONT, p=((10,0),(0,0)))],
+                    [sg.Listbox([], k="male_furs", expand_x=True, p=((10,10),(0,0)), s=(None, 4), select_mode=sg.LISTBOX_SELECT_MODE_MULTIPLE)],
+                    [sg.Slider((0,0), orientation="h", p=((10,10),(10,20)), k="male_fur_animals_cnt")],                        
+                ], k="fur_male_section", visible=True))],
+                [sg.T(symbol_closed, k="fur_female_section_symbol", enable_events=True, text_color="orange"), sg.T(config.FEMALE_FURS, k="fur_female_section_title", enable_events=True, text_color="orange")],
+                [sg.pin(sg.Column([            
+                  [sg.Checkbox(config.USE_ALL_FURS, k="female_all_furs", font=MEDIUM_FONT, p=((10,0),(0,0)))],
+                  [sg.Listbox([], k="female_furs", expand_x=True, p=((10,10),(0,0)), s=(None, 4), select_mode=sg.LISTBOX_SELECT_MODE_MULTIPLE)],
+                  [sg.Slider((0,0), orientation="h", p=((10,10),(10,20)), k="female_fur_animals_cnt")],                  
+                ], k="fur_female_section", visible=False))],
+                [sg.T(" ", font="_ 3", p=(0,0))],
                 [sg.Button(config.RESET, k="fur_reset", font=BUTTON_FONT, p=((10,0),(0,0))), sg.Button(config.UPDATE_ANIMALS, expand_x=True, disabled=True, k="fur_update_animals", font=BUTTON_FONT, p=((10,10),(0,0)))],
                 [sg.T(" ", font="_ 3", p=(0,0))]                
               ], k="fur_tab"),
@@ -726,7 +758,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
         ]
     ]
 
-    window = sg.Window(config.APC, layout, resizable=True, font=DEFAULT_FONT, icon=logo.value, size=(1300, 900))
+    window = sg.Window(config.APC, layout, resizable=True, font=DEFAULT_FONT, icon=logo.value, size=(1300, 780))
     
     if my_window is not None:
       my_window.close()
@@ -738,10 +770,13 @@ def main() -> None:
   window = main_window()
   reserve_details = None
   global reserve_description
+  global species_group_details
+  global male_group_cnt
+  global female_group_cnt
 
   while True:
       event, values = window.read()
-      # print(event, values)
+      # print(event, values, "\n")
 
       if event == sg.WIN_CLOSED:
           break 
@@ -770,7 +805,7 @@ def main() -> None:
             window["fur_party"].update(disabled=True)              
             window["show_animals"].update(disabled=True)              
             continue
-          reserve_description = populations.describe_reserve(reserve_key, reserve_details.adf)
+          reserve_description, species_groups = populations.describe_reserve(reserve_key, reserve_details.adf)
           _disable_go_parties(window, reserve_key)
           window["diamond_party"].update(disabled=False)
           window["everyone_party"].update(disabled=False)
@@ -800,9 +835,12 @@ def main() -> None:
 
               great_one_cnt = int(reserve_description[row][-1])
               diamond_cnt = int(reserve_description[row][-2])
+              total_cnt = int(reserve_description[row][3])
               male_cnt = int(reserve_description[row][4])
               female_cnt = int(reserve_description[row][5])
-              _update_mod_animal_counts(window, species, female_cnt, male_cnt, great_one_cnt, diamond_cnt)
+              
+              _parse_species_groups(species_groups, species)
+              _update_mod_animal_counts(window, species, total_cnt, male_cnt, female_cnt, female_cnt, male_cnt, great_one_cnt, diamond_cnt, male_group_cnt, female_group_cnt)
               
               male_fur_names, male_fur_keys = config.get_species_fur_names(species, "male")
               female_fur_names, female_fur_keys = config.get_species_fur_names(species, "female")
@@ -857,8 +895,8 @@ def main() -> None:
             _mod_animal(window, reserve_key, species, _parse_animal_details(values, get_diamond_gender(species)), full_animal_details)
             species_description, animal_details = _show_animals(window, values, reserve_key, species, species_name, modded=True)
         elif event == "update_animals":
-          male_value = int(values["male_value"])
-          female_value = int(values["female_value"])
+          male_value = int(window["new_male_value"].DisplayText)
+          female_value = int(window["new_female_value"].DisplayText)
           go_value = int(values["go_value"])
           diamond_value = int(values["diamond_value"])
           diamond_all_furs = values["diamond_all_furs"]
@@ -874,12 +912,12 @@ def main() -> None:
             male_use_furs = [male_fur_keys[male_fur_names.index(re.sub(label_pattern, "", x))] for x in diamond_furs if f"({config.MALE.lower()})" in x]
             female_use_furs = [female_fur_keys[female_fur_names.index(re.sub(label_pattern, "", x))] for x in diamond_furs if f"({config.FEMALE.lower()})" in x]
 
-          if _is_male_enabled(window, male_value):
+          if male_value > male_cnt:
             print("modding males")
-            _mod(reserve_key, species, Strategy.males, window, male_value, False)
-          if _is_female_enabled(window, female_value):
+            _mod(reserve_key, species, Strategy.males, window, male_value - male_cnt, False)  
+          if female_value > female_cnt:
             print("modding females")
-            _mod(reserve_key, species, Strategy.females, window, female_value, False)
+            _mod(reserve_key, species, Strategy.females, window, female_value - female_cnt, False)                         
           if _is_go_enabled(window, go_value):
             print("modding go")
             _mod(reserve_key, species, Strategy.go_some, window, go_value, False)        
@@ -888,6 +926,8 @@ def main() -> None:
             _mod_diamonds(window, reserve_key, species, diamond_value, male_use_furs, female_use_furs)
             
           _disable_new_reserve(window)   
+          male_cnt = 0
+          female_cnt = 0
           _reset_mod(window)   
           _clear_furs(window) 
         elif event == "fur_update_animals":
@@ -923,6 +963,8 @@ def main() -> None:
           _unload_mod(window, selected_mod[2])
           mods = _process_list_mods(window)
         elif event == "reset":
+          male_cnt = 0
+          female_cnt = 0
           _reset_mod(window)
         elif event == "go_party":
           go_species = _get_go_species(reserve_key)
@@ -958,15 +1000,33 @@ def main() -> None:
           elif key == "switch_language":
             config.update_language(value)
             window = main_window(window)
-        elif event == "female_value":
-          new_female_cnt = int(values["female_value"])
-          _update_mod_animal_counts(window, species, female_cnt + new_female_cnt, male_cnt - new_female_cnt, great_one_cnt, diamond_cnt, changing="female")
-        elif event == "male_value":
-          new_male_cnt = int(values["male_value"])
-          _update_mod_animal_counts(window, species, female_cnt - new_male_cnt, male_cnt + new_male_cnt, great_one_cnt, diamond_cnt, changing="male")      
-        elif event == "go_value":
+        elif event in ("gender_value", "go_value", "diamond_value"):
           new_go_cnt = int(values["go_value"])
-          _update_mod_animal_counts(window, species, female_cnt, male_cnt, great_one_cnt + new_go_cnt, diamond_cnt, changing="go")               
+          new_diamond_cnt = int(values["diamond_value"])
+          gender_value = int(values["gender_value"])
+          new_male_cnt = gender_value + male_cnt if gender_value > 0 else male_cnt - (-gender_value)
+          new_female_cnt = -gender_value + female_cnt if gender_value < 0 else female_cnt - gender_value
+          if event == "gender_value":
+            changing = "male" if gender_value > 0 else "female"
+          else:
+            changing = event
+          _update_mod_animal_counts(window, species, total_cnt, male_cnt, female_cnt, new_female_cnt, new_male_cnt, new_go_cnt, new_diamond_cnt, male_group_cnt, female_group_cnt, changing=changing)
+        elif event == "gender_section_symbol" or event == "gender_section_title":
+          if not window["gender_section"].visible:
+            _toggle_section_visible(window, "gender_section", True)
+            _toggle_section_visible(window, "trophy_section", False)            
+        elif event == "trophy_section_symbol" or event == "trophy_section_title":
+          if not window["trophy_section"].visible:
+            _toggle_section_visible(window, "gender_section", False)
+            _toggle_section_visible(window, "trophy_section", True) 
+        elif event == "fur_male_section_symbol" or event == "fur_male_section_title":
+          if not window["fur_male_section"].visible:
+            _toggle_section_visible(window, "fur_male_section", True)
+            _toggle_section_visible(window, "fur_female_section", False)    
+        elif event == "fur_female_section_symbol" or event == "fur_female_section_title":
+          if not window["fur_female_section"].visible:
+            _toggle_section_visible(window, "fur_male_section", False)
+            _toggle_section_visible(window, "fur_female_section", True)                           
       except Exception:
         _show_error_window(traceback.format_exc())
   

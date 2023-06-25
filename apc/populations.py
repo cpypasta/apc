@@ -140,17 +140,18 @@ def describe_animals(reserve_name: str, species: str, reserve_details: Adf, good
     rows.sort(key=lambda x: x[4], reverse=True)
     return rows[:10] if top else rows 
 
-def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = True, verbose = False) -> list:
+def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = True, verbose = False) -> tuple:
     populations = _get_populations(reserve_details)
-
+    reserve_species = config.get_reserve(reserve_key)["species"]
     if verbose:
       print(f"processing {len(populations)} species...")
 
     rows = []
-    keys = []
     total_cnt = 0
     population_cnt = 0
-    for population in populations:
+    species_groups = {}
+    
+    for population_i, population in enumerate(populations):
       groups = population.value["Groups"].value
       animal_cnt = 0
       population_high_weight = 0        
@@ -159,6 +160,8 @@ def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = T
       male_cnt = 0
       go_cnt = 0
       diamond_cnt = 0
+      female_groups = []
+      male_groups = []
 
       species_key = config.RESERVES[reserve_key]["species"][population_cnt] if include_species else str(population_cnt)
       known_species = species_key in config.ANIMALS.keys()
@@ -171,21 +174,25 @@ def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = T
       if verbose and diamond_score != config.HIGH_NUMBER:
         print(f"Species: {species_name}, Diamond Weight: {diamond_weight}, Diamond Score: {diamond_score}")
 
-      for group in groups:
+      for group_i, group in enumerate(groups):
         animals = group.value["Animals"].value
         group_animal_cnt = len(animals)
         animal_cnt += group_animal_cnt
         total_cnt += group_animal_cnt
-
+        group_male_cnt = 0
+        group_female_cnt = 0
+        
         for animal in animals:
           animal = AdfAnimal(animal, species_key)
 
           if animal.gender == "male":
             male_cnt += 1
+            group_male_cnt += 1
             if animal.score > population_high_score:
                 population_high_score = animal.score                  
-          else:
+          else:            
             female_cnt += 1
+            group_female_cnt += 1
 
           if animal.weight > population_high_weight:
               population_high_weight = animal.weight
@@ -194,6 +201,12 @@ def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = T
             go_cnt += 1
           elif animal.weight >= diamond_weight and animal.score >= diamond_score:
             diamond_cnt += 1
+        if group_male_cnt > 0:
+          male_groups.append(group_i)
+        if group_female_cnt > 0:
+          female_groups.append(group_i)
+          
+      species_groups[reserve_species[population_i]] = { "male": male_groups, "female": female_groups }
 
       rows.append([
         species_key,
@@ -208,7 +221,7 @@ def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = T
         go_cnt
       ])
 
-    return sorted(rows, key = lambda x: x[1])
+    return (sorted(rows, key = lambda x: x[1]), species_groups)
 
 def _create_new_animal(animals: List[AdfAnimal]) -> adf_profile.Animal:
   chosen_animal = random.choice(animals)
@@ -386,18 +399,18 @@ def _male_some(species: str, groups: list, reserve_data: bytearray, modifier: in
 def _female_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False) -> None:
   _process_some(species, {}, groups, reserve_data, modifier, percentage, _create_female, gender = "male")  
 
-def _add_animals(groups: list, reserve_name: str, species_key: str, modifier: int, verbose: bool, mod: bool) -> None:
-  eligible_animals = _get_eligible_animals(groups, species_key, "both")
+def _add_animals(groups: list, reserve_name: str, species_key: str, animal_cnt: int, gender: str, verbose: bool, mod: bool) -> None:
+  eligible_animals = _get_eligible_animals(groups, species_key, gender)
   animals = []
-  if modifier:
-    for i in range(modifier):
+  if animal_cnt:
+    for i in range(animal_cnt):
       animals.append(_create_new_animal(eligible_animals))
   else:
     animals.append(_create_new_animal(eligible_animals))
   adf.add_animals_to_reserve(reserve_name, species_key, animals, verbose, mod)
   
-def _remove_animals(reserve_name: str, species_key: str, modifier: int, verbose: bool, mod: bool) -> None:
-  adf.remove_animals_from_reserve(reserve_name, species_key, modifier, verbose, mod)
+def _remove_animals(reserve_name: str, species_key: str, modifier: int, gender: str, verbose: bool, mod: bool) -> None:
+  adf.remove_animals_from_reserve(reserve_name, species_key, modifier, gender, verbose, mod)
 
 def mod_furs(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, male_fur_keys: List[str], female_fur_keys: List[str], male_fur_cnt: int, female_fur_cnt: int, verbose: bool = False) -> None:
   species_details = _species(reserve_name, reserve_details.adf, species_key)
@@ -445,8 +458,20 @@ def mod_animal(reserve_details: ParsedAdfFile, species_key: str, animal: AdfAnim
   print(f"[green]Animal has been updated![/green]")   
   reserve_details.decompressed.save(config.MOD_DIR_PATH)  
 
-def mod(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, strategy: str, modifier: int = None, percentage: bool = False, rares: bool = False, verbose = False, mod: bool = False):
-  species_details = _species(reserve_name, reserve_details.adf, species_key)
+def mod_animal_cnt(reserve_key:str, reserve_details: ParsedAdfFile, species_key: str, animal_cnt: int, cnt_type: str, gender: str, modded: bool = False) -> list:
+  species_details = _species(reserve_key, reserve_details.adf, species_key)
+  groups = species_details.value["Groups"].value
+  species_name = config.get_species_name(species_key)
+    
+  if cnt_type == "add":
+    _add_animals(groups, reserve_key, species_key, animal_cnt, gender, False, modded)
+  elif cnt_type == "remove":
+    _remove_animals(reserve_key, species_key, animal_cnt, gender, False, modded)
+  print(f"[green]All {animal_cnt} {gender} {species_name} animals have been {'added' if cnt_type == 'add' else 'removed'}![/green]")  
+  return describe_reserve(reserve_key, load_reserve(reserve_key, True).adf)
+
+def mod(reserve_key: str, reserve_details: ParsedAdfFile, species_key: str, strategy: str, modifier: int = None, percentage: bool = False, rares: bool = False, verbose = False, mod: bool = False):
+  species_details = _species(reserve_key, reserve_details.adf, species_key)
   groups = species_details.value["Groups"].value
   species_name = config.get_species_name(species_key)
   reserve_data = reserve_details.decompressed.data  
@@ -478,14 +503,8 @@ def mod(reserve_name: str, reserve_details: ParsedAdfFile, species_key: str, str
   elif (strategy == config.Strategy.furs_some):
     _furs_some(species_key, groups, reserve_data, modifier, percentage)
     print(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now random furs![/green]") 
-  elif (strategy == config.Strategy.add):
-    _add_animals(groups, reserve_name, species_key, modifier, verbose, mod)
-    print(f"[green]All {modifier} {species_name} have been added![/green]")   
-  elif (strategy == config.Strategy.remove):
-    _remove_animals(reserve_name, species_key, modifier, verbose, mod)
-    print(f"[green]All {modifier} {species_name} have been removed![/green]") 
   else:
     print(f"[red]Unknown strategy: {strategy}")  
   
   reserve_details.decompressed.save(config.MOD_DIR_PATH, verbose=verbose)
-  return describe_reserve(reserve_name, load_reserve(reserve_name, True, verbose=verbose).adf, verbose=verbose)
+  return describe_reserve(reserve_key, load_reserve(reserve_key, True, verbose=verbose).adf, verbose=verbose)
