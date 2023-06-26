@@ -365,8 +365,16 @@ def merge_furs_into_animals() -> None:
     animal["diamonds"]["furs"] = animal_furs
   Path("apc/config/animal_details.json").write_text(json.dumps(animals, indent=2))
 
+def fix_furs() -> None:
+  animals = json.load(Path("apc/config/animal_details.json").open())
+  for _, animal in animals.items():
+    if isinstance(list(animal["diamonds"]["furs"]["male"].values())[0], float):
+      animal["diamonds"]["furs"] = convert_fur_float_to_int(animal["diamonds"]["furs"])
+  Path("apc/config/animal_details.json").write_text(json.dumps(animals, indent=2))
+      
 if __name__ == "__main__":
   # analyze_reserve(config.get_save_path() / "animal_population_16")
-  seed_animals("emerald")
+  fix_furs()
+  # seed_animals("emerald")
   # launch_aps()
   # click_reserve("emerald")

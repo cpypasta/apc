@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-05-01 20:53-0500\n"
+"POT-Creation-Date: 2023-06-25 20:51-0500\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es_MX\n"
@@ -82,7 +82,7 @@ msgstr "El Pelaje"
 msgid "Diamond"
 msgstr "Diamante"
 
-#: apc/config.py:70 apc/config.py:362
+#: apc/config.py:70 apc/config.py:363
 msgid "Great One"
 msgstr "El Mejor"
 
@@ -187,12 +187,12 @@ msgid "More Females"
 msgstr "Mas Hembras"
 
 #: apc/config.py:122
-msgid "Great Ones"
-msgstr "Los Mas Grandes"
+msgid "More Great Ones"
+msgstr ""
 
 #: apc/config.py:124
-msgid "Diamonds"
-msgstr "Diamantes"
+msgid "More Diamonds"
+msgstr ""
 
 #: apc/config.py:126
 msgid "include diamond rare furs"
@@ -424,51 +424,51 @@ msgstr ""
 msgid "Loaded Mod"
 msgstr ""
 
-#: apc/config.py:344
+#: apc/config.py:345
 msgid "Trivial"
 msgstr "Trivial"
 
-#: apc/config.py:346
+#: apc/config.py:347
 msgid "Minor"
 msgstr "Menor"
 
-#: apc/config.py:348
+#: apc/config.py:349
 msgid "Very Easy"
 msgstr "Bien Facil"
 
-#: apc/config.py:350
+#: apc/config.py:351
 msgid "Easy"
 msgstr "Facil"
 
-#: apc/config.py:352
+#: apc/config.py:353
 msgid "Medium"
 msgstr "Medio"
 
-#: apc/config.py:354
+#: apc/config.py:355
 msgid "Hard"
 msgstr "Duro"
 
-#: apc/config.py:356
+#: apc/config.py:357
 msgid "Very Hard"
 msgstr "Muy Duro"
 
-#: apc/config.py:358
+#: apc/config.py:359
 msgid "Mythical"
 msgstr "Mitico"
 
-#: apc/config.py:360
+#: apc/config.py:361
 msgid "Legendary"
 msgstr "Legendario"
 
-#: apc/config.py:389
+#: apc/config.py:390
 msgid "fur_name"
 msgstr ""
 
-#: apc/config.py:426
+#: apc/config.py:430
 msgid "reserve_name"
 msgstr "nombre_de_la_reserva"
 
-#: apc/config.py:498
+#: apc/config.py:502
 msgid "name"
 msgstr "nombre"
 
@@ -808,6 +808,38 @@ msgstr "Pavo Salvaje"
 msgid "Willow Ptarmigan"
 msgstr "Perdiz Blanca De Sauce"
 
+#: apc/config/animal_names.json:256
+msgid "Hog Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:259
+msgid "Magpie Goose"
+msgstr ""
+
+#: apc/config/animal_names.json:262
+msgid "Eastern Kangaroo"
+msgstr ""
+
+#: apc/config/animal_names.json:265
+msgid "Sambar Deer"
+msgstr ""
+
+#: apc/config/animal_names.json:268
+msgid "Banteng"
+msgstr ""
+
+#: apc/config/animal_names.json:271
+msgid "Saltwater Crocodile"
+msgstr ""
+
+#: apc/config/animal_names.json:274
+msgid "Stubble Quail"
+msgstr ""
+
+#: apc/config/animal_names.json:277
+msgid "Javan Rusa"
+msgstr ""
+
 #: apc/config/fur_names.json:4
 msgid "Piebald"
 msgstr ""
@@ -1120,6 +1152,46 @@ msgstr ""
 msgid "Bright"
 msgstr ""
 
+#: apc/config/fur_names.json:238
+msgid "Fabled Hooded"
+msgstr ""
+
+#: apc/config/fur_names.json:241
+msgid "Fabled Mocha"
+msgstr ""
+
+#: apc/config/fur_names.json:244
+msgid "Two Tone"
+msgstr ""
+
+#: apc/config/fur_names.json:247
+msgid "Grey Brown"
+msgstr ""
+
+#: apc/config/fur_names.json:250
+msgid "Mocha"
+msgstr ""
+
+#: apc/config/fur_names.json:253
+msgid "Dusky Gradient"
+msgstr ""
+
+#: apc/config/fur_names.json:256
+msgid "Yellow"
+msgstr ""
+
+#: apc/config/fur_names.json:259
+msgid "Maroon"
+msgstr ""
+
+#: apc/config/fur_names.json:262
+msgid "Dark Spotted"
+msgstr ""
+
+#: apc/config/fur_names.json:265
+msgid "Chocolate"
+msgstr ""
+
 #: apc/config/reserve_names.json:4
 msgid "Hirschfelden"
 msgstr "Hirschfelden"
@@ -1172,9 +1244,19 @@ msgstr "La Costa Revontuli"
 msgid "New England Mountains"
 msgstr "Las Montañas De Nueva Inglaterra"
 
+#: apc/config/reserve_names.json:43
+msgid "Emerald Coast"
+msgstr ""
+
 #~ msgid "include rare furs"
 #~ msgstr "incluye pieles raras"
 
 #~ msgid "viewing modded mod"
 #~ msgstr ""
+
+#~ msgid "Great Ones"
+#~ msgstr "Los Mas Grandes"
+
+#~ msgid "Diamonds"
+#~ msgstr "Diamantes"
 

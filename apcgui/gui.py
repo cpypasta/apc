@@ -415,7 +415,6 @@ def _format_reserve_description(reserve_description: List) -> List:
   return rows
 
 def _reset_mod(window: sg.Window) -> None:
-  print("reset mod")
   window["gender_value"].update(0, range=(0,0))
   window["go_value"].update(0)
   window["diamond_value"].update(0)
@@ -900,7 +899,7 @@ def main() -> None:
           go_value = int(values["go_value"])
           diamond_value = int(values["diamond_value"])
           diamond_all_furs = values["diamond_all_furs"]
-          diamond_furs = window["diamond_furs"].Values if diamond_all_furs else values["diamond_furs"]
+          diamond_furs = window["diamond_furs"].Values if diamond_all_furs or len(values["diamond_furs"]) == 0 else values["diamond_furs"]
           if diamond_gender == "male":
             male_use_furs = [male_fur_keys[male_fur_names.index(x)] for x in diamond_furs]
             female_use_furs = []

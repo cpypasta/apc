@@ -236,6 +236,33 @@
     },
     "fabled_hooded": {
       "fur_name": "Fabled Hooded"
-    }
+    },
+    "fabled_mocha": {
+      "fur_name": "Fabled Mocha"
+    },    
+    "two_tone": {
+      "fur_name": "Two Tone"
+    },
+    "grey_brown": {
+      "fur_name": "Grey Brown"
+    },
+    "mocha": {
+      "fur_name": "Mocha"
+    },
+    "dusky_gradient": {
+      "fur_name": "Dusky Gradient"
+    },
+    "yellow": {
+      "fur_name": "Yellow"
+    },
+    "maroon": {
+      "fur_name": "Maroon"
+    },
+    "dark_spotted": {
+      "fur_name": "Dark Spotted"
+    },
+    "chocolate": {
+      "fur_name": "Chocolate"
+    }                        
   }
 }

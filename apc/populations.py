@@ -268,7 +268,7 @@ def _create_diamond(animal: AdfAnimal, species_config: dict, data: bytearray, fu
     visual_seed = _random_choice(species_config["furs"][animal.gender])
   update_float(data, animal.weight_offset, new_weight)
   update_float(data, animal.score_offset, new_score)
-  if visual_seed:
+  if visual_seed != None:
     update_uint(data, animal.visual_seed_offset, visual_seed)
 
 def _create_fur(animal: AdfAnimal, species_config: dict, data: bytearray, fur: int = None) -> None:
@@ -368,8 +368,8 @@ def _update_with_furs(species_key: str, groups: list, reserve_data: bytearray, m
   for animal in female_animals:
     _create_fur(animal, species_config, reserve_data, random.choice(female_fur_seeds))
 
-def _process_some(species, species_config: dict, groups: list, reserve_data: bytearray, modifier: int, percentage: bool, cb: callable, kwargs: dict = {}, gender: str = "male") -> None:
-  eligible_animals = _get_eligible_animals(groups, species, gender=gender)
+def _process_some(species, species_config: dict, groups: list, reserve_data: bytearray, modifier: int, percentage: bool, cb: callable, kwargs: dict = {}, gender: str = "male", include_diamonds: bool = False) -> None:
+  eligible_animals = _get_eligible_animals(groups, species, gender=gender, include_diamonds=include_diamonds)
   if len(eligible_animals) == 0:
     raise NoAnimalsException(f"There are not enough {get_species_name(species)} to process")
   if percentage:
@@ -382,7 +382,7 @@ def _process_some(species, species_config: dict, groups: list, reserve_data: byt
 
 def _go_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False) -> None:
   go_config = config.ANIMALS[species]["go"]
-  _process_some(species, go_config, groups, reserve_data, modifier, percentage, _create_go)
+  _process_some(species, go_config, groups, reserve_data, modifier, percentage, _create_go, include_diamonds=True)
 
 def _diamond_some(species: str, groups: list, reserve_data: bytearray, modifier: int = None, percentage: bool = False, rares: bool = False) -> None:
   species_config = config.ANIMALS[species]["diamonds"]
