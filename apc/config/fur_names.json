@@ -263,6 +263,15 @@
     },
     "chocolate": {
       "fur_name": "Chocolate"
-    }                        
+    },
+    "fabled_silver": {
+      "fur_name": "Fabled Silver"
+    },      
+    "fabled_golden": {
+      "fur_name": "Fabled Golden"
+    },
+    "fabled_painted": {
+      "fur_name": "Fabled Painted"
+    }                       
   }
 }

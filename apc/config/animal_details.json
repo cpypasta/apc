@@ -1343,7 +1343,11 @@
       "weight_low": 100,
       "weight_high": 140,
       "furs": {
-        "fabled_mocha": 0
+        "fabled_mocha": 0,
+        "fabled_hooded": 3099507478,
+        "fabled_silver": 722332835,
+        "fabled_golden": 4105395128,
+        "fabled_painted": 935348104
       }
     },
     "diamonds": {
