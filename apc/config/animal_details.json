@@ -1357,10 +1357,10 @@
       "weight_high": 100.0,
       "furs": {
         "male": {
-          "piebald": 0,
           "dark": 4,
           "albino": 1502,
           "melanistic": 1506,
+          "piebald": 3007,
           "chocolate": 3022,
           "spotted": 4276,
           "dark_spotted": 5774,

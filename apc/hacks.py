@@ -146,6 +146,9 @@ def map_aps(reserve_name: str, species_key: str) -> str:
   
   return species_key
 
+"""
+Captures first seed that gives fur
+"""
 def process_aps(species_key: str, filename: Path) -> None:
   scanned_furs = {}
   with filename.open() as csvfile:
@@ -169,15 +172,38 @@ def combine_furs(existing: dict, latest: dict) -> None:
   latest_male_furs = latest["male"] if "male" in latest else {}
     
   for fur, seed in latest_female_furs.items():
-    if fur not in existing_female_furs:
-      existing_female_furs[fur] = seed
+    if fur not in existing_female_furs and seed != 0.0:
+      existing_female_furs[fur] = int(seed)
   for fur, seed in latest_male_furs.items():
-    if fur not in existing_male_furs:
-      existing_male_furs[fur] = seed
+    if fur not in existing_male_furs and seed != 0.0:
+      existing_male_furs[fur] = int(seed)
       
   new_existing = {
     "male": existing_male_furs,
     "female": existing_female_furs
+  }
+  return new_existing
+
+def combine_furs2(existing: dict, latest: dict, gender: str, last_seed: float, new_seed: float) -> None:
+  existing_furs = existing[gender] if gender in existing else {}
+  latest_furs = latest[gender] if gender in latest else {}
+  print(existing_furs)
+  print(latest_furs)
+    
+  for fur, seed in latest_furs.items():
+    seed = int(seed)
+    if fur not in existing_furs:
+      existing_furs[fur] = range(last_seed, new_seed)
+    else:
+      existing_fur = existing_furs[fur]
+      if existing_fur.stop == last_seed:
+        existing_fur = range(existing_fur.start, seed)
+      else:
+        existing_furs[f'{fur}2'] = range(last_seed, new_seed)
+      
+  new_existing = {
+    "male": existing_furs if gender == "male" else existing["male"],
+    "female": existing_furs if gender == "female" else existing["female"]
   }
   return new_existing
 
@@ -289,7 +315,7 @@ def seed_animals(reserve_key: str) -> None:
     species_furs = {}    
     for gender in [1, 2]:
       seed = 0
-      while seed < 11000:
+      while seed < 12000:
         initial_seed = seed
         seed = populations.diamond_test_seed(species, groups, reserve.decompressed.data, seed, gender)
         print(f"[{initial_seed}-{seed}]")
@@ -301,11 +327,48 @@ def seed_animals(reserve_key: str) -> None:
           print(f"we didn't find any furs; probably have name wrong: {species.lower()}:{utils.unformat_key(aps_species).lower()}")
           break
         species_furs = combine_furs(species_furs, new_furs)
+        print(species_furs)
         
     if bool(species_furs):
       print(species_furs)
       all_furs[species] = species_furs
       save_furs(all_furs)
+
+"""
+{
+  "fallow_deer": {
+    "male": {
+      "piebald": range(0, 20), 0-19 inclusive
+      "brown": range(20, 40)
+    }
+  }
+}
+"""
+
+def seed_animals2(reserve_key: str, species: str) -> None:  
+  print()
+  print(config.get_reserve_name(reserve_key))
+  print()
+  aps_species = map_aps(reserve_key, species)
+  print(species.upper())   
+  reserve = adf.load_reserve(reserve_key, False, False)    
+  species_details = populations._species(reserve_key, reserve.adf, species)
+  groups = species_details.value["Groups"].value  
+  species_furs = { "male": {}, "female": {} }    
+  for gender in [1, 2]:
+    seed = 0
+    while seed < 12000:
+      initial_seed = seed
+      seed = populations.diamond_test_seed(species, groups, reserve.decompressed.data, seed, gender)
+      print(f"[{initial_seed}-{seed}]")
+      reserve.decompressed.save(config.MOD_DIR_PATH, False)
+      launch_aps()
+      click_reserve(reserve_key)
+      new_furs = process_aps(aps_species, Path(f"scans/scan.csv"))
+      species_furs = combine_furs2(species_furs, new_furs, "male" if gender == 1 else "female", initial_seed, seed)  
+      print(species_furs)
+      print()    
+  print(json.dumps(species_furs, indent=2))
 
 def get_reserve_keys() -> list:
   return list(dict.keys(config.RESERVES))
@@ -374,7 +437,7 @@ def fix_furs() -> None:
       
 if __name__ == "__main__":
   # analyze_reserve(config.get_save_path() / "animal_population_16")
-  fix_furs()
-  # seed_animals("emerald")
+  # fix_furs()
+  seed_animals("emerald")
   # launch_aps()
   # click_reserve("emerald")

@@ -1504,25 +1504,5 @@
       "two tone": 7522.0,
       "leucistic": 10023.0
     }
-  },
-  "fallow_deer": {
-    "male": {
-      "piebald": 0.0,
-      "dark": 4.0,
-      "albino": 1502.0,
-      "melanistic": 1506.0,
-      "chocolate": 3022.0,
-      "spotted": 4276.0,
-      "dark spotted": 5774.0,
-      "white": 7272.0
-    },
-    "female": {
-      "piebald": 0.0,
-      "dark spotted": 12.0,
-      "spotted red": 2320.0,
-      "melanistic": 6166.0,
-      "spotted": 6171.0,
-      "albino": 10017.0
-    }
   }
 }
