@@ -109,14 +109,14 @@
       "weight_high": 75.0,
       "furs": {
         "male": {
-          "spotted": 0,
+          "spotted": 293,
           "albino": 8561,
           "piebald": 8567,
           "dark": 8590,
           "melanistic": 10023
         },
         "female": {
-          "orange": 0,
+          "orange": 293,
           "spotted": 1428,
           "albino": 9995,
           "piebald": 10000,
@@ -1407,7 +1407,7 @@
       "weight_high": 50.0,
       "furs": {
         "male": {
-          "dark_brown": 0,
+          "dark_brown": 198,
           "albino": 1873,
           "blonde": 1878,
           "white_brown": 3752,
@@ -1419,7 +1419,7 @@
           "mixed": 10013
         },
         "female": {
-          "black_white": 0,
+          "black_white": 198,
           "black": 1826,
           "brown": 1837,
           "white": 5930,
@@ -1458,16 +1458,16 @@
       "weight_high": 205.0,
       "furs": {
         "male": {
-          "black_spots": 0,
+          "black_spots": 200,
           "brown_hybrid": 1243,
           "albino": 3747,
           "blackgold": 3757,
           "dark_brown": 5006,
-          "brown": 8754,
+          "black": 8754,
           "pink": 10003
         },
         "female": {
-          "black_spots": 0,
+          "black_spots": 200,
           "pink": 9943
         }
       },
@@ -2895,15 +2895,15 @@
       "weight_high": 240.0,
       "furs": {
         "male": {
-          "piebald": 0,
-          "light_brown": 14,
-          "dark_brown": 3349,
+          "light brown": 14,
+          "dark brown": 3349,
           "melanistic": 6683,
           "brown": 6689,
-          "albino": 10023
+          "albino": 10023,
+          "piebald": 10028
         },
         "female": {
-          "dark_brown": 0,
+          "dark brown": 302,
           "albino": 3323,
           "piebald": 3329,
           "melanistic": 3349,
@@ -2959,7 +2959,7 @@
       "weight_high": 15.4,
       "furs": {
         "male": {
-          "dark_red": 0,
+          "dark_red": 250,
           "albino": 3329,
           "red": 3334,
           "piebald": 6668,
@@ -2967,7 +2967,7 @@
           "melanistic": 10023
         },
         "female": {
-          "red": 0,
+          "red": 250,
           "albino": 3329,
           "orange": 3334,
           "dark_red": 6668,

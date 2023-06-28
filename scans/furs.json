@@ -74,24 +74,6 @@
       "piebald": 10003.0
     }
   },
-  "red_fox": {
-    "male": {
-      "dark_red": 0.0,
-      "albino": 3329.0,
-      "red": 3334.0,
-      "piebald": 6668.0,
-      "orange": 6689.0,
-      "melanistic": 10023.0
-    },
-    "female": {
-      "red": 0.0,
-      "albino": 3329.0,
-      "orange": 3334.0,
-      "dark_red": 6668.0,
-      "piebald": 10003.0,
-      "melanistic": 10023.0
-    }
-  },
   "pheasant": {
     "male": {
       "white_brown": 0.0,
@@ -642,22 +624,6 @@
       "melanistic": 10023.0
     }
   },
-  "axis_deer": {
-    "male": {
-      "spotted": 0.0,
-      "albino": 8561.0,
-      "piebald": 8567.0,
-      "dark": 8590.0,
-      "melanistic": 10023.0
-    },
-    "female": {
-      "orange": 0.0,
-      "spotted": 1428.0,
-      "albino": 9995.0,
-      "piebald": 10000.0,
-      "melanistic": 10023.0
-    }
-  },
   "harlequin_duck": {
     "male": {
       "dark_grey": 0.0,
@@ -897,21 +863,6 @@
       "bronze": 9185.0
     }
   },
-  "feral_pig": {
-    "male": {
-      "black_spots": 0.0,
-      "brown_hybrid": 1243.0,
-      "albino": 3747.0,
-      "blackgold": 3757.0,
-      "dark brown": 5006.0,
-      "brown": 8754.0,
-      "pink": 10003.0
-    },
-    "female": {
-      "black_spots": 0.0,
-      "pink": 9943.0
-    }
-  },
   "chamois": {
     "male": {
       "brown": 0.0,
@@ -948,27 +899,6 @@
       "albino": 8739.0,
       "spotted_dark": 8749.0,
       "spotted red": 10003.0
-    }
-  },
-  "feral_goat": {
-    "male": {
-      "dark brown": 0.0,
-      "albino": 1873.0,
-      "blonde": 1878.0,
-      "white_brown": 3752.0,
-      "black_brown": 4588.0,
-      "black_white": 5424.0,
-      "black": 6260.0,
-      "brown": 6265.0,
-      "white": 8139.0,
-      "mixed": 10013.0
-    },
-    "female": {
-      "black_white": 0.0,
-      "black": 1826.0,
-      "brown": 1837.0,
-      "white": 5930.0,
-      "albino": 10023.0
     }
   },
   "mexican_bobcat": {
@@ -1523,6 +1453,76 @@
       "piebald": 7512,
       "two tone": 7522,
       "leucistic": 10023
+    }
+  },
+  "feral_pig": {
+    "male": {
+      "black spots": 200,
+      "brown_hybrid": 1243,
+      "albino": 3747,
+      "blackgold": 3757,
+      "dark brown": 5006,
+      "black": 8754,
+      "pink": 10003
+    },
+    "female": {
+      "black spots": 200,
+      "pink": 9943
+    }
+  },
+  "red_fox": {
+    "male": {
+      "dark red": 250,
+      "albino": 3329,
+      "red": 3334,
+      "piebald": 6668,
+      "orange": 6689,
+      "melanistic": 10023
+    },
+    "female": {
+      "red": 250,
+      "albino": 3329,
+      "orange": 3334,
+      "dark red": 6668,
+      "piebald": 10003,
+      "melanistic": 10023
+    }
+  },
+  "feral_goat": {
+    "male": {
+      "dark brown": 198,
+      "albino": 1873,
+      "blonde": 1878,
+      "white brown": 3752,
+      "black brown": 4588,
+      "black white": 5424,
+      "black": 6260,
+      "brown": 6265,
+      "white": 8139,
+      "mixed": 10013
+    },
+    "female": {
+      "black white": 198,
+      "black": 1826,
+      "brown": 1837,
+      "white": 5930,
+      "albino": 10023
+    }
+  },
+  "axis_deer": {
+    "male": {
+      "spotted": 293,
+      "albino": 8561,
+      "piebald": 8567,
+      "dark": 8590,
+      "melanistic": 10023
+    },
+    "female": {
+      "orange": 293,
+      "spotted": 1428,
+      "albino": 9995,
+      "piebald": 10000,
+      "melanistic": 10023
     }
   }
 }

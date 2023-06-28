@@ -6,7 +6,9 @@ Starting decompression...
 Magic number matches
 Starting scan of playerinformation file 'C:/Users/appma/code/animal-population-changer/mods/playerinformation_adf'
 Starting scan of found need zones file 'C:/Users/appma/code/animal-population-changer/mods/found_need_zones_adf'
+Javan Rusa,Trivial,Female,70.9042 kg,0 TR,Light Brown  
 Red Deer,Trivial,Female,143.084 kg,0 TR,Dark Brown   
+Javan Rusa,Trivial,Female,73.7699 kg,0 TR,White Brown
 Fallow Deer,Trivial,Female,41.3347 kg,0 TR,Spotted Red  
 Red Deer,Minor,Female,148.322 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,42.8237 kg,0 TR,Spotted Red  
@@ -14,24 +16,18 @@ Fallow Deer,Trivial,Female,36.8361 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,32.468 kg,0 TR,Brown        
 Sambar,Trivial,Female,205.046 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,28.3953 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,32.5749 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,35.9135 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,34.7473 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,33.6203 kg,0 TR,Spotted
 Red Deer,Trivial,Female,138.162 kg,0 TR,Brown        
 Red Deer,Trivial,Female,141.981 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,33.4603 kg,0 TR,Orange       
 Red Deer,Minor,Female,149.765 kg,0 TR,Gray         
 Sambar,Trivial,Female,207.617 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,31.8038 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,28.8333 kg,0 TR,Dark Spotted
 Red Deer,Minor,Female,158.754 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,30.5669 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,33.9228 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,31.6056 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,28.9225 kg,0 TR,Brown        
 Sambar,Trivial,Female,199.719 kg,0 TR,Light Brown  
-Axis Deer,Trivial,Female,31.7286 kg,0 TR,Spotted
 Sambar,Trivial,Female,195.317 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,38.008 kg,0 TR,Spotted Red  
 Fallow Deer,Trivial,Female,48.0436 kg,0 TR,Spotted Red  
@@ -42,34 +38,32 @@ Red Deer,Minor,Female,150.339 kg,0 TR,Brown
 Hog Deer,Trivial,Female,29.4655 kg,0 TR,Brown        
 Sambar,Trivial,Female,208.788 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,44.7045 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,33.449 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,32.2456 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,26.7029 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,69.6597 kg,0 TR,Two Tone
 Sambar,Minor,Female,216.274 kg,0 TR,Dark Brown   
 Red Deer,Minor,Female,148.969 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,35.6558 kg,0 TR,Orange       
+Javan Rusa,Trivial,Female,73.3676 kg,0 TR,White Brown
 Hog Deer,Trivial,Female,31.0682 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,31.9233 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,70.9269 kg,0 TR,Two Tone
 Fallow Deer,Trivial,Female,37.4529 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,31.8857 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,74.081 kg,0 TR,Two Tone
+Javan Rusa,Trivial,Female,67.7352 kg,0 TR,Two Tone
 Fallow Deer,Trivial,Female,38.7675 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,212.519 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,210.176 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,42.6246 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,208.636 kg,0 TR,Light Brown  
+Javan Rusa,Trivial,Female,74.822 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,44.1506 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,205.804 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,33.9838 kg,0 TR,Spotted
 Red Deer,Minor,Female,147.637 kg,0 TR,Gray         
 Fallow Deer,Trivial,Female,39.1815 kg,0 TR,Spotted Red  
+Javan Rusa,Trivial,Female,76.2237 kg,0 TR,Brown        
 Red Deer,Minor,Female,148.662 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,34.6722 kg,0 TR,Spotted
 Sambar,Trivial,Female,194.535 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,30.5296 kg,0 TR,Brown        
 Sambar,Trivial,Female,191.139 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,40.4714 kg,0 TR,Dark Spotted
 Fallow Deer,Trivial,Female,40.3352 kg,0 TR,Dark Spotted
-Axis Deer,Trivial,Female,33.687 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,39.1393 kg,0 TR,Spotted
 Sambar,Trivial,Female,199.576 kg,0 TR,Dusky Gradient
 Sambar,Trivial,Female,207.03 kg,0 TR,Light Brown  
@@ -79,36 +73,35 @@ Sambar,Trivial,Female,205.193 kg,0 TR,Dark Brown
 Sambar,Trivial,Female,213.605 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,29.8453 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,38.9994 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,32.8531 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,30.8467 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,38.587 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,39.8507 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,212.118 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,30.7101 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,36.5945 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,197.638 kg,0 TR,Dusky Gradient
 Fallow Deer,Trivial,Female,49.4703 kg,0 TR,Spotted Red  
 Red Deer,Trivial,Female,146.252 kg,0 TR,Brown        
 Red Deer,Minor,Female,157.33 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,42.7128 kg,0 TR,Spotted Red  
-Axis Deer,Trivial,Female,35.0634 kg,0 TR,Orange       
 Hog Deer,Trivial,Female,29.1846 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,30.9881 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,33.9131 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,74.6723 kg,0 TR,White Brown
+Javan Rusa,Trivial,Female,73.3735 kg,0 TR,Light Brown  
+Javan Rusa,Trivial,Female,72.7623 kg,0 TR,Brown        
 Red Deer,Minor,Female,154.213 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,28.9122 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,38.4099 kg,0 TR,Spotted Red  
 Hog Deer,Trivial,Female,31.4398 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,32.1482 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,74.1483 kg,0 TR,Two Tone
 Red Deer,Trivial,Female,130.547 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,37.3168 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,39.6431 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,35.8321 kg,0 TR,Spotted
 Sambar,Trivial,Female,207.859 kg,0 TR,Dark Brown   
 Red Deer,Trivial,Female,145.938 kg,0 TR,Dark Brown   
 Red Deer,Minor,Female,152.236 kg,0 TR,Brown        
 Sambar,Trivial,Female,203.226 kg,0 TR,Light Brown  
 Sambar,Trivial,Female,214.528 kg,0 TR,Light Brown  
+Javan Rusa,Trivial,Female,75.3233 kg,0 TR,Brown        
 Sambar,Trivial,Female,203.471 kg,0 TR,Brown        
 Red Deer,Trivial,Female,147.272 kg,0 TR,Gray         
 Fallow Deer,Trivial,Female,41.4843 kg,0 TR,Spotted
@@ -121,36 +114,33 @@ Red Deer,Trivial,Female,144.272 kg,0 TR,Gray
 Hog Deer,Trivial,Female,30.7402 kg,0 TR,Brown        
 Sambar,Trivial,Female,209.694 kg,0 TR,Light Brown  
 Red Deer,Minor,Female,153.531 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,34.5462 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,30.588 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,38.7389 kg,0 TR,Spotted
 Sambar,Trivial,Female,203.458 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,34.9776 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,37.9134 kg,0 TR,Spotted Red  
+Javan Rusa,Trivial,Female,78.1397 kg,0 TR,White Brown
 Sambar,Trivial,Female,200.333 kg,0 TR,Dusky Gradient
 Red Deer,Trivial,Female,127.982 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,29.1439 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,74.446 kg,0 TR,Two Tone
 Fallow Deer,Trivial,Female,36.6511 kg,0 TR,Spotted Red  
 Red Deer,Minor,Female,155.642 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,29.9065 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,35.6472 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,31.9591 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,73.1631 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,70.5665 kg,0 TR,Two Tone
 Fallow Deer,Trivial,Female,42.7928 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,30.0962 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,32.597 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,34.2899 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,31.3074 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,32.8718 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,45.3543 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,30.6535 kg,0 TR,Brown        
 Red Deer,Trivial,Female,141.197 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,33.8711 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,36.5019 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,30.4588 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,31.7054 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,43.9834 kg,0 TR,Spotted Red  
+Javan Rusa,Trivial,Female,73.4927 kg,0 TR,Two Tone
 Fallow Deer,Trivial,Female,41.1252 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,29.0342 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,73.82 kg,0 TR,Brown        
 Red Deer,Minor,Female,149.48 kg,0 TR,Gray         
 Red Deer,Minor,Female,147.6 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,29.6088 kg,0 TR,Brown        
@@ -160,36 +150,32 @@ Red Deer,Trivial,Female,145.331 kg,0 TR,Brown
 Fallow Deer,Trivial,Female,35.1599 kg,0 TR,Spotted Red  
 Hog Deer,Trivial,Female,30.2873 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,37.1919 kg,0 TR,Spotted Red  
-Axis Deer,Trivial,Female,34.7536 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,28.3128 kg,0 TR,Dark Spotted
 Red Deer,Trivial,Female,142.002 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,31.5235 kg,0 TR,Piebald      
 Hog Deer,Trivial,Female,32.0363 kg,0 TR,Brown        
 Sambar,Trivial,Female,209.903 kg,0 TR,Light Brown  
 Sambar,Trivial,Female,201.024 kg,0 TR,Light Brown  
-Axis Deer,Trivial,Female,31.4692 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,75.0398 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,36.0275 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,40.1148 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,30.9231 kg,0 TR,Orange       
-Axis Deer,Trivial,Female,32.1738 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,78.0874 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,32.5079 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,70.1608 kg,0 TR,Brown        
 Red Deer,Minor,Female,153.413 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,40.053 kg,0 TR,Spotted Red  
 Fallow Deer,Trivial,Female,36.9455 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,192.481 kg,0 TR,Brown        
 Red Deer,Trivial,Female,122.98 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,34.3839 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,30.7838 kg,0 TR,Brown        
 Sambar,Trivial,Female,206.571 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,69.2254 kg,0 TR,Brown        
 Sambar,Trivial,Female,205.649 kg,0 TR,Light Brown  
-Axis Deer,Trivial,Female,36.1484 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,29.0098 kg,0 TR,Brown        
 Sambar,Trivial,Female,203.307 kg,0 TR,Dusky Gradient
+Javan Rusa,Trivial,Female,70.2144 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,37.6918 kg,0 TR,Dark Spotted
-Axis Deer,Trivial,Female,32.9055 kg,0 TR,Spotted
 Sambar,Trivial,Female,187.666 kg,0 TR,Light Brown  
 Red Deer,Trivial,Female,144.033 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,34.9473 kg,0 TR,Orange       
 Hog Deer,Trivial,Female,30.8627 kg,0 TR,Dark Spotted
 Hog Deer,Trivial,Female,28.4926 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,29.1014 kg,0 TR,Brown        
@@ -205,17 +191,22 @@ Fallow Deer,Trivial,Female,43.1907 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,32.2701 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,42.8344 kg,0 TR,Spotted Red  
 Fallow Deer,Trivial,Female,38.8483 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,74.7717 kg,0 TR,Light Brown  
 Red Deer,Trivial,Female,146.68 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,31.2392 kg,0 TR,Brown        
 Red Deer,Minor,Female,150.468 kg,0 TR,Gray         
 Fallow Deer,Trivial,Female,40.4771 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,71.791 kg,0 TR,Brown        
 Red Deer,Trivial,Female,130.204 kg,0 TR,Gray         
+Javan Rusa,Trivial,Female,70.5412 kg,0 TR,White Brown
 Fallow Deer,Trivial,Female,38.84 kg,0 TR,Dark Spotted
+Javan Rusa,Trivial,Female,73.1354 kg,0 TR,Two Tone
 Fallow Deer,Trivial,Female,44.2619 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,203.917 kg,0 TR,Dusky Gradient
-Axis Deer,Trivial,Female,33.7496 kg,0 TR,Orange       
 Red Deer,Minor,Female,149.727 kg,0 TR,Gray         
 Sambar,Minor,Female,220.706 kg,0 TR,Dusky Gradient
+Javan Rusa,Trivial,Female,73.7392 kg,0 TR,Two Tone
+Javan Rusa,Trivial,Female,70.2458 kg,0 TR,White Brown
 Hog Deer,Trivial,Female,28.6914 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,29.4935 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,42.8172 kg,0 TR,Dark Spotted
@@ -227,64 +218,60 @@ Fallow Deer,Trivial,Female,37.8186 kg,0 TR,Dark Spotted
 Sambar,Trivial,Female,209.653 kg,0 TR,Brown        
 Red Deer,Trivial,Female,133.527 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,30.7706 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,27.6593 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,29.3999 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,26.9842 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,32.2934 kg,0 TR,Brown        
 Sambar,Trivial,Female,201.996 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,43.8875 kg,0 TR,Dark Spotted
 Red Deer,Trivial,Female,138.325 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,202.478 kg,0 TR,Dusky Gradient
 Hog Deer,Trivial,Female,28.8612 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,70.3683 kg,0 TR,Two Tone
 Fallow Deer,Trivial,Female,39.257 kg,0 TR,Spotted Red  
 Red Deer,Trivial,Female,147.253 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,45.1174 kg,0 TR,Dark Spotted
-Axis Deer,Trivial,Female,38.2764 kg,0 TR,Spotted
 Red Deer,Minor,Female,152.492 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,29.6213 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,71.569 kg,0 TR,Two Tone
 Sambar,Trivial,Female,208.569 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,33.8744 kg,0 TR,Spotted
 Red Deer,Trivial,Female,138.868 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,32.0298 kg,0 TR,Spotted
 Sambar,Trivial,Female,194.597 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,41.5199 kg,0 TR,Spotted
 Red Deer,Trivial,Female,146.998 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,29.46 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,27.1203 kg,0 TR,Brown        
 Sambar,Trivial,Female,202.169 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,33.4944 kg,0 TR,Orange       
 Sambar,Trivial,Female,198.639 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,33.5078 kg,0 TR,Orange       
 Red Deer,Minor,Female,157.101 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,30.3646 kg,0 TR,Brown        
 Red Deer,Minor,Female,151.431 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,31.0034 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,34.7138 kg,0 TR,Spotted Red  
-Axis Deer,Trivial,Female,28.6698 kg,0 TR,Spotted
 Red Deer,Trivial,Female,137.423 kg,0 TR,Brown        
 Sambar,Trivial,Female,207.862 kg,0 TR,Dark Brown   
 Red Deer,Trivial,Female,143.957 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,29.1141 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,41.5342 kg,0 TR,Dark Spotted
 Red Deer,Trivial,Female,138.82 kg,0 TR,Brown        
 Red Deer,Trivial,Female,130.695 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,40.5211 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,71.8863 kg,0 TR,Light Brown  
 Sambar,Trivial,Female,190.526 kg,0 TR,Dusky Gradient
+Javan Rusa,Trivial,Female,74.6024 kg,0 TR,Light Brown  
 Red Deer,Minor,Female,155.746 kg,0 TR,Brown        
 Sambar,Trivial,Female,205.124 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,30.2638 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,33.0001 kg,0 TR,Orange       
-Axis Deer,Trivial,Female,30.8871 kg,0 TR,Orange       
+Javan Rusa,Trivial,Female,74.3721 kg,0 TR,Two Tone
+Javan Rusa,Trivial,Female,66.9988 kg,0 TR,White Brown
 Sambar,Trivial,Female,208.224 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,39.5734 kg,0 TR,Dark Spotted
 Red Deer,Minor,Female,150.994 kg,0 TR,Dark Brown   
 Red Deer,Minor,Female,158.16 kg,0 TR,Gray         
 Fallow Deer,Trivial,Female,46.6361 kg,0 TR,Dark Spotted
 Sambar,Trivial,Female,213.337 kg,0 TR,Light Brown  
+Javan Rusa,Trivial,Female,74.3169 kg,0 TR,White Brown
 Sambar,Trivial,Female,195.562 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,42.2876 kg,0 TR,Spotted Red  
 Red Deer,Trivial,Female,146.988 kg,0 TR,Gray         
+Javan Rusa,Minor,Female,82.2606 kg,0 TR,Light Brown  
 Sambar,Trivial,Female,191.037 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,72.5359 kg,0 TR,Brown        
 Red Deer,Trivial,Female,138.076 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,208.081 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,200.594 kg,0 TR,Light Brown  
@@ -293,25 +280,23 @@ Fallow Deer,Trivial,Female,43.9217 kg,0 TR,Dark Spotted
 Sambar,Trivial,Female,202.506 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,39.4192 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,30.6599 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,34.6762 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,29.0233 kg,0 TR,Spotted
 Red Deer,Trivial,Female,143.732 kg,0 TR,Gray         
 Red Deer,Trivial,Female,144.709 kg,0 TR,Gray         
+Javan Rusa,Trivial,Female,74.3874 kg,0 TR,Two Tone
 Sambar,Trivial,Female,204.537 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,39.7869 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,29.7025 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,27.4125 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,43.3383 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,29.6164 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,73.0805 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,35.9693 kg,0 TR,Spotted Red  
 Fallow Deer,Trivial,Female,39.7409 kg,0 TR,Spotted Red  
 Red Deer,Trivial,Female,140.268 kg,0 TR,Gray         
+Javan Rusa,Trivial,Female,76.713 kg,0 TR,White Brown
 Hog Deer,Trivial,Female,31.5826 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,36.746 kg,0 TR,Spotted Red  
 Hog Deer,Trivial,Female,31.4828 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,29.6385 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,40.4005 kg,0 TR,Spotted Red  
-Axis Deer,Trivial,Female,32.693 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,30.6621 kg,0 TR,Brown        
 Red Deer,Minor,Female,153.977 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,32.3773 kg,0 TR,Brown        
@@ -321,83 +306,81 @@ Red Deer,Trivial,Female,138.724 kg,0 TR,Brown
 Fallow Deer,Trivial,Female,39.3957 kg,0 TR,Spotted
 Red Deer,Trivial,Female,144.585 kg,0 TR,Gray         
 Sambar,Trivial,Female,193.99 kg,0 TR,Light Brown  
-Axis Deer,Trivial,Female,32.1297 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,71.1703 kg,0 TR,Two Tone
+Javan Rusa,Trivial,Female,77.9778 kg,0 TR,Brown        
 Red Deer,Trivial,Female,136.714 kg,0 TR,Brown        
 Sambar,Trivial,Female,195.889 kg,0 TR,Brown        
 Sambar,Trivial,Female,210.434 kg,0 TR,Light Brown  
+Javan Rusa,Trivial,Female,72.0855 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,42.4536 kg,0 TR,Dark Spotted
 Sambar,Trivial,Female,192.298 kg,0 TR,Brown        
 Red Deer,Trivial,Female,145.227 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,31.241 kg,0 TR,Brown        
 Sambar,Trivial,Female,197.098 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,34.8275 kg,0 TR,Spotted Red  
-Axis Deer,Trivial,Female,31.7559 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,28.3018 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,35.3797 kg,0 TR,Spotted
 Sambar,Trivial,Female,199.841 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,48.3016 kg,0 TR,Spotted
 Red Deer,Trivial,Female,141.43 kg,0 TR,Brown        
 Sambar,Trivial,Female,204.655 kg,0 TR,Brown        
 Sambar,Trivial,Female,190.158 kg,0 TR,Light Brown  
 Red Deer,Minor,Female,151.531 kg,0 TR,Gray         
+Javan Rusa,Trivial,Female,72.9783 kg,0 TR,White Brown
 Hog Deer,Trivial,Female,29.6514 kg,0 TR,Dark Spotted
 Red Deer,Minor,Female,152.409 kg,0 TR,Gray         
 Red Deer,Minor,Female,148.123 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,32.7607 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,67.5375 kg,0 TR,Two Tone
 Hog Deer,Trivial,Female,28.3988 kg,0 TR,Brown        
 Red Deer,Trivial,Female,134.048 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,32.7066 kg,0 TR,Orange       
 Red Deer,Trivial,Female,145.662 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,36.1726 kg,0 TR,Spotted
 Red Deer,Minor,Female,152.034 kg,0 TR,Dark Brown   
+Javan Rusa,Trivial,Female,77.6712 kg,0 TR,Light Brown  
 Sambar,Trivial,Female,201.83 kg,0 TR,Light Brown  
 Red Deer,Trivial,Female,142.518 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,34.5878 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,71.8994 kg,0 TR,White Brown
+Javan Rusa,Trivial,Female,72.8033 kg,0 TR,Light Brown  
+Javan Rusa,Trivial,Female,75.9197 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,76.5317 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,72.6762 kg,0 TR,Two Tone
 Fallow Deer,Trivial,Female,37.3336 kg,0 TR,Spotted Red  
 Hog Deer,Trivial,Female,30.3426 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,40.6692 kg,0 TR,Dark Spotted
+Javan Rusa,Trivial,Female,74.1624 kg,0 TR,Brown        
 Red Deer,Trivial,Female,143.473 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,27.1158 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,39.5212 kg,0 TR,Spotted Red  
 Fallow Deer,Trivial,Female,40.5219 kg,0 TR,Spotted Red  
 Red Deer,Minor,Female,157.607 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,199.178 kg,0 TR,Dusky Gradient
 Fallow Deer,Trivial,Female,38.9346 kg,0 TR,Dark Spotted
 Sambar,Trivial,Female,190.452 kg,0 TR,Dark Brown   
+Javan Rusa,Trivial,Female,72.8837 kg,0 TR,White Brown
 Fallow Deer,Trivial,Female,39.4106 kg,0 TR,Dark Spotted
+Javan Rusa,Trivial,Female,73.3659 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,39.3475 kg,0 TR,Dark Spotted
 Sambar,Trivial,Female,197.04 kg,0 TR,Dusky Gradient
 Hog Deer,Trivial,Female,28.538 kg,0 TR,Brown        
 Red Deer,Trivial,Female,143.036 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,34.1412 kg,0 TR,Spotted
 Red Deer,Minor,Female,147.721 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,29.4883 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,35.7048 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,75.9838 kg,0 TR,White Brown
 Sambar,Trivial,Female,193.739 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,43.9744 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,214.871 kg,0 TR,Leucistic    
-Axis Deer,Trivial,Female,28.9685 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,32.9064 kg,0 TR,Orange       
 Fallow Deer,Trivial,Female,39.8004 kg,0 TR,Dark Spotted
 Hog Deer,Trivial,Female,29.3812 kg,0 TR,Brown        
 Sambar,Trivial,Female,209.728 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,30.3174 kg,0 TR,Brown        
 Sambar,Trivial,Female,201.818 kg,0 TR,Dusky Gradient
 Red Deer,Trivial,Female,137.811 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,36.4107 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,36.2638 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,35.1006 kg,0 TR,Dark Spotted
 Fallow Deer,Trivial,Female,39.7793 kg,0 TR,Spotted Red  
 Hog Deer,Trivial,Female,31.8146 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,32.0138 kg,0 TR,Spotted
 Red Deer,Trivial,Female,136.962 kg,0 TR,Gray         
 Fallow Deer,Trivial,Female,31.315 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,34.2368 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,34.5353 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,32.1081 kg,0 TR,Brown        
 Sambar,Trivial,Female,210.112 kg,0 TR,Dark Brown   
+Javan Rusa,Trivial,Female,80.2108 kg,0 TR,Two Tone
 Red Deer,Trivial,Female,140.247 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,30.3488 kg,0 TR,Spotted
 Red Deer,Trivial,Female,145.926 kg,0 TR,Gray         
 Sambar,Trivial,Female,205.825 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,31.3682 kg,0 TR,Brown        
@@ -408,19 +391,16 @@ Sambar,Trivial,Female,191.819 kg,0 TR,Dark Brown
 Red Deer,Minor,Female,148.656 kg,0 TR,Gray         
 Fallow Deer,Trivial,Female,34.8379 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,41.5662 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,30.4508 kg,0 TR,Spotted
 Red Deer,Trivial,Female,136.414 kg,0 TR,Gray         
 Red Deer,Trivial,Female,144.565 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,34.3562 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,33.2724 kg,0 TR,Spotted
 Red Deer,Trivial,Female,140.456 kg,0 TR,Gray         
 Fallow Deer,Trivial,Female,39.9863 kg,0 TR,Spotted Red  
+Javan Rusa,Trivial,Female,68.725 kg,0 TR,Two Tone
 Sambar,Trivial,Female,202.503 kg,0 TR,Dusky Gradient
 Fallow Deer,Trivial,Female,43.2226 kg,0 TR,Spotted
 Red Deer,Trivial,Female,137.354 kg,0 TR,Gray         
 Fallow Deer,Trivial,Female,41.2456 kg,0 TR,Spotted Red  
 Fallow Deer,Trivial,Female,41.2737 kg,0 TR,Spotted Red  
-Axis Deer,Trivial,Female,32.5961 kg,0 TR,Spotted
 Sambar,Trivial,Female,209.056 kg,0 TR,Dark Brown   
 Red Deer,Trivial,Female,139.861 kg,0 TR,Gray         
 Fallow Deer,Trivial,Female,40.6862 kg,0 TR,Spotted Red  
@@ -429,31 +409,29 @@ Sambar,Trivial,Female,204.692 kg,0 TR,Light Brown
 Red Deer,Minor,Female,148.274 kg,0 TR,Dark Brown   
 Red Deer,Minor,Female,147.676 kg,0 TR,Gray         
 Red Deer,Trivial,Female,146.09 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,31.8409 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,76.9931 kg,0 TR,Light Brown  
 Red Deer,Minor,Female,152.475 kg,0 TR,Gray         
 Red Deer,Trivial,Female,139.657 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,27.019 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,35.3542 kg,0 TR,Spotted
 Red Deer,Minor,Female,149.435 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,32.4825 kg,0 TR,Spotted
 Red Deer,Minor,Female,150.477 kg,0 TR,Brown        
 Red Deer,Trivial,Female,142.626 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,38.3421 kg,0 TR,Spotted Red  
 Fallow Deer,Trivial,Female,45.2567 kg,0 TR,Spotted Red  
 Hog Deer,Trivial,Female,30.5682 kg,0 TR,Dark Spotted
+Javan Rusa,Trivial,Female,70.5029 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,42.2008 kg,0 TR,Dark Spotted
 Red Deer,Trivial,Female,141.395 kg,0 TR,Gray         
 Fallow Deer,Trivial,Female,38.5952 kg,0 TR,Dark Spotted
 Red Deer,Trivial,Female,146.381 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,30.7891 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,34.3135 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,43.9501 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,75.2515 kg,0 TR,Two Tone
 Sambar,Trivial,Female,199.484 kg,0 TR,Light Brown  
 Red Deer,Minor,Female,152.051 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,30.8104 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,33.7945 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,33.7519 kg,0 TR,Spotted
 Red Deer,Trivial,Female,138.638 kg,0 TR,Gray         
+Javan Rusa,Trivial,Female,79.6903 kg,0 TR,White Brown
 Red Deer,Trivial,Female,136.517 kg,0 TR,Gray         
 Red Deer,Trivial,Female,145.487 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,198.566 kg,0 TR,Light Brown  
@@ -461,7 +439,6 @@ Hog Deer,Trivial,Female,29.3172 kg,0 TR,Brown
 Hog Deer,Trivial,Female,26.623 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,44.3831 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,193.82 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,39.2204 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,37.071 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,203.657 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,39.2009 kg,0 TR,Spotted Red  
@@ -477,16 +454,17 @@ Fallow Deer,Trivial,Female,46.244 kg,0 TR,Dark Spotted
 Hog Deer,Trivial,Female,30.4513 kg,0 TR,Brown        
 Sambar,Trivial,Female,196.484 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,208.068 kg,0 TR,Dusky Gradient
+Javan Rusa,Trivial,Female,74.204 kg,0 TR,White Brown
 Fallow Deer,Trivial,Female,37.3086 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,206.707 kg,0 TR,Dusky Gradient
-Axis Deer,Trivial,Female,31.8211 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,74.6236 kg,0 TR,Two Tone
 Hog Deer,Trivial,Female,28.9757 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,41.6423 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,29.1977 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,41.1534 kg,0 TR,Spotted Red  
+Javan Rusa,Trivial,Female,74.4584 kg,0 TR,Brown        
 Red Deer,Trivial,Female,132.493 kg,0 TR,Dark Brown   
 Red Deer,Minor,Female,153.271 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,38.5788 kg,0 TR,Orange       
 Fallow Deer,Trivial,Female,40.2532 kg,0 TR,Spotted
 Red Deer,Minor,Female,153.677 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,28.7997 kg,0 TR,Brown        
@@ -497,21 +475,26 @@ Red Deer,Trivial,Female,146.621 kg,0 TR,Brown
 Fallow Deer,Trivial,Female,37.5093 kg,0 TR,Dark Spotted
 Red Deer,Minor,Female,152.785 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,214.199 kg,0 TR,Dusky Gradient
+Javan Rusa,Trivial,Female,74.0758 kg,0 TR,White Brown
 Sambar,Trivial,Female,209.848 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,196.57 kg,0 TR,Brown        
 Sambar,Trivial,Female,196.044 kg,0 TR,Dusky Gradient
 Fallow Deer,Trivial,Female,44.5681 kg,0 TR,Spotted Red  
+Javan Rusa,Trivial,Female,76.5235 kg,0 TR,Brown        
 Red Deer,Trivial,Female,143.244 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,207.128 kg,0 TR,Dusky Gradient
 Red Deer,Trivial,Female,146.781 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,207.391 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,72.6184 kg,0 TR,Two Tone
 Red Deer,Trivial,Female,142.013 kg,0 TR,Gray         
 Sambar,Trivial,Female,206.114 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,203.678 kg,0 TR,Dusky Gradient
+Javan Rusa,Trivial,Female,71.5353 kg,0 TR,Two Tone
 Red Deer,Trivial,Female,140.394 kg,0 TR,Dark Brown   
 Red Deer,Trivial,Female,140.615 kg,0 TR,Dark Brown   
 Red Deer,Minor,Female,148.581 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,32.0723 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,69.6818 kg,0 TR,White Brown
 Hog Deer,Trivial,Female,27.4594 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,45.6085 kg,0 TR,Spotted Red  
 Red Deer,Trivial,Female,135.011 kg,0 TR,Gray         
@@ -520,7 +503,7 @@ Fallow Deer,Trivial,Female,39.3988 kg,0 TR,Spotted
 Red Deer,Trivial,Female,147.018 kg,0 TR,Brown        
 Sambar,Trivial,Female,205.092 kg,0 TR,Dark Brown   
 Red Deer,Minor,Female,150.538 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,34.3663 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,69.1095 kg,0 TR,Light Brown  
 Hog Deer,Trivial,Female,26.2146 kg,0 TR,Brown        
 Sambar,Trivial,Female,207.906 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,49.4706 kg,0 TR,Spotted
@@ -534,6 +517,7 @@ Sambar,Minor,Female,217.234 kg,0 TR,Brown
 Red Deer,Trivial,Female,140.044 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,30.2497 kg,0 TR,Brown        
 Sambar,Trivial,Female,195.667 kg,0 TR,Brown        
+Javan Rusa,Minor,Female,83.5118 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,37.6688 kg,0 TR,Spotted Red  
 Hog Deer,Trivial,Female,31.1442 kg,0 TR,Brown        
 Sambar,Trivial,Female,209.061 kg,0 TR,Light Brown  
@@ -541,10 +525,12 @@ Fallow Deer,Trivial,Female,44.657 kg,0 TR,Spotted Red
 Sambar,Trivial,Female,211.813 kg,0 TR,Light Brown  
 Sambar,Trivial,Female,204.372 kg,0 TR,Brown        
 Red Deer,Very Easy,Female,169.807 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,76.5873 kg,0 TR,Brown        
 Sambar,Minor,Female,216.369 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,29.8892 kg,0 TR,Brown        
 Sambar,Trivial,Female,204.524 kg,0 TR,Brown        
 Red Deer,Trivial,Female,137.877 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,76.4538 kg,0 TR,White Brown
 Red Deer,Trivial,Female,146.447 kg,0 TR,Dark Brown   
 Red Deer,Trivial,Female,129.545 kg,0 TR,Gray         
 Red Deer,Minor,Female,152.53 kg,0 TR,Brown        
@@ -554,8 +540,6 @@ Fallow Deer,Trivial,Female,37.9015 kg,0 TR,Spotted Red
 Hog Deer,Trivial,Female,29.4902 kg,0 TR,Brown        
 Red Deer,Minor,Female,155.788 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,37.0658 kg,0 TR,Spotted Red  
-Axis Deer,Trivial,Female,28.8409 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,31.9692 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,28.4129 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,30.0568 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,32.6493 kg,0 TR,Brown        
@@ -564,16 +548,14 @@ Fallow Deer,Trivial,Female,35.728 kg,0 TR,Spotted Red
 Red Deer,Trivial,Female,146.902 kg,0 TR,Brown        
 Sambar,Trivial,Female,202.715 kg,0 TR,Light Brown  
 Red Deer,Minor,Female,151.151 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,75.011 kg,0 TR,Brown        
 Red Deer,Trivial,Female,134.567 kg,0 TR,Gray         
 Sambar,Trivial,Female,201.937 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,33.5411 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,34.3831 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,75.0633 kg,0 TR,Light Brown  
+Javan Rusa,Trivial,Female,70.8344 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,38.8778 kg,0 TR,Dark Spotted
 Red Deer,Minor,Female,154.788 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,32.729 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,35.5617 kg,0 TR,Spotted
 Red Deer,Trivial,Female,132.877 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,38.5367 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,27.3037 kg,0 TR,Brown        
 Red Deer,Trivial,Female,143.945 kg,0 TR,Gray         
 Red Deer,Trivial,Female,147.057 kg,0 TR,Brown        
@@ -586,37 +568,36 @@ Fallow Deer,Trivial,Female,35.739 kg,0 TR,Dark Spotted
 Hog Deer,Trivial,Female,28.1124 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,40.8864 kg,0 TR,Dark Spotted
 Hog Deer,Trivial,Female,31.1681 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,34.8347 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,76.0384 kg,0 TR,Light Brown  
 Red Deer,Trivial,Female,146.737 kg,0 TR,Gray         
 Sambar,Trivial,Female,194.995 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,32.4082 kg,0 TR,Brown        
 Sambar,Trivial,Female,211.377 kg,0 TR,Dusky Gradient
 Red Deer,Minor,Female,151.057 kg,0 TR,Dark Brown   
+Javan Rusa,Trivial,Female,75.9728 kg,0 TR,Light Brown  
 Sambar,Trivial,Female,207.334 kg,0 TR,Dark Brown   
 Red Deer,Minor,Female,149.039 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,34.5801 kg,0 TR,Dark Spotted
+Javan Rusa,Trivial,Female,69.7348 kg,0 TR,Light Brown  
 Sambar,Trivial,Female,205.206 kg,0 TR,Dusky Gradient
-Axis Deer,Trivial,Female,36.2621 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,39.6475 kg,0 TR,Spotted Red  
 Hog Deer,Trivial,Female,32.4747 kg,0 TR,Dark Spotted
 Fallow Deer,Trivial,Female,40.2228 kg,0 TR,Spotted
 Red Deer,Trivial,Female,135.826 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,36.8176 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,34.7539 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,33.9333 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,34.6901 kg,0 TR,Orange       
 Red Deer,Trivial,Female,145.402 kg,0 TR,Brown        
 Sambar,Trivial,Female,203.729 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,37.4243 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,79.9865 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,43.6537 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,32.4724 kg,0 TR,Spotted
 Sambar,Trivial,Female,201.647 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,32.6358 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,71.8367 kg,0 TR,Light Brown  
 Red Deer,Trivial,Female,145.357 kg,0 TR,Brown        
 Red Deer,Trivial,Female,141.599 kg,0 TR,Gray         
 Fallow Deer,Trivial,Female,40.014 kg,0 TR,Spotted Red  
 Fallow Deer,Trivial,Female,37.4931 kg,0 TR,Spotted Red  
-Axis Deer,Trivial,Female,35.1609 kg,0 TR,Spotted
+Javan Rusa,Minor,Female,81.912 kg,0 TR,Light Brown  
+Javan Rusa,Trivial,Female,74.6617 kg,0 TR,Light Brown  
 Sambar,Minor,Female,217.575 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,27.4021 kg,0 TR,Brown        
 Red Deer,Trivial,Female,140.389 kg,0 TR,Brown        
@@ -625,16 +606,15 @@ Red Deer,Trivial,Female,141.333 kg,0 TR,Brown
 Hog Deer,Trivial,Female,30.5165 kg,0 TR,Spotted
 Red Deer,Minor,Female,148.353 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,194.77 kg,0 TR,Light Brown  
-Axis Deer,Trivial,Female,29.8302 kg,0 TR,Spotted
 Sambar,Trivial,Female,200.701 kg,0 TR,Dusky Gradient
 Sambar,Trivial,Female,198.495 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,36.1279 kg,0 TR,Dark Spotted
-Axis Deer,Trivial,Female,31.2289 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,30.1466 kg,0 TR,Brown        
 Red Deer,Trivial,Female,147.274 kg,0 TR,Gray         
 Red Deer,Trivial,Female,140.663 kg,0 TR,Dark Brown   
 Sambar,Minor,Female,216.446 kg,0 TR,Dusky Gradient
 Hog Deer,Trivial,Female,30.5607 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,71.0608 kg,0 TR,Light Brown  
 Red Deer,Trivial,Female,143.27 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,30.912 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,31.4332 kg,0 TR,Brown        
@@ -647,11 +627,10 @@ Sambar,Trivial,Female,209.18 kg,0 TR,Dusky Gradient
 Fallow Deer,Trivial,Female,44.4825 kg,0 TR,Dark Spotted
 Sambar,Minor,Female,219.936 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,26.9682 kg,0 TR,Dark Spotted
-Axis Deer,Trivial,Female,34.5508 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,71.7169 kg,0 TR,Two Tone
 Sambar,Trivial,Female,213.486 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,30.3943 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,30.4854 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,33.5002 kg,0 TR,Orange       
 Red Deer,Trivial,Female,134.437 kg,0 TR,Gray         
 Sambar,Trivial,Female,201.26 kg,0 TR,Dusky Gradient
 Hog Deer,Trivial,Female,31.5392 kg,0 TR,Brown        
@@ -660,13 +639,13 @@ Sambar,Trivial,Female,209.984 kg,0 TR,Dusky Gradient
 Red Deer,Minor,Female,148.369 kg,0 TR,Brown        
 Sambar,Trivial,Female,207.334 kg,0 TR,Dusky Gradient
 Sambar,Trivial,Female,203.235 kg,0 TR,Dusky Gradient
-Axis Deer,Trivial,Female,34.5575 kg,0 TR,Orange       
 Hog Deer,Trivial,Female,31.9892 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,28.5172 kg,0 TR,Brown        
 Red Deer,Trivial,Female,144.86 kg,0 TR,Dark Brown   
 Sambar,Minor,Female,223.081 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,32.6309 kg,0 TR,Brown        
 Sambar,Trivial,Female,209.698 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,73.1182 kg,0 TR,Two Tone
 Red Deer,Minor,Female,162.665 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,41.2294 kg,0 TR,Spotted Red  
 Fallow Deer,Trivial,Female,44.258 kg,0 TR,Dark Spotted
@@ -675,11 +654,11 @@ Sambar,Trivial,Female,202.766 kg,0 TR,Brown
 Fallow Deer,Trivial,Female,41.418 kg,0 TR,Dark Spotted
 Sambar,Trivial,Female,198.556 kg,0 TR,Light Brown  
 Red Deer,Trivial,Female,130.255 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,32.0047 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,69.0181 kg,0 TR,White Brown
 Sambar,Trivial,Female,212.004 kg,0 TR,Dusky Gradient
+Javan Rusa,Trivial,Female,72.0481 kg,0 TR,Two Tone
 Red Deer,Trivial,Female,143.407 kg,0 TR,Brown        
 Sambar,Minor,Female,221.663 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,30.0515 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,28.4633 kg,0 TR,Brown        
 Sambar,Minor,Female,215.915 kg,0 TR,Dusky Gradient
 Sambar,Trivial,Female,180.384 kg,0 TR,Brown        
@@ -688,49 +667,46 @@ Fallow Deer,Trivial,Female,43.1876 kg,0 TR,Spotted Red
 Sambar,Minor,Female,215.152 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,48.2371 kg,0 TR,Spotted
 Sambar,Minor,Female,219.322 kg,0 TR,Dusky Gradient
-Axis Deer,Trivial,Female,34.4638 kg,0 TR,Orange       
 Hog Deer,Trivial,Female,28.7703 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,29.2619 kg,0 TR,Orange       
-Axis Deer,Trivial,Female,34.0586 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,36.408 kg,0 TR,Spotted
 Sambar,Trivial,Female,209.738 kg,0 TR,Light Brown  
 Red Deer,Minor,Female,148.495 kg,0 TR,Gray         
 Sambar,Trivial,Female,202.419 kg,0 TR,Light Brown  
 Red Deer,Trivial,Female,140 kg,0 TR,Gray         
-Axis Deer,Trivial,Female,32.4611 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,30.5049 kg,0 TR,Spotted
 Red Deer,Trivial,Female,136.679 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,40.0975 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,76.9314 kg,0 TR,Light Brown  
+Javan Rusa,Trivial,Female,69.5786 kg,0 TR,Two Tone
 Sambar,Trivial,Female,191.221 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,35.6973 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,71.7129 kg,0 TR,Two Tone
 Hog Deer,Trivial,Female,29.5589 kg,0 TR,Brown        
 Red Deer,Trivial,Female,144.05 kg,0 TR,Dark Brown   
 Red Deer,Minor,Female,150.325 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,30.7654 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,36.881 kg,0 TR,Spotted Red  
 Fallow Deer,Trivial,Female,37.1208 kg,0 TR,Dark Spotted
+Javan Rusa,Trivial,Female,75.9829 kg,0 TR,Two Tone
 Red Deer,Trivial,Female,137.913 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,31.6964 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,38.7499 kg,0 TR,Spotted
 Sambar,Trivial,Female,209.219 kg,0 TR,Dark Brown   
 Red Deer,Minor,Female,159.302 kg,0 TR,Dark Brown   
+Javan Rusa,Trivial,Female,69.4339 kg,0 TR,Two Tone
 Red Deer,Minor,Female,154.882 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,43.7312 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,199.533 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,29.6386 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,34.8976 kg,0 TR,Spotted
 Sambar,Trivial,Female,205.623 kg,0 TR,Dark Brown   
+Javan Rusa,Trivial,Female,73.1541 kg,0 TR,White Brown
 Fallow Deer,Trivial,Female,41.2082 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,34.0821 kg,0 TR,Spotted
 Sambar,Trivial,Female,210.214 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,30.1013 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,40.7931 kg,0 TR,Spotted Red  
 Red Deer,Minor,Female,155.176 kg,0 TR,Brown        
 Sambar,Trivial,Female,207.189 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,32.9497 kg,0 TR,Spotted
 Sambar,Trivial,Female,210.772 kg,0 TR,Brown        
 Red Deer,Trivial,Female,135.721 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,39.3353 kg,0 TR,Dark Spotted
+Javan Rusa,Trivial,Female,74.6455 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,37.0742 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,200.952 kg,0 TR,Dusky Gradient
 Red Deer,Trivial,Female,130.785 kg,0 TR,Brown        
@@ -738,39 +714,43 @@ Hog Deer,Trivial,Female,30.8995 kg,0 TR,Brown
 Sambar,Trivial,Female,210.755 kg,0 TR,Dusky Gradient
 Red Deer,Trivial,Female,145.491 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,38.6144 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,73.8813 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,43.3365 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,39.1293 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,72.0843 kg,0 TR,White Brown
 Sambar,Trivial,Female,205.773 kg,0 TR,Light Brown  
 Sambar,Trivial,Female,196.274 kg,0 TR,Dusky Gradient
-Axis Deer,Trivial,Female,29.4334 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,33.37 kg,0 TR,Spotted
 Red Deer,Trivial,Female,143.152 kg,0 TR,Brown        
 Sambar,Trivial,Female,206.999 kg,0 TR,Dark Brown   
 Fallow Deer,Trivial,Female,37.7747 kg,0 TR,Spotted Red  
 Hog Deer,Trivial,Female,32.4798 kg,0 TR,Brown        
 Sambar,Trivial,Female,209.209 kg,0 TR,Dusky Gradient
 Fallow Deer,Trivial,Female,41.0948 kg,0 TR,Spotted Red  
-Axis Deer,Trivial,Female,34.4033 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,73.1624 kg,0 TR,Light Brown  
 Sambar,Trivial,Female,193.339 kg,0 TR,Light Brown  
+Javan Rusa,Trivial,Female,73.8424 kg,0 TR,White Brown
 Hog Deer,Trivial,Female,30.1586 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,37.3951 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,80.673 kg,0 TR,Leucistic    
 Red Deer,Trivial,Female,131.593 kg,0 TR,Brown        
 Sambar,Trivial,Female,211.3 kg,0 TR,Dark Brown   
+Javan Rusa,Trivial,Female,72.7665 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,43.6126 kg,0 TR,Spotted Red  
 Fallow Deer,Trivial,Female,38.9554 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,35.846 kg,0 TR,Orange       
 Hog Deer,Trivial,Female,30.5455 kg,0 TR,Leucistic    
 Fallow Deer,Trivial,Female,35.5278 kg,0 TR,Spotted
 Sambar,Trivial,Female,203.558 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,30.1792 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,37.543 kg,0 TR,Spotted
 Red Deer,Trivial,Female,146.264 kg,0 TR,Gray         
 Fallow Deer,Trivial,Female,36.8239 kg,0 TR,Spotted Red  
+Javan Rusa,Trivial,Female,68.0181 kg,0 TR,Two Tone
 Hog Deer,Trivial,Female,30.0207 kg,0 TR,Brown        
 Red Deer,Trivial,Female,137.765 kg,0 TR,Gray         
 Red Deer,Trivial,Female,136.568 kg,0 TR,Dark Brown   
 Red Deer,Minor,Female,147.798 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,71.9281 kg,0 TR,Brown        
 Red Deer,Minor,Female,157.413 kg,0 TR,Gray         
+Javan Rusa,Trivial,Female,76.067 kg,0 TR,Light Brown  
 Red Deer,Trivial,Female,146.408 kg,0 TR,Brown        
 Red Deer,Minor,Female,147.582 kg,0 TR,Dark Brown   
 Hog Deer,Trivial,Female,30.5342 kg,0 TR,Brown        
@@ -783,22 +763,21 @@ Sambar,Trivial,Female,195.756 kg,0 TR,Dark Brown
 Hog Deer,Trivial,Female,29.2034 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,32.5394 kg,0 TR,Brown        
 Sambar,Trivial,Female,209.743 kg,0 TR,Dusky Gradient
-Axis Deer,Trivial,Female,31.2248 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,42.8846 kg,0 TR,Spotted Red  
-Axis Deer,Trivial,Female,33.8554 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,32.7952 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,76.4185 kg,0 TR,White Brown
 Hog Deer,Trivial,Female,32.0263 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,42.2514 kg,0 TR,Spotted Red  
-Axis Deer,Trivial,Female,30.4364 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,76.7092 kg,0 TR,Light Brown  
+Javan Rusa,Trivial,Female,69.5375 kg,0 TR,Brown        
 Red Deer,Trivial,Female,139.622 kg,0 TR,Brown        
 Sambar,Trivial,Female,191.91 kg,0 TR,Dusky Gradient
 Fallow Deer,Trivial,Female,48.6345 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,29.5119 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,34.5314 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,28.8764 kg,0 TR,Brown        
 Red Deer,Minor,Female,156.241 kg,0 TR,Brown        
 Red Deer,Trivial,Female,140.351 kg,0 TR,Brown        
 Red Deer,Minor,Female,149.421 kg,0 TR,Dark Brown   
+Javan Rusa,Trivial,Female,72.7155 kg,0 TR,Two Tone
 Sambar,Trivial,Female,193.904 kg,0 TR,Dusky Gradient
 Sambar,Trivial,Female,192.476 kg,0 TR,Light Brown  
 Fallow Deer,Trivial,Female,35.3367 kg,0 TR,Spotted
@@ -806,21 +785,23 @@ Sambar,Trivial,Female,214.572 kg,0 TR,Dusky Gradient
 Fallow Deer,Trivial,Female,39.4681 kg,0 TR,Spotted
 Red Deer,Trivial,Female,141.769 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,28.8642 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,70.4247 kg,0 TR,White Brown
 Fallow Deer,Trivial,Female,42.9492 kg,0 TR,Spotted Red  
 Fallow Deer,Trivial,Female,40.5032 kg,0 TR,Spotted Red  
-Axis Deer,Trivial,Female,29.6004 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,79.4503 kg,0 TR,Two Tone
+Javan Rusa,Trivial,Female,78.0782 kg,0 TR,White Brown
 Red Deer,Minor,Female,150.194 kg,0 TR,Dark Brown   
 Red Deer,Trivial,Female,127.188 kg,0 TR,Brown        
 Sambar,Trivial,Female,195.648 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,33.4574 kg,0 TR,Spotted
-Axis Deer,Trivial,Female,38.152 kg,0 TR,Spotted
 Red Deer,Minor,Female,160.2 kg,0 TR,Gray         
 Hog Deer,Trivial,Female,27.7792 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,80.782 kg,0 TR,Brown        
 Red Deer,Trivial,Female,144.901 kg,0 TR,Gray         
 Fallow Deer,Trivial,Female,39.6541 kg,0 TR,Spotted Red  
 Fallow Deer,Trivial,Female,36.4984 kg,0 TR,Spotted
 Fallow Deer,Trivial,Female,36.5369 kg,0 TR,Dark Spotted
 Red Deer,Trivial,Female,140.521 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,74.6711 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,43.2925 kg,0 TR,Spotted
 Red Deer,Trivial,Female,132.464 kg,0 TR,Gray         
 Red Deer,Minor,Female,148.803 kg,0 TR,Dark Brown   
@@ -833,279 +814,329 @@ Hog Deer,Trivial,Female,28.1063 kg,0 TR,Brown
 Fallow Deer,Trivial,Female,38.869 kg,0 TR,Spotted Red  
 Sambar,Trivial,Female,206.859 kg,0 TR,Dusky Gradient
 Fallow Deer,Trivial,Female,39.9816 kg,0 TR,Dark Spotted
+Javan Rusa,Trivial,Female,75.1149 kg,0 TR,Two Tone
+Javan Rusa,Trivial,Female,75.132 kg,0 TR,Two Tone
 Hog Deer,Trivial,Female,29.6689 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,30.3893 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,34.8875 kg,0 TR,Spotted
 Hog Deer,Trivial,Female,31.2007 kg,0 TR,Dark Spotted
+Javan Rusa,Trivial,Female,76.6237 kg,0 TR,White Brown
 Hog Deer,Trivial,Female,28.0641 kg,0 TR,Brown        
 Sambar,Trivial,Female,204.728 kg,0 TR,Dusky Gradient
 Fallow Deer,Trivial,Female,41.929 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,72.2096 kg,0 TR,Two Tone
 Hog Deer,Trivial,Female,30.7198 kg,0 TR,Brown        
 Red Deer,Trivial,Female,144.665 kg,0 TR,Dark Brown   
 Red Deer,Trivial,Female,145.647 kg,0 TR,Brown        
 Hog Deer,Trivial,Female,28.4248 kg,0 TR,Brown        
-Axis Deer,Trivial,Female,35.4296 kg,0 TR,Spotted
 Red Deer,Trivial,Female,143.751 kg,0 TR,Brown        
 Fallow Deer,Trivial,Female,43.7321 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,78.1753 kg,0 TR,Light Brown  
 Hog Deer,Trivial,Female,30.1687 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,71.4034 kg,0 TR,Two Tone
+Javan Rusa,Trivial,Female,75.8236 kg,0 TR,White Brown
 Hog Deer,Trivial,Female,29.0877 kg,0 TR,Brown        
+Javan Rusa,Trivial,Female,73.7097 kg,0 TR,White Brown
 Red Deer,Trivial,Female,147.234 kg,0 TR,Gray         
 Red Deer,Trivial,Female,145.119 kg,0 TR,Gray         
 Sambar,Trivial,Female,204.665 kg,0 TR,Dark Brown   
-Axis Deer,Trivial,Female,34.1803 kg,0 TR,Spotted
+Javan Rusa,Trivial,Female,73.6592 kg,0 TR,White Brown
 Sambar,Trivial,Female,208.995 kg,0 TR,Dark Brown   
 Sambar,Trivial,Female,203.98 kg,0 TR,Light Brown  
 Red Deer,Trivial,Female,138.1 kg,0 TR,Gray         
 Sambar,Trivial,Female,203.756 kg,0 TR,Dusky Gradient
-Javan Rusa,Medium,Female,11952 kg,1.1952 TR,White Brown
-Javan Rusa,Medium,Female,11953 kg,1.1953 TR,White Brown
-Javan Rusa,Medium,Female,11954 kg,1.1954 TR,White Brown
-Javan Rusa,Medium,Female,11955 kg,1.1955 TR,White Brown
-Javan Rusa,Medium,Female,11956 kg,1.1956 TR,White Brown
-Javan Rusa,Medium,Female,11957 kg,1.1957 TR,White Brown
-Javan Rusa,Medium,Female,11958 kg,1.1958 TR,White Brown
-Javan Rusa,Medium,Female,11959 kg,1.1959 TR,White Brown
-Javan Rusa,Medium,Female,11960 kg,1.196 TR,White Brown
-Javan Rusa,Medium,Female,11961 kg,1.1961 TR,White Brown
-Javan Rusa,Medium,Female,11962 kg,1.1962 TR,White Brown
-Javan Rusa,Medium,Female,11963 kg,1.1963 TR,White Brown
-Javan Rusa,Medium,Female,11964 kg,1.1964 TR,White Brown
-Javan Rusa,Medium,Female,11965 kg,1.1965 TR,White Brown
-Javan Rusa,Medium,Female,11966 kg,1.1966 TR,White Brown
-Javan Rusa,Medium,Female,11967 kg,1.1967 TR,White Brown
-Javan Rusa,Medium,Female,11968 kg,1.1968 TR,White Brown
-Javan Rusa,Medium,Female,11969 kg,1.1969 TR,White Brown
-Javan Rusa,Medium,Female,11970 kg,1.197 TR,White Brown
-Javan Rusa,Medium,Female,11971 kg,1.1971 TR,White Brown
-Javan Rusa,Medium,Female,11972 kg,1.1972 TR,White Brown
-Javan Rusa,Medium,Female,11973 kg,1.1973 TR,White Brown
-Javan Rusa,Medium,Female,11974 kg,1.1974 TR,White Brown
-Javan Rusa,Medium,Female,11975 kg,1.1975 TR,White Brown
-Javan Rusa,Medium,Female,11976 kg,1.1976 TR,White Brown
-Javan Rusa,Medium,Female,11977 kg,1.1977 TR,White Brown
-Javan Rusa,Medium,Female,11978 kg,1.1978 TR,White Brown
-Javan Rusa,Medium,Female,11979 kg,1.1979 TR,White Brown
-Javan Rusa,Medium,Female,11980 kg,1.198 TR,White Brown
-Javan Rusa,Medium,Female,11981 kg,1.1981 TR,White Brown
-Javan Rusa,Medium,Female,11982 kg,1.1982 TR,White Brown
-Javan Rusa,Medium,Female,11983 kg,1.1983 TR,White Brown
-Javan Rusa,Medium,Female,11984 kg,1.1984 TR,White Brown
-Javan Rusa,Medium,Female,11985 kg,1.1985 TR,White Brown
-Javan Rusa,Medium,Female,11986 kg,1.1986 TR,White Brown
-Javan Rusa,Medium,Female,11987 kg,1.1987 TR,White Brown
-Javan Rusa,Medium,Female,11988 kg,1.1988 TR,White Brown
-Javan Rusa,Medium,Female,11989 kg,1.1989 TR,White Brown
-Javan Rusa,Medium,Female,11990 kg,1.199 TR,White Brown
-Javan Rusa,Medium,Female,11991 kg,1.1991 TR,White Brown
-Javan Rusa,Medium,Female,11992 kg,1.1992 TR,White Brown
-Javan Rusa,Medium,Female,11993 kg,1.1993 TR,White Brown
-Javan Rusa,Medium,Female,11994 kg,1.1994 TR,White Brown
-Javan Rusa,Medium,Female,11995 kg,1.1995 TR,White Brown
-Javan Rusa,Medium,Female,11996 kg,1.1996 TR,White Brown
-Javan Rusa,Medium,Female,11997 kg,1.1997 TR,White Brown
-Javan Rusa,Medium,Female,11998 kg,1.1998 TR,White Brown
-Javan Rusa,Medium,Female,11999 kg,1.1999 TR,White Brown
-Javan Rusa,Medium,Female,12000 kg,1.2 TR,White Brown
-Javan Rusa,Medium,Female,12001 kg,1.2001 TR,White Brown
-Javan Rusa,Medium,Female,12002 kg,1.2002 TR,White Brown
-Javan Rusa,Medium,Female,12003 kg,1.2003 TR,White Brown
-Javan Rusa,Medium,Female,12004 kg,1.2004 TR,White Brown
-Javan Rusa,Medium,Female,12005 kg,1.2005 TR,White Brown
-Javan Rusa,Medium,Female,12006 kg,1.2006 TR,White Brown
-Javan Rusa,Medium,Female,12007 kg,1.2007 TR,White Brown
-Javan Rusa,Medium,Female,12008 kg,1.2008 TR,White Brown
-Javan Rusa,Medium,Female,12009 kg,1.2009 TR,White Brown
-Javan Rusa,Medium,Female,12010 kg,1.201 TR,White Brown
-Javan Rusa,Medium,Female,12011 kg,1.2011 TR,White Brown
-Javan Rusa,Medium,Female,12012 kg,1.2012 TR,White Brown
-Javan Rusa,Medium,Female,12013 kg,1.2013 TR,White Brown
-Javan Rusa,Medium,Female,12014 kg,1.2014 TR,White Brown
-Javan Rusa,Medium,Female,12015 kg,1.2015 TR,White Brown
-Javan Rusa,Medium,Female,12016 kg,1.2016 TR,White Brown
-Javan Rusa,Medium,Female,12017 kg,1.2017 TR,White Brown
-Javan Rusa,Medium,Female,12018 kg,1.2018 TR,White Brown
-Javan Rusa,Medium,Female,12019 kg,1.2019 TR,White Brown
-Javan Rusa,Medium,Female,12020 kg,1.202 TR,White Brown
-Javan Rusa,Medium,Female,12021 kg,1.2021 TR,White Brown
-Javan Rusa,Medium,Female,12022 kg,1.2022 TR,White Brown
-Javan Rusa,Medium,Female,12023 kg,1.2023 TR,White Brown
-Javan Rusa,Medium,Female,12024 kg,1.2024 TR,White Brown
-Javan Rusa,Medium,Female,12025 kg,1.2025 TR,White Brown
-Javan Rusa,Medium,Female,12026 kg,1.2026 TR,White Brown
-Javan Rusa,Medium,Female,12027 kg,1.2027 TR,White Brown
-Javan Rusa,Medium,Female,12028 kg,1.2028 TR,White Brown
-Javan Rusa,Medium,Female,12029 kg,1.2029 TR,White Brown
-Javan Rusa,Medium,Female,12030 kg,1.203 TR,White Brown
-Javan Rusa,Medium,Female,12031 kg,1.2031 TR,White Brown
-Javan Rusa,Medium,Female,12032 kg,1.2032 TR,White Brown
-Javan Rusa,Medium,Female,12033 kg,1.2033 TR,White Brown
-Javan Rusa,Medium,Female,12034 kg,1.2034 TR,White Brown
-Javan Rusa,Medium,Female,12035 kg,1.2035 TR,White Brown
-Javan Rusa,Medium,Female,12036 kg,1.2036 TR,White Brown
-Javan Rusa,Medium,Female,12037 kg,1.2037 TR,White Brown
-Javan Rusa,Medium,Female,12038 kg,1.2038 TR,White Brown
-Javan Rusa,Medium,Female,12039 kg,1.2039 TR,White Brown
-Javan Rusa,Medium,Female,12040 kg,1.204 TR,White Brown
-Javan Rusa,Medium,Female,12041 kg,1.2041 TR,White Brown
-Javan Rusa,Medium,Female,12042 kg,1.2042 TR,White Brown
-Javan Rusa,Medium,Female,12043 kg,1.2043 TR,White Brown
-Javan Rusa,Medium,Female,12044 kg,1.2044 TR,White Brown
-Javan Rusa,Medium,Female,12045 kg,1.2045 TR,White Brown
-Javan Rusa,Medium,Female,12046 kg,1.2046 TR,White Brown
-Javan Rusa,Medium,Female,12047 kg,1.2047 TR,White Brown
-Javan Rusa,Medium,Female,12048 kg,1.2048 TR,White Brown
-Javan Rusa,Medium,Female,12049 kg,1.2049 TR,White Brown
-Javan Rusa,Medium,Female,12050 kg,1.205 TR,White Brown
-Javan Rusa,Medium,Female,12051 kg,1.2051 TR,White Brown
-Javan Rusa,Medium,Female,12052 kg,1.2052 TR,White Brown
-Javan Rusa,Medium,Female,12053 kg,1.2053 TR,White Brown
-Javan Rusa,Medium,Female,12054 kg,1.2054 TR,White Brown
-Javan Rusa,Medium,Female,12055 kg,1.2055 TR,White Brown
-Javan Rusa,Medium,Female,12056 kg,1.2056 TR,White Brown
-Javan Rusa,Medium,Female,12057 kg,1.2057 TR,White Brown
-Javan Rusa,Medium,Female,12058 kg,1.2058 TR,White Brown
-Javan Rusa,Medium,Female,12059 kg,1.2059 TR,White Brown
-Javan Rusa,Medium,Female,12060 kg,1.206 TR,White Brown
-Javan Rusa,Medium,Female,12061 kg,1.2061 TR,White Brown
-Javan Rusa,Medium,Female,12062 kg,1.2062 TR,White Brown
-Javan Rusa,Medium,Female,12063 kg,1.2063 TR,White Brown
-Javan Rusa,Medium,Female,12064 kg,1.2064 TR,White Brown
-Javan Rusa,Medium,Female,12065 kg,1.2065 TR,White Brown
-Javan Rusa,Medium,Female,12066 kg,1.2066 TR,White Brown
-Javan Rusa,Medium,Female,12067 kg,1.2067 TR,White Brown
-Javan Rusa,Medium,Female,12068 kg,1.2068 TR,White Brown
-Javan Rusa,Medium,Female,12069 kg,1.2069 TR,White Brown
-Javan Rusa,Medium,Female,12070 kg,1.207 TR,White Brown
-Javan Rusa,Medium,Female,12071 kg,1.2071 TR,White Brown
-Javan Rusa,Medium,Female,12072 kg,1.2072 TR,White Brown
-Javan Rusa,Medium,Female,12073 kg,1.2073 TR,White Brown
-Javan Rusa,Medium,Female,12074 kg,1.2074 TR,White Brown
-Javan Rusa,Medium,Female,12075 kg,1.2075 TR,White Brown
-Javan Rusa,Medium,Female,12076 kg,1.2076 TR,White Brown
-Javan Rusa,Medium,Female,12077 kg,1.2077 TR,White Brown
-Javan Rusa,Medium,Female,12078 kg,1.2078 TR,White Brown
-Javan Rusa,Medium,Female,12079 kg,1.2079 TR,White Brown
-Javan Rusa,Medium,Female,12080 kg,1.208 TR,White Brown
-Javan Rusa,Medium,Female,12081 kg,1.2081 TR,White Brown
-Javan Rusa,Medium,Female,12082 kg,1.2082 TR,White Brown
-Javan Rusa,Medium,Female,12083 kg,1.2083 TR,White Brown
-Javan Rusa,Medium,Female,12084 kg,1.2084 TR,White Brown
-Javan Rusa,Medium,Female,12085 kg,1.2085 TR,White Brown
-Javan Rusa,Medium,Female,12086 kg,1.2086 TR,White Brown
-Javan Rusa,Medium,Female,12087 kg,1.2087 TR,White Brown
-Javan Rusa,Medium,Female,12088 kg,1.2088 TR,White Brown
-Javan Rusa,Medium,Female,12089 kg,1.2089 TR,White Brown
-Javan Rusa,Medium,Female,12090 kg,1.209 TR,White Brown
-Javan Rusa,Medium,Female,12091 kg,1.2091 TR,White Brown
-Javan Rusa,Medium,Female,12092 kg,1.2092 TR,White Brown
-Javan Rusa,Medium,Female,12093 kg,1.2093 TR,White Brown
-Javan Rusa,Medium,Female,12094 kg,1.2094 TR,White Brown
-Javan Rusa,Medium,Female,12095 kg,1.2095 TR,White Brown
-Javan Rusa,Medium,Female,12096 kg,1.2096 TR,White Brown
-Javan Rusa,Medium,Female,12097 kg,1.2097 TR,White Brown
-Javan Rusa,Medium,Female,12098 kg,1.2098 TR,White Brown
-Javan Rusa,Medium,Female,12099 kg,1.2099 TR,White Brown
-Javan Rusa,Medium,Female,12100 kg,1.21 TR,White Brown
-Javan Rusa,Medium,Female,12101 kg,1.2101 TR,White Brown
-Javan Rusa,Medium,Female,12102 kg,1.2102 TR,White Brown
-Javan Rusa,Medium,Female,12103 kg,1.2103 TR,White Brown
-Javan Rusa,Medium,Female,12104 kg,1.2104 TR,White Brown
-Javan Rusa,Medium,Female,12105 kg,1.2105 TR,White Brown
-Javan Rusa,Medium,Female,12106 kg,1.2106 TR,White Brown
-Javan Rusa,Medium,Female,12107 kg,1.2107 TR,White Brown
-Javan Rusa,Medium,Female,12108 kg,1.2108 TR,White Brown
-Javan Rusa,Medium,Female,12109 kg,1.2109 TR,White Brown
-Javan Rusa,Medium,Female,12110 kg,1.211 TR,White Brown
-Javan Rusa,Medium,Female,12111 kg,1.2111 TR,White Brown
-Javan Rusa,Medium,Female,12112 kg,1.2112 TR,White Brown
-Javan Rusa,Medium,Female,12113 kg,1.2113 TR,White Brown
-Javan Rusa,Medium,Female,12114 kg,1.2114 TR,White Brown
-Javan Rusa,Medium,Female,12115 kg,1.2115 TR,White Brown
-Javan Rusa,Medium,Female,12116 kg,1.2116 TR,White Brown
-Javan Rusa,Medium,Female,12117 kg,1.2117 TR,White Brown
-Javan Rusa,Medium,Female,12118 kg,1.2118 TR,White Brown
-Javan Rusa,Medium,Female,12119 kg,1.2119 TR,White Brown
-Javan Rusa,Medium,Female,12120 kg,1.212 TR,White Brown
-Javan Rusa,Medium,Female,12121 kg,1.2121 TR,White Brown
-Javan Rusa,Medium,Female,12122 kg,1.2122 TR,White Brown
-Javan Rusa,Medium,Female,12123 kg,1.2123 TR,White Brown
-Javan Rusa,Medium,Female,12124 kg,1.2124 TR,White Brown
-Javan Rusa,Medium,Female,12125 kg,1.2125 TR,White Brown
-Javan Rusa,Medium,Female,12126 kg,1.2126 TR,White Brown
-Javan Rusa,Medium,Female,12127 kg,1.2127 TR,White Brown
-Javan Rusa,Medium,Female,12128 kg,1.2128 TR,White Brown
-Javan Rusa,Medium,Female,12129 kg,1.2129 TR,White Brown
-Javan Rusa,Medium,Female,12130 kg,1.213 TR,White Brown
-Javan Rusa,Medium,Female,12131 kg,1.2131 TR,White Brown
-Javan Rusa,Medium,Female,12132 kg,1.2132 TR,White Brown
-Javan Rusa,Medium,Female,12133 kg,1.2133 TR,White Brown
-Javan Rusa,Medium,Female,12134 kg,1.2134 TR,White Brown
-Javan Rusa,Medium,Female,12135 kg,1.2135 TR,White Brown
-Javan Rusa,Medium,Female,12136 kg,1.2136 TR,White Brown
-Javan Rusa,Medium,Female,12137 kg,1.2137 TR,White Brown
-Javan Rusa,Medium,Female,12138 kg,1.2138 TR,White Brown
-Javan Rusa,Medium,Female,12139 kg,1.2139 TR,White Brown
-Javan Rusa,Medium,Female,12140 kg,1.214 TR,White Brown
-Javan Rusa,Medium,Female,12141 kg,1.2141 TR,White Brown
-Javan Rusa,Medium,Female,12142 kg,1.2142 TR,White Brown
-Javan Rusa,Medium,Female,12143 kg,1.2143 TR,White Brown
-Javan Rusa,Medium,Female,12144 kg,1.2144 TR,White Brown
-Javan Rusa,Medium,Female,12145 kg,1.2145 TR,White Brown
-Javan Rusa,Medium,Female,12146 kg,1.2146 TR,White Brown
-Javan Rusa,Medium,Female,12147 kg,1.2147 TR,White Brown
-Javan Rusa,Medium,Female,12148 kg,1.2148 TR,White Brown
-Javan Rusa,Medium,Female,12149 kg,1.2149 TR,White Brown
-Javan Rusa,Medium,Female,12150 kg,1.215 TR,White Brown
-Javan Rusa,Medium,Female,12151 kg,1.2151 TR,White Brown
-Javan Rusa,Medium,Female,12152 kg,1.2152 TR,White Brown
-Javan Rusa,Medium,Female,12153 kg,1.2153 TR,White Brown
-Javan Rusa,Medium,Female,12154 kg,1.2154 TR,White Brown
-Javan Rusa,Medium,Female,12155 kg,1.2155 TR,White Brown
-Javan Rusa,Medium,Female,12156 kg,1.2156 TR,White Brown
-Javan Rusa,Medium,Female,12157 kg,1.2157 TR,White Brown
-Javan Rusa,Medium,Female,12158 kg,1.2158 TR,White Brown
-Javan Rusa,Medium,Female,12159 kg,1.2159 TR,White Brown
-Javan Rusa,Medium,Female,12160 kg,1.216 TR,White Brown
-Javan Rusa,Medium,Female,12161 kg,1.2161 TR,White Brown
-Javan Rusa,Medium,Female,12162 kg,1.2162 TR,White Brown
-Javan Rusa,Medium,Female,12163 kg,1.2163 TR,White Brown
-Javan Rusa,Medium,Female,12164 kg,1.2164 TR,White Brown
-Javan Rusa,Medium,Female,12165 kg,1.2165 TR,White Brown
-Javan Rusa,Medium,Female,12166 kg,1.2166 TR,White Brown
-Javan Rusa,Medium,Female,12167 kg,1.2167 TR,White Brown
-Javan Rusa,Medium,Female,12168 kg,1.2168 TR,White Brown
-Javan Rusa,Medium,Female,12169 kg,1.2169 TR,White Brown
-Javan Rusa,Medium,Female,12170 kg,1.217 TR,White Brown
-Javan Rusa,Medium,Female,12171 kg,1.2171 TR,White Brown
-Javan Rusa,Medium,Female,12172 kg,1.2172 TR,White Brown
-Javan Rusa,Medium,Female,12173 kg,1.2173 TR,White Brown
-Javan Rusa,Medium,Female,12174 kg,1.2174 TR,White Brown
-Javan Rusa,Medium,Female,12175 kg,1.2175 TR,White Brown
-Javan Rusa,Medium,Female,12176 kg,1.2176 TR,White Brown
-Javan Rusa,Medium,Female,12177 kg,1.2177 TR,White Brown
-Javan Rusa,Medium,Female,12178 kg,1.2178 TR,White Brown
-Javan Rusa,Medium,Female,12179 kg,1.2179 TR,White Brown
-Javan Rusa,Medium,Female,12180 kg,1.218 TR,White Brown
-Javan Rusa,Medium,Female,12181 kg,1.2181 TR,White Brown
-Javan Rusa,Medium,Female,12182 kg,1.2182 TR,White Brown
-Javan Rusa,Medium,Female,12183 kg,1.2183 TR,White Brown
-Javan Rusa,Medium,Female,12184 kg,1.2184 TR,White Brown
-Javan Rusa,Medium,Female,12185 kg,1.2185 TR,White Brown
-Javan Rusa,Medium,Female,12186 kg,1.2186 TR,White Brown
-Javan Rusa,Medium,Female,12187 kg,1.2187 TR,White Brown
-Javan Rusa,Medium,Female,12188 kg,1.2188 TR,White Brown
-Javan Rusa,Medium,Female,12189 kg,1.2189 TR,White Brown
-Javan Rusa,Medium,Female,12190 kg,1.219 TR,White Brown
-Javan Rusa,Medium,Female,12191 kg,1.2191 TR,White Brown
-Javan Rusa,Medium,Female,12192 kg,1.2192 TR,White Brown
-Javan Rusa,Medium,Female,12193 kg,1.2193 TR,White Brown
-Javan Rusa,Medium,Female,12194 kg,1.2194 TR,White Brown
-Javan Rusa,Medium,Female,12195 kg,1.2195 TR,White Brown
-Javan Rusa,Medium,Female,12196 kg,1.2196 TR,White Brown
-Javan Rusa,Medium,Female,12197 kg,1.2197 TR,White Brown
-Javan Rusa,Medium,Female,12198 kg,1.2198 TR,White Brown
-Javan Rusa,Medium,Female,12199 kg,1.2199 TR,White Brown
-Javan Rusa,Medium,Female,12200 kg,1.22 TR,White Brown
+Axis Deer,Trivial,Female,11720 kg,1.172 TR,Spotted
+Axis Deer,Trivial,Female,11721 kg,1.1721 TR,Spotted
+Axis Deer,Trivial,Female,11722 kg,1.1722 TR,Spotted
+Axis Deer,Trivial,Female,11723 kg,1.1723 TR,Spotted
+Axis Deer,Trivial,Female,11724 kg,1.1724 TR,Spotted
+Axis Deer,Trivial,Female,11725 kg,1.1725 TR,Spotted
+Axis Deer,Trivial,Female,11726 kg,1.1726 TR,Spotted
+Axis Deer,Trivial,Female,11727 kg,1.1727 TR,Spotted
+Axis Deer,Trivial,Female,11728 kg,1.1728 TR,Spotted
+Axis Deer,Trivial,Female,11729 kg,1.1729 TR,Spotted
+Axis Deer,Trivial,Female,11730 kg,1.173 TR,Spotted
+Axis Deer,Trivial,Female,11731 kg,1.1731 TR,Spotted
+Axis Deer,Trivial,Female,11732 kg,1.1732 TR,Spotted
+Axis Deer,Trivial,Female,11733 kg,1.1733 TR,Spotted
+Axis Deer,Trivial,Female,11734 kg,1.1734 TR,Spotted
+Axis Deer,Trivial,Female,11735 kg,1.1735 TR,Spotted
+Axis Deer,Trivial,Female,11736 kg,1.1736 TR,Spotted
+Axis Deer,Trivial,Female,11737 kg,1.1737 TR,Spotted
+Axis Deer,Trivial,Female,11738 kg,1.1738 TR,Spotted
+Axis Deer,Trivial,Female,11739 kg,1.1739 TR,Spotted
+Axis Deer,Trivial,Female,11740 kg,1.174 TR,Spotted
+Axis Deer,Trivial,Female,11741 kg,1.1741 TR,Spotted
+Axis Deer,Trivial,Female,11742 kg,1.1742 TR,Spotted
+Axis Deer,Trivial,Female,11743 kg,1.1743 TR,Spotted
+Axis Deer,Trivial,Female,11744 kg,1.1744 TR,Spotted
+Axis Deer,Trivial,Female,11745 kg,1.1745 TR,Spotted
+Axis Deer,Trivial,Female,11746 kg,1.1746 TR,Spotted
+Axis Deer,Trivial,Female,11747 kg,1.1747 TR,Spotted
+Axis Deer,Trivial,Female,11748 kg,1.1748 TR,Spotted
+Axis Deer,Trivial,Female,11749 kg,1.1749 TR,Spotted
+Axis Deer,Trivial,Female,11750 kg,1.175 TR,Spotted
+Axis Deer,Trivial,Female,11751 kg,1.1751 TR,Spotted
+Axis Deer,Trivial,Female,11752 kg,1.1752 TR,Spotted
+Axis Deer,Trivial,Female,11753 kg,1.1753 TR,Spotted
+Axis Deer,Trivial,Female,11754 kg,1.1754 TR,Spotted
+Axis Deer,Trivial,Female,11755 kg,1.1755 TR,Spotted
+Axis Deer,Trivial,Female,11756 kg,1.1756 TR,Spotted
+Axis Deer,Trivial,Female,11757 kg,1.1757 TR,Spotted
+Axis Deer,Trivial,Female,11758 kg,1.1758 TR,Spotted
+Axis Deer,Trivial,Female,11759 kg,1.1759 TR,Spotted
+Axis Deer,Trivial,Female,11760 kg,1.176 TR,Spotted
+Axis Deer,Trivial,Female,11761 kg,1.1761 TR,Spotted
+Axis Deer,Trivial,Female,11762 kg,1.1762 TR,Spotted
+Axis Deer,Trivial,Female,11763 kg,1.1763 TR,Spotted
+Axis Deer,Trivial,Female,11764 kg,1.1764 TR,Spotted
+Axis Deer,Trivial,Female,11765 kg,1.1765 TR,Spotted
+Axis Deer,Trivial,Female,11766 kg,1.1766 TR,Spotted
+Axis Deer,Trivial,Female,11767 kg,1.1767 TR,Spotted
+Axis Deer,Trivial,Female,11768 kg,1.1768 TR,Spotted
+Axis Deer,Trivial,Female,11769 kg,1.1769 TR,Spotted
+Axis Deer,Trivial,Female,11770 kg,1.177 TR,Spotted
+Axis Deer,Trivial,Female,11771 kg,1.1771 TR,Spotted
+Axis Deer,Trivial,Female,11772 kg,1.1772 TR,Spotted
+Axis Deer,Trivial,Female,11773 kg,1.1773 TR,Spotted
+Axis Deer,Trivial,Female,11774 kg,1.1774 TR,Spotted
+Axis Deer,Trivial,Female,11775 kg,1.1775 TR,Spotted
+Axis Deer,Trivial,Female,11776 kg,1.1776 TR,Spotted
+Axis Deer,Trivial,Female,11777 kg,1.1777 TR,Spotted
+Axis Deer,Trivial,Female,11778 kg,1.1778 TR,Spotted
+Axis Deer,Trivial,Female,11779 kg,1.1779 TR,Spotted
+Axis Deer,Trivial,Female,11780 kg,1.178 TR,Spotted
+Axis Deer,Trivial,Female,11781 kg,1.1781 TR,Spotted
+Axis Deer,Trivial,Female,11782 kg,1.1782 TR,Spotted
+Axis Deer,Trivial,Female,11783 kg,1.1783 TR,Spotted
+Axis Deer,Trivial,Female,11784 kg,1.1784 TR,Spotted
+Axis Deer,Trivial,Female,11785 kg,1.1785 TR,Spotted
+Axis Deer,Trivial,Female,11786 kg,1.1786 TR,Spotted
+Axis Deer,Trivial,Female,11787 kg,1.1787 TR,Spotted
+Axis Deer,Trivial,Female,11788 kg,1.1788 TR,Spotted
+Axis Deer,Trivial,Female,11789 kg,1.1789 TR,Spotted
+Axis Deer,Trivial,Female,11790 kg,1.179 TR,Spotted
+Axis Deer,Trivial,Female,11791 kg,1.1791 TR,Spotted
+Axis Deer,Trivial,Female,11792 kg,1.1792 TR,Spotted
+Axis Deer,Trivial,Female,11793 kg,1.1793 TR,Spotted
+Axis Deer,Trivial,Female,11794 kg,1.1794 TR,Spotted
+Axis Deer,Trivial,Female,11795 kg,1.1795 TR,Spotted
+Axis Deer,Trivial,Female,11796 kg,1.1796 TR,Spotted
+Axis Deer,Trivial,Female,11797 kg,1.1797 TR,Spotted
+Axis Deer,Trivial,Female,11798 kg,1.1798 TR,Spotted
+Axis Deer,Trivial,Female,11799 kg,1.1799 TR,Spotted
+Axis Deer,Trivial,Female,11800 kg,1.18 TR,Spotted
+Axis Deer,Trivial,Female,11801 kg,1.1801 TR,Spotted
+Axis Deer,Trivial,Female,11802 kg,1.1802 TR,Spotted
+Axis Deer,Trivial,Female,11803 kg,1.1803 TR,Spotted
+Axis Deer,Trivial,Female,11804 kg,1.1804 TR,Spotted
+Axis Deer,Trivial,Female,11805 kg,1.1805 TR,Spotted
+Axis Deer,Trivial,Female,11806 kg,1.1806 TR,Spotted
+Axis Deer,Trivial,Female,11807 kg,1.1807 TR,Spotted
+Axis Deer,Trivial,Female,11808 kg,1.1808 TR,Spotted
+Axis Deer,Trivial,Female,11809 kg,1.1809 TR,Spotted
+Axis Deer,Trivial,Female,11810 kg,1.181 TR,Spotted
+Axis Deer,Trivial,Female,11811 kg,1.1811 TR,Spotted
+Axis Deer,Trivial,Female,11812 kg,1.1812 TR,Spotted
+Axis Deer,Trivial,Female,11813 kg,1.1813 TR,Spotted
+Axis Deer,Trivial,Female,11814 kg,1.1814 TR,Spotted
+Axis Deer,Trivial,Female,11815 kg,1.1815 TR,Spotted
+Axis Deer,Trivial,Female,11816 kg,1.1816 TR,Spotted
+Axis Deer,Trivial,Female,11817 kg,1.1817 TR,Spotted
+Axis Deer,Trivial,Female,11818 kg,1.1818 TR,Spotted
+Axis Deer,Trivial,Female,11819 kg,1.1819 TR,Spotted
+Axis Deer,Trivial,Female,11820 kg,1.182 TR,Spotted
+Axis Deer,Trivial,Female,11821 kg,1.1821 TR,Spotted
+Axis Deer,Trivial,Female,11822 kg,1.1822 TR,Spotted
+Axis Deer,Trivial,Female,11823 kg,1.1823 TR,Spotted
+Axis Deer,Trivial,Female,11824 kg,1.1824 TR,Spotted
+Axis Deer,Trivial,Female,11825 kg,1.1825 TR,Spotted
+Axis Deer,Trivial,Female,11826 kg,1.1826 TR,Spotted
+Axis Deer,Trivial,Female,11827 kg,1.1827 TR,Spotted
+Axis Deer,Trivial,Female,11828 kg,1.1828 TR,Spotted
+Axis Deer,Trivial,Female,11829 kg,1.1829 TR,Spotted
+Axis Deer,Trivial,Female,11830 kg,1.183 TR,Spotted
+Axis Deer,Trivial,Female,11831 kg,1.1831 TR,Spotted
+Axis Deer,Trivial,Female,11832 kg,1.1832 TR,Spotted
+Axis Deer,Trivial,Female,11833 kg,1.1833 TR,Spotted
+Axis Deer,Trivial,Female,11834 kg,1.1834 TR,Spotted
+Axis Deer,Trivial,Female,11835 kg,1.1835 TR,Spotted
+Axis Deer,Trivial,Female,11836 kg,1.1836 TR,Spotted
+Axis Deer,Trivial,Female,11837 kg,1.1837 TR,Spotted
+Axis Deer,Trivial,Female,11838 kg,1.1838 TR,Spotted
+Axis Deer,Trivial,Female,11839 kg,1.1839 TR,Spotted
+Axis Deer,Trivial,Female,11840 kg,1.184 TR,Spotted
+Axis Deer,Trivial,Female,11841 kg,1.1841 TR,Spotted
+Axis Deer,Trivial,Female,11842 kg,1.1842 TR,Spotted
+Axis Deer,Trivial,Female,11843 kg,1.1843 TR,Spotted
+Axis Deer,Trivial,Female,11844 kg,1.1844 TR,Spotted
+Axis Deer,Trivial,Female,11845 kg,1.1845 TR,Spotted
+Axis Deer,Trivial,Female,11846 kg,1.1846 TR,Spotted
+Axis Deer,Trivial,Female,11847 kg,1.1847 TR,Spotted
+Axis Deer,Trivial,Female,11848 kg,1.1848 TR,Spotted
+Axis Deer,Trivial,Female,11849 kg,1.1849 TR,Spotted
+Axis Deer,Trivial,Female,11850 kg,1.185 TR,Spotted
+Axis Deer,Trivial,Female,11851 kg,1.1851 TR,Spotted
+Axis Deer,Trivial,Female,11852 kg,1.1852 TR,Spotted
+Axis Deer,Trivial,Female,11853 kg,1.1853 TR,Spotted
+Axis Deer,Trivial,Female,11854 kg,1.1854 TR,Spotted
+Axis Deer,Trivial,Female,11855 kg,1.1855 TR,Spotted
+Axis Deer,Trivial,Female,11856 kg,1.1856 TR,Spotted
+Axis Deer,Trivial,Female,11857 kg,1.1857 TR,Spotted
+Axis Deer,Trivial,Female,11858 kg,1.1858 TR,Spotted
+Axis Deer,Trivial,Female,11859 kg,1.1859 TR,Spotted
+Axis Deer,Trivial,Female,11860 kg,1.186 TR,Spotted
+Axis Deer,Trivial,Female,11861 kg,1.1861 TR,Spotted
+Axis Deer,Trivial,Female,11862 kg,1.1862 TR,Spotted
+Axis Deer,Trivial,Female,11863 kg,1.1863 TR,Spotted
+Axis Deer,Trivial,Female,11864 kg,1.1864 TR,Spotted
+Axis Deer,Trivial,Female,11865 kg,1.1865 TR,Spotted
+Axis Deer,Trivial,Female,11866 kg,1.1866 TR,Spotted
+Axis Deer,Trivial,Female,11867 kg,1.1867 TR,Spotted
+Axis Deer,Trivial,Female,11868 kg,1.1868 TR,Spotted
+Axis Deer,Trivial,Female,11869 kg,1.1869 TR,Spotted
+Axis Deer,Trivial,Female,11870 kg,1.187 TR,Spotted
+Axis Deer,Trivial,Female,11871 kg,1.1871 TR,Spotted
+Axis Deer,Trivial,Female,11872 kg,1.1872 TR,Spotted
+Axis Deer,Trivial,Female,11873 kg,1.1873 TR,Spotted
+Axis Deer,Trivial,Female,11874 kg,1.1874 TR,Spotted
+Axis Deer,Trivial,Female,11875 kg,1.1875 TR,Spotted
+Axis Deer,Trivial,Female,11876 kg,1.1876 TR,Spotted
+Axis Deer,Trivial,Female,11877 kg,1.1877 TR,Spotted
+Axis Deer,Trivial,Female,11878 kg,1.1878 TR,Spotted
+Axis Deer,Trivial,Female,11879 kg,1.1879 TR,Spotted
+Axis Deer,Trivial,Female,11880 kg,1.188 TR,Spotted
+Axis Deer,Trivial,Female,11881 kg,1.1881 TR,Spotted
+Axis Deer,Trivial,Female,11882 kg,1.1882 TR,Spotted
+Axis Deer,Trivial,Female,11883 kg,1.1883 TR,Spotted
+Axis Deer,Trivial,Female,11884 kg,1.1884 TR,Spotted
+Axis Deer,Trivial,Female,11885 kg,1.1885 TR,Spotted
+Axis Deer,Trivial,Female,11886 kg,1.1886 TR,Spotted
+Axis Deer,Trivial,Female,11887 kg,1.1887 TR,Spotted
+Axis Deer,Trivial,Female,11888 kg,1.1888 TR,Spotted
+Axis Deer,Trivial,Female,11889 kg,1.1889 TR,Spotted
+Axis Deer,Trivial,Female,11890 kg,1.189 TR,Spotted
+Axis Deer,Trivial,Female,11891 kg,1.1891 TR,Spotted
+Axis Deer,Trivial,Female,11892 kg,1.1892 TR,Spotted
+Axis Deer,Trivial,Female,11893 kg,1.1893 TR,Spotted
+Axis Deer,Trivial,Female,11894 kg,1.1894 TR,Spotted
+Axis Deer,Trivial,Female,11895 kg,1.1895 TR,Spotted
+Axis Deer,Trivial,Female,11896 kg,1.1896 TR,Spotted
+Axis Deer,Trivial,Female,11897 kg,1.1897 TR,Spotted
+Axis Deer,Trivial,Female,11898 kg,1.1898 TR,Spotted
+Axis Deer,Trivial,Female,11899 kg,1.1899 TR,Spotted
+Axis Deer,Trivial,Female,11900 kg,1.19 TR,Spotted
+Axis Deer,Trivial,Female,11901 kg,1.1901 TR,Spotted
+Axis Deer,Trivial,Female,11902 kg,1.1902 TR,Spotted
+Axis Deer,Trivial,Female,11903 kg,1.1903 TR,Spotted
+Axis Deer,Trivial,Female,11904 kg,1.1904 TR,Spotted
+Axis Deer,Trivial,Female,11905 kg,1.1905 TR,Spotted
+Axis Deer,Trivial,Female,11906 kg,1.1906 TR,Spotted
+Axis Deer,Trivial,Female,11907 kg,1.1907 TR,Spotted
+Axis Deer,Trivial,Female,11908 kg,1.1908 TR,Spotted
+Axis Deer,Trivial,Female,11909 kg,1.1909 TR,Spotted
+Axis Deer,Trivial,Female,11910 kg,1.191 TR,Spotted
+Axis Deer,Trivial,Female,11911 kg,1.1911 TR,Spotted
+Axis Deer,Trivial,Female,11912 kg,1.1912 TR,Spotted
+Axis Deer,Trivial,Female,11913 kg,1.1913 TR,Spotted
+Axis Deer,Trivial,Female,11914 kg,1.1914 TR,Spotted
+Axis Deer,Trivial,Female,11915 kg,1.1915 TR,Spotted
+Axis Deer,Trivial,Female,11916 kg,1.1916 TR,Spotted
+Axis Deer,Trivial,Female,11917 kg,1.1917 TR,Spotted
+Axis Deer,Trivial,Female,11918 kg,1.1918 TR,Spotted
+Axis Deer,Trivial,Female,11919 kg,1.1919 TR,Spotted
+Axis Deer,Trivial,Female,11920 kg,1.192 TR,Spotted
+Axis Deer,Trivial,Female,11921 kg,1.1921 TR,Spotted
+Axis Deer,Trivial,Female,11922 kg,1.1922 TR,Spotted
+Axis Deer,Trivial,Female,11923 kg,1.1923 TR,Spotted
+Axis Deer,Trivial,Female,11924 kg,1.1924 TR,Spotted
+Axis Deer,Trivial,Female,11925 kg,1.1925 TR,Spotted
+Axis Deer,Trivial,Female,11926 kg,1.1926 TR,Spotted
+Axis Deer,Trivial,Female,11927 kg,1.1927 TR,Spotted
+Axis Deer,Trivial,Female,11928 kg,1.1928 TR,Spotted
+Axis Deer,Trivial,Female,11929 kg,1.1929 TR,Spotted
+Axis Deer,Trivial,Female,11930 kg,1.193 TR,Spotted
+Axis Deer,Trivial,Female,11931 kg,1.1931 TR,Spotted
+Axis Deer,Trivial,Female,11932 kg,1.1932 TR,Spotted
+Axis Deer,Trivial,Female,11933 kg,1.1933 TR,Spotted
+Axis Deer,Trivial,Female,11934 kg,1.1934 TR,Spotted
+Axis Deer,Trivial,Female,11935 kg,1.1935 TR,Spotted
+Axis Deer,Trivial,Female,11936 kg,1.1936 TR,Spotted
+Axis Deer,Trivial,Female,11937 kg,1.1937 TR,Spotted
+Axis Deer,Trivial,Female,11938 kg,1.1938 TR,Spotted
+Axis Deer,Trivial,Female,11939 kg,1.1939 TR,Spotted
+Axis Deer,Trivial,Female,11940 kg,1.194 TR,Spotted
+Axis Deer,Trivial,Female,11941 kg,1.1941 TR,Spotted
+Axis Deer,Trivial,Female,11942 kg,1.1942 TR,Spotted
+Axis Deer,Trivial,Female,11943 kg,1.1943 TR,Spotted
+Axis Deer,Trivial,Female,11944 kg,1.1944 TR,Spotted
+Axis Deer,Trivial,Female,11945 kg,1.1945 TR,Spotted
+Axis Deer,Trivial,Female,11946 kg,1.1946 TR,Spotted
+Axis Deer,Trivial,Female,11947 kg,1.1947 TR,Spotted
+Axis Deer,Trivial,Female,11948 kg,1.1948 TR,Spotted
+Axis Deer,Trivial,Female,11949 kg,1.1949 TR,Spotted
+Axis Deer,Trivial,Female,11950 kg,1.195 TR,Spotted
+Axis Deer,Trivial,Female,11951 kg,1.1951 TR,Spotted
+Axis Deer,Trivial,Female,11952 kg,1.1952 TR,Spotted
+Axis Deer,Trivial,Female,11953 kg,1.1953 TR,Spotted
+Axis Deer,Trivial,Female,11954 kg,1.1954 TR,Spotted
+Axis Deer,Trivial,Female,11955 kg,1.1955 TR,Spotted
+Axis Deer,Trivial,Female,11956 kg,1.1956 TR,Spotted
+Axis Deer,Trivial,Female,11957 kg,1.1957 TR,Spotted
+Axis Deer,Trivial,Female,11958 kg,1.1958 TR,Spotted
+Axis Deer,Trivial,Female,11959 kg,1.1959 TR,Spotted
+Axis Deer,Trivial,Female,11960 kg,1.196 TR,Spotted
+Axis Deer,Trivial,Female,11961 kg,1.1961 TR,Spotted
+Axis Deer,Trivial,Female,11962 kg,1.1962 TR,Spotted
+Axis Deer,Trivial,Female,11963 kg,1.1963 TR,Spotted
+Axis Deer,Trivial,Female,11964 kg,1.1964 TR,Spotted
+Axis Deer,Trivial,Female,11965 kg,1.1965 TR,Spotted
+Axis Deer,Trivial,Female,11966 kg,1.1966 TR,Spotted
+Axis Deer,Trivial,Female,11967 kg,1.1967 TR,Spotted
+Axis Deer,Trivial,Female,11968 kg,1.1968 TR,Spotted
+Axis Deer,Trivial,Female,11969 kg,1.1969 TR,Spotted
+Axis Deer,Trivial,Female,11970 kg,1.197 TR,Spotted
+Axis Deer,Trivial,Female,11971 kg,1.1971 TR,Spotted
+Axis Deer,Trivial,Female,11972 kg,1.1972 TR,Spotted
+Axis Deer,Trivial,Female,11973 kg,1.1973 TR,Spotted
+Axis Deer,Trivial,Female,11974 kg,1.1974 TR,Spotted
+Axis Deer,Trivial,Female,11975 kg,1.1975 TR,Spotted
+Axis Deer,Trivial,Female,11976 kg,1.1976 TR,Spotted
+Axis Deer,Trivial,Female,11977 kg,1.1977 TR,Spotted
+Axis Deer,Trivial,Female,11978 kg,1.1978 TR,Spotted
+Axis Deer,Trivial,Female,11979 kg,1.1979 TR,Spotted
+Axis Deer,Trivial,Female,11980 kg,1.198 TR,Spotted
+Axis Deer,Trivial,Female,11981 kg,1.1981 TR,Spotted
+Axis Deer,Trivial,Female,11982 kg,1.1982 TR,Spotted
+Axis Deer,Trivial,Female,11983 kg,1.1983 TR,Spotted
+Axis Deer,Trivial,Female,11984 kg,1.1984 TR,Spotted
+Axis Deer,Trivial,Female,11985 kg,1.1985 TR,Spotted
+Axis Deer,Trivial,Female,11986 kg,1.1986 TR,Spotted
+Axis Deer,Trivial,Female,11987 kg,1.1987 TR,Spotted
+Axis Deer,Trivial,Female,11988 kg,1.1988 TR,Spotted
+Axis Deer,Trivial,Female,11989 kg,1.1989 TR,Spotted
+Axis Deer,Trivial,Female,11990 kg,1.199 TR,Spotted
+Axis Deer,Trivial,Female,11991 kg,1.1991 TR,Spotted
+Axis Deer,Trivial,Female,11992 kg,1.1992 TR,Spotted
+Axis Deer,Trivial,Female,11993 kg,1.1993 TR,Spotted
+Axis Deer,Trivial,Female,11994 kg,1.1994 TR,Spotted
+Axis Deer,Trivial,Female,11995 kg,1.1995 TR,Spotted
+Axis Deer,Trivial,Female,11996 kg,1.1996 TR,Spotted
+Axis Deer,Trivial,Female,11997 kg,1.1997 TR,Spotted
+Axis Deer,Trivial,Female,11998 kg,1.1998 TR,Spotted
+Axis Deer,Trivial,Female,11999 kg,1.1999 TR,Spotted
+Axis Deer,Trivial,Female,12000 kg,1.2 TR,Spotted
+Axis Deer,Trivial,Female,12001 kg,1.2001 TR,Spotted
+Axis Deer,Trivial,Female,12002 kg,1.2002 TR,Spotted
+Axis Deer,Trivial,Female,12003 kg,1.2003 TR,Spotted
+Axis Deer,Trivial,Female,12004 kg,1.2004 TR,Spotted
+Axis Deer,Trivial,Female,12005 kg,1.2005 TR,Spotted
+Axis Deer,Trivial,Female,12006 kg,1.2006 TR,Spotted
+Axis Deer,Trivial,Female,12007 kg,1.2007 TR,Spotted
+Axis Deer,Trivial,Female,12008 kg,1.2008 TR,Spotted
+Axis Deer,Trivial,Female,12009 kg,1.2009 TR,Spotted
+Axis Deer,Trivial,Female,12010 kg,1.201 TR,Spotted
+Axis Deer,Trivial,Female,12011 kg,1.2011 TR,Spotted
+Axis Deer,Trivial,Female,12012 kg,1.2012 TR,Spotted
 Magpie Goose,Trivial,Female,1.50456 kg,2.5702 TR,Maroon
 Magpie Goose,Trivial,Female,1.52186 kg,2.60349 TR,Maroon
 Magpie Goose,Trivial,Female,1.53681 kg,2.6039 TR,Orange       
@@ -2197,6 +2228,7 @@ Feral Pig,Trivial,Female,68.611 kg,40.7684 TR,Black Spots
 Feral Pig,Trivial,Female,69.7773 kg,40.914 TR,Black Spots
 Feral Pig,Trivial,Female,70.5466 kg,40.9617 TR,Black Spots
 Hog Deer,Very Easy,Male,40.5982 kg,41.3118 TR,Brown        
+Javan Rusa,Very Easy,Male,152 kg,42.6105 TR,White Brown
 Feral Pig,Trivial,Female,70.6032 kg,42.6188 TR,Black Spots
 Feral Pig,Trivial,Female,72.8839 kg,42.8493 TR,Black Spots
 Feral Pig,Trivial,Female,71.4428 kg,42.905 TR,Black Spots
@@ -2276,7 +2308,6 @@ Feral Pig,Minor,Male,101.78 kg,59.9229 TR,Dark Brown
 Feral Goat,Trivial,Female,27.8146 kg,60.0935 TR,Brown        
 Feral Pig,Minor,Male,97.9094 kg,60.2631 TR,Brown_Hybrid
 Hog Deer,Very Easy,Male,42.0916 kg,60.2823 TR,Brown        
-Axis Deer,Trivial,Male,35.8121 kg,60.3919 TR,Spotted
 Feral Pig,Minor,Female,90.9562 kg,60.4822 TR,Black Spots
 Feral Goat,Trivial,Female,27.7916 kg,60.5259 TR,Brown        
 Feral Pig,Minor,Male,100.1 kg,60.5506 TR,Brown_Hybrid
@@ -2300,7 +2331,6 @@ Feral Goat,Trivial,Female,28.897 kg,62.394 TR,Black White
 Feral Goat,Trivial,Female,29.1056 kg,62.4779 TR,Brown        
 Feral Goat,Trivial,Female,28.6246 kg,62.5069 TR,Brown        
 Banteng,Trivial,Female,606.304 kg,62.5496 TR,Orange       
-Axis Deer,Minor,Male,37.6333 kg,62.5761 TR,Spotted
 Feral Goat,Trivial,Female,28.2965 kg,62.5812 TR,Brown        
 Feral Goat,Trivial,Female,29.2736 kg,62.6007 TR,Brown        
 Feral Goat,Trivial,Female,28.7736 kg,62.6728 TR,Black White
@@ -2390,7 +2420,6 @@ Feral Goat,Trivial,Female,30.3837 kg,65.9863 TR,Brown
 Feral Goat,Trivial,Female,30.2332 kg,66.008 TR,Black White
 Feral Goat,Trivial,Female,30.1324 kg,66.0155 TR,Brown        
 Feral Goat,Trivial,Female,30.9826 kg,66.0761 TR,White        
-Axis Deer,Trivial,Male,36.8237 kg,66.0816 TR,Spotted
 Feral Goat,Trivial,Female,30.8583 kg,66.1237 TR,Brown        
 Sambar,Very Easy,Male,259.419 kg,66.1612 TR,Dark Brown   
 Hog Deer,Very Easy,Male,43.3261 kg,66.3588 TR,Brown        
@@ -2408,6 +2437,7 @@ Feral Goat,Trivial,Female,30.6137 kg,66.8918 TR,Brown
 Feral Goat,Trivial,Female,30.805 kg,66.965 TR,Brown        
 Feral Pig,Minor,Male,105.794 kg,67.0692 TR,Dark Brown   
 Feral Goat,Trivial,Female,30.7542 kg,67.1145 TR,Black White
+Javan Rusa,Very Easy,Male,156.669 kg,67.1169 TR,Light Brown  
 Feral Pig,Minor,Male,106.024 kg,67.2331 TR,Brown_Hybrid
 Feral Goat,Trivial,Female,31.5834 kg,67.273 TR,White        
 Feral Goat,Trivial,Female,31.6106 kg,67.3303 TR,Black White
@@ -2415,7 +2445,6 @@ Feral Goat,Trivial,Female,31.227 kg,67.3894 TR,Black White
 Hog Deer,Very Easy,Male,43.7551 kg,67.4433 TR,Spotted
 Feral Goat,Trivial,Female,30.9911 kg,67.4487 TR,Brown        
 Feral Goat,Trivial,Female,31.6487 kg,67.5019 TR,White        
-Axis Deer,Minor,Male,37.2842 kg,67.5228 TR,Spotted
 Hog Deer,Very Easy,Male,43.7602 kg,67.5411 TR,Spotted
 Hog Deer,Very Easy,Male,43.9383 kg,67.5987 TR,Dark Spotted
 Feral Goat,Trivial,Female,31.1988 kg,67.6181 TR,Black White
@@ -2439,11 +2468,14 @@ Feral Goat,Trivial,Female,31.5534 kg,68.52 TR,Brown
 Sambar,Very Easy,Male,260.15 kg,68.529 TR,Dusky Grad.
 Feral Goat,Trivial,Female,32.1465 kg,68.6047 TR,Brown        
 Feral Goat,Trivial,Female,31.8306 kg,68.7231 TR,Brown        
+Javan Rusa,Very Easy,Male,156.748 kg,68.7332 TR,Two Tone
+Javan Rusa,Very Easy,Male,156.868 kg,68.7642 TR,White Brown
 Feral Goat,Trivial,Female,31.7027 kg,68.7954 TR,Black White
 Hog Deer,Very Easy,Male,44.2292 kg,68.911 TR,Dark Brown   
 Banteng,Trivial,Female,615.289 kg,68.9278 TR,Orange       
 Hog Deer,Very Easy,Male,43.3445 kg,69.0654 TR,Brown        
 Feral Goat,Trivial,Female,32.2371 kg,69.1598 TR,Brown        
+Javan Rusa,Very Easy,Male,156.944 kg,69.1751 TR,Brown        
 Feral Goat,Trivial,Female,31.8111 kg,69.2926 TR,White        
 Feral Pig,Minor,Male,108.844 kg,69.3406 TR,Black        
 Feral Goat,Trivial,Female,31.9114 kg,69.3969 TR,Brown        
@@ -2458,7 +2490,7 @@ Feral Goat,Minor,Female,33.1897 kg,70.1814 TR,White
 Banteng,Minor,Female,618.128 kg,70.2071 TR,Orange       
 Feral Goat,Trivial,Female,32.483 kg,70.2268 TR,White        
 Feral Pig,Minor,Male,112.041 kg,70.2477 TR,Dark Brown   
-Axis Deer,Minor,Male,38.6628 kg,70.3044 TR,Spotted
+Javan Rusa,Very Easy,Male,156.936 kg,70.3042 TR,Brown        
 Feral Goat,Trivial,Female,32.7457 kg,70.4471 TR,White        
 Feral Goat,Trivial,Female,32.6165 kg,70.6699 TR,Black White
 Feral Pig,Minor,Male,111.95 kg,70.6901 TR,Black Spots
@@ -2472,12 +2504,12 @@ Banteng,Minor,Female,621.259 kg,71.2977 TR,Orange
 Feral Pig,Very Easy,Male,114.866 kg,71.4837 TR,Dark Brown   
 Hog Deer,Very Easy,Male,43.862 kg,71.5648 TR,Brown        
 Hog Deer,Very Easy,Male,44.2494 kg,71.5833 TR,Dark Brown   
-Axis Deer,Minor,Male,37.9664 kg,71.5862 TR,Spotted
 Hog Deer,Very Easy,Male,44.0001 kg,71.9301 TR,Dark Brown   
 Hog Deer,Very Easy,Male,43.8804 kg,71.9398 TR,Spotted
 Sambar,Very Easy,Male,260.671 kg,71.976 TR,Brown        
 Banteng,Minor,Female,622.785 kg,72.0447 TR,Orange       
 Feral Pig,Very Easy,Male,115.981 kg,72.099 TR,Black        
+Javan Rusa,Very Easy,Male,157.536 kg,72.1774 TR,Two Tone
 Hog Deer,Very Easy,Male,44.5192 kg,72.1964 TR,Brown        
 Feral Goat,Minor,Female,33.5553 kg,72.3282 TR,Brown        
 Feral Pig,Very Easy,Male,114.926 kg,72.3363 TR,Dark Brown   
@@ -2489,7 +2521,10 @@ Banteng,Minor,Female,621.727 kg,72.5965 TR,Orange
 Banteng,Minor,Female,622.877 kg,72.6509 TR,Orange       
 Hog Deer,Very Easy,Male,44.0809 kg,72.7199 TR,Brown        
 Feral Pig,Very Easy,Male,114.928 kg,72.8887 TR,Black Spots
+Javan Rusa,Very Easy,Male,157.23 kg,72.9352 TR,Two Tone
 Banteng,Minor,Female,623.687 kg,73.03 TR,Orange       
+Javan Rusa,Very Easy,Male,157.039 kg,73.1416 TR,Brown        
+Javan Rusa,Very Easy,Male,157.275 kg,73.3004 TR,White Brown
 Banteng,Minor,Female,622.373 kg,73.3419 TR,Orange       
 Banteng,Minor,Female,625.387 kg,73.4008 TR,Orange       
 Banteng,Minor,Female,623.35 kg,73.4542 TR,Orange       
@@ -2501,6 +2536,7 @@ Banteng,Minor,Female,625.428 kg,73.7188 TR,Orange
 Hog Deer,Very Easy,Male,44.3383 kg,73.7391 TR,Brown        
 Hog Deer,Very Easy,Male,43.9482 kg,73.7495 TR,Dark Brown   
 Hog Deer,Very Easy,Male,43.9358 kg,73.7676 TR,Brown        
+Javan Rusa,Very Easy,Male,157.179 kg,74.0296 TR,Light Brown  
 Feral Pig,Very Easy,Male,117.674 kg,74.032 TR,Brown_Hybrid
 Hog Deer,Very Easy,Male,43.9619 kg,74.0376 TR,Brown        
 Hog Deer,Very Easy,Male,44.0184 kg,74.149 TR,Brown        
@@ -2523,36 +2559,44 @@ Banteng,Minor,Female,626.702 kg,75.2809 TR,Orange
 Hog Deer,Easy,Male,45.0507 kg,75.3597 TR,Brown        
 Feral Pig,Very Easy,Male,114.948 kg,75.3663 TR,Dark Brown   
 Banteng,Minor,Female,628.036 kg,75.4784 TR,Orange       
+Javan Rusa,Very Easy,Male,157.578 kg,75.4785 TR,White Brown
 Banteng,Minor,Female,627.463 kg,75.5815 TR,Orange       
 Banteng,Minor,Female,626.515 kg,75.6665 TR,Orange       
 Banteng,Minor,Female,627.622 kg,75.6989 TR,Mocha
 Hog Deer,Easy,Male,45.1283 kg,75.8262 TR,Brown        
 Hog Deer,Easy,Male,45.0232 kg,76.0424 TR,Brown        
 Banteng,Minor,Female,629.889 kg,76.0616 TR,Orange       
+Javan Rusa,Very Easy,Male,157.593 kg,76.1958 TR,White Brown
+Javan Rusa,Very Easy,Male,158.223 kg,76.2431 TR,Brown        
 Banteng,Minor,Female,628.816 kg,76.3415 TR,Orange       
 Hog Deer,Very Easy,Male,44.4571 kg,76.4034 TR,Spotted
 Hog Deer,Very Easy,Male,44.5295 kg,76.4734 TR,Brown        
 Banteng,Minor,Female,629.68 kg,76.5296 TR,Orange       
 Banteng,Minor,Female,630.553 kg,76.5592 TR,Orange       
+Javan Rusa,Very Easy,Male,158.098 kg,76.7759 TR,White Brown
 Hog Deer,Easy,Male,45.2698 kg,76.7776 TR,Brown        
 Feral Pig,Very Easy,Male,117.997 kg,76.8054 TR,Dark Brown   
 Feral Pig,Very Easy,Male,120.038 kg,76.9127 TR,Dark Brown   
 Hog Deer,Easy,Male,45.0976 kg,76.9451 TR,Spotted
 Banteng,Minor,Female,631.676 kg,77.125 TR,Orange       
+Javan Rusa,Very Easy,Male,157.693 kg,77.1564 TR,Two Tone
 Sambar,Very Easy,Male,263.413 kg,77.1792 TR,Dusky Grad.
 Sambar,Very Easy,Male,262.764 kg,77.311 TR,Light Brown  
 Banteng,Minor,Female,629.726 kg,77.5804 TR,Orange       
+Javan Rusa,Very Easy,Male,158.062 kg,77.6129 TR,Two Tone
 Banteng,Minor,Female,630.152 kg,77.7449 TR,Orange       
 Banteng,Minor,Female,631.853 kg,77.8198 TR,Orange       
 Banteng,Minor,Female,632.04 kg,77.9083 TR,Orange       
+Javan Rusa,Very Easy,Male,158.449 kg,77.9143 TR,Brown        
+Javan Rusa,Very Easy,Male,158.172 kg,77.916 TR,White Brown
 Banteng,Minor,Female,630.669 kg,77.9382 TR,Orange       
 Banteng,Minor,Female,633.33 kg,78.129 TR,Mocha
 Sambar,Very Easy,Male,263.496 kg,78.1769 TR,Brown        
 Banteng,Minor,Female,632.738 kg,78.1915 TR,Orange       
 Sambar,Very Easy,Male,262.996 kg,78.2091 TR,Brown        
 Feral Pig,Very Easy,Male,119.767 kg,78.3435 TR,Blackgold    
+Javan Rusa,Very Easy,Male,158.514 kg,78.5797 TR,Light Brown  
 Banteng,Minor,Female,631.345 kg,78.6005 TR,Orange       
-Axis Deer,Minor,Male,40.7797 kg,78.6198 TR,Spotted
 Banteng,Minor,Female,634.091 kg,78.6891 TR,Orange       
 Banteng,Minor,Female,631.254 kg,78.6966 TR,Orange       
 Hog Deer,Very Easy,Male,44.8558 kg,78.7068 TR,Spotted
@@ -2560,6 +2604,7 @@ Sambar,Very Easy,Male,263.298 kg,78.7328 TR,Brown
 Banteng,Minor,Female,634.024 kg,78.8916 TR,Orange       
 Banteng,Minor,Female,633.683 kg,78.9313 TR,Orange       
 Feral Pig,Very Easy,Male,120.276 kg,79.1337 TR,Brown_Hybrid
+Javan Rusa,Very Easy,Male,158.756 kg,79.2091 TR,Light Brown  
 Banteng,Minor,Female,634.995 kg,79.2668 TR,Orange       
 Banteng,Minor,Female,634.14 kg,79.3037 TR,Orange       
 Hog Deer,Very Easy,Male,44.6001 kg,79.3393 TR,Brown        
@@ -2572,11 +2617,15 @@ Banteng,Minor,Female,633.132 kg,79.5874 TR,Orange
 Banteng,Minor,Female,634.109 kg,79.635 TR,Orange       
 Banteng,Minor,Female,635.046 kg,79.6933 TR,Orange       
 Banteng,Minor,Female,633.606 kg,79.7534 TR,Orange       
+Javan Rusa,Very Easy,Male,158.657 kg,79.7974 TR,Two Tone
 Feral Pig,Very Easy,Male,124.523 kg,79.9366 TR,Brown_Hybrid
 Hog Deer,Easy,Male,45.5513 kg,79.9736 TR,Brown        
 Feral Pig,Very Easy,Male,124.376 kg,79.983 TR,Blackgold    
+Javan Rusa,Very Easy,Male,158.437 kg,80.014 TR,Brown        
+Javan Rusa,Very Easy,Male,158.285 kg,80.1926 TR,Light Brown  
 Red Deer,Very Easy,Male,172.455 kg,80.4575 TR,Dark Brown   
 Banteng,Minor,Female,635.343 kg,80.4612 TR,Orange       
+Javan Rusa,Very Easy,Male,158.807 kg,80.4964 TR,Brown        
 Banteng,Minor,Female,635.739 kg,80.5562 TR,Orange       
 Feral Pig,Very Easy,Male,119.672 kg,80.5685 TR,Dark Brown   
 Hog Deer,Easy,Male,45.1077 kg,80.8083 TR,Brown        
@@ -2584,12 +2633,13 @@ Hog Deer,Easy,Male,45.7666 kg,81.1104 TR,Brown
 Feral Pig,Very Easy,Male,124.512 kg,81.3716 TR,Dark Brown   
 Banteng,Minor,Female,638.316 kg,81.6974 TR,Orange       
 Banteng,Minor,Female,638.932 kg,81.8612 TR,Orange       
-Axis Deer,Minor,Male,41.7889 kg,81.9589 TR,Dark         
+Javan Rusa,Very Easy,Male,158.681 kg,81.9721 TR,Brown        
 Banteng,Minor,Female,638.249 kg,82.0783 TR,Orange       
 Hog Deer,Easy,Male,45.0526 kg,82.0899 TR,Dark Spotted
 Hog Deer,Easy,Male,45.3668 kg,82.1738 TR,Brown        
 Sambar,Very Easy,Male,264.24 kg,82.178 TR,Dusky Grad.
 Banteng,Minor,Female,639.774 kg,82.3123 TR,Orange       
+Javan Rusa,Very Easy,Male,158.635 kg,82.3461 TR,Light Brown  
 Banteng,Minor,Female,638.294 kg,82.3921 TR,Orange       
 Sambar,Very Easy,Male,265.595 kg,82.4103 TR,Light Brown  
 Hog Deer,Easy,Male,45.2732 kg,82.6634 TR,Brown        
@@ -2598,47 +2648,56 @@ Hog Deer,Easy,Male,45.4431 kg,82.8525 TR,Spotted
 Feral Pig,Very Easy,Male,124.277 kg,82.9071 TR,Black Spots
 Red Deer,Very Easy,Male,172.994 kg,82.9766 TR,Light Brown  
 Banteng,Minor,Female,638.862 kg,82.9924 TR,Orange       
+Javan Rusa,Very Easy,Male,159.387 kg,83.1442 TR,White Brown
+Javan Rusa,Very Easy,Male,159.374 kg,83.1448 TR,Light Brown  
 Feral Pig,Very Easy,Male,125.148 kg,83.256 TR,Black Spots
 Hog Deer,Easy,Male,45.2337 kg,83.3327 TR,Brown        
 Banteng,Minor,Female,639.902 kg,83.3931 TR,Orange       
 Banteng,Minor,Female,641.822 kg,83.5147 TR,Orange       
 Banteng,Minor,Female,641.415 kg,83.5726 TR,Orange       
+Javan Rusa,Very Easy,Male,159.452 kg,83.5808 TR,White Brown
 Banteng,Minor,Female,640.873 kg,83.5945 TR,Orange       
 Hog Deer,Easy,Male,45.4739 kg,83.656 TR,Brown        
 Feral Pig,Very Easy,Male,122.708 kg,83.7324 TR,Brown_Hybrid
 Hog Deer,Easy,Male,45.1985 kg,83.9383 TR,Brown        
 Banteng,Minor,Female,640.446 kg,83.9419 TR,Orange       
 Sambar,Very Easy,Male,265.206 kg,84.0061 TR,Light Brown  
-Axis Deer,Minor,Male,41.7034 kg,84.2071 TR,Spotted
+Javan Rusa,Very Easy,Male,158.98 kg,84.152 TR,White Brown
 Banteng,Minor,Female,640.623 kg,84.2894 TR,Mocha
 Banteng,Minor,Female,640.948 kg,84.316 TR,Mocha
-Axis Deer,Minor,Male,41.3832 kg,84.3352 TR,Spotted
-Axis Deer,Minor,Male,42.3484 kg,84.4263 TR,Spotted
 Feral Pig,Very Easy,Male,127.107 kg,84.471 TR,Dark Brown   
+Javan Rusa,Very Easy,Male,159.061 kg,84.5277 TR,Two Tone
 Feral Pig,Very Easy,Male,129.233 kg,84.6809 TR,Black Spots
+Javan Rusa,Very Easy,Male,159.081 kg,84.8308 TR,Light Brown  
 Sambar,Very Easy,Male,266.402 kg,84.8353 TR,Light Brown  
 Banteng,Minor,Female,642.81 kg,84.9557 TR,Orange       
 Sambar,Very Easy,Male,266.245 kg,85.2222 TR,Dark Brown   
 Sambar,Very Easy,Male,265.675 kg,85.223 TR,Dusky Grad.
 Feral Pig,Very Easy,Male,128.771 kg,85.2977 TR,Brown_Hybrid
+Javan Rusa,Very Easy,Male,159.585 kg,85.3355 TR,Two Tone
 Hog Deer,Easy,Male,45.6493 kg,85.4456 TR,Brown        
 Sambar,Very Easy,Male,265.521 kg,85.601 TR,Light Brown  
 Hog Deer,Easy,Male,45.5626 kg,85.6638 TR,Brown        
 Sambar,Very Easy,Male,266.853 kg,85.8206 TR,Light Brown  
 Sambar,Very Easy,Male,266.997 kg,85.8824 TR,Light Brown  
 Hog Deer,Easy,Male,45.8432 kg,85.9918 TR,Brown        
+Javan Rusa,Very Easy,Male,159.806 kg,86.0106 TR,Two Tone
 Sambar,Very Easy,Male,267.139 kg,86.026 TR,Light Brown  
 Feral Pig,Very Easy,Male,125.097 kg,86.0568 TR,Brown_Hybrid
 Hog Deer,Easy,Male,45.5139 kg,86.0657 TR,Brown        
 Feral Pig,Very Easy,Male,130.513 kg,86.4196 TR,Black Spots
 Hog Deer,Easy,Male,45.6522 kg,86.4607 TR,Brown        
+Javan Rusa,Very Easy,Male,159.353 kg,86.4792 TR,Two Tone
 Banteng,Minor,Female,645.313 kg,86.564 TR,Orange       
 Sambar,Very Easy,Male,267.425 kg,86.5893 TR,Brown        
 Sambar,Very Easy,Male,266.282 kg,86.6895 TR,Brown        
 Hog Deer,Easy,Male,45.8939 kg,86.7748 TR,Dark Spotted
 Hog Deer,Easy,Male,46.1184 kg,87.0184 TR,Brown        
+Javan Rusa,Very Easy,Male,159.913 kg,87.2179 TR,White Brown
 Sambar,Very Easy,Male,267.374 kg,87.2416 TR,Dark Brown   
+Javan Rusa,Very Easy,Male,159.683 kg,87.3624 TR,Two Tone
 Banteng,Minor,Female,648.547 kg,87.405 TR,Mocha
+Javan Rusa,Very Easy,Male,159.848 kg,87.4076 TR,Brown        
 Feral Pig,Very Easy,Male,127.408 kg,87.5684 TR,Black Spots
 Feral Pig,Very Easy,Male,127.334 kg,87.6015 TR,Brown_Hybrid
 Banteng,Minor,Female,646.976 kg,87.6094 TR,Orange       
@@ -2646,15 +2705,21 @@ Sambar,Very Easy,Male,267.148 kg,87.6151 TR,Brown
 Feral Pig,Very Easy,Male,131.532 kg,87.6289 TR,Dark Brown   
 Feral Pig,Very Easy,Male,128.849 kg,87.8013 TR,Dark Brown   
 Feral Pig,Very Easy,Male,129.387 kg,87.9539 TR,Dark Brown   
+Javan Rusa,Very Easy,Male,160.229 kg,88.2562 TR,White Brown
 Banteng,Minor,Female,649.113 kg,88.419 TR,Orange       
+Javan Rusa,Very Easy,Male,160.126 kg,88.4735 TR,Brown        
+Javan Rusa,Very Easy,Male,160.103 kg,88.5677 TR,Two Tone
 Feral Pig,Very Easy,Male,127.649 kg,88.5775 TR,Blackgold    
+Javan Rusa,Very Easy,Male,159.736 kg,88.7105 TR,Light Brown  
 Red Deer,Very Easy,Male,176.962 kg,88.764 TR,Light Brown  
 Hog Deer,Easy,Male,45.9455 kg,88.8341 TR,Brown        
 Banteng,Minor,Female,650.848 kg,88.9045 TR,Orange       
 Feral Pig,Very Easy,Male,130.642 kg,88.9055 TR,Black        
+Javan Rusa,Very Easy,Male,160.205 kg,88.9929 TR,Light Brown  
 Feral Pig,Very Easy,Male,133.828 kg,89.1475 TR,Black Spots
 Feral Pig,Very Easy,Male,131.332 kg,89.4814 TR,Black Spots
 Feral Pig,Very Easy,Male,128.645 kg,89.6325 TR,Black        
+Javan Rusa,Very Easy,Male,159.859 kg,89.8362 TR,Brown        
 Feral Pig,Very Easy,Male,132.843 kg,89.9521 TR,Dark Brown   
 Feral Pig,Very Easy,Male,131.733 kg,90.0679 TR,Brown_Hybrid
 Sambar,Very Easy,Male,267.528 kg,90.1198 TR,Brown        
@@ -2662,7 +2727,9 @@ Hog Deer,Easy,Male,46.2722 kg,90.2835 TR,Brown
 Banteng,Minor,Female,652.489 kg,90.3694 TR,Orange       
 Banteng,Minor,Female,651.812 kg,90.4522 TR,Orange       
 Sambar,Very Easy,Male,267.451 kg,90.5865 TR,Brown        
+Javan Rusa,Very Easy,Male,160.704 kg,90.6105 TR,Light Brown  
 Sambar,Very Easy,Male,268.225 kg,90.7291 TR,Dark Brown   
+Javan Rusa,Very Easy,Male,160.262 kg,90.9289 TR,Two Tone
 Banteng,Minor,Female,654.813 kg,91.2386 TR,Orange       
 Sambar,Very Easy,Male,267.575 kg,91.2811 TR,Dark Brown   
 Sambar,Very Easy,Male,268.505 kg,91.4932 TR,Dusky Grad.
@@ -2672,126 +2739,146 @@ Hog Deer,Easy,Male,47.0676 kg,91.9471 TR,Brown
 Sambar,Very Easy,Male,268.744 kg,91.9682 TR,Dusky Grad.
 Hog Deer,Easy,Male,46.8691 kg,92.1465 TR,Brown        
 Feral Pig,Very Easy,Male,135.613 kg,92.1828 TR,Black Spots
-Axis Deer,Minor,Male,43.6704 kg,92.241 TR,Spotted
 Hog Deer,Easy,Male,46.9069 kg,92.3824 TR,Brown        
 Hog Deer,Easy,Male,46.4644 kg,92.4243 TR,Dark Brown   
 Hog Deer,Easy,Male,46.5173 kg,92.4847 TR,Brown        
-Axis Deer,Minor,Male,43.4679 kg,92.757 TR,Spotted
+Javan Rusa,Very Easy,Male,160.409 kg,92.5358 TR,White Brown
 Sambar,Very Easy,Male,268.492 kg,92.7605 TR,Dark Brown   
 Sambar,Very Easy,Male,269.174 kg,92.9988 TR,Dusky Grad.
 Feral Pig,Very Easy,Male,133.571 kg,93.1546 TR,Blackgold    
 Sambar,Very Easy,Male,269.513 kg,93.1649 TR,Dark Brown   
+Javan Rusa,Very Easy,Male,160.757 kg,93.3794 TR,White Brown
 Sambar,Very Easy,Male,269.048 kg,93.4178 TR,Brown        
+Javan Rusa,Very Easy,Male,160.92 kg,93.4379 TR,Light Brown  
+Javan Rusa,Very Easy,Male,160.864 kg,93.5126 TR,Two Tone
 Banteng,Minor,Female,656.739 kg,93.8372 TR,Orange       
+Javan Rusa,Very Easy,Male,160.976 kg,93.8454 TR,Light Brown  
+Javan Rusa,Easy,Male,161.196 kg,93.9117 TR,Brown        
 Feral Pig,Very Easy,Male,134.512 kg,93.9122 TR,Brown_Hybrid
-Axis Deer,Minor,Male,44.2086 kg,94.0369 TR,Spotted
+Javan Rusa,Very Easy,Male,160.843 kg,94.0684 TR,White Brown
 Sambar,Very Easy,Male,269.135 kg,94.1248 TR,Brown        
 Banteng,Minor,Female,657.906 kg,94.22 TR,Orange       
+Javan Rusa,Easy,Male,161.018 kg,94.2781 TR,Brown        
 Feral Pig,Very Easy,Male,134.091 kg,94.4054 TR,Black Spots
-Axis Deer,Minor,Male,44.5203 kg,94.7327 TR,Spotted
+Javan Rusa,Very Easy,Male,160.747 kg,94.6346 TR,White Brown
+Javan Rusa,Easy,Male,161.314 kg,94.7497 TR,Brown        
 Feral Pig,Very Easy,Male,135.278 kg,94.8801 TR,Dark Brown   
+Javan Rusa,Very Easy,Male,160.75 kg,95.2248 TR,White Brown
 Sambar,Very Easy,Male,269.493 kg,95.5504 TR,Dark Brown   
 Hog Deer,Easy,Male,46.8297 kg,95.6061 TR,Spotted
+Javan Rusa,Easy,Male,161.084 kg,95.6216 TR,White Brown
 Sambar,Very Easy,Male,269.454 kg,95.6426 TR,Light Brown  
 Sambar,Very Easy,Male,270.367 kg,95.7594 TR,Dark Brown   
+Javan Rusa,Easy,Male,161.511 kg,95.826 TR,Brown        
 Sambar,Very Easy,Male,270.546 kg,95.9944 TR,Light Brown  
-Axis Deer,Minor,Male,43.2949 kg,96.0076 TR,Spotted
+Javan Rusa,Easy,Male,161.239 kg,96.0149 TR,Two Tone
 Feral Pig,Very Easy,Male,140.247 kg,96.1786 TR,Brown_Hybrid
 Feral Pig,Very Easy,Male,137.354 kg,96.3966 TR,Brown_Hybrid
+Javan Rusa,Easy,Male,161.201 kg,96.687 TR,Light Brown  
+Javan Rusa,Easy,Male,161.54 kg,96.7836 TR,Brown        
+Javan Rusa,Very Easy,Male,160.993 kg,96.9209 TR,Two Tone
 Sambar,Very Easy,Male,271.162 kg,96.9754 TR,Dark Brown   
 Feral Pig,Very Easy,Male,136.803 kg,97.0593 TR,Black Spots
 Sambar,Very Easy,Male,269.812 kg,97.155 TR,Dusky Grad.
 Sambar,Very Easy,Male,269.836 kg,97.2934 TR,Brown        
 Hog Deer,Easy,Male,47.3511 kg,97.3155 TR,Brown        
-Axis Deer,Minor,Male,44.6197 kg,97.3633 TR,Spotted
 Sambar,Very Easy,Male,269.584 kg,97.482 TR,Dark Brown   
 Sambar,Very Easy,Male,269.611 kg,97.5096 TR,Dark Brown   
 Sambar,Very Easy,Male,269.678 kg,97.5121 TR,Dark Brown   
 Sambar,Very Easy,Male,270.836 kg,97.5164 TR,Brown        
+Javan Rusa,Easy,Male,161.447 kg,97.8161 TR,Brown        
+Javan Rusa,Easy,Male,161.648 kg,97.8345 TR,White Brown
 Banteng,Minor,Male,625.481 kg,97.9064 TR,Dark Brown   
 Feral Pig,Very Easy,Male,142.282 kg,97.9141 TR,Black Spots
 Feral Pig,Very Easy,Male,137.286 kg,97.9362 TR,Black        
-Axis Deer,Minor,Male,44.5524 kg,97.9677 TR,Spotted
 Sambar,Very Easy,Male,271.237 kg,98.0016 TR,Dusky Grad.
 Feral Pig,Very Easy,Male,141.517 kg,98.0612 TR,Black        
-Axis Deer,Minor,Male,44.0136 kg,98.117 TR,Spotted
 Feral Pig,Very Easy,Male,138.715 kg,98.3991 TR,Black        
 Hog Deer,Easy,Male,47.7434 kg,98.4037 TR,Brown        
 Feral Pig,Very Easy,Male,138.519 kg,98.4212 TR,Brown_Hybrid
 Red Deer,Easy,Male,179.037 kg,98.4353 TR,Light Brown  
 Feral Pig,Very Easy,Male,139.691 kg,98.5293 TR,Black Spots
 Banteng,Minor,Male,627.323 kg,98.6193 TR,Black        
+Javan Rusa,Easy,Male,161.934 kg,98.6962 TR,Brown        
+Javan Rusa,Easy,Male,161.587 kg,98.7875 TR,Brown        
 Sambar,Very Easy,Male,271.99 kg,98.8738 TR,Brown        
 Fallow Deer,Minor,Male,66.643 kg,99.0667 TR,Dark Spotted
 Sambar,Very Easy,Male,271.506 kg,99.078 TR,Dusky Grad.
 Hog Deer,Easy,Male,47.7578 kg,99.082 TR,Brown        
-Axis Deer,Minor,Male,44.7489 kg,99.4382 TR,Spotted
+Javan Rusa,Easy,Male,161.666 kg,99.2244 TR,Light Brown  
+Javan Rusa,Easy,Male,161.969 kg,99.2748 TR,Brown        
+Javan Rusa,Easy,Male,161.93 kg,99.3068 TR,White Brown
+Javan Rusa,Easy,Male,161.598 kg,99.4068 TR,Light Brown  
 Sambar,Very Easy,Male,271.155 kg,99.5645 TR,Dusky Grad.
-Axis Deer,Minor,Male,45.1207 kg,99.8281 TR,Spotted
 Fallow Deer,Minor,Male,67.537 kg,99.8331 TR,Spotted
 Red Deer,Easy,Male,179.8 kg,99.8768 TR,Light Brown  
-Axis Deer,Minor,Male,45.0166 kg,99.9205 TR,Dark         
 Feral Goat,Very Easy,Male,44.9945 kg,99.9256 TR,Brown        
 Sambar,Very Easy,Male,270.653 kg,100.127 TR,Light Brown  
-Axis Deer,Minor,Male,44.8362 kg,100.208 TR,Spotted
 Feral Pig,Very Easy,Male,143.109 kg,100.239 TR,Black        
 Hog Deer,Easy,Male,47.9437 kg,100.266 TR,Brown        
 Banteng,Very Easy,Female,669.803 kg,100.386 TR,Orange       
-Axis Deer,Minor,Male,45.4527 kg,100.564 TR,Spotted
 Feral Pig,Very Easy,Male,141.453 kg,100.771 TR,Brown_Hybrid
 Sambar,Very Easy,Male,272.366 kg,100.996 TR,Light Brown  
 Feral Pig,Very Easy,Male,142.944 kg,101.227 TR,Black Spots
 Sambar,Very Easy,Male,272.698 kg,101.472 TR,Dusky Grad.
-Axis Deer,Minor,Male,45.2891 kg,101.711 TR,Dark         
+Javan Rusa,Easy,Male,162.35 kg,101.519 TR,White Brown
+Javan Rusa,Easy,Male,162.261 kg,101.549 TR,Light Brown  
 Hog Deer,Easy,Male,47.7859 kg,101.788 TR,Brown        
 Feral Goat,Very Easy,Male,44.6329 kg,101.796 TR,White        
 Sambar,Very Easy,Male,272.999 kg,102.018 TR,Dusky Grad.
+Javan Rusa,Easy,Male,162.653 kg,102.406 TR,Light Brown  
 Red Deer,Easy,Male,180.776 kg,102.451 TR,Light Brown  
 Feral Pig,Very Easy,Male,145.804 kg,102.567 TR,Black Spots
 Feral Pig,Very Easy,Male,142.495 kg,102.573 TR,Brown_Hybrid
 Sambar,Very Easy,Male,273.106 kg,102.586 TR,Dark Brown   
 Sambar,Very Easy,Male,272.628 kg,102.647 TR,Light Brown  
 Feral Goat,Very Easy,Male,45.0805 kg,102.698 TR,Brown        
+Javan Rusa,Easy,Male,162.741 kg,102.829 TR,White Brown
+Javan Rusa,Easy,Male,162.062 kg,102.904 TR,Brown        
+Javan Rusa,Easy,Male,162 kg,103.075 TR,Brown        
 Red Deer,Easy,Male,180.355 kg,103.136 TR,Light Brown  
+Javan Rusa,Easy,Male,162.553 kg,103.204 TR,Brown        
 Sambar,Very Easy,Male,273.459 kg,103.319 TR,Dusky Grad.
+Javan Rusa,Easy,Male,162.428 kg,103.438 TR,Two Tone
 Sambar,Very Easy,Male,272.166 kg,103.475 TR,Dark Brown   
 Sambar,Very Easy,Male,273.18 kg,103.518 TR,Light Brown  
 Banteng,Minor,Male,648.121 kg,103.578 TR,Black        
 Sambar,Very Easy,Male,272.611 kg,103.651 TR,Brown        
 Sambar,Very Easy,Male,272.138 kg,103.704 TR,Light Brown  
+Javan Rusa,Easy,Male,162.393 kg,103.711 TR,White Brown
 Sambar,Very Easy,Male,272.327 kg,103.752 TR,Dark Brown   
 Sambar,Very Easy,Male,273.71 kg,103.76 TR,Light Brown  
-Axis Deer,Minor,Male,46.0141 kg,103.816 TR,Spotted
-Axis Deer,Minor,Male,45.014 kg,103.899 TR,Spotted
-Axis Deer,Very Easy,Male,46.4455 kg,103.966 TR,Spotted
 Sambar,Very Easy,Male,272.491 kg,104.147 TR,Brown        
+Javan Rusa,Easy,Male,162.638 kg,104.645 TR,Two Tone
 Sambar,Very Easy,Male,272.314 kg,104.876 TR,Brown        
-Axis Deer,Very Easy,Male,46.5957 kg,104.879 TR,Spotted
 Sambar,Very Easy,Male,272.677 kg,105.076 TR,Brown        
-Axis Deer,Very Easy,Male,46.8748 kg,105.144 TR,Spotted
-Axis Deer,Very Easy,Male,46.4745 kg,105.148 TR,Spotted
 Sambar,Very Easy,Male,273.835 kg,105.215 TR,Light Brown  
+Javan Rusa,Easy,Male,162.581 kg,105.223 TR,Light Brown  
 Feral Pig,Easy,Male,150.771 kg,105.575 TR,Black        
 Feral Pig,Easy,Male,150.158 kg,105.639 TR,Blackgold    
 Red Deer,Easy,Male,180.428 kg,105.67 TR,Light Brown  
 Sambar,Very Easy,Male,272.844 kg,105.718 TR,Light Brown  
+Javan Rusa,Easy,Male,163.093 kg,105.779 TR,Light Brown  
 Feral Pig,Easy,Male,151.727 kg,105.807 TR,Brown_Hybrid
-Axis Deer,Very Easy,Male,47.0408 kg,106.295 TR,Spotted
 Banteng,Minor,Male,655.641 kg,106.35 TR,Black        
 Sambar,Very Easy,Male,274.505 kg,106.424 TR,Dark Brown   
+Javan Rusa,Easy,Male,162.863 kg,106.493 TR,Light Brown  
 Feral Pig,Very Easy,Male,149.286 kg,106.639 TR,Blackgold    
 Feral Pig,Very Easy,Male,149.618 kg,106.82 TR,Black Spots
 Sambar,Very Easy,Male,274.635 kg,107.001 TR,Dusky Grad.
+Javan Rusa,Easy,Male,163.387 kg,107.024 TR,Brown        
 Sambar,Very Easy,Male,273.229 kg,107.041 TR,Brown        
-Axis Deer,Very Easy,Male,46.6451 kg,107.223 TR,Spotted
 Sambar,Very Easy,Male,274.431 kg,107.241 TR,Brown        
 Feral Pig,Easy,Male,151.344 kg,107.434 TR,Black Spots
 Fallow Deer,Minor,Male,68.8437 kg,107.493 TR,Dark         
 Banteng,Minor,Male,662.145 kg,107.662 TR,Black        
 Banteng,Minor,Male,663.854 kg,107.703 TR,Brown        
+Javan Rusa,Easy,Male,163.523 kg,107.718 TR,White Brown
 Red Deer,Easy,Male,182.53 kg,107.927 TR,Dark Brown   
 Sambar,Very Easy,Male,273.555 kg,107.937 TR,Dusky Grad.
+Javan Rusa,Easy,Male,163.019 kg,107.963 TR,White Brown
 Feral Pig,Easy,Male,151.355 kg,107.997 TR,Dark Brown   
+Javan Rusa,Easy,Male,162.892 kg,108.117 TR,White Brown
 Fallow Deer,Minor,Male,69.3866 kg,108.193 TR,Dark         
 Hog Deer,Medium,Male,48.8635 kg,108.374 TR,Brown        
 Red Deer,Easy,Male,183.687 kg,108.418 TR,Brown        
@@ -2800,25 +2887,31 @@ Sambar,Very Easy,Male,274.826 kg,108.531 TR,Dark Brown
 Sambar,Very Easy,Male,274.396 kg,108.734 TR,Dark Brown   
 Sambar,Very Easy,Male,273.594 kg,108.773 TR,Light Brown  
 Sambar,Very Easy,Male,273.594 kg,108.883 TR,Brown        
-Axis Deer,Very Easy,Male,46.8071 kg,108.908 TR,Spotted
 Sambar,Very Easy,Male,274.728 kg,109.004 TR,Brown        
-Axis Deer,Very Easy,Male,46.854 kg,109.145 TR,Spotted
 Sambar,Very Easy,Male,274.119 kg,109.195 TR,Light Brown  
 Feral Pig,Easy,Male,155.013 kg,109.475 TR,Dark Brown   
 Sambar,Very Easy,Male,275.057 kg,109.48 TR,Light Brown  
+Javan Rusa,Easy,Male,163.767 kg,109.535 TR,Light Brown  
+Javan Rusa,Easy,Male,163.222 kg,109.631 TR,White Brown
 Sambar,Very Easy,Male,275.738 kg,110.13 TR,Light Brown  
+Javan Rusa,Easy,Male,163.563 kg,110.193 TR,Brown        
 Sambar,Very Easy,Male,275.852 kg,110.252 TR,Light Brown  
+Javan Rusa,Easy,Male,163.609 kg,110.255 TR,White Brown
 Sambar,Very Easy,Male,275.926 kg,110.308 TR,Dark Brown   
 Fallow Deer,Minor,Male,69.3497 kg,110.363 TR,Spotted
 Banteng,Very Easy,Male,668.484 kg,110.426 TR,Black        
 Sambar,Very Easy,Male,275.777 kg,110.447 TR,Dusky Grad.
 Sambar,Very Easy,Male,275.185 kg,110.703 TR,Dark Brown   
+Javan Rusa,Easy,Male,163.849 kg,110.712 TR,Two Tone
 Sambar,Very Easy,Male,275.281 kg,110.738 TR,Light Brown  
+Javan Rusa,Easy,Male,163.936 kg,110.775 TR,Light Brown  
 Banteng,Very Easy,Male,673.074 kg,110.779 TR,Black        
 Red Deer,Easy,Male,183.17 kg,110.8 TR,Brown        
 Feral Goat,Very Easy,Male,45.074 kg,110.905 TR,Brown        
+Javan Rusa,Easy,Male,163.5 kg,110.998 TR,Brown        
 Fallow Deer,Minor,Male,69.0578 kg,111.11 TR,Dark         
 Banteng,Very Easy,Male,677.317 kg,111.209 TR,Black        
+Javan Rusa,Easy,Male,163.814 kg,111.279 TR,White Brown
 Feral Goat,Very Easy,Male,45.457 kg,111.357 TR,Blonde       
 Sambar,Very Easy,Male,275.214 kg,111.373 TR,Brown        
 Banteng,Very Easy,Male,675.34 kg,111.432 TR,Black        
@@ -2830,14 +2923,11 @@ Fallow Deer,Minor,Male,70.1332 kg,112.133 TR,Chocolate
 Banteng,Very Easy,Male,680.198 kg,112.166 TR,Black        
 Red Deer,Easy,Male,183.333 kg,112.282 TR,Brown        
 Banteng,Very Easy,Male,678.256 kg,112.32 TR,Black        
-Axis Deer,Very Easy,Male,47.8167 kg,112.337 TR,Spotted
 Banteng,Very Easy,Male,678.304 kg,112.353 TR,Black        
-Axis Deer,Very Easy,Male,47.2374 kg,112.548 TR,Spotted
 Sambar,Very Easy,Male,275.911 kg,112.77 TR,Light Brown  
-Axis Deer,Very Easy,Male,47.3289 kg,112.805 TR,Dark         
 Red Deer,Easy,Male,184.814 kg,112.827 TR,Light Brown  
 Banteng,Very Easy,Male,683.325 kg,112.898 TR,Dark Brown   
-Axis Deer,Very Easy,Male,47.8263 kg,113.26 TR,Spotted
+Javan Rusa,Easy,Male,163.922 kg,113.015 TR,White Brown
 Sambar,Very Easy,Male,275.996 kg,113.371 TR,Light Brown  
 Sambar,Very Easy,Male,276.072 kg,113.402 TR,Dark Brown   
 Banteng,Very Easy,Male,682.357 kg,113.513 TR,Mocha
@@ -2845,25 +2935,29 @@ Sambar,Easy,Male,276.618 kg,113.568 TR,Light Brown
 Fallow Deer,Minor,Male,69.8445 kg,113.667 TR,Spotted
 Banteng,Very Easy,Male,687.124 kg,113.715 TR,Black        
 Banteng,Very Easy,Male,688.259 kg,113.845 TR,Black        
+Javan Rusa,Easy,Male,163.922 kg,113.98 TR,Two Tone
 Feral Pig,Easy,Male,156.747 kg,113.985 TR,Black Spots
 Red Deer,Easy,Male,183.416 kg,113.996 TR,Dark Brown   
 Banteng,Very Easy,Male,687.56 kg,114.006 TR,Black        
+Javan Rusa,Easy,Male,164.544 kg,114.009 TR,Brown        
 Sambar,Very Easy,Male,276.411 kg,114.183 TR,Light Brown  
 Banteng,Very Easy,Male,686.282 kg,114.221 TR,Black        
-Axis Deer,Very Easy,Male,47.6855 kg,114.439 TR,Spotted
+Javan Rusa,Easy,Male,163.894 kg,114.262 TR,Two Tone
 Sambar,Very Easy,Male,276.447 kg,114.449 TR,Dark Brown   
 Banteng,Very Easy,Male,686.078 kg,114.553 TR,Black        
 Feral Pig,Easy,Male,159.466 kg,114.582 TR,Blackgold    
+Javan Rusa,Easy,Male,164.642 kg,114.601 TR,Light Brown  
+Javan Rusa,Easy,Male,163.919 kg,114.635 TR,Brown        
 Sambar,Very Easy,Male,276.427 kg,114.693 TR,Brown        
 Red Deer,Easy,Male,184.793 kg,114.695 TR,Light Brown  
 Red Deer,Easy,Male,185.256 kg,114.702 TR,Dark Brown   
+Javan Rusa,Easy,Male,164.004 kg,114.795 TR,White Brown
 Fallow Deer,Minor,Male,69.9777 kg,115.039 TR,Dark         
 Feral Pig,Easy,Male,155.977 kg,115.099 TR,Dark Brown   
 Banteng,Very Easy,Male,689.142 kg,115.156 TR,Black        
 Banteng,Very Easy,Male,690.224 kg,115.292 TR,Black        
-Axis Deer,Very Easy,Male,49.1664 kg,115.352 TR,Spotted
-Axis Deer,Very Easy,Male,48.7046 kg,115.385 TR,Spotted
 Sambar,Very Easy,Male,276.266 kg,115.396 TR,Brown        
+Javan Rusa,Easy,Male,164.383 kg,115.446 TR,Light Brown  
 Sambar,Very Easy,Male,276.376 kg,115.695 TR,Brown        
 Fallow Deer,Minor,Male,70.8527 kg,115.888 TR,White        
 Sambar,Easy,Male,276.872 kg,115.995 TR,Brown        
@@ -2882,34 +2976,34 @@ Sambar,Easy,Male,277.555 kg,116.975 TR,Light Brown
 Banteng,Very Easy,Male,698.857 kg,117.118 TR,Black        
 Banteng,Very Easy,Male,698.545 kg,117.247 TR,Black        
 Red Deer,Easy,Male,185.261 kg,117.434 TR,Brown        
-Axis Deer,Very Easy,Male,48.4562 kg,117.557 TR,Spotted
 Banteng,Very Easy,Male,700.05 kg,117.573 TR,Black        
 Sambar,Easy,Male,277.697 kg,117.589 TR,Light Brown  
 Sambar,Easy,Male,277.875 kg,117.668 TR,Dusky Grad.
+Javan Rusa,Easy,Male,165.003 kg,117.814 TR,Light Brown  
 Sambar,Easy,Male,278.397 kg,117.92 TR,Dusky Grad.
 Feral Pig,Easy,Male,158.893 kg,118.087 TR,Blackgold    
 Sambar,Easy,Male,277.892 kg,118.134 TR,Dusky Grad.
-Axis Deer,Very Easy,Male,48.5987 kg,118.337 TR,Spotted
-Axis Deer,Very Easy,Male,48.9339 kg,118.453 TR,Spotted
-Axis Deer,Very Easy,Male,49.2183 kg,118.672 TR,Spotted
-Axis Deer,Very Easy,Male,49.0389 kg,118.732 TR,Spotted
 Feral Pig,Easy,Male,164.191 kg,118.798 TR,Dark Brown   
 Banteng,Very Easy,Male,699.993 kg,118.811 TR,Black        
 Sambar,Easy,Male,278.089 kg,118.867 TR,Dusky Grad.
 Sambar,Easy,Male,278.779 kg,118.889 TR,Dark Brown   
 Banteng,Very Easy,Male,699.132 kg,118.963 TR,Dark Brown   
-Axis Deer,Very Easy,Male,49.7471 kg,119.092 TR,Spotted
+Javan Rusa,Easy,Male,165.392 kg,118.983 TR,White Brown
 Banteng,Very Easy,Male,700.722 kg,119.198 TR,Black        
 Sambar,Easy,Male,278.374 kg,119.235 TR,Dark Brown   
 Red Deer,Medium,Male,187.476 kg,119.325 TR,Light Brown  
 Banteng,Very Easy,Male,707.331 kg,119.38 TR,Black        
+Javan Rusa,Easy,Male,165.432 kg,119.573 TR,Two Tone
 Fallow Deer,Minor,Male,70.7804 kg,119.613 TR,Dark Spotted
 Banteng,Very Easy,Male,709.009 kg,119.792 TR,Black        
 Fallow Deer,Minor,Male,71.4693 kg,119.86 TR,Spotted
+Javan Rusa,Easy,Male,165.383 kg,119.876 TR,Brown        
 Banteng,Very Easy,Male,703.596 kg,120 TR,Black        
 Red Deer,Easy,Male,186.266 kg,120.078 TR,Light Brown  
+Javan Rusa,Easy,Male,165.499 kg,120.078 TR,White Brown
 Red Deer,Medium,Male,187.792 kg,120.109 TR,Light Brown  
 Banteng,Very Easy,Male,705.64 kg,120.188 TR,Black        
+Javan Rusa,Easy,Male,165.026 kg,120.336 TR,Brown        
 Banteng,Very Easy,Male,703.904 kg,120.382 TR,Mocha
 Banteng,Very Easy,Male,710.862 kg,120.393 TR,Black        
 Banteng,Very Easy,Male,710.669 kg,120.451 TR,Black        
@@ -2921,20 +3015,20 @@ Banteng,Very Easy,Male,708.62 kg,121.074 TR,Black
 Banteng,Very Easy,Male,712.097 kg,121.126 TR,Black        
 Fallow Deer,Minor,Male,71.0102 kg,121.15 TR,White        
 Red Deer,Easy,Male,186.262 kg,121.208 TR,Brown        
+Javan Rusa,Easy,Male,165.172 kg,121.24 TR,White Brown
 Banteng,Very Easy,Male,712.949 kg,121.366 TR,Black        
 Sambar,Easy,Male,279.165 kg,121.471 TR,Brown        
-Axis Deer,Very Easy,Male,50.2767 kg,121.491 TR,Dark         
+Javan Rusa,Easy,Male,165.53 kg,121.556 TR,Two Tone
 Red Deer,Easy,Male,185.77 kg,121.67 TR,Dark Brown   
-Axis Deer,Very Easy,Male,50.4924 kg,121.732 TR,Spotted
 Banteng,Very Easy,Male,710.032 kg,121.787 TR,Black        
 Feral Pig,Easy,Male,164.534 kg,121.855 TR,Black Spots
 Sambar,Easy,Male,279.826 kg,121.998 TR,Light Brown  
-Axis Deer,Very Easy,Male,49.6223 kg,122.203 TR,Spotted
 Sambar,Easy,Male,280.129 kg,122.367 TR,Brown        
 Banteng,Easy,Male,715.979 kg,122.437 TR,Black        
-Axis Deer,Very Easy,Male,49.8496 kg,122.521 TR,Dark         
 Sambar,Easy,Male,278.957 kg,122.574 TR,Dark Brown   
 Red Deer,Medium,Male,186.561 kg,122.651 TR,Brown        
+Javan Rusa,Easy,Male,165.51 kg,122.674 TR,White Brown
+Javan Rusa,Easy,Male,165.669 kg,122.724 TR,Two Tone
 Banteng,Easy,Male,719.295 kg,122.796 TR,Black        
 Banteng,Easy,Male,719.93 kg,122.816 TR,Black        
 Fallow Deer,Minor,Male,71.0141 kg,122.847 TR,Chocolate
@@ -2942,15 +3036,13 @@ Sambar,Easy,Male,278.739 kg,122.91 TR,Brown
 Banteng,Easy,Male,717.111 kg,122.954 TR,Black        
 Sambar,Easy,Male,279.562 kg,123.012 TR,Brown        
 Sambar,Easy,Male,280.217 kg,123.116 TR,Dusky Grad.
-Axis Deer,Very Easy,Male,50.4314 kg,123.152 TR,Spotted
 Banteng,Easy,Male,719.574 kg,123.352 TR,Mocha
 Red Deer,Medium,Male,188.592 kg,123.481 TR,Brown        
 Sambar,Easy,Male,280.466 kg,123.556 TR,Brown        
 Fallow Deer,Very Easy,Male,72.0006 kg,123.606 TR,Spotted
-Axis Deer,Very Easy,Male,50.381 kg,123.826 TR,Spotted
+Javan Rusa,Easy,Male,165.998 kg,123.82 TR,Two Tone
 Sambar,Easy,Male,279.788 kg,124.099 TR,Light Brown  
 Fallow Deer,Minor,Male,71.8782 kg,124.283 TR,White        
-Axis Deer,Very Easy,Male,50.5015 kg,124.359 TR,Spotted
 Feral Pig,Easy,Male,171.279 kg,124.533 TR,Brown_Hybrid
 Sambar,Easy,Male,279.993 kg,124.618 TR,Dark Brown   
 Banteng,Easy,Male,721.056 kg,124.772 TR,Black        
@@ -2958,53 +3050,46 @@ Banteng,Easy,Male,727.555 kg,125.063 TR,Dark Brown
 Red Deer,Medium,Male,188.488 kg,125.161 TR,Dark Brown   
 Banteng,Easy,Male,726.788 kg,125.247 TR,Black        
 Feral Goat,Very Easy,Male,46.0907 kg,125.427 TR,Black Brown
-Axis Deer,Very Easy,Male,49.8182 kg,125.533 TR,Spotted
 Feral Goat,Very Easy,Male,45.7563 kg,125.548 TR,Blonde       
 Sambar,Easy,Male,279.655 kg,125.621 TR,Light Brown  
 Sambar,Easy,Male,279.852 kg,125.667 TR,Dark Brown   
 Banteng,Easy,Male,725.378 kg,125.83 TR,Mocha
+Javan Rusa,Easy,Male,165.889 kg,125.84 TR,Brown        
 Banteng,Easy,Male,729.428 kg,125.865 TR,Black        
-Axis Deer,Very Easy,Male,51.1736 kg,126.084 TR,Spotted
 Sambar,Easy,Male,280.709 kg,126.103 TR,Light Brown  
 Sambar,Easy,Male,279.867 kg,126.34 TR,Light Brown  
 Fallow Deer,Very Easy,Male,72.2964 kg,126.533 TR,White        
 Red Deer,Medium,Male,188.729 kg,126.534 TR,Brown        
 Banteng,Easy,Male,728.776 kg,126.669 TR,Black        
-Axis Deer,Very Easy,Male,51.584 kg,126.7 TR,Spotted
 Feral Goat,Very Easy,Male,46.0728 kg,127.081 TR,Brown        
-Axis Deer,Very Easy,Male,50.1798 kg,127.359 TR,Spotted
 Fallow Deer,Very Easy,Male,73.0927 kg,127.399 TR,Spotted
 Feral Goat,Very Easy,Male,45.8138 kg,127.525 TR,Blonde       
 Sambar,Easy,Male,280.454 kg,127.765 TR,Dark Brown   
 Feral Goat,Very Easy,Male,46.2121 kg,127.833 TR,Blonde       
 Sambar,Easy,Male,282.113 kg,127.841 TR,Dark Brown   
 Banteng,Easy,Male,731.186 kg,127.973 TR,Black        
-Axis Deer,Very Easy,Male,50.1498 kg,128.013 TR,Dark         
 Feral Pig,Easy,Male,172.744 kg,128.382 TR,Brown_Hybrid
-Axis Deer,Very Easy,Male,51.858 kg,128.387 TR,Spotted
 Banteng,Easy,Male,735.007 kg,128.485 TR,Black        
-Axis Deer,Very Easy,Male,51.1545 kg,128.49 TR,Spotted
 Fallow Deer,Very Easy,Male,73.2251 kg,128.503 TR,Dark         
 Banteng,Easy,Male,736.829 kg,128.534 TR,Black        
+Javan Rusa,Easy,Male,166.519 kg,128.77 TR,Brown        
 Banteng,Easy,Male,741.692 kg,128.879 TR,Black        
 Red Deer,Medium,Male,190.91 kg,128.903 TR,Dark Brown   
+Javan Rusa,Easy,Male,166.912 kg,128.964 TR,Brown        
 Sambar,Easy,Male,282.529 kg,129.173 TR,Dark Brown   
-Axis Deer,Very Easy,Male,51.4254 kg,129.188 TR,Spotted
 Fallow Deer,Very Easy,Male,73.1485 kg,129.282 TR,Dark Spotted
 Fallow Deer,Very Easy,Male,72.6007 kg,129.318 TR,White        
 Sambar,Easy,Male,282.125 kg,129.36 TR,Dusky Grad.
-Axis Deer,Very Easy,Male,51.6298 kg,129.465 TR,Dark         
 Banteng,Easy,Male,744.427 kg,129.712 TR,Black        
 Sambar,Easy,Male,281.223 kg,130.089 TR,Brown        
 Sambar,Easy,Male,281.987 kg,130.247 TR,Dusky Grad.
+Javan Rusa,Easy,Male,166.603 kg,130.268 TR,Brown        
 Sambar,Easy,Male,283.132 kg,130.475 TR,Light Brown  
 Red Deer,Medium,Male,189.677 kg,130.559 TR,Brown        
 Sambar,Easy,Male,283.045 kg,130.628 TR,Dark Brown   
-Axis Deer,Very Easy,Male,51.6781 kg,130.742 TR,Spotted
 Feral Pig,Easy,Male,173.088 kg,130.775 TR,Dark Brown   
-Axis Deer,Very Easy,Male,51.0779 kg,130.928 TR,Spotted
 Fallow Deer,Very Easy,Male,73.8198 kg,131.261 TR,White        
-Axis Deer,Very Easy,Male,51.9192 kg,131.567 TR,Spotted
+Javan Rusa,Easy,Male,166.866 kg,131.288 TR,Two Tone
 Red Deer,Medium,Male,191.316 kg,131.591 TR,Dark Brown   
 Sambar,Easy,Male,282.558 kg,131.643 TR,Brown        
 Sambar,Easy,Male,283.18 kg,131.801 TR,Dusky Grad.
@@ -3013,23 +3098,17 @@ Red Deer,Medium,Male,191.632 kg,132.515 TR,Dark Brown
 Sambar,Easy,Male,283.688 kg,132.524 TR,Light Brown  
 Feral Goat,Very Easy,Male,45.9009 kg,132.577 TR,Brown        
 Sambar,Easy,Male,282.843 kg,132.749 TR,Brown        
-Axis Deer,Very Easy,Male,52.937 kg,132.778 TR,Spotted
 Sambar,Easy,Male,282.673 kg,132.902 TR,Dusky Grad.
 Feral Goat,Very Easy,Male,45.9208 kg,133.166 TR,White        
-Axis Deer,Very Easy,Male,52.825 kg,133.323 TR,Spotted
 Red Deer,Medium,Male,190.245 kg,133.327 TR,Dark Brown   
-Axis Deer,Very Easy,Male,51.5058 kg,133.708 TR,Dark         
 Red Deer,Medium,Male,189.716 kg,134.269 TR,Brown        
 Fallow Deer,Very Easy,Male,73.0445 kg,134.302 TR,Spotted
 Fallow Deer,Very Easy,Male,74.0976 kg,134.349 TR,Dark         
-Axis Deer,Very Easy,Male,53.2476 kg,134.372 TR,Spotted
 Sambar,Easy,Male,283.869 kg,134.527 TR,Light Brown  
 Feral Goat,Easy,Male,46.4106 kg,134.727 TR,Black Brown
 Fallow Deer,Very Easy,Male,73.2105 kg,134.774 TR,Dark         
 Feral Goat,Easy,Male,46.4437 kg,134.931 TR,Blonde       
 Sambar,Easy,Male,283.38 kg,135.442 TR,Brown        
-Axis Deer,Very Easy,Male,51.9019 kg,135.501 TR,Spotted
-Axis Deer,Very Easy,Male,51.8091 kg,135.573 TR,Spotted
 Stubble Quail,Trivial,Female,0.0946364 kg,135.844 TR,Gray         
 Feral Goat,Very Easy,Male,46.0125 kg,136.252 TR,Blonde       
 Sambar,Easy,Male,284.961 kg,136.382 TR,Light Brown  
@@ -3037,24 +3116,17 @@ Sambar,Easy,Male,284.802 kg,136.52 TR,Dark Brown
 Sambar,Easy,Male,284.386 kg,136.553 TR,Brown        
 Stubble Quail,Trivial,Female,0.0953627 kg,136.641 TR,Grey Brown
 Sambar,Easy,Male,283.72 kg,136.738 TR,Light Brown  
-Axis Deer,Very Easy,Male,52.5426 kg,136.749 TR,Dark         
+Javan Rusa,Easy,Male,167.836 kg,136.751 TR,Light Brown  
 Sambar,Easy,Male,284.768 kg,136.885 TR,Brown        
 Sambar,Easy,Male,284.741 kg,137.019 TR,Brown        
-Axis Deer,Very Easy,Male,52.8551 kg,137.048 TR,Spotted
 Feral Goat,Very Easy,Male,46.1182 kg,137.115 TR,White Brown
 Feral Goat,Easy,Male,46.4639 kg,137.276 TR,Blonde       
-Axis Deer,Very Easy,Male,52.5969 kg,137.384 TR,Spotted
 Sambar,Easy,Male,285.306 kg,137.728 TR,Brown        
 Fallow Deer,Very Easy,Male,74.6478 kg,138.006 TR,Spotted
 Red Deer,Medium,Male,193.469 kg,138.231 TR,Light Brown  
-Axis Deer,Very Easy,Male,53.473 kg,138.262 TR,Piebald      
-Axis Deer,Very Easy,Male,52.606 kg,138.63 TR,Spotted
 Stubble Quail,Trivial,Female,0.0974565 kg,138.808 TR,Grey Brown
-Axis Deer,Very Easy,Male,53.6457 kg,138.89 TR,Dark         
-Axis Deer,Very Easy,Male,54.305 kg,139.218 TR,Spotted
+Javan Rusa,Easy,Male,168.518 kg,139.107 TR,White Brown
 Fallow Deer,Very Easy,Male,74.7772 kg,139.274 TR,Dark         
-Axis Deer,Very Easy,Male,53.1013 kg,139.446 TR,Spotted
-Axis Deer,Very Easy,Male,52.943 kg,139.689 TR,Spotted
 Stubble Quail,Trivial,Female,0.0988057 kg,139.959 TR,Gray         
 Sambar,Easy,Male,286.349 kg,140.005 TR,Light Brown  
 Fallow Deer,Very Easy,Male,75.2882 kg,140.084 TR,Dark         
@@ -3063,12 +3135,9 @@ Feral Goat,Easy,Male,46.5431 kg,140.518 TR,Dark Brown
 Red Deer,Medium,Male,194.178 kg,140.646 TR,Light Brown  
 Red Deer,Medium,Male,194.93 kg,140.954 TR,Brown        
 Sambar,Easy,Male,286.708 kg,140.955 TR,Light Brown  
-Axis Deer,Very Easy,Male,53.2665 kg,140.966 TR,Spotted
 Red Deer,Medium,Male,192.436 kg,140.976 TR,Brown        
-Axis Deer,Very Easy,Male,53.7212 kg,141.175 TR,Spotted
 Stubble Quail,Trivial,Female,0.100834 kg,141.336 TR,Gray         
 Feral Goat,Easy,Male,46.6658 kg,141.43 TR,White        
-Axis Deer,Very Easy,Male,54.8109 kg,141.479 TR,Spotted
 Feral Goat,Easy,Male,46.5526 kg,141.554 TR,Dark Brown   
 Stubble Quail,Trivial,Female,0.100196 kg,141.616 TR,Gray         
 Feral Pig,Easy,Male,185.952 kg,141.631 TR,Black Spots
@@ -3077,15 +3146,12 @@ Stubble Quail,Trivial,Female,0.100736 kg,141.758 TR,Gray
 Fallow Deer,Very Easy,Male,75.6325 kg,141.825 TR,Spotted
 Red Deer,Medium,Male,193.258 kg,141.84 TR,Brown        
 Red Deer,Medium,Male,194.102 kg,141.908 TR,Brown        
-Axis Deer,Very Easy,Male,54.8211 kg,141.969 TR,Spotted
+Javan Rusa,Medium,Male,169.146 kg,142.23 TR,Brown        
 Stubble Quail,Trivial,Female,0.100286 kg,142.367 TR,Gray         
 Fallow Deer,Very Easy,Male,74.9091 kg,142.455 TR,Dark         
-Axis Deer,Very Easy,Male,53.872 kg,142.478 TR,Dark         
-Axis Deer,Very Easy,Male,54.8693 kg,142.569 TR,Spotted
 Feral Goat,Easy,Male,46.4168 kg,142.58 TR,White        
 Stubble Quail,Trivial,Female,0.101125 kg,142.815 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.101097 kg,142.825 TR,Grey Brown
-Axis Deer,Very Easy,Male,54.1871 kg,142.927 TR,Spotted
 Stubble Quail,Trivial,Female,0.101308 kg,142.945 TR,Grey Brown
 Red Deer,Medium,Male,193.319 kg,143.045 TR,Dark Brown   
 Feral Goat,Easy,Male,46.5315 kg,143.057 TR,Dark Brown   
@@ -3093,16 +3159,13 @@ Stubble Quail,Trivial,Female,0.102187 kg,143.098 TR,Gray
 Stubble Quail,Trivial,Female,0.100924 kg,143.158 TR,Grey Brown
 Feral Goat,Easy,Male,46.6593 kg,143.398 TR,Dark Brown   
 Fallow Deer,Very Easy,Male,75.8042 kg,143.594 TR,Dark         
-Axis Deer,Very Easy,Male,54.7262 kg,143.626 TR,Spotted
 Stubble Quail,Trivial,Female,0.101923 kg,144.083 TR,Gray         
 Fallow Deer,Very Easy,Male,75.8511 kg,144.365 TR,Spotted
 Stubble Quail,Trivial,Female,0.10259 kg,144.402 TR,Gray         
 Feral Goat,Easy,Male,46.3738 kg,144.479 TR,Blonde       
 Sambar,Easy,Male,287.403 kg,144.734 TR,Brown        
-Axis Deer,Very Easy,Male,54.0869 kg,144.848 TR,Spotted
 Stubble Quail,Trivial,Female,0.10366 kg,144.955 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.10364 kg,145.351 TR,Grey Brown
-Axis Deer,Very Easy,Male,55.2814 kg,145.413 TR,Spotted
 Red Deer,Medium,Male,193.78 kg,145.434 TR,Brown        
 Stubble Quail,Trivial,Female,0.103015 kg,145.442 TR,Gray         
 Stubble Quail,Trivial,Female,0.103963 kg,145.493 TR,Gray         
@@ -3116,14 +3179,12 @@ Stubble Quail,Trivial,Female,0.105133 kg,146.459 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.105284 kg,146.47 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.104839 kg,146.672 TR,Grey Brown
 Feral Goat,Easy,Male,46.7456 kg,146.742 TR,Dark Brown   
-Axis Deer,Very Easy,Male,54.2824 kg,146.778 TR,Spotted
 Stubble Quail,Trivial,Female,0.105746 kg,146.887 TR,Gray         
 Stubble Quail,Trivial,Female,0.104472 kg,146.961 TR,Gray         
 Fallow Deer,Very Easy,Male,76.7329 kg,147.033 TR,Dark         
 Stubble Quail,Trivial,Female,0.104708 kg,147.096 TR,Gray         
 Feral Goat,Easy,Male,46.4216 kg,147.104 TR,Black White
 Stubble Quail,Trivial,Female,0.106084 kg,147.202 TR,Gray         
-Axis Deer,Very Easy,Male,55.7132 kg,147.37 TR,Spotted
 Feral Goat,Easy,Male,46.4411 kg,147.408 TR,Brown        
 Fallow Deer,Very Easy,Male,76.5788 kg,147.535 TR,Chocolate
 Stubble Quail,Trivial,Female,0.105202 kg,147.609 TR,Gray         
@@ -3141,7 +3202,6 @@ Fallow Deer,Very Easy,Male,76.5659 kg,148.543 TR,Spotted
 Stubble Quail,Trivial,Female,0.105911 kg,148.712 TR,Grey Brown
 Sambar,Easy,Male,288.109 kg,148.713 TR,Brown        
 Stubble Quail,Trivial,Female,0.105919 kg,148.803 TR,Gray         
-Axis Deer,Very Easy,Male,55.5038 kg,148.81 TR,Spotted
 Feral Pig,Medium,Male,196.283 kg,148.898 TR,Dark Brown   
 Stubble Quail,Trivial,Female,0.106189 kg,148.926 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.107282 kg,148.942 TR,Gray         
@@ -3165,24 +3225,18 @@ Stubble Quail,Trivial,Female,0.108793 kg,150.548 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.108059 kg,150.979 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.108129 kg,151.002 TR,Grey Brown
 Red Deer,Medium,Male,196.471 kg,151.034 TR,Brown        
-Axis Deer,Very Easy,Male,55.624 kg,151.072 TR,Dark         
 Fallow Deer,Very Easy,Male,77.6494 kg,151.128 TR,Dark         
-Axis Deer,Very Easy,Male,56.6602 kg,151.133 TR,Spotted
 Stubble Quail,Trivial,Female,0.108512 kg,151.638 TR,Gray         
 Stubble Quail,Trivial,Female,0.108961 kg,151.69 TR,Gray         
 Stubble Quail,Trivial,Female,0.109143 kg,151.76 TR,Grey Brown
-Axis Deer,Very Easy,Male,55.7038 kg,151.77 TR,Spotted
 Stubble Quail,Trivial,Female,0.109151 kg,151.821 TR,Gray         
-Axis Deer,Very Easy,Male,56.3292 kg,151.834 TR,Spotted
 Stubble Quail,Trivial,Female,0.108863 kg,151.937 TR,Grey Brown
 Red Deer,Medium,Male,196.224 kg,151.943 TR,Dark Brown   
 Stubble Quail,Trivial,Female,0.108918 kg,152.137 TR,Gray         
-Axis Deer,Very Easy,Male,56.7022 kg,152.193 TR,Spotted
 Stubble Quail,Trivial,Female,0.109337 kg,152.206 TR,Gray         
 Stubble Quail,Trivial,Female,0.110392 kg,152.221 TR,Gray         
 Feral Goat,Easy,Male,47.1305 kg,152.236 TR,Dark Brown   
 Red Deer,Hard,Male,198.484 kg,152.268 TR,Dark Brown   
-Axis Deer,Very Easy,Male,56.7053 kg,152.278 TR,Spotted
 Stubble Quail,Trivial,Female,0.10983 kg,152.445 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.110125 kg,152.603 TR,Gray         
 Fallow Deer,Very Easy,Male,76.9236 kg,152.641 TR,White        
@@ -3190,23 +3244,18 @@ EG Kangaroo,Trivial,Female,17.624 kg,152.748 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.110369 kg,152.756 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.11097 kg,152.831 TR,Gray         
 Stubble Quail,Trivial,Female,0.11093 kg,152.953 TR,Gray         
-Axis Deer,Very Easy,Male,55.6787 kg,153.046 TR,Dark         
 Fallow Deer,Very Easy,Male,76.6609 kg,153.089 TR,Dark         
-Axis Deer,Very Easy,Male,56.5677 kg,153.112 TR,Spotted
 Stubble Quail,Trivial,Female,0.111286 kg,153.241 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.110211 kg,153.256 TR,Gray         
 Stubble Quail,Trivial,Female,0.110197 kg,153.363 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.110335 kg,153.403 TR,Gray         
-Axis Deer,Very Easy,Male,57.3553 kg,153.528 TR,Spotted
 Feral Goat,Easy,Male,46.8185 kg,153.599 TR,White        
 Feral Goat,Easy,Male,46.9306 kg,153.675 TR,White        
 Stubble Quail,Trivial,Female,0.110608 kg,153.681 TR,Grey Brown
-Axis Deer,Very Easy,Male,57.0632 kg,153.715 TR,Dark         
 Red Deer,Hard,Male,199.15 kg,153.768 TR,Dark Brown   
 EG Kangaroo,Trivial,Female,17.192 kg,153.882 TR,Gray         
 Feral Goat,Easy,Male,46.9743 kg,153.893 TR,Brown        
 Fallow Deer,Very Easy,Male,77.718 kg,153.939 TR,Dark Spotted
-Axis Deer,Very Easy,Male,55.9632 kg,153.988 TR,Spotted
 Stubble Quail,Trivial,Female,0.110776 kg,154.047 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.111993 kg,154.194 TR,Gray         
 Stubble Quail,Trivial,Female,0.111502 kg,154.261 TR,Gray         
@@ -3230,7 +3279,6 @@ Stubble Quail,Trivial,Female,0.112628 kg,155.615 TR,Grey Brown
 Feral Goat,Easy,Male,47.0727 kg,155.631 TR,White        
 Fallow Deer,Very Easy,Male,78.4266 kg,155.721 TR,Dark Spotted
 Fallow Deer,Very Easy,Male,78.4028 kg,155.743 TR,Dark         
-Axis Deer,Very Easy,Male,56.4102 kg,155.792 TR,Spotted
 Stubble Quail,Trivial,Female,0.113427 kg,155.795 TR,Gray         
 Stubble Quail,Trivial,Female,0.113249 kg,155.815 TR,Grey Brown
 Fallow Deer,Very Easy,Male,78.2607 kg,155.843 TR,Spotted
@@ -3243,7 +3291,6 @@ Sambar,Easy,Male,290.546 kg,156.321 TR,Dark Brown
 Stubble Quail,Trivial,Female,0.112732 kg,156.393 TR,Gray         
 Stubble Quail,Trivial,Female,0.113781 kg,156.47 TR,Gray         
 Stubble Quail,Trivial,Female,0.113306 kg,156.623 TR,Grey Brown
-Axis Deer,Very Easy,Male,57.9809 kg,156.657 TR,Dark         
 Stubble Quail,Trivial,Female,0.113775 kg,156.778 TR,Gray         
 Stubble Quail,Trivial,Female,0.114333 kg,156.809 TR,Gray         
 Stubble Quail,Trivial,Female,0.114284 kg,156.839 TR,Grey Brown
@@ -3252,24 +3299,20 @@ Stubble Quail,Trivial,Female,0.114564 kg,156.91 TR,Grey Brown
 Red Deer,Hard,Male,199.982 kg,157.216 TR,Brown        
 Stubble Quail,Trivial,Female,0.113684 kg,157.297 TR,Gray         
 Stubble Quail,Trivial,Female,0.115279 kg,157.614 TR,Gray         
-Axis Deer,Very Easy,Male,58.1769 kg,157.693 TR,Spotted
 Stubble Quail,Trivial,Female,0.1153 kg,157.784 TR,Gray         
 Stubble Quail,Trivial,Female,0.114462 kg,157.802 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.115481 kg,157.868 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.114672 kg,157.937 TR,Gray         
 Fallow Deer,Very Easy,Male,78.8587 kg,158.102 TR,Dark         
-Axis Deer,Very Easy,Male,56.9571 kg,158.168 TR,Dark         
 Stubble Quail,Trivial,Female,0.115078 kg,158.214 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.115651 kg,158.307 TR,Gray         
 Stubble Quail,Trivial,Male,0.0998304 kg,158.372 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.114549 kg,158.375 TR,Gray         
 Red Deer,Hard,Male,200.937 kg,158.448 TR,Dark Brown   
 Stubble Quail,Trivial,Female,0.114893 kg,158.505 TR,Gray         
-Axis Deer,Very Easy,Male,57.4401 kg,158.523 TR,Spotted
 Feral Goat,Easy,Male,47.4326 kg,158.728 TR,Black Brown
 Stubble Quail,Trivial,Female,0.115872 kg,158.735 TR,Gray         
 Red Deer,Hard,Male,200.371 kg,158.933 TR,Light Brown  
-Axis Deer,Very Easy,Male,58.2842 kg,159.109 TR,Spotted
 Stubble Quail,Trivial,Female,0.116193 kg,159.132 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.115216 kg,159.265 TR,Grey Brown
 Fallow Deer,Very Easy,Male,78.7806 kg,159.295 TR,Spotted
@@ -3277,17 +3320,13 @@ Red Deer,Hard,Male,200.677 kg,159.354 TR,Dark Brown
 Stubble Quail,Trivial,Male,0.0990225 kg,159.365 TR,Brown        
 Stubble Quail,Trivial,Female,0.115566 kg,159.599 TR,Gray         
 Stubble Quail,Trivial,Female,0.116758 kg,159.723 TR,Grey Brown
-Axis Deer,Very Easy,Male,57.51 kg,159.796 TR,Spotted
 Stubble Quail,Trivial,Male,0.0999027 kg,159.947 TR,Grey Brown
 Feral Goat,Easy,Male,47.2549 kg,159.949 TR,White Brown
-Axis Deer,Very Easy,Male,57.7289 kg,159.99 TR,Dark         
 Stubble Quail,Trivial,Female,0.116201 kg,160.023 TR,Gray         
-Axis Deer,Very Easy,Male,58.3322 kg,160.229 TR,Spotted
 Stubble Quail,Trivial,Female,0.116887 kg,160.239 TR,Gray         
 Stubble Quail,Trivial,Female,0.116804 kg,160.496 TR,Gray         
 Red Deer,Hard,Male,200.754 kg,160.536 TR,Light Brown  
 Fallow Deer,Very Easy,Male,79.3467 kg,160.581 TR,Dark         
-Axis Deer,Very Easy,Male,57.4198 kg,160.716 TR,Dark         
 Fallow Deer,Very Easy,Male,78.5424 kg,160.818 TR,Dark         
 Stubble Quail,Trivial,Male,0.0997014 kg,160.882 TR,Brown        
 Stubble Quail,Trivial,Female,0.117068 kg,160.967 TR,Gray         
@@ -3298,18 +3337,13 @@ Feral Goat,Easy,Male,47.4846 kg,161.242 TR,Brown
 Stubble Quail,Trivial,Male,0.0998822 kg,161.351 TR,Grey Brown
 Stubble Quail,Trivial,Male,0.100803 kg,161.41 TR,Grey Brown
 Fallow Deer,Very Easy,Male,79.736 kg,161.754 TR,Chocolate
-Axis Deer,Very Easy,Male,58.5807 kg,161.823 TR,Spotted
 Feral Goat,Easy,Male,47.2216 kg,161.827 TR,White        
 Stubble Quail,Trivial,Female,0.118851 kg,161.892 TR,Gray         
-Axis Deer,Very Easy,Male,58.1789 kg,161.977 TR,Dark         
 Stubble Quail,Trivial,Female,0.117951 kg,161.982 TR,Grey Brown
 Stubble Quail,Trivial,Female,0.118317 kg,162.01 TR,Gray         
-Axis Deer,Very Easy,Male,59.3289 kg,162.312 TR,Spotted
 Red Deer,Hard,Male,199.661 kg,162.596 TR,Dark Brown   
 Feral Goat,Easy,Male,47.3202 kg,162.612 TR,Dark Brown   
 Feral Goat,Easy,Male,47.204 kg,162.642 TR,Blonde       
-Axis Deer,Very Easy,Male,58.4207 kg,162.658 TR,Spotted
-Axis Deer,Very Easy,Male,59.085 kg,162.711 TR,Spotted
 Stubble Quail,Trivial,Male,0.101483 kg,162.721 TR,Albino       
 Stubble Quail,Trivial,Male,0.100483 kg,162.769 TR,Brown        
 Red Deer,Hard,Male,201.605 kg,162.78 TR,Brown        
@@ -3320,15 +3354,11 @@ Red Deer,Hard,Male,201.615 kg,163.473 TR,Dark Brown
 Stubble Quail,Trivial,Male,0.101455 kg,163.496 TR,Grey Brown
 Fallow Deer,Very Easy,Male,78.8344 kg,163.619 TR,Spotted
 Red Deer,Hard,Male,200.197 kg,163.703 TR,Dark Brown   
-Axis Deer,Very Easy,Male,59.0397 kg,163.712 TR,Spotted
 Stubble Quail,Trivial,Male,0.100905 kg,163.717 TR,Grey Brown
 Sambar,Medium,Male,294.032 kg,164.319 TR,Brown        
 Red Deer,Hard,Male,202.09 kg,164.332 TR,Light Brown  
-Axis Deer,Very Easy,Male,59.5283 kg,164.452 TR,Spotted
 Feral Goat,Easy,Male,47.4023 kg,164.515 TR,White        
 Stubble Quail,Trivial,Male,0.102273 kg,164.544 TR,Brown        
-Axis Deer,Very Easy,Male,58.3652 kg,164.609 TR,Spotted
-Axis Deer,Very Easy,Male,59.3743 kg,164.634 TR,Spotted
 Fallow Deer,Very Easy,Male,79.557 kg,164.768 TR,Dark Spotted
 Stubble Quail,Trivial,Male,0.10213 kg,164.957 TR,Grey Brown
 Fallow Deer,Very Easy,Male,80.1222 kg,165.203 TR,Spotted
@@ -3336,19 +3366,16 @@ Feral Goat,Easy,Male,47.3637 kg,165.37 TR,Dark Brown
 Stubble Quail,Minor,Female,0.12217 kg,165.475 TR,Gray         
 Red Deer,Hard,Male,202.11 kg,165.486 TR,Light Brown  
 Stubble Quail,Minor,Female,0.1219 kg,165.738 TR,Grey Brown
-Axis Deer,Very Easy,Male,59.5104 kg,165.762 TR,Spotted
 Fallow Deer,Very Easy,Male,79.0541 kg,165.808 TR,Dark         
 Feral Goat,Easy,Male,47.4232 kg,165.828 TR,White Brown
 Stubble Quail,Minor,Female,0.122281 kg,165.846 TR,Gray         
 Red Deer,Hard,Male,202.422 kg,165.877 TR,Dark Brown   
 Fallow Deer,Very Easy,Male,79.8799 kg,166.002 TR,Dark         
 Red Deer,Hard,Male,202.875 kg,166.016 TR,Brown        
-Axis Deer,Easy,Male,60.001 kg,166.019 TR,Spotted
 Stubble Quail,Minor,Female,0.122563 kg,166.062 TR,Gray         
 Fallow Deer,Very Easy,Male,80.1888 kg,166.078 TR,Chocolate
 Feral Goat,Easy,Male,47.2284 kg,166.213 TR,Black White
 Fallow Deer,Very Easy,Male,80.7147 kg,166.712 TR,Dark         
-Axis Deer,Easy,Male,59.9233 kg,166.781 TR,Spotted
 Feral Goat,Easy,Male,47.3562 kg,167.149 TR,Dark Brown   
 Feral Goat,Easy,Male,47.6021 kg,167.149 TR,White        
 Fallow Deer,Very Easy,Male,80.4683 kg,167.427 TR,Dark         
@@ -3372,17 +3399,10 @@ Red Deer,Hard,Male,201.952 kg,168.593 TR,Brown
 Stubble Quail,Trivial,Male,0.102199 kg,168.801 TR,Brown        
 Red Deer,Hard,Male,203.192 kg,168.967 TR,Brown        
 Fallow Deer,Very Easy,Male,80.2108 kg,169.121 TR,Dark         
-Axis Deer,Easy,Male,59.8968 kg,169.145 TR,Spotted
-Axis Deer,Very Easy,Male,59.2684 kg,169.395 TR,Dark         
-Axis Deer,Easy,Male,60.0919 kg,169.47 TR,Spotted
 Stubble Quail,Trivial,Male,0.102534 kg,169.537 TR,Brown        
-Axis Deer,Easy,Male,60.876 kg,169.646 TR,Spotted
 Fallow Deer,Very Easy,Male,81.0699 kg,169.674 TR,Spotted
-Axis Deer,Very Easy,Male,59.5372 kg,169.688 TR,Spotted
 Stubble Quail,Trivial,Male,0.102545 kg,169.723 TR,Grey Brown
 Stubble Quail,Trivial,Male,0.103048 kg,169.74 TR,Grey Brown
-Axis Deer,Very Easy,Male,59.7911 kg,170.228 TR,Dark         
-Axis Deer,Very Easy,Male,59.509 kg,170.387 TR,Spotted
 Stubble Quail,Trivial,Male,0.103374 kg,170.884 TR,Grey Brown
 Red Deer,Hard,Male,204.775 kg,171.218 TR,Light Brown  
 Feral Goat,Easy,Male,47.5186 kg,171.52 TR,White        
@@ -3390,9 +3410,7 @@ Stubble Quail,Trivial,Male,0.104236 kg,171.676 TR,Brown
 Red Deer,Hard,Male,203.203 kg,171.714 TR,Brown        
 Stubble Quail,Trivial,Male,0.104486 kg,171.911 TR,Brown        
 Stubble Quail,Trivial,Male,0.104033 kg,171.923 TR,Grey Brown
-Axis Deer,Easy,Male,61.4228 kg,172.239 TR,Spotted
 Fallow Deer,Very Easy,Male,80.429 kg,172.603 TR,Dark Spotted
-Axis Deer,Easy,Male,60.9262 kg,172.667 TR,Dark         
 Red Deer,Hard,Male,205.99 kg,172.772 TR,Light Brown  
 Fallow Deer,Very Easy,Male,81.1634 kg,173.336 TR,Spotted
 Stubble Quail,Trivial,Male,0.103826 kg,173.393 TR,Brown        
@@ -3406,30 +3424,25 @@ Stubble Quail,Trivial,Male,0.104584 kg,173.764 TR,Grey Brown
 Stubble Quail,Trivial,Male,0.104422 kg,173.779 TR,Brown        
 Stubble Quail,Trivial,Male,0.1044 kg,173.794 TR,Brown        
 Feral Goat,Easy,Male,47.6079 kg,173.917 TR,Dark Brown   
-Axis Deer,Easy,Male,61.4641 kg,174.034 TR,Spotted
 Red Deer,Hard,Male,206.165 kg,174.242 TR,Light Brown  
 Feral Goat,Easy,Male,47.8053 kg,174.378 TR,Blonde       
 Stubble Quail,Trivial,Male,0.104607 kg,174.49 TR,Brown        
 Stubble Quail,Trivial,Male,0.105046 kg,174.75 TR,Grey Brown
-Axis Deer,Easy,Male,61.7363 kg,174.87 TR,Spotted
 Feral Goat,Easy,Male,48.0763 kg,175.319 TR,White        
 Fallow Deer,Very Easy,Male,82.1957 kg,175.837 TR,Dark         
 Stubble Quail,Trivial,Male,0.104712 kg,176.066 TR,Brown        
 Red Deer,Hard,Male,205.831 kg,176.112 TR,Brown        
 EG Kangaroo,Trivial,Female,21.364 kg,176.154 TR,Brown        
 Fallow Deer,Very Easy,Male,81.063 kg,176.471 TR,Dark         
-Axis Deer,Easy,Male,61.5032 kg,176.568 TR,Spotted
 Stubble Quail,Trivial,Male,0.105766 kg,176.597 TR,Grey Brown
 Stubble Quail,Trivial,Male,0.106344 kg,177.143 TR,Grey Brown
 Stubble Quail,Trivial,Male,0.10539 kg,177.314 TR,Brown        
 Stubble Quail,Trivial,Male,0.106062 kg,177.322 TR,Grey Brown
 Red Deer,Hard,Male,206.129 kg,177.424 TR,Light Brown  
 Stubble Quail,Trivial,Male,0.105304 kg,177.436 TR,Grey Brown
-Axis Deer,Easy,Male,61.9182 kg,177.457 TR,Spotted
 Stubble Quail,Trivial,Male,0.106473 kg,177.459 TR,Brown        
 Stubble Quail,Trivial,Male,0.105496 kg,177.664 TR,Grey Brown
 Fallow Deer,Very Easy,Male,82.3541 kg,177.707 TR,White        
-Axis Deer,Easy,Male,60.9812 kg,177.731 TR,Dark         
 Fallow Deer,Very Easy,Male,82.014 kg,178.04 TR,Spotted
 Stubble Quail,Trivial,Male,0.105719 kg,178.124 TR,Grey Brown
 Fallow Deer,Very Easy,Male,82.5119 kg,178.189 TR,White        
@@ -3447,7 +3460,6 @@ Feral Goat,Easy,Male,48.2641 kg,180.092 TR,Dark Brown
 Fallow Deer,Very Easy,Male,82.7782 kg,180.309 TR,Chocolate
 Stubble Quail,Trivial,Male,0.107053 kg,180.337 TR,Brown        
 Stubble Quail,Trivial,Male,0.107001 kg,180.673 TR,Brown        
-Axis Deer,Easy,Male,62.4141 kg,180.763 TR,Spotted
 Stubble Quail,Trivial,Male,0.106742 kg,180.772 TR,Brown        
 Fallow Deer,Easy,Male,83.3831 kg,180.885 TR,Dark Spotted
 Stubble Quail,Trivial,Male,0.107701 kg,180.937 TR,Brown        
@@ -3460,14 +3472,12 @@ Fallow Deer,Easy,Male,83.5943 kg,182.184 TR,Dark
 Feral Goat,Easy,Male,47.8874 kg,182.3 TR,Dark Brown   
 EG Kangaroo,Trivial,Female,22.3349 kg,182.306 TR,Grey Brown
 Stubble Quail,Trivial,Male,0.107004 kg,182.539 TR,Grey Brown
-Axis Deer,Easy,Male,62.2387 kg,182.665 TR,Spotted
 Stubble Quail,Trivial,Male,0.10698 kg,182.707 TR,Grey Brown
 EG Kangaroo,Trivial,Female,22.0399 kg,183.083 TR,Gray         
 Stubble Quail,Trivial,Male,0.108468 kg,183.112 TR,Brown        
 Stubble Quail,Trivial,Male,0.107825 kg,183.183 TR,Brown        
 Fallow Deer,Very Easy,Male,82.9466 kg,183.588 TR,Dark Spotted
 Stubble Quail,Trivial,Male,0.107638 kg,183.801 TR,Brown        
-Axis Deer,Easy,Male,63.9062 kg,184.211 TR,Spotted
 Fallow Deer,Easy,Male,83.2879 kg,184.223 TR,Dark         
 Red Deer,Very Hard,Male,208.365 kg,184.286 TR,Dark Brown   
 EG Kangaroo,Trivial,Female,22.0682 kg,184.401 TR,Brown        
@@ -3486,7 +3496,6 @@ Fallow Deer,Easy,Male,84.2301 kg,187.185 TR,Dark Spotted
 Stubble Quail,Trivial,Male,0.108846 kg,187.425 TR,Grey Brown
 Stubble Quail,Trivial,Male,0.108866 kg,187.549 TR,Grey Brown
 Red Deer,Very Hard,Male,210.882 kg,187.679 TR,Light Brown  
-Axis Deer,Easy,Male,64.1856 kg,187.836 TR,Spotted
 Fallow Deer,Easy,Male,84.2003 kg,188.092 TR,Dark Spotted
 Fallow Deer,Easy,Male,84.6201 kg,188.197 TR,Dark         
 EG Kangaroo,Trivial,Female,22.4986 kg,188.375 TR,Leucistic    
@@ -3509,8 +3518,6 @@ Fallow Deer,Easy,Male,84.574 kg,191.816 TR,Spotted
 Fallow Deer,Easy,Male,84.613 kg,191.953 TR,Spotted
 Stubble Quail,Trivial,Male,0.111091 kg,192.102 TR,Grey Brown
 Stubble Quail,Trivial,Male,0.109981 kg,192.308 TR,Grey Brown
-Axis Deer,Easy,Male,65.3772 kg,192.321 TR,Spotted
-Axis Deer,Easy,Male,64.7312 kg,192.426 TR,Spotted
 EG Kangaroo,Trivial,Female,23.8632 kg,192.897 TR,Brown        
 Stubble Quail,Trivial,Male,0.110918 kg,193.129 TR,Grey Brown
 Stubble Quail,Trivial,Male,0.111421 kg,193.216 TR,Grey Brown
@@ -3533,19 +3540,15 @@ Stubble Quail,Trivial,Male,0.112879 kg,196.818 TR,Brown
 EG Kangaroo,Trivial,Female,24.2195 kg,196.945 TR,Grey Brown
 EG Kangaroo,Trivial,Female,23.8579 kg,197.581 TR,Gray         
 Stubble Quail,Trivial,Male,0.11209 kg,197.793 TR,Brown        
-Axis Deer,Easy,Male,66.6109 kg,197.857 TR,Spotted
 EG Kangaroo,Trivial,Female,23.9533 kg,197.924 TR,Brown        
 Stubble Quail,Trivial,Male,0.112415 kg,198.002 TR,Brown        
 Stubble Quail,Trivial,Male,0.112621 kg,198.091 TR,Grey Brown
 EG Kangaroo,Trivial,Female,24.8259 kg,198.892 TR,Gray         
 Feral Goat,Easy,Male,48.5931 kg,199.087 TR,Blonde       
-Axis Deer,Easy,Male,66.0789 kg,199.298 TR,Spotted
 Stubble Quail,Trivial,Male,0.113079 kg,199.409 TR,Grey Brown
-Axis Deer,Easy,Male,66.7183 kg,199.668 TR,Spotted
 EG Kangaroo,Trivial,Female,24.7092 kg,199.879 TR,Gray         
 EG Kangaroo,Trivial,Female,24.106 kg,199.922 TR,Gray         
 Stubble Quail,Trivial,Male,0.113318 kg,199.997 TR,Grey Brown
-Axis Deer,Easy,Male,66.9998 kg,200.518 TR,Spotted
 EG Kangaroo,Trivial,Female,24.5533 kg,200.641 TR,Gray         
 Stubble Quail,Trivial,Male,0.113405 kg,200.657 TR,Brown        
 Fallow Deer,Easy,Male,86.6248 kg,200.884 TR,Dark         
@@ -3581,7 +3584,6 @@ Stubble Quail,Trivial,Male,0.114813 kg,206.719 TR,Grey Brown
 Stubble Quail,Trivial,Male,0.115764 kg,206.937 TR,Grey Brown
 EG Kangaroo,Minor,Female,25.4369 kg,206.994 TR,Gray         
 EG Kangaroo,Minor,Female,25.2526 kg,207.088 TR,Gray         
-Axis Deer,Easy,Male,68.5891 kg,207.358 TR,Spotted
 EG Kangaroo,Minor,Female,25.5664 kg,207.513 TR,Gray         
 EG Kangaroo,Minor,Female,26.0951 kg,207.559 TR,Grey Brown
 Stubble Quail,Trivial,Male,0.116544 kg,207.573 TR,Grey Brown
@@ -3612,7 +3614,6 @@ Fallow Deer,Easy,Male,88.2901 kg,213.976 TR,Dark
 Stubble Quail,Trivial,Male,0.118382 kg,214.014 TR,Brown        
 Fallow Deer,Easy,Male,88.7403 kg,214.692 TR,Dark Spotted
 Stubble Quail,Trivial,Male,0.118302 kg,215.258 TR,Grey Brown
-Axis Deer,Medium,Male,69.8255 kg,215.799 TR,Spotted
 Stubble Quail,Trivial,Male,0.118141 kg,215.84 TR,Brown        
 EG Kangaroo,Minor,Female,27.107 kg,216.164 TR,Grey Brown
 EG Kangaroo,Minor,Female,27.2666 kg,218.289 TR,Grey Brown
@@ -3650,7 +3651,6 @@ Stubble Quail,Minor,Male,0.121945 kg,226.51 TR,Grey Brown
 EG Kangaroo,Minor,Female,28.3667 kg,227.503 TR,Brown        
 EG Kangaroo,Minor,Female,28.8567 kg,227.724 TR,Gray         
 Stubble Quail,Minor,Male,0.123027 kg,227.859 TR,Grey Brown
-Axis Deer,Medium,Male,72.8739 kg,228.146 TR,Spotted
 Stubble Quail,Minor,Male,0.122487 kg,228.162 TR,Grey Brown
 EG Kangaroo,Very Easy,Female,29.0038 kg,228.319 TR,Gray         
 EG Kangaroo,Very Easy,Female,29.0405 kg,228.55 TR,Gray         
