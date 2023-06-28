@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-06-25 20:51-0500\n"
+"POT-Creation-Date: 2023-06-27 20:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,7 +81,7 @@ msgstr ""
 msgid "Diamond"
 msgstr ""
 
-#: apc/config.py:70 apc/config.py:363
+#: apc/config.py:70 apc/config.py:385
 msgid "Great One"
 msgstr ""
 
@@ -421,51 +421,91 @@ msgstr ""
 msgid "Loaded Mod"
 msgstr ""
 
-#: apc/config.py:345
+#: apc/config.py:240
+msgid "Export Mod"
+msgstr ""
+
+#: apc/config.py:242
+msgid "Import Mod"
+msgstr ""
+
+#: apc/config.py:244
+msgid "Export"
+msgstr ""
+
+#: apc/config.py:246
+msgid "Import"
+msgstr ""
+
+#: apc/config.py:248
+msgid "Select the location and filename where you want to export"
+msgstr ""
+
+#: apc/config.py:250
+msgid "Select the reserve mod to import"
+msgstr ""
+
+#: apc/config.py:252
+msgid "Export As"
+msgstr ""
+
+#: apc/config.py:254
+msgid "Select File"
+msgstr ""
+
+#: apc/config.py:256
+msgid "Mod Exported"
+msgstr ""
+
+#: apc/config.py:258
+msgid "Mod Imported"
+msgstr ""
+
+#: apc/config.py:367
 msgid "Trivial"
 msgstr ""
 
-#: apc/config.py:347
+#: apc/config.py:369
 msgid "Minor"
 msgstr ""
 
-#: apc/config.py:349
+#: apc/config.py:371
 msgid "Very Easy"
 msgstr ""
 
-#: apc/config.py:351
+#: apc/config.py:373
 msgid "Easy"
 msgstr ""
 
-#: apc/config.py:353
+#: apc/config.py:375
 msgid "Medium"
 msgstr ""
 
-#: apc/config.py:355
+#: apc/config.py:377
 msgid "Hard"
 msgstr ""
 
-#: apc/config.py:357
+#: apc/config.py:379
 msgid "Very Hard"
 msgstr ""
 
-#: apc/config.py:359
+#: apc/config.py:381
 msgid "Mythical"
 msgstr ""
 
-#: apc/config.py:361
+#: apc/config.py:383
 msgid "Legendary"
 msgstr ""
 
-#: apc/config.py:390
+#: apc/config.py:412
 msgid "fur_name"
 msgstr ""
 
-#: apc/config.py:430
+#: apc/config.py:452
 msgid "reserve_name"
 msgstr ""
 
-#: apc/config.py:502
+#: apc/config.py:524
 msgid "name"
 msgstr ""
 
@@ -1187,6 +1227,18 @@ msgstr ""
 
 #: apc/config/fur_names.json:265
 msgid "Chocolate"
+msgstr ""
+
+#: apc/config/fur_names.json:268
+msgid "Fabled Silver"
+msgstr ""
+
+#: apc/config/fur_names.json:271
+msgid "Fabled Golden"
+msgstr ""
+
+#: apc/config/fur_names.json:274
+msgid "Fabled Painted"
 msgstr ""
 
 #: apc/config/reserve_names.json:4
