@@ -72,7 +72,7 @@ def _show_popup(message: str, title: str, ok: str, cancel: str = None) -> str:
   
   layout = [
     [sg.T(message, font=DEFAULT_FONT, p=(0,10))],
-    [buttons]
+    [sg.Push(), buttons]
   ]
   window = sg.Window(title, layout, modal=True, icon=logo.value)
   response = None
@@ -83,6 +83,51 @@ def _show_popup(message: str, title: str, ok: str, cancel: str = None) -> str:
       break
     if event == "ok":
       response = "ok"
+      break
+    elif event == "cancel":
+      response = "cancel"
+      break
+  window.close()
+  return response
+
+def _show_export_popup(reserve: str, file: Path) -> str: 
+  default_path = config.EXPORTS_PATH / file
+  layout = [
+    [sg.T(f"{config.EXPORT_MSG}:", font=DEFAULT_FONT, p=(0,10))],
+    [sg.FileSaveAs(f"{config.EXPORT_AS}...", initial_folder=config.EXPORTS_PATH, font=DEFAULT_FONT, target="export_path", k="export_btn", enable_events=True, change_submits=True), sg.T(default_path, k="export_path")],
+    [sg.Push(), sg.Button(config.CANCEL, k="cancel", font=DEFAULT_FONT), sg.Button(config.EXPORT, k="export", font=DEFAULT_FONT)]
+  ]
+  window = sg.Window(f"{config.EXPORT_MOD}: {reserve}", layout, modal=True, icon=logo.value)
+  response = None
+  while True:
+    event, values = window.read()
+    if event == sg.WIN_CLOSED:
+      response = "cancel"
+      break
+    if event == "export":
+      response = values["export_btn"] if values["export_btn"] != '' else default_path
+      break
+    elif event == "cancel":
+      response = "cancel"
+      break
+  window.close()
+  return response
+
+def _show_import_popup(reserve: str, file: str) -> str: 
+  layout = [
+    [sg.T(f"{config.IMPORT_MSG}:", font=DEFAULT_FONT, p=(0,10))],
+    [sg.FileBrowse(config.SELECT_FILE, initial_folder=config.EXPORTS_PATH, font=DEFAULT_FONT, target="import_path", k="import_btn"), sg.T(file, k="import_path")],
+    [sg.Push(), sg.Button(config.CANCEL, k="cancel", font=DEFAULT_FONT), sg.Button(config.IMPORT, k="import", font=DEFAULT_FONT)]
+  ]
+  window = sg.Window(f"{config.IMPORT_MOD}: {reserve}", layout, modal=True, icon=logo.value)
+  response = None
+  while True:
+    event, values = window.read()
+    if event == sg.WIN_CLOSED:
+      response = "cancel"
+      break
+    if event == "import":
+      response = values["import_btn"]
       break
     elif event == "cancel":
       response = "cancel"
@@ -169,6 +214,8 @@ def _show_reserve_description(window: sg.Window) -> None:
     window["reserve_note"].update("")
     window["load_mod"].update(disabled=True)
     window["unload_mod"].update(disabled=True)    
+    window["export_mod"].update(disabled=True)
+    window["import_mod"].update(disabled=True)    
     _clear_animal_details(window)
     _disable_animal_details(window, True)
 
@@ -182,6 +229,8 @@ def _show_mod_list(window: sg.Window) -> None:
   window["party_tab"].update(disabled=True)
   window["load_mod"].update(disabled=True)
   window["unload_mod"].update(disabled=True)
+  window["export_mod"].update(disabled=True)
+  window["import_mod"].update(disabled=True)
   
 def _viewing_modded(window: sg.Window) -> bool:
   return window['reserve_warning'].get() == VIEW_MODDED  
@@ -730,6 +779,8 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
                 [sg.Button(config.LIST_MODS, expand_x=True, k="list_mods", font=BUTTON_FONT)],
                 [sg.Button(config.LOAD_MOD, expand_x=True, k="load_mod", disabled=True, font=BUTTON_FONT)],
                 [sg.Button(config.UNLOAD_MOD, expand_x=True, k="unload_mod", disabled=True, font=BUTTON_FONT)],
+                [sg.Button(config.EXPORT_MOD, expand_x=True, k="export_mod", disabled=True, font=BUTTON_FONT)],
+                [sg.Button(config.IMPORT_MOD, expand_x=True, k="import_mod", disabled=True, font=BUTTON_FONT)],
               ])
             ]], p=(0,5))
           ]], vertical_alignment="top", p=(0,0), k="modding"),
@@ -858,7 +909,7 @@ def main() -> None:
                 window["diamond_gender"].update(f"({config.FEMALES.lower()})")   
               else:
                 male_labeled = [f"{x} ({config.MALE.lower()})" for x in male_fur_names]
-                female_labeled = [f"{x} ({config.FEMALE.lower()})" for x in male_fur_names]
+                female_labeled = [f"{x} ({config.FEMALE.lower()})" for x in female_fur_names]
                 window["diamond_furs"].update(values=male_labeled+female_labeled)
                 window["diamond_gender"].update(f"({config.MALES.lower()} and {config.FEMALES.lower()})")                                
           elif event[0] == "mod_list" and event[1] == "+CLICKED+":
@@ -866,6 +917,8 @@ def main() -> None:
             if row != None and row >= 0:
               selected_mod = mods[row]
               window["load_mod"].update(disabled=False)
+              window["export_mod"].update(disabled=False)
+              window["import_mod"].update(disabled=False)
               window["unload_mod"].update(disabled=selected_mod[1] != config.YES) 
           elif event[0] == "species_description" and event[1] == "+CLICKED+":
             animal_row, _ = event[2]
@@ -961,6 +1014,18 @@ def main() -> None:
         elif event == "unload_mod":
           _unload_mod(window, selected_mod[2])
           mods = _process_list_mods(window)
+        elif event == "export_mod":
+          from_mod = selected_mod[2]
+          export_file = _show_export_popup(selected_mod[0], Path(from_mod).name)
+          if export_file != None and export_file != "cancel":
+            _copy_file(from_mod, export_file)
+            sg.PopupQuickMessage(config.MOD_EXPORTED, font="_ 28", background_color="brown")
+        elif event == "import_mod":
+          to_mod = selected_mod[2]
+          import_file = _show_import_popup(selected_mod[0], Path(to_mod).name)
+          if import_file != '' and import_file != "cancel":
+            _copy_file(import_file, to_mod)
+            sg.PopupQuickMessage(config.MOD_IMPORTED, font="_ 28", background_color="brown")
         elif event == "reset":
           male_cnt = 0
           female_cnt = 0

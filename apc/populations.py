@@ -428,7 +428,7 @@ def mod_diamonds(reserve_name: str, reserve_details: ParsedAdfFile, species_key:
   reserve_data = reserve_details.decompressed.data  
   diamond_gender = config.get_diamond_gender(species_key) 
   animals = _get_eligible_animals(groups, species_key, diamond_gender)
-  animals = random.choices(animals, k=diamond_cnt)
+  animals = random.sample(animals, k=diamond_cnt)
   
   species_config = config.ANIMALS[species_key]["diamonds"]
   male_fur_seeds = [config.get_fur_seed(species_key, x, "male") for x in male_fur_keys]
@@ -440,9 +440,11 @@ def mod_diamonds(reserve_name: str, reserve_details: ParsedAdfFile, species_key:
       _create_diamond(animal, species_config, reserve_data, fur=random.choice(female_fur_seeds))
     else:
       if random.choice(["male", "female"]) == "male":
-        _create_diamond(animal, species_config, reserve_data, fur=random.choice(male_fur_seeds))
+        fur = random.choice(male_fur_seeds) if len(male_fur_seeds) > 0 else None
+        _create_diamond(animal, species_config, reserve_data, fur=fur)
       else:
-        _create_diamond(animal, species_config, reserve_data, fur=random.choice(female_fur_seeds))
+        fur = random.choice(female_fur_seeds) if len(female_fur_seeds) > 0 else None
+        _create_diamond(animal, species_config, reserve_data, fur=fur)
             
   print(f"[green]All {diamond_cnt} {species_name} diamonds have been added![/green]")   
   reserve_details.decompressed.save(config.MOD_DIR_PATH)

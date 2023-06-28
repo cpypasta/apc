@@ -236,6 +236,26 @@ def setup_translations() -> None:
   TOP_10 = translate("Top 10")
   global LOADED_MOD
   LOADED_MOD = translate("Loaded Mod")
+  global EXPORT_MOD
+  EXPORT_MOD = translate("Export Mod")  
+  global IMPORT_MOD
+  IMPORT_MOD = translate("Import Mod")
+  global EXPORT
+  EXPORT = translate("Export")  
+  global IMPORT
+  IMPORT = translate("Import")
+  global EXPORT_MSG
+  EXPORT_MSG = translate("Select the location and filename where you want to export")
+  global IMPORT_MSG
+  IMPORT_MSG = translate("Select the reserve mod to import")  
+  global EXPORT_AS
+  EXPORT_AS = translate("Export As")
+  global SELECT_FILE
+  SELECT_FILE = translate("Select File")
+  global MOD_EXPORTED
+  MOD_EXPORTED = translate("Mod Exported")
+  global MOD_IMPORTED
+  MOD_IMPORTED = translate("Mod Imported")  
   
 setup_translations()
 
@@ -277,6 +297,7 @@ def _find_saves_path() -> str:
       return None
 
 APP_DIR_PATH = Path(getattr(sys, '_MEIPASS', Path(__file__).resolve().parent))
+EXPORTS_PATH = APP_DIR_PATH.parent / "exports"
 DEFAULT_SAVE_PATH = _find_saves_path()
 CONFIG_PATH = APP_DIR_PATH / "config"
 SAVE_PATH = CONFIG_PATH / "save_path.txt"
