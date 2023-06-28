@@ -297,7 +297,7 @@ def _find_saves_path() -> str:
       return None
 
 APP_DIR_PATH = Path(getattr(sys, '_MEIPASS', Path(__file__).resolve().parent))
-EXPORTS_PATH = APP_DIR_PATH.parent / "exports"
+EXPORTS_PATH = APP_DIR_PATH / "exports"
 EXPORTS_PATH.mkdir(exist_ok=True, parents=True)
 DEFAULT_SAVE_PATH = _find_saves_path()
 CONFIG_PATH = APP_DIR_PATH / "config"
