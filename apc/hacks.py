@@ -172,9 +172,11 @@ def combine_furs(existing: dict, latest: dict) -> None:
   latest_male_furs = latest["male"] if "male" in latest else {}
     
   for fur, seed in latest_female_furs.items():
+    fur = fur.replace(" ", "_")
     if fur not in existing_female_furs and seed != 0.0:
       existing_female_furs[fur] = int(seed)
   for fur, seed in latest_male_furs.items():
+    fur = fur.replace(" ", "_")
     if fur not in existing_male_furs and seed != 0.0:
       existing_male_furs[fur] = int(seed)
       
