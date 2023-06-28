@@ -2895,15 +2895,15 @@
       "weight_high": 240.0,
       "furs": {
         "male": {
-          "light brown": 14,
-          "dark brown": 3349,
+          "light_brown": 14,
+          "dark_brown": 3349,
           "melanistic": 6683,
           "brown": 6689,
           "albino": 10023,
           "piebald": 10028
         },
         "female": {
-          "dark brown": 302,
+          "dark_brown": 302,
           "albino": 3323,
           "piebald": 3329,
           "melanistic": 3349,
