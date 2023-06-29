@@ -16,28 +16,6 @@
       "albino": 10018.0
     }
   },
-  "eu_rabbit": {
-    "male": {
-      "dark brown": 0.0,
-      "light_brown": 3747.0,
-      "leucistic": 5001.0,
-      "albino": 5006.0,
-      "melanistic": 5011.0,
-      "brown": 5021.0,
-      "tan": 6275.0,
-      "light gray": 10023.0
-    },
-    "female": {
-      "dark brown": 0.0,
-      "light_brown": 3747.0,
-      "leucistic": 5001.0,
-      "albino": 5006.0,
-      "melanistic": 5011.0,
-      "brown": 5021.0,
-      "tan": 6275.0,
-      "light gray": 10023.0
-    }
-  },
   "eu_bison": {
     "male": {
       "brown": 0.0,
@@ -74,24 +52,6 @@
       "piebald": 10003.0
     }
   },
-  "pheasant": {
-    "male": {
-      "white_brown": 0.0,
-      "molting": 3746.0,
-      "albino": 5001.0,
-      "brown": 5004.0,
-      "gray": 8762.0,
-      "leucistic": 10016.0,
-      "melanistic": 10020.0
-    },
-    "female": {
-      "gray": 0.0,
-      "brown": 1179.0,
-      "leucistic": 10007.0,
-      "melanistic": 10015.0,
-      "albino": 10023.0
-    }
-  },
   "canada_goose": {
     "male": {
       "gray_brown": 0.0,
@@ -110,24 +70,6 @@
       "gray": 10003.0
     }
   },
-  "moose": {
-    "male": {
-      "tan": 0.0,
-      "light_brown": 3329.0,
-      "brown": 6663.0,
-      "piebald": 9998.0,
-      "melanistic": 10018.0,
-      "albino": 10023.0
-    },
-    "female": {
-      "brown": 0.0,
-      "albino": 3323.0,
-      "dark brown": 3329.0,
-      "tan": 6663.0,
-      "piebald": 9998.0,
-      "melanistic": 10018.0
-    }
-  },
   "jackrabbit": {
     "male": {
       "light_brown": 0.0,
@@ -142,58 +84,6 @@
       "brown": 5011.0,
       "beige": 7517.0,
       "albino": 10023.0
-    }
-  },
-  "mallard": {
-    "male": {
-      "melanistic": 0.0,
-      "brown_hybrid": 9.0,
-      "black_brown": 1264.0,
-      "piebald": 8768.0,
-      "leucistic": 10023.0
-    },
-    "female": {
-      "brown_hybrid": 0.0,
-      "blonde": 1254.0,
-      "black_brown": 1264.0,
-      "piebald": 8768.0,
-      "melanistic": 10023.0
-    }
-  },
-  "wild_turkey": {
-    "male": {
-      "leucistic": 0.0,
-      "melanistic": 5.0,
-      "brown": 9.0,
-      "dark brown": 6005.0,
-      "light_brown": 8012.0,
-      "albino": 10019.0
-    },
-    "female": {
-      "leucistic": 0.0,
-      "melanistic": 5.0,
-      "brown": 9.0,
-      "dark brown": 6005.0,
-      "light_brown": 8012.0,
-      "albino": 10019.0
-    }
-  },
-  "black_bear": {
-    "male": {
-      "black": 0.0,
-      "brown": 3329.0,
-      "dusky": 3334.0,
-      "dark": 6668.0,
-      "cinnamon": 10003.0,
-      "blonde": 10023.0
-    },
-    "female": {
-      "dusky": 0.0,
-      "black": 3334.0,
-      "dark": 6668.0,
-      "cinnamon": 10003.0,
-      "blonde": 10023.0,
-      "brown": 10028.0
     }
   },
   "roosevelt_elk": {
@@ -214,24 +104,6 @@
       "melanistic": 10018.0
     }
   },
-  "coyote": {
-    "male": {
-      "piebald": 0.0,
-      "dark_grey": 9.0,
-      "orange": 3344.0,
-      "albino": 6678.0,
-      "gray_brown": 6683.0,
-      "melanistic": 10018.0
-    },
-    "female": {
-      "piebald": 0.0,
-      "gray_brown": 9.0,
-      "orange": 3344.0,
-      "albino": 6678.0,
-      "light gray": 6683.0,
-      "melanistic": 10018.0
-    }
-  },
   "blacktail_deer": {
     "male": {
       "gray_brown": 0.0,
@@ -248,24 +120,6 @@
       "piebald": 9998.0,
       "melanistic": 10018.0,
       "albino": 10023.0
-    }
-  },
-  "whitetail_deer": {
-    "male": {
-      "piebald": 0.0,
-      "tan": 9.0,
-      "brown": 3344.0,
-      "melanistic": 6678.0,
-      "albino": 6683.0,
-      "dark brown": 6689.0
-    },
-    "female": {
-      "piebald": 0.0,
-      "brown": 9.0,
-      "melanistic": 3344.0,
-      "dark brown": 3349.0,
-      "albino": 6683.0,
-      "red_brown": 6689.0
     }
   },
   "siberian_musk_deer": {
@@ -863,44 +717,6 @@
       "bronze": 9185.0
     }
   },
-  "chamois": {
-    "male": {
-      "brown": 0.0,
-      "honeytones": 1243.0,
-      "melanistic": 2497.0,
-      "leucistic": 2502.0,
-      "dark brown": 2522.0,
-      "albino": 6270.0,
-      "gray_brown": 6275.0
-    },
-    "female": {
-      "brown": 0.0,
-      "honeytones": 1243.0,
-      "melanistic": 2497.0,
-      "leucistic": 2502.0,
-      "dark brown": 2522.0,
-      "albino": 6270.0,
-      "gray_brown": 6275.0
-    }
-  },
-  "sika_deer": {
-    "male": {
-      "black": 0.0,
-      "brown": 3737.0,
-      "spotted": 7484.0,
-      "albino": 8739.0,
-      "spotted_dark": 8749.0,
-      "spotted red": 10003.0
-    },
-    "female": {
-      "black": 0.0,
-      "brown": 3737.0,
-      "spotted": 7484.0,
-      "albino": 8739.0,
-      "spotted_dark": 8749.0,
-      "spotted red": 10003.0
-    }
-  },
   "mexican_bobcat": {
     "male": {
       "gray": 0.0,
@@ -959,37 +775,6 @@
       "melanistic": 10023.0
     }
   },
-  "eastern_wild_turkey": {
-    "male": {
-      "brown": 0.0,
-      "light_bronze": 3742.0,
-      "leucistic": 4996.0,
-      "bronze": 5016.0,
-      "light_brown": 8764.0,
-      "albino": 10018.0,
-      "melanistic": 10023.0
-    },
-    "female": {
-      "brown": 0.0,
-      "light_bronze": 3742.0,
-      "leucistic": 4996.0,
-      "bronze": 5016.0,
-      "light_brown": 8764.0,
-      "albino": 10018.0,
-      "melanistic": 10023.0
-    }
-  },
-  "green_wing_teal": {
-    "male": {
-      "piebald": 0.0,
-      "light_green": 77.0,
-      "albino": 10023.0
-    },
-    "female": {
-      "piebald": 0.0,
-      "light_green": 2.0
-    }
-  },
   "rock_ptarmigan": {
     "male": {
       "white": 0.0,
@@ -1000,19 +785,6 @@
       "white": 0.0,
       "molting": 20.0,
       "mottled": 3354.0
-    }
-  },
-  "goldeneye": {
-    "male": {
-      "eclipse": 0.0,
-      "black": 26.0,
-      "leucistic": 10013.0,
-      "hybrid": 10020.0
-    },
-    "female": {
-      "gray": 0.0,
-      "dark": 9990.0,
-      "leucistic": 10017.0
     }
   },
   "mountain_hare": {
@@ -1150,96 +922,6 @@
       "dark brown": 8567.0,
       "black_white": 8593.0,
       "albino": 10023.0
-    }
-  },
-  "bobcat": {
-    "male": {
-      "tan": 0.0,
-      "brown": 3737.0,
-      "melanistic": 4991.0,
-      "blue": 4996.0,
-      "red": 5016.0,
-      "gray": 6270.0,
-      "albino": 10018.0
-    },
-    "female": {
-      "tan": 0.0,
-      "brown": 3737.0,
-      "melanistic": 4991.0,
-      "blue": 4996.0,
-      "red": 5016.0,
-      "gray": 6270.0,
-      "albino": 10018.0
-    }
-  },
-  "raccoon": {
-    "male": {
-      "blonde": 0.0,
-      "piebald-grey": 2497.0,
-      "albino": 2507.0,
-      "melanistic": 2513.0,
-      "gray": 2517.0,
-      "piebald-blnd": 6265.0,
-      "brown": 6275.0
-    },
-    "female": {
-      "blonde": 0.0,
-      "piebald-grey": 3993.0,
-      "albino": 4009.0,
-      "melanistic": 4017.0,
-      "piebald-blnd": 4025.0,
-      "brown": 4041.0
-    }
-  },
-  "eastern_cottontail_rabbit": {
-    "male": {
-      "light_brown": 0.0,
-      "gray": 1253.0,
-      "leucistic": 5001.0,
-      "light gray": 5011.0,
-      "brown": 6265.0,
-      "melanistic": 10023.0,
-      "albino": 10028.0
-    },
-    "female": {
-      "light_brown": 0.0,
-      "gray": 1253.0,
-      "leucistic": 5001.0,
-      "light gray": 5011.0,
-      "brown": 6265.0,
-      "melanistic": 10023.0,
-      "albino": 10028.0
-    }
-  },
-  "northern_bobwhite_quail": {
-    "male": {
-      "gray": 0.0,
-      "red_brown": 3334.0,
-      "brown": 6678.0
-    },
-    "female": {
-      "brown": 0.0,
-      "albino": 10023.0
-    }
-  },
-  "gray_fox": {
-    "male": {
-      "two tones": 0.0,
-      "piebald": 1248.0,
-      "red": 1255.0,
-      "albino": 2509.0,
-      "gray": 2514.0,
-      "leucistic": 10017.0,
-      "melanistic": 10023.0
-    },
-    "female": {
-      "two tones": 0.0,
-      "piebald": 1248.0,
-      "red": 1255.0,
-      "albino": 2509.0,
-      "gray": 2514.0,
-      "leucistic": 10017.0,
-      "melanistic": 10023.0
     }
   },
   "american_alligator": {
@@ -1523,6 +1205,324 @@
       "albino": 9995,
       "piebald": 10000,
       "melanistic": 10023
+    }
+  },
+  "eu_rabbit": {
+    "male": {
+      "dark_brown": 252,
+      "light_brown": 3747,
+      "leucistic": 5001,
+      "albino": 5006,
+      "melanistic": 5011,
+      "brown": 5021,
+      "tan": 6275,
+      "light_gray": 10023
+    },
+    "female": {
+      "dark_brown": 252,
+      "light_brown": 3747,
+      "leucistic": 5001,
+      "albino": 5006,
+      "melanistic": 5011,
+      "brown": 5021,
+      "tan": 6275,
+      "light_gray": 10023
+    }
+  },
+  "chamois": {
+    "male": {
+      "brown": 244,
+      "honeytones": 1243,
+      "melanistic": 2497,
+      "leucistic": 2502,
+      "dark_brown": 2522,
+      "albino": 6270,
+      "grey_brown": 6275
+    },
+    "female": {
+      "brown": 244,
+      "honeytones": 1243,
+      "melanistic": 2497,
+      "leucistic": 2502,
+      "dark_brown": 2522,
+      "albino": 6270,
+      "grey_brown": 6275
+    }
+  },
+  "mallard": {
+    "male": {
+      "brown_hybrid": 9,
+      "black_brown": 1264,
+      "piebald": 8768,
+      "leucistic": 10023,
+      "melanistic": 10033
+    },
+    "female": {
+      "brown_hybrid": 796,
+      "blonde": 1254,
+      "black_brown": 1264,
+      "piebald": 8768,
+      "melanistic": 10023
+    }
+  },
+  "wild_turkey": {
+    "male": {
+      "melanistic": 5,
+      "brown": 9,
+      "dark_brown": 6005,
+      "light_brown": 8012,
+      "albino": 10019,
+      "leucistic": 10023
+    },
+    "female": {
+      "melanistic": 5,
+      "brown": 9,
+      "dark_brown": 6005,
+      "light_brown": 8012,
+      "albino": 10019,
+      "leucistic": 10023
+    }
+  },
+  "sika_deer": {
+    "male": {
+      "black": 149,
+      "brown": 3737,
+      "spotted": 7484,
+      "albino": 8739,
+      "dark_spotted": 8749,
+      "spotted_red": 10003
+    },
+    "female": {
+      "black": 149,
+      "brown": 3737,
+      "spotted": 7484,
+      "albino": 8739,
+      "dark_spotted": 8749,
+      "spotted_red": 10003
+    }
+  },
+  "whitetail_deer": {
+    "male": {
+      "tan": 9,
+      "brown": 3344,
+      "melanistic": 6678,
+      "albino": 6683,
+      "dark_brown": 6689,
+      "piebald": 10023
+    },
+    "female": {
+      "brown": 575,
+      "melanistic": 3344,
+      "dark_brown": 3349,
+      "albino": 6683,
+      "redbrown": 6689,
+      "piebald": 10023
+    }
+  },
+  "moose": {
+    "male": {
+      "tan": 486,
+      "light_brown": 3329,
+      "brown": 6663,
+      "piebald": 9998,
+      "melanistic": 10018,
+      "albino": 10023
+    },
+    "female": {
+      "brown": 486,
+      "albino": 3323,
+      "dark_brown": 3329,
+      "tan": 6663,
+      "piebald": 9998,
+      "melanistic": 10018
+    }
+  },
+  "goldeneye": {
+    "male": {
+      "black": 26,
+      "leucistic": 10013,
+      "hybrid": 10020,
+      "eclipse": 10033
+    },
+    "female": {
+      "gray": 384,
+      "dark": 9990,
+      "leucistic": 10017
+    }
+  },
+  "raccoon": {
+    "male": {
+      "blonde": 250,
+      "piebald-grey": 2497,
+      "albino": 2507,
+      "melanistic": 2513,
+      "gray": 2517,
+      "piebald-blnd": 6265,
+      "brown": 6275
+    },
+    "female": {
+      "blonde": 250,
+      "piebald-grey": 3993,
+      "albino": 4009,
+      "melanistic": 4017,
+      "piebald-blnd": 4025,
+      "brown": 4041
+    }
+  },
+  "eastern_cottontail_rabbit": {
+    "male": {
+      "light_brown": 400,
+      "gray": 1253,
+      "leucistic": 5001,
+      "light_gray": 5011,
+      "brown": 6265,
+      "melanistic": 10023,
+      "albino": 10028
+    },
+    "female": {
+      "light_brown": 400,
+      "gray": 1253,
+      "leucistic": 5001,
+      "light_gray": 5011,
+      "brown": 6265,
+      "melanistic": 10023,
+      "albino": 10028
+    }
+  },
+  "northern_bobwhite_quail": {
+    "male": {
+      "gray": 246,
+      "redbrown": 3334,
+      "brown": 6678
+    },
+    "female": {
+      "brown": 246,
+      "albino": 10023
+    }
+  },
+  "eastern_wild_turkey": {
+    "male": {
+      "brown": 329,
+      "light_bronze": 3742,
+      "leucistic": 4996,
+      "bronze": 5016,
+      "light_brown": 8764,
+      "albino": 10018,
+      "melanistic": 10023
+    },
+    "female": {
+      "brown": 329,
+      "light_bronze": 3742,
+      "leucistic": 4996,
+      "bronze": 5016,
+      "light_brown": 8764,
+      "albino": 10018,
+      "melanistic": 10023
+    }
+  },
+  "gray_fox": {
+    "male": {
+      "two_tone": 150,
+      "piebald": 1248,
+      "red": 1255,
+      "albino": 2509,
+      "gray": 2514,
+      "leucistic": 10017,
+      "melanistic": 10023
+    },
+    "female": {
+      "two_tone": 150,
+      "piebald": 1248,
+      "red": 1255,
+      "albino": 2509,
+      "gray": 2514,
+      "leucistic": 10017,
+      "melanistic": 10023
+    }
+  },
+  "black_bear": {
+    "male": {
+      "black": 200,
+      "brown": 3329,
+      "dusky": 3334,
+      "dark": 6668,
+      "cinnamon": 10003,
+      "blonde": 10023
+    },
+    "female": {
+      "dusky": 200,
+      "black": 3334,
+      "dark": 6668,
+      "cinnamon": 10003,
+      "blonde": 10023,
+      "brown": 10028
+    }
+  },
+  "bobcat": {
+    "male": {
+      "tan": 100,
+      "brown": 3737,
+      "melanistic": 4991,
+      "blue": 4996,
+      "red": 5016,
+      "gray": 6270,
+      "albino": 10018
+    },
+    "female": {
+      "tan": 100,
+      "brown": 3737,
+      "melanistic": 4991,
+      "blue": 4996,
+      "red": 5016,
+      "gray": 6270,
+      "albino": 10018
+    }
+  },
+  "coyote": {
+    "male": {
+      "dark_grey": 9,
+      "orange": 3344,
+      "albino": 6678,
+      "grey_brown": 6683,
+      "melanistic": 10018,
+      "piebald": 10023
+    },
+    "female": {
+      "grey_brown": 9,
+      "orange": 3344,
+      "albino": 6678,
+      "light_gray": 6683,
+      "melanistic": 10018,
+      "piebald": 10023
+    }
+  },
+  "pheasant": {
+    "male": {
+      "white_brown": 247,
+      "molting": 3746,
+      "albino": 5001,
+      "brown": 5004,
+      "gray": 8762,
+      "leucistic": 10016,
+      "melanistic": 10020
+    },
+    "female": {
+      "gray": 247,
+      "brown": 1179,
+      "leucistic": 10007,
+      "melanistic": 10015,
+      "albino": 10023
+    }
+  },
+  "green_wing_teal": {
+    "male": {
+      "light_green": 77,
+      "albino": 10023,
+      "piebald": 10032
+    },
+    "female": {
+      "light_green": 2,
+      "piebald": 10010
     }
   }
 }

@@ -327,7 +327,8 @@ def seed_animals(reserve_key: str) -> None:
         new_furs = process_aps(aps_species, Path(f"scans/scan.csv"))
         if not bool(new_furs):
           print(f"we didn't find any furs; probably have name wrong: {species.lower()}:{utils.unformat_key(aps_species).lower()}")
-          break
+          seed = initial_seed
+          continue
         species_furs = combine_furs(species_furs, new_furs)
         print(species_furs)
         
@@ -440,6 +441,6 @@ def fix_furs() -> None:
 if __name__ == "__main__":
   # analyze_reserve(config.get_save_path() / "animal_population_16")
   # fix_furs()
-  seed_animals("emerald")
+  seed_animals("newengland")
   # launch_aps()
   # click_reserve("emerald")
