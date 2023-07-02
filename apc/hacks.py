@@ -76,13 +76,21 @@ def compare_fur_cnt() -> None:
   details = json.load(Path("apc/config/animal_details.json").open())
   global_furs = json.load(Path("scans/global_furs.json").open())
   for animal_name, detail in details.items():
+    if animal_name == "eg_kangaroo":
+      animal_name = "eastern_grey_kangaroo"
+    elif animal_name == "sw_crocodile":
+      animal_name = "saltwater_crocodile"
     if animal_name in global_furs:
       global_male_cnt = global_furs[animal_name]["male_cnt"]
       global_female_cnt = global_furs[animal_name]["female_cnt"]
-      if global_male_cnt != len(detail["diamonds"]["furs"]["male"]) or global_female_cnt != len(detail["diamonds"]["furs"]["female"]):
-        print(animal_name)
+      male_cnt = len(detail["diamonds"]["furs"]["male"])
+      female_cnt = len(detail["diamonds"]["furs"]["female"])
+      missing_male = global_male_cnt != male_cnt
+      missing_female = global_female_cnt != female_cnt
+      if missing_male or missing_female:
+        print(f"{animal_name} (male: {global_male_cnt - male_cnt}) (female: {global_female_cnt - female_cnt})")
     else:
-      print("MISSING:", animal_name)
+      print("** MISSING:", animal_name)
 
 FURS_PATH = Path("scans/furs.json")
 
