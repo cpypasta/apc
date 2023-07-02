@@ -1368,12 +1368,12 @@
           "white": 7272
         },
         "female": {
-          "piebald": 0,
           "dark_spotted": 12,
           "spotted_red": 2320,
           "melanistic": 6166,
           "spotted": 6171,
-          "albino": 10017
+          "albino": 10017,
+          "piebald": 10023
         }
       },
       "levels": [

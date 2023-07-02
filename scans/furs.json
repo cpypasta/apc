@@ -11,8 +11,8 @@
       "white": 7272
     },
     "female": {
-      "dark spotted": 12,
-      "spotted red": 2320,
+      "dark_spotted": 12,
+      "spotted_red": 2320,
       "melanistic": 6166,
       "spotted": 6171,
       "albino": 10017,

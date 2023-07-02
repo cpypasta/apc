@@ -72,6 +72,18 @@ def analyze_reserve(path: Path) -> None:
     group_weight[p_i] = high_weight
   print(json.dumps(group_weight, indent=2))
 
+def compare_fur_cnt() -> None:
+  details = json.load(Path("apc/config/animal_details.json").open())
+  global_furs = json.load(Path("scans/global_furs.json").open())
+  for animal_name, detail in details.items():
+    if animal_name in global_furs:
+      global_male_cnt = global_furs[animal_name]["male_cnt"]
+      global_female_cnt = global_furs[animal_name]["female_cnt"]
+      if global_male_cnt != len(detail["diamonds"]["furs"]["male"]) or global_female_cnt != len(detail["diamonds"]["furs"]["female"]):
+        print(animal_name)
+    else:
+      print("MISSING:", animal_name)
+
 FURS_PATH = Path("scans/furs.json")
 
 class ApsAnimal:
@@ -455,4 +467,4 @@ if __name__ == "__main__":
   # seed_animals("hirsch")
   # launch_aps()
   # click_reserve("emerald")
-  merge_furs()
+  compare_fur_cnt()

@@ -1,0 +1,378 @@
+{
+  "raccoon_dog": {
+    "male_cnt": 8,
+    "female_cnt": 8
+  },
+  "feral_goat": {
+    "male_cnt": 11,
+    "female_cnt": 5
+  },
+  "beceite_ibex": {
+    "male_cnt": 6,
+    "female_cnt": 5
+  },
+  "raccoon": {
+    "male_cnt": 7,
+    "female_cnt": 7
+  },
+  "ronda_ibex": {
+    "male_cnt": 6,
+    "female_cnt": 5
+  },
+  "bighorn_sheep": {
+    "male_cnt": 5,
+    "female_cnt": 5
+  },
+  "coyote": {
+    "male_cnt": 6,
+    "female_cnt": 6
+  },
+  "red_deer": {
+    "male_cnt": 6,
+    "female_cnt": 6
+  },
+  "springbok": {
+    "male_cnt": 5,
+    "female_cnt": 5
+  },
+  "eurasian_lynx": {
+    "male_cnt": 7,
+    "female_cnt": 7
+  },
+  "lesser_kudu": {
+    "male_cnt": 6,
+    "female_cnt": 7
+  },
+  "jackrabbit": {
+    "male_cnt": 5,
+    "female_cnt": 5
+  },
+  "chamois": {
+    "male_cnt": 7,
+    "female_cnt": 7
+  },
+  "antelope_jackrabbit": {
+    "male_cnt": 6,
+    "female_cnt": 6
+  },
+  "banteng": {
+    "male_cnt": 6,
+    "female_cnt": 4
+  },
+  "feral_pig": {
+    "male_cnt": 10,
+    "female_cnt": 4
+  },
+  "sidestriped_jackal": {
+    "male_cnt": 6,
+    "female_cnt": 6
+  },
+  "eastern_cottontail_rabbit": {
+    "male_cnt": 8,
+    "female_cnt": 8
+  },
+  "siberian_weasel": {
+    "male_cnt": 4,
+    "female_cnt": 4
+  },
+  "eu_bison": {
+    "male_cnt": 9,
+    "female_cnt": 9
+  },
+  "magpie_goose": {
+    "male_cnt": 8,
+    "female_cnt": 8
+  },
+  "gemsbok": {
+    "male_cnt": 5,
+    "female_cnt": 5
+  },
+  "southeastern_ibex": {
+    "male_cnt": 6,
+    "female_cnt": 5
+  },
+  "hazel_grouse": {
+    "male_cnt": 5,
+    "female_cnt": 5
+  },
+  "red_fox": {
+    "male_cnt": 9,
+    "female_cnt": 9
+  },
+  "black_bear": {
+    "male_cnt": 9,
+    "female_cnt": 9
+  },
+  "saltwater_crocodile": {
+    "male_cnt": 9,
+    "female_cnt": 9
+  },
+  "willow_ptarmigan": {
+    "male_cnt": 4,
+    "female_cnt": 5
+  },
+  "lion": {
+    "male_cnt": 5,
+    "female_cnt": 5
+  },
+  "cinnamon_teal": {
+    "male_cnt": 4,
+    "female_cnt": 3
+  },
+  "prong_horn": {
+    "male_cnt": 7,
+    "female_cnt": 6
+  },
+  "pheasant": {
+    "male_cnt": 7,
+    "female_cnt": 5
+  },
+  "eastern_wild_turkey": {
+    "male_cnt": 7,
+    "female_cnt": 7
+  },
+  "blackbuck": {
+    "male_cnt": 5,
+    "female_cnt": 5
+  },
+  "eu_hare": {
+    "male_cnt": 6,
+    "female_cnt": 6
+  },
+  "mountain_hare": {
+    "male_cnt": 8,
+    "female_cnt": 8
+  },
+  "gray_wolf": {
+    "male_cnt": 6,
+    "female_cnt": 6
+  },
+  "western_capercaillie": {
+    "male_cnt": 4,
+    "female_cnt": 4
+  },
+  "moose": {
+    "male_cnt": 10,
+    "female_cnt": 10
+  },
+  "blue_wildebeest": {
+    "male_cnt": 5,
+    "female_cnt": 5
+  },
+  "caribou": {
+    "male_cnt": 6,
+    "female_cnt": 5
+  },
+  "siberian_musk_deer": {
+    "male_cnt": 7,
+    "female_cnt": 7
+  },
+  "american_alligator": {
+    "male_cnt": 9,
+    "female_cnt": 9
+  },
+  "water_buffalo": {
+    "male_cnt": 4,
+    "female_cnt": 5
+  },
+  "goldeneye": {
+    "male_cnt": 6,
+    "female_cnt": 4
+  },
+  "northern_bobwhite_quail": {
+    "male_cnt": 4,
+    "female_cnt": 2
+  },
+  "stubble_quail": {
+    "male_cnt": 4,
+    "female_cnt": 3
+  },
+  "mule_deer": {
+    "male_cnt": 8,
+    "female_cnt": 8
+  },
+  "eastern_grey_kangaroo": {
+    "male_cnt": 10,
+    "female_cnt": 10
+  },
+  "rock_ptarmigan": {
+    "male_cnt": 4,
+    "female_cnt": 5
+  },
+  "green_wing_teal": {
+    "male_cnt": 5,
+    "female_cnt": 3
+  },
+  "iberian_wolf": {
+    "male_cnt": 10,
+    "female_cnt": 10
+  },
+  "sambar": {
+    "male_cnt": 9,
+    "female_cnt": 7
+  },
+  "sika_deer": {
+    "male_cnt": 6,
+    "female_cnt": 6
+  },
+  "canada_goose": {
+    "male_cnt": 6,
+    "female_cnt": 6
+  },
+  "axis_deer": {
+    "male_cnt": 5,
+    "female_cnt": 5
+  },
+  "scrub_hare": {
+    "male_cnt": 4,
+    "female_cnt": 4
+  },
+  "bobcat": {
+    "male_cnt": 7,
+    "female_cnt": 7
+  },
+  "gray_fox": {
+    "male_cnt": 8,
+    "female_cnt": 8
+  },
+  "greylag_goose": {
+    "male_cnt": 8,
+    "female_cnt": 8
+  },
+  "eu_rabbit": {
+    "male_cnt": 8,
+    "female_cnt": 8
+  },
+  "eurasian_brown_bear": {
+    "male_cnt": 13,
+    "female_cnt": 13
+  },
+  "eurasian_wigeon": {
+    "male_cnt": 6,
+    "female_cnt": 5
+  },
+  "unknown": {
+    "male_cnt": 1,
+    "female_cnt": 1
+  },
+  "harlequin_duck": {
+    "male_cnt": 4,
+    "female_cnt": 5
+  },
+  "red_squirrel": {
+    "male_cnt": 4,
+    "female_cnt": 4
+  },
+  "black_grouse": {
+    "male_cnt": 6,
+    "female_cnt": 4
+  },
+  "wild_boar": {
+    "male_cnt": 9,
+    "female_cnt": 9
+  },
+  "hog_deer": {
+    "male_cnt": 6,
+    "female_cnt": 5
+  },
+  "roe_deer": {
+    "male_cnt": 9,
+    "female_cnt": 9
+  },
+  "mountain_goat": {
+    "male_cnt": 6,
+    "female_cnt": 6
+  },
+  "whitetail_deer": {
+    "male_cnt": 6,
+    "female_cnt": 6
+  },
+  "eurasian_teal": {
+    "male_cnt": 6,
+    "female_cnt": 2
+  },
+  "reindeer": {
+    "male_cnt": 8,
+    "female_cnt": 8
+  },
+  "tufted_duck": {
+    "male_cnt": 5,
+    "female_cnt": 4
+  },
+  "plains_bison": {
+    "male_cnt": 7,
+    "female_cnt": 7
+  },
+  "rio_grande_turkey": {
+    "male_cnt": 7,
+    "female_cnt": 7
+  },
+  "warthog": {
+    "male_cnt": 5,
+    "female_cnt": 5
+  },
+  "wild_turkey": {
+    "male_cnt": 6,
+    "female_cnt": 6
+  },
+  "javan_rusa": {
+    "male_cnt": 8,
+    "female_cnt": 6
+  },
+  "mexican_bobcat": {
+    "male_cnt": 7,
+    "female_cnt": 7
+  },
+  "tundra_bean_goose": {
+    "male_cnt": 6,
+    "female_cnt": 6
+  },
+  "grizzly_bear": {
+    "male_cnt": 4,
+    "female_cnt": 4
+  },
+  "blacktail_deer": {
+    "male_cnt": 9,
+    "female_cnt": 9
+  },
+  "iberian_mouflon": {
+    "male_cnt": 6,
+    "female_cnt": 5
+  },
+  "homo_sapien": {
+    "male_cnt": 1,
+    "female_cnt": 1
+  },
+  "fallow_deer": {
+    "male_cnt": 16,
+    "female_cnt": 10
+  },
+  "roosevelt_elk": {
+    "male_cnt": 9,
+    "female_cnt": 9
+  },
+  "collared_peccary": {
+    "male_cnt": 8,
+    "female_cnt": 8
+  },
+  "cape_buffalo": {
+    "male_cnt": 5,
+    "female_cnt": 5
+  },
+  "mallard": {
+    "male_cnt": 5,
+    "female_cnt": 5
+  },
+  "rockymountain_elk": {
+    "male_cnt": 6,
+    "female_cnt": 6
+  },
+  "puma": {
+    "male_cnt": 5,
+    "female_cnt": 5
+  },
+  "gredos_ibex": {
+    "male_cnt": 6,
+    "female_cnt": 5
+  }
+}
