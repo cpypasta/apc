@@ -1067,7 +1067,6 @@ def main() -> None:
             window = main_window(window)
         elif event in ("gender_value", "go_value", "diamond_value"):
           new_go_cnt = int(values["go_value"])
-          new_diamond_cnt = int(values["diamond_value"])
           gender_value = int(values["gender_value"])
           new_male_cnt = gender_value + male_cnt if gender_value > 0 else male_cnt - (-gender_value)
           new_female_cnt = -gender_value + female_cnt if gender_value < 0 else female_cnt - gender_value
@@ -1075,7 +1074,7 @@ def main() -> None:
             changing = "male" if gender_value > 0 else "female"
           else:
             changing = event
-          _update_mod_animal_counts(window, species, total_cnt, male_cnt, female_cnt, new_female_cnt, new_male_cnt, new_go_cnt, new_diamond_cnt, male_group_cnt, female_group_cnt, changing=changing)
+          _update_mod_animal_counts(window, species, total_cnt, male_cnt, female_cnt, new_female_cnt, new_male_cnt, new_go_cnt, diamond_cnt, male_group_cnt, female_group_cnt, changing=changing)
         elif event == "gender_section_symbol" or event == "gender_section_title":
           if not window["gender_section"].visible:
             _toggle_section_visible(window, "gender_section", True)
