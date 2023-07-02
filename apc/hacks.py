@@ -119,8 +119,8 @@ def map_aps(reserve_name: str, species_key: str) -> str:
     return "turkey"
   if species_key == "prong_horn":
     return "pronghorn"
-  if reserve_name == "silver" and species_key == "puma":
-    return "mountain_lion"
+  # if reserve_name == "silver" and species_key == "puma":
+  #   return "mountain_lion"
   if species_key == "rockymountain_elk":
     return "rm_elk"
   if species_key == "rio_grande_turkey":
@@ -441,6 +441,6 @@ def fix_furs() -> None:
 if __name__ == "__main__":
   # analyze_reserve(config.get_save_path() / "animal_population_16")
   # fix_furs()
-  seed_animals("newengland")
+  seed_animals("hirsch")
   # launch_aps()
   # click_reserve("emerald")
