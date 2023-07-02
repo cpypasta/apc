@@ -1,0 +1,20 @@
+Bears:
+
+25.41 score, 322.55 weight (spirit) 1179311934
+24.71, 347.61 (glacier2) 1669758857
+        "fabled_glacier": 2742609257
+        "fabled_glacier2": 1669758857,
+        "fabled_chestnut": 3087602548,
+        "fabled_cream": 3631307431,
+        "fabled_spotted": 1868463965,
+        "fabled_spirit": 1179311934
+
+Moose:
+
+        "fabled_two_tone": 0, 293.12, 666.02
+        "fabled_birch": 0, 255.76, 628.86
+        "fabled_oak": 0, 203.58, 652.95
+        "fabled_speckled": 0, 272.4, 677.17
+        "fabled_spruce": 0, 274.73, 624.59        
+        "fabled_ashen": 243.70, 679.66
+

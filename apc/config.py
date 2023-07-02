@@ -314,6 +314,12 @@ RESERVE_NAMES = json.load((CONFIG_PATH / "reserve_names.json").open())["reserve_
 FUR_NAMES = json.load((CONFIG_PATH / "fur_names.json").open())["fur_names"]
 RESERVES = json.load((CONFIG_PATH / "reserve_details.json").open())
 ANIMALS = json.load((CONFIG_PATH / "animal_details.json").open())
+# TODO: diamonds that can be both genders need different weight / score values
+# TODO: fix animal furs since they auto-die
+# TODO: fabled glacier go black bear
+# TODO: kangaroos with multiple white furs
+# TODO: crocodiles with multiple spots
+# TODO: species change; have male diamonds done for score; need low weight and levels
 
 class Reserve(str, Enum):
    hirsch = "hirsch"

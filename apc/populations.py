@@ -199,7 +199,7 @@ def describe_reserve(reserve_key: str, reserve_details: Adf, include_species = T
 
           if animal.go:
             go_cnt += 1
-          elif animal.weight >= diamond_weight and animal.score >= diamond_score:
+          elif _is_diamond(animal):
             diamond_cnt += 1
         if group_male_cnt > 0:
           male_groups.append(group_i)

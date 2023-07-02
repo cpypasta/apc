@@ -924,6 +924,7 @@ def main() -> None:
             animal_row, _ = event[2]
             if animal_row != None and animal_row >= 0:                                       
               animal = _parse_animal_row(species_description[animal_row], get_diamond_gender(species))
+              print("Visual Seed:", animal_details[animal_row].visual_seed)
               _disable_animal_details(window, False)
               _update_animal_details(window, species, animal)
         elif event == "animal_go" or event == "animal_gender":

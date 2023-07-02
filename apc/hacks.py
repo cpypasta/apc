@@ -46,6 +46,17 @@ def bad_scores(path: Path) -> None:
     if animal["diamonds"]["score_low"] > animal["diamonds"]["score_high"]:
       print(animal_key, animal)
 
+def merge_furs() -> None:
+  scan = json.load(Path("scans/furs.json").open())
+  details = json.load(Path("apc/config/animal_details.json").open())
+  for animal_name, furs in scan.items():
+    existing_animal = details[animal_name]
+    if existing_animal:
+      existing_animal_furs = existing_animal["diamonds"]["furs"]
+      if list(existing_animal_furs["male"].values())[0] == 0:
+        details[animal_name]["diamonds"]["furs"] = furs
+  Path("apc/config/animal_details2.json").write_text(json.dumps(details, indent=2))
+
 def analyze_reserve(path: Path) -> None:
   pops = populations._get_populations(adf.load_adf(path, True).adf)
   group_weight = {}
@@ -441,6 +452,7 @@ def fix_furs() -> None:
 if __name__ == "__main__":
   # analyze_reserve(config.get_save_path() / "animal_population_16")
   # fix_furs()
-  seed_animals("hirsch")
+  # seed_animals("hirsch")
   # launch_aps()
   # click_reserve("emerald")
+  merge_furs()
