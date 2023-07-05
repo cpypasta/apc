@@ -412,7 +412,7 @@ def _load_mod(window: sg.Window, filename: Path) -> None:
       _show_warning(window, f"{config.FAILED_TO_LOAD_MOD} {filename}")
       return    
     _progress(window, 100)
-    _show_popup(config.MOD_LOADED, config.MOD_LOADED, config.OK)
+    sg.PopupQuickMessage(config.MOD_LOADED, font="_ 28", background_color="brown")
     time.sleep(PROGRESS_DELAY)
   except Exception:
     print(traceback.format_exc())
@@ -434,7 +434,7 @@ def _unload_mod(window: sg.Window, filename: Path) -> None:
     _progress(window, 50)
     os.remove(backup_file)
     _progress(window, 100)
-    _show_popup(config.MOD_UNLOADED, config.MOD_UNLOADED, config.OK)
+    sg.PopupQuickMessage(config.MOD_UNLOADED, font="_ 28", background_color="brown")
     time.sleep(PROGRESS_DELAY)
   except Exception:
     print(traceback.format_exc())
@@ -470,10 +470,6 @@ def _reset_mod(window: sg.Window) -> None:
   window["diamond_all_furs"].update(False)
   window["diamond_furs"].update(set_to_index=[])
   window["reserve_description"].update(select_rows=[])
-  
-def _clear_gender_values(window: sg.Window):
-  window["new_male_value"].update("0")
-  window["new_female_value"].update("0")
 
 def _reset_furs(window: sg.Window) -> None:
   window["male_all_furs"].update(False)

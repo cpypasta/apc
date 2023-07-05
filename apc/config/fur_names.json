@@ -275,6 +275,15 @@
     },
     "fabled_painted": {
       "fur_name": "Fabled Painted"
-    }                       
+    },
+    "redbrown": {
+      "fur_name": "Redbrown"
+    },
+    "lg_leucist.": {
+      "fur_name": "Lg Leucist"
+    },
+    "bald_leuc.": {
+      "fur_name": "Bald Leucist"
+    }                  
   }
 }

@@ -89,9 +89,12 @@ def find_animals(species: str, modded = False, good = False, verbose = False, to
   animals = []
   for reserve in reserves:
     if valid_species_for_reserve(species, reserve):
-      reserve_details = adf.load_reserve(reserve, modded)
-      reserve_animals = describe_animals(reserve, species, reserve_details.adf, good, verbose)
-      animals.extend(reserve_animals)  
+      try:
+        reserve_details = adf.load_reserve(reserve, modded)
+        reserve_animals = describe_animals(reserve, species, reserve_details.adf, good, verbose)
+        animals.extend(reserve_animals)  
+      except:
+        continue
   animals = sorted(animals, key = lambda x : x[4], reverse=True)
   return animals[:10] if top else animals
 

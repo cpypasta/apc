@@ -221,7 +221,7 @@ def setup_translations() -> None:
   global MANAGE_MODDED_RESERVES
   MANAGE_MODDED_RESERVES = translate("Manage Modded Reserves")
   global VIEWING_LOADED_MOD
-  VIEWING_LOADED_MOD = translate("viewing loaded mod")
+  VIEWING_LOADED_MOD = translate("viewing loaded")
   global USE_ALL_FURS
   USE_ALL_FURS = translate("use all furs")
   global NO
@@ -235,7 +235,7 @@ def setup_translations() -> None:
   global TOP_10
   TOP_10 = translate("Top 10")
   global LOADED_MOD
-  LOADED_MOD = translate("Loaded Mod")
+  LOADED_MOD = translate("Loaded")
   global EXPORT_MOD
   EXPORT_MOD = translate("Export Mod")  
   global IMPORT_MOD
