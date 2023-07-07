@@ -105,7 +105,7 @@
     "diamonds": {
       "score_low": 217.29,
       "score_high": 237.937,
-      "weight_low": 70.991,
+      "weight_low": 70.0,
       "weight_high": 75.0,
       "furs": {
         "male": {
@@ -1404,7 +1404,7 @@
     "diamonds": {
       "score_low": 208.71,
       "score_high": 225.758,
-      "weight_low": 47.991,
+      "weight_low": 48.8,
       "weight_high": 50.0,
       "furs": {
         "male": {
@@ -1455,7 +1455,7 @@
     "diamonds": {
       "score_low": 144.25,
       "score_high": 159.5,
-      "weight_low": 191.151,
+      "weight_low": 189.0,
       "weight_high": 205.0,
       "furs": {
         "male": {
@@ -2956,7 +2956,7 @@
     "diamonds": {
       "score_low": 14.05,
       "score_high": 15.4,
-      "weight_low": 14.049,
+      "weight_low": 14.1,
       "weight_high": 15.4,
       "furs": {
         "male": {
@@ -3994,7 +3994,7 @@
     "diamonds": {
       "score_low": 108.68,
       "score_high": 117.15,
-      "weight_low": 47.991,
+      "weight_low": 48.4,
       "weight_high": 50.0,
       "furs": {
         "male": {
@@ -4041,7 +4041,7 @@
     "diamonds": {
       "score_low": 3.85,
       "score_high": 4.0,
-      "weight_low": 3.0,
+      "weight_low": 3.1,
       "weight_high": 3.2,
       "furs": {
         "male": {
@@ -4081,7 +4081,7 @@
     "diamonds": {
       "score_low": 492.0,
       "score_high": 530.0,
-      "weight_low": 60.0,
+      "weight_low": 62.8,
       "weight_high": 66.0,
       "furs": {
         "male": {
@@ -4145,7 +4145,7 @@
     "diamonds": {
       "score_low": 166.43,
       "score_high": 180.51,
-      "weight_low": 290.0,
+      "weight_low": 295.0,
       "weight_high": 300.0,
       "furs": {
         "male": {
@@ -4241,7 +4241,7 @@
     "diamonds": {
       "score_low": 1015.0,
       "score_high": 1100.0,
-      "weight_low": 1090.0,
+      "weight_low": 1000.0,
       "weight_high": 1100.0,
       "furs": {
         "male": {
@@ -4344,7 +4344,7 @@
     "diamonds": {
       "score_low": 148.78,
       "score_high": 160.81,
-      "weight_low": 164.0,
+      "weight_low": 168.3,
       "weight_high": 172.0,
       "furs": {
         "male": {
