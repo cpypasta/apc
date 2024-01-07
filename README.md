@@ -1,6 +1,6 @@
 # animal-population-changer
 
-A tool that allows anyone to change the animal population on all the reserves in theHunter: Call of the Wild (COTW). You can choose to use the CLI tool or the GUI.
+A tool that allows anyone to change the animal population on all the reserves in theHunter: Call of the Wild (COTW).
 
 ![GUI](https://user-images.githubusercontent.com/2107385/248629158-47bec7aa-a978-4cc7-8fd0-dfeaea8e6777.gif)
 
@@ -18,9 +18,10 @@ The modded population files can be found in a `mods` folder in the same director
 To download the latest releases of this tool, go to [NexusMods](https://www.nexusmods.com/thehuntercallofthewild/mods/225) where you can also post bugs and have a conversation with the COTW modding community.
 
 ## Limitations:
-* This tool was tested on Windows 11 with the game installed via Steam. It is smart enough to also look where Epic Games saves its files too. If your game files are saved somewhere else besides where Steam or Epic saves them, use the `apc set-save [SAVE_PATH]` if you are using the CLI or the `Configure Game Path` in the GUI.
+* This tool was tested on Windows 11 with the game installed via Steam. It is smart enough to also look where Epic Games saves its files too. If your game files are saved somewhere else besides where Steam or Epic saves them, use the `Configure Game Path` button.
 * The species that use the newer TruRACS trophy system may not become a diamond. This is an area where I am still doing research to figure out how exactly to manipulate.
 * If you use the executables (EXE) files, your system may complain there is a virus. This is not true, but the `pyinstaller` package that builds the executable is often used by hackers, and so it is being flagged. To avoid this, simply install the tool from the `wheel` file or build it from source.
+  
 ## How To Build
 
 > Note: This code was built and tested with Python 3.10.10.
