@@ -17,6 +17,8 @@ The modded population files can be found in a `mods` folder in the same director
 
 To download the latest releases of this tool, go to [NexusMods](https://www.nexusmods.com/thehuntercallofthewild/mods/225) where you can also post bugs and have a conversation with the COTW modding community.
 
+Testing with game version: 2649775
+
 ## Limitations:
 * This tool was tested on Windows 11 with the game installed via Steam. It is smart enough to also look where Epic Games saves its files too. If your game files are saved somewhere else besides where Steam or Epic saves them, use the `Configure Game Path` button.
 * The species that use the newer TruRACS trophy system may not become a diamond. This is an area where I am still doing research to figure out how exactly to manipulate.
