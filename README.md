@@ -1,5 +1,8 @@
 # animal-population-changer
 
+> [!WARNING]
+> This application is no longer maintained.
+
 A tool that allows anyone to change the animal population on all the reserves in theHunter: Call of the Wild (COTW).
 
 ![GUI](https://user-images.githubusercontent.com/2107385/248629158-47bec7aa-a978-4cc7-8fd0-dfeaea8e6777.gif)
